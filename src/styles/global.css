@@ -269,9 +269,12 @@ details .ans{padding:0 0 16px;color:var(--muted);font-size:13.8px}
   .head-bar{height:60px;gap:12px}
   .logo{font-size:16px}
   .logo img{width:30px;height:30px}
-  .prod-grid{grid-template-columns:1fr;gap:12px}
-  .prod{padding:12px}
-  .prod-imgwrap img{height:140px}
+  .prod-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .prod{padding:0;overflow:hidden;border-radius:16px}
+  .prod-imgwrap{aspect-ratio:4/5;overflow:hidden}
+  .prod-imgwrap img{height:100%;width:100%;object-fit:cover;border-radius:0}
+  .prod .meta,.prod-actions{padding-inline:12px}
+  .prod-actions{padding-bottom:12px}
   .prod .meta{font-size:10.5px}
   .prod-actions .btn{padding:8px 6px;font-size:10px;letter-spacing:.06em}
   .cat-grid{grid-template-columns:1fr}
@@ -316,14 +319,15 @@ details .ans{padding:0 0 16px;color:var(--muted);font-size:13.8px}
   .wrap{padding-inline:20px}
   .sec{padding:56px 0}
   .sec-head{margin-bottom:26px}
-  .sec-head h2{font-size:23px;line-height:1.28;letter-spacing:-.01em}
+  .sec-head h2{font-size:24px;line-height:1.22;letter-spacing:-.01em;
+    font-family:Georgia,'Times New Roman',serif;font-weight:400}
   .sec-head .sub-sec{font-size:14.5px;line-height:1.6;margin-top:10px}
   .eyebrow{font-size:11px;letter-spacing:.14em;margin-bottom:8px}
 
   /* soft, rounded cards everywhere instead of square blocks */
   .feat,.prod,.cat,.price-card,.guarantee-grid article{
     border-radius:18px;border:1px solid var(--line-2);
-    padding:20px 18px;box-shadow:0 3px 16px rgba(94,75,57,.06)}
+    padding:20px 18px;box-shadow:0 1px 4px rgba(94,75,57,.045)}
   .feat h3{font-size:16px;line-height:1.35;margin-bottom:8px}
   .feat p{font-size:14px;line-height:1.62}
   .feat-grid,.feat-grid--2,.guarantee-grid,.trust-grid{gap:14px}
@@ -339,8 +343,10 @@ details .ans{padding:0 0 16px;color:var(--muted);font-size:13.8px}
     border-radius:18px;object-fit:cover}
 
   /* headline scales down gracefully, no clipping */
-  .h-sec{font-size:23px;line-height:1.28;letter-spacing:-.01em}
-  .slide-copy h1{font-size:26px;line-height:1.2;letter-spacing:-.02em}
+  .h-sec{font-size:24px;line-height:1.22;letter-spacing:-.01em;
+    font-family:Georgia,'Times New Roman',serif;font-weight:400}
+  .slide-copy h1{font-size:27px;line-height:1.18;letter-spacing:-.01em;
+    font-family:Georgia,'Times New Roman',serif;font-weight:400}
   .slide-copy{text-align:left}
   .slide-copy .eyebrow{font-size:10.5px}
 

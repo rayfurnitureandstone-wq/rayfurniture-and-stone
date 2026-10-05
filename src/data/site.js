@@ -83,7 +83,7 @@ export const inclusions = [
 
 export const customVsStock = [
   ['Ukuran pas ruang Anda', 'Setiap modul dibuat mengikuti ukuran ruang, jadi tidak ada sela kosong atau ruang terbuang.'],
-  ['Bebas pilih material', 'HPL motif kayu, marmer, granit, kuarsa, kayu solid — sesuaikan dengan selera dan anggaran.'],
+  ['Bebas pilih material', 'HPL motif kayu, marmer, granit, Quadra, material kabinet — sesuaikan dengan selera dan anggaran.'],
   ['Fungsionalitas maksimal', 'Rak, laci, dan organizer ditata pakai kebiasaan harian sehingga berkeja di dapur jauh lebih ringan.'],
   ['Nilai properti naik', 'Furniture custom yang ramping dan kuat memberi kesan elegan, jadi rumah lebih nyaman dan bernilai.'],
 ];
