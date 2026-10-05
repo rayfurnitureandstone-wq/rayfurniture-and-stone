@@ -2,7 +2,7 @@
 title: "Kenapa Lantai Marmer Kusam Harus Dipoles Rutin?"
 date: 2026-07-28
 category: "Perawatan"
-banner: "/images/modern-white-kitchen-set-promotion.png"
+banner: "/images/ai/kenapa-lantai-marmer-kusam-harus-dipoles.jpg"
 excerpt: "Lantai marmer yang tadinya mengkilap, setelah dua tahun biasanya sudah redup dan kusam. Penyebabnya bukan permukaan, melainkan lapisan sealant yang sudah habis."
 ---
 

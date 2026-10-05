@@ -2,7 +2,7 @@
 title: "Jasa Pasang Top Table Marmer dan Granit di Bogor: Ketebalan, Lem, dan Biaya"
 date: 2026-10-06
 category: "Top Table"
-banner: "/images/warm-modern-kitchen-set-advertisement.png"
+banner: "/images/ai/jasa-pasang-top-table-marmer-bogor.jpg"
 excerpt: "Top table marmer tidak boleh dipasang asal. Ini penjelasan ketebalan ideal, cara memasang dengan lem khusus batu, dan alasan harga per meter bisa berubah di tengah pengerjaan."
 ---
 

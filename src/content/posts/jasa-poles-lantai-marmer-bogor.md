@@ -2,7 +2,7 @@
 title: "Jasa Poles Lantai Marmer dan Granit Bogor: Shine Restoration vs Full Restoration"
 date: 2026-10-07
 category: "Perawatan"
-banner: "/images/modern-white-kitchen-set-promotion.png"
+banner: "/images/ai/jasa-poles-lantai-marmer-bogor.jpg"
 excerpt: "Lantai marmer kusam tidak selalu harus dibongkar. Ini bedanya Shine Restoration dan Full Stone Restoration, kapan salah satu cukup, dan kenapa poles tanpa perbaiki nat akan cepat kusam lagi."
 ---
 

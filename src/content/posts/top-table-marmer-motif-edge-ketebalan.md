@@ -2,7 +2,7 @@
 title: "Top Table Marmer atau Granit: Cara Memilih Motif, Edge Profile, dan Ketebalan"
 date: 2026-10-07
 category: "Top Table"
-banner: "/images/mbr-1421x983.jpg"
+banner: "/images/ai/top-table-marmer-motif-edge-ketebalan.jpg"
 excerpt: "Motif marmer menentukan tampilan, edge profile menentukan kesan modernization, dan ketebalan menentukan ketahanan. Tiga hal ini yang perlu diputuskan sebelum top table dipesan."
 ---
 

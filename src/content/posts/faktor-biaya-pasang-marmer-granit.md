@@ -2,7 +2,7 @@
 title: "Faktor yang Menentukan Biaya Pasang Marmer & Granit"
 date: 2026-10-05
 category: "Top Table"
-banner: "/images/mbr-1421x983.jpg"
+banner: "/images/ai/faktor-biaya-pasang-marmer-granit.jpg"
 excerpt: "Harga pasang marmer dan granit tidak bisa dibaca dari luas meter saja. Empat faktor benar-benar menggerakkan biaya, dan tiga di antaranya bisa Anda kendalikan sebelum order."
 ---
 

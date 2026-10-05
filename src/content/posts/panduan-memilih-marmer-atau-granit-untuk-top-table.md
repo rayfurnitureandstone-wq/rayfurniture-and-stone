@@ -2,7 +2,7 @@
 title: "Panduan Memilih Marmer atau Granit untuk Top Table"
 date: 2026-08-05
 category: "Material"
-banner: "/images/warm-modern-kitchen-set-advertisement.png"
+banner: "/images/ai/panduan-memilih-marmer-atau-granit-untuk-top-table.jpg"
 excerpt: "Banyak Clients menanyakan: marmer atau granit? Keduanya sama-sama bagus, tapi berbeda karakter dan perawatannya."
 ---
 

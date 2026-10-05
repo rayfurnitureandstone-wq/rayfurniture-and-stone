@@ -2,7 +2,7 @@
 title: "Jasa Kitchen Set Custom Bogor: Cara Membaca Penawaran Harga"
 date: 2026-10-06
 category: "Kitchen Set"
-banner: "/images/mbr-1421x983.jpg"
+banner: "/images/ai/jasa-kitchen-set-custom-bogor-proses-harga.jpg"
 excerpt: "Mencari jasa pembuatan kitchen set custom di Bogor? Ini cara membaca penawaran harga, isi garansi 1 tahun, dan pertanyaan yang bisa kamu ajukan sebelum membayar DP."
 ---
 
