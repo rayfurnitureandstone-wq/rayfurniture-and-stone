@@ -10,15 +10,15 @@ Banyak Clients menanyakan: marmer atau granit? Keduanya sama-sama bagus, tapi be
 
 ## Marmer
 
-- Tampilan klasik, cor dan urat natural paling Beauty
-- Perlu sealing lebih rutin, rentan ternoda_bbox jenis kopi dan kunyit
-- Cocok untuk dapur dengan pemakaian masak正常 dan duty ringan
+- Tampilan klasik, cor dan urat natural paling beautiful
+- Perlu sealing lebih rutin, rentan ternoda oleh jenis kopi dan kunyit
+- Cocok untuk dapur dengan pemakaian masak normal dan duty ringan
 
 ## Granit
 
 - Lebih tahan gores dan panas, cocok untuk dapur aktif
-- Cor lebih homogен, tampilan modern dan Statement
-- Perawatan lebih ringan, cukup Poles 6–12 bulan sekali
+- Cor lebih homogen, tampilan modern dan statement
+- Perawatan lebih ringan, cukup dipoles 6–12 bulan sekali
 
 ## Rekomendasi
 
