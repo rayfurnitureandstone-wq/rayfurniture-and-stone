@@ -1,7 +1,6 @@
 // Data situs — satu sumber truth untuk WA, nav, data layanan, FAQ.
 // Banner (hero slide) di src/data/banners.json — editable via Decap CMS (/admin).
 import banners from './banners.json';
-import { getRef } from '../scripts/affiliate.js';
 
 export const site = {
   name: 'Ray Furniture & Stone',
@@ -18,11 +17,8 @@ export const site = {
   since: 2010,
 };
 
-export const waLink = (msg = 'Halo Kak, saya mau tanya kitchen set custom, top table marmer/granit, atau jasa pasang poles lantai.') => {
-  const ref = getRef();
-  if (ref) msg += `\n\n[Tracking referral: ${ref}]`;
-  return `https://wa.me/${site.waNumber}?text=${encodeURIComponent(msg)}`;
-};
+export const waLink = (msg = 'Halo Kak, saya mau tanya kitchen set custom, top table marmer/granit, atau jasa pasang poles lantai.') =>
+  `https://wa.me/${site.waNumber}?text=${encodeURIComponent(msg)}`;
 
 // Semua tautan internal memakai trailing slash — situs pakai trailingSlash "always".
 export const nav = [

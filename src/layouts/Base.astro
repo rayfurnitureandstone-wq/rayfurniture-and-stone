@@ -122,6 +122,28 @@ const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));
   </a>
 
   <script is:inline>
+    // ── Tracking referral afiliasi: baca ?ref= dari URL, simpan sticky,
+    //     dan sertakan ke setiap tautan WhatsApp di client-side.
+    (function () {
+      const LS = "aff_ref";
+      try {
+        const p = new URLSearchParams(window.location.search);
+        const ref = p.get("ref");
+        if (ref) localStorage.setItem(LS, ref);
+      } catch (e) { /* SSR */ }
+      const ref = (() => { try { return localStorage.getItem(LS) } catch (e) { return null } })();
+      if (!ref) return;
+      document.querySelectorAll('a[href*="wa.me/"]').forEach(function (a) {
+        try {
+          const u = new URL(a.href);
+          const t = u.searchParams.get("text") || "";
+          if (t && t.indexOf(ref) === -1) {
+            u.searchParams.set("text", t + "\n\n[Tracking referral: " + ref + "]");
+            a.href = u.toString();
+          }
+        } catch (e) { /* skip non-WA links */ }
+      });
+    })();
     const burger = document.getElementById('burger');
     const drawer = document.getElementById('drawer');
     const close = document.getElementById('drawerClose');
