@@ -11,7 +11,11 @@
   <script>
     // Path config eksplisit: tanpa ini Decap menebak relatif terhadap URL,
     // dan saat halaman dibuka sebagai /admin (tanpa slash) dia cari /config.yml → 404.
-    CMS.init({ config: { load_config_file: '/admin/config.yml' } });
+    CMS.init({
+      config: { load_config_file: '/admin/config.yml' },
+      // OAuth App client_id (github.com/settings/developers). PKCE — tanpa client_secret.
+      backend: { name: 'github', client_id: 'Ov23li3RdYdMEY1cBjz9' }
+    });
   </script>
 </body>
 </html>
