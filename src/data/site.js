@@ -102,6 +102,15 @@ export const stoneRestoration = [
   },
 ];
 
+export const brands = [
+  ['Kitchen Set Custom', 'Fokus utama kami'],
+  ['Pasang Marmer & Granit', 'Tim tetap kami'],
+  ['Poles Lantai Marmer', 'Mulai Rp 75.000/m²'],
+  ['Garansi 1 tahun', 'Hanya kitchen set'],
+  ['Desain 3D Gratis', 'Sebelum produksi'],
+  ['Order ulang', 'Dapat diskon'],
+];
+
 export const process = [
   ['1. Konsultasi & survei', 'Ceritakan kebutuhan kitchen set, ukuran ruang, dan material favorit. Kami datang ke lokasi atau konsultasi lewat WhatsApp, tanpa biaya.'],
   ['2. Desain 3D & penawaran', 'Anda dapat desain 3D dan rincian biaya. Produksi baru mulai setelah desain Anda setuju, jadi tidak ada revisi paksa di tengah jalan.'],
@@ -115,7 +124,7 @@ export const faq = [
   ['Berapa harga kitchen set custom?', 'Karena setiap ruang beda, kami kasih harga setelah survei. Titik awal kitchen set L-shaped kira-kira mulai dari Rp 3 juta, tergantung ukuran, material, dan fitting.'],
   ['Garansi berlaku sampai kapan dan untuk apa?', 'Kitchen set custom: garansi produk 1 tahun (engsel, handle, lampu LED, HPL). Pekerjaan marmer/granit/poles: garansi pengerjaan sampai Anda menandai QC dan membayar lunas; setelah itu tidak ada after-sales, tapi order ulang diskon.'],
   ['Apakah ada desain 3D sebelum produksi?', 'Ya. Kami kirim desain 3D setelah survei. Anda bisa revisi sampai cocok, baru lanjut produksi.'],
-  ['Berapa lama pengerjaan pas pasang marmer?', 'Top table standar 2-3 hari kerja. Poles lantai tergantung luas dan kondisi, biasanya 1-3 hari kerja per area.'],
+  ['Berapa lama pengerjaan pasang marmer?', 'Top table standar 2-3 hari kerja. Poles lantai tergantung luas dan kondisi, biasanya 1-3 hari kerja per area.'],
   ['Kota mana saja yang dilayani?', 'Bogor, Bekasi, Jakarta, Depok, Tangerang, dan seluruh JABODETABEK. Untuk luar wilayah dan luar pulau, ada minimal order — hubungi kami.'],
   ['Bagaimana cara bayar?', 'DP 30-50% di awal, sisanya setelah pekerjaan selesai dan Anda QC. Bisa tunai atau transfer.'],
   ['Apakah ada workshop sendiri?', 'Ya. Workshop dan showroom kami di Kabupaten Bogor, jadi Anda bisa lihat proses produksi dan contoh hasil sebelum keputusan.'],

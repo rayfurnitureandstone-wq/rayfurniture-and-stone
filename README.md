@@ -1,43 +1,21 @@
-# Astro Starter Kit: Minimal
+## 🚀 Commands
 
-```sh
-npm create astro@latest -- --template minimal
-```
+| Command        | Action                                           |
+| --------------- | -------------------------------------------------- |
+| `npm run dev`   | Dev server lokal http://localhost:4321          |
+| `npm run build` | Build produksi ke ./dist/                        |
+| `npm run cms`   | Decap CMS proxy http://localhost:8081            |
+| `cms.bat`       | Jalankan CMS + petunjuk                          |
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Update konten (artikel & banner hero)
+1. Jendela 1: `npm run dev`, lalu buka http://localhost:4321/admin di browser.
+2. Jendela 2: `npm run cms` (atau dobel klik `cms.bat`).
+3. Di browser, pilih **Local Backend** → edit artikel atau slide hero.
+   Setiap save langsung commit ke repo git lokal.
+4. Refresh halaman untuk lihat perubahan.
 
-## 🚀 Project Structure
+Backend default `git-gateway` dipakai untuk hosting produksi (Netlify). Untuk lokal,
+`local_backend: true` di `public/admin/config.yml` mengarah ke `decap-server` port 8081.
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Deploy
+Upload seluruh isi `dist/` ke hosting statis. Skema harga final keluar setelah survei lokasi.

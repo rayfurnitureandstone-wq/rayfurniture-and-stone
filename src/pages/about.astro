@@ -2,13 +2,12 @@
 import Base from '../layouts/Base.astro';
 import GeoBlock from '../components/GeoBlock.astro';
 import Faq from '../components/Faq.astro';
-import { site, process, whyUs, services, stoneRestoration, waLink } from '../data/site.js';
-import { mdLink } from '../lib/mdlink.js';
+import { site, services, stoneRestoration, process, inclusions, waLink } from '../data/site.js';
 
-const desc = 'Tentang Ray Furniture and Stone: sejak 2010 mengerjakan jasa pembuatan kitchen set dan furniture custom serta jasa pasang dan poles marmer di Bogor dan Jabodetabek. Gratis survei, desain 3D, dan estimasi biaya.';
+const desc = 'Tentang Ray Furniture & Stone: sejak 2010 mengerjakan kitchen set custom, pasang marmer/granit, dan poles lantai di Bogor dan Jabodetabek. Desain 3D gratis, harga transparan.';
 ---
 
-<Base title="About — Kitchen Set Custom & Pasang Poles Marmer Bogor" description={desc}>
+<Base title="Tentang Kami — Kitchen Set Custom & Marmer Bogor" description={desc}>
   <div class="wrap">
     <nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / About</nav>
   </div>
@@ -17,94 +16,75 @@ const desc = 'Tentang Ray Furniture and Stone: sejak 2010 mengerjakan jasa pembu
     <div class="wrap two-col" style="align-items:center">
       <div>
         <p class="eyebrow">Tentang kami</p>
-        <h1>Setiap Dapur Bermula dari <em>Ruang yang Benar</em></h1>
-        <p class="lead">Sejak 2010, Ray Furniture and Stone mengerjakan rumah, apartemen, dan ruko di Bogor sampai seluruh Jabodetabek. Kami tahu satu hal: masalah kitchen set hampir selalu bermula dari ukuran yang salah, bukan dari material yang salah.</p>
-        <p style="margin-top:22px"><a class="btn btn--green" href={waLink('Halo Kak, saya mau konsultasi Gratis.')}>Konsultasi Gratis →</a>
-        <a class="btn btn--ghost" href="/top-table/">Lihat Top Table</a></p>
+        <h1>Kitchen Set Pertama, Lantai Kedua</h1>
+        <p class="lead">Sejak 2010, kami fokus pada kitchen set custom. Di samping itu, kami juga pasang marmer, granit, dan kuarsa, serta poles lantai — semuanya dengan tim tetap kami sendiri.</p>
+        <p style="margin-top:22px"><a class="btn btn--green" href={waLink('Halo Kak, saya mau konsultasi gratis untuk kitchen set.')}>Konsultasi Gratis →</a>
+        <a class="btn btn--ghost" href="/top-table/">Coba Simulator Top Table →</a></p>
       </div>
-      <div><img src="/images/mbr-1421x983.jpg" alt="Workshop dan hasil pekerjaan Ray Furniture and Stone di Kabupaten Bogor" width="800" height="560" style="border-radius:16px" loading="eager"></div>
+      <div><img src="/images/mbr-1421x983.jpg" alt="Workshop Ray Furniture and Stone di Kabupaten Bogor" width="800" height="560" style="border-radius:16px" loading="eager"></div>
     </div>
   </section>
 
-  <GeoBlock links={['/', '/about', '/top-table']} />
+  <GeoBlock links={['/', '/about/', '/top-table/']} />
 
+  <!-- Kitchen set: fokus utama -->
   <section class="sec">
-    <div class="wrap two-col">
-      <div>
-        <p class="eyebrow">One stop interior solution</p>
-        <h2 class="h-sec" style="text-align:left">Kenapa Klien Kembali</h2>
-        <p style="color:var(--muted)">Kami adalah penyedia jasa spesialis pembuatan furniture dan pengerjaan interior. Tim profesional kami siap menghadirkan solusi kreatif untuk hunian Anda — dari segi estetika maupun kualitas material.</p>
-        <p style="color:var(--muted)">Kami bekerja sebagai tangan pertama. Tidak ada fee marketing, tidak ada harga pihak ketiga yang disisipkan di tengah. Angka yang Anda terima adalah angka yang benar-benar masuk ke pekerja.</p>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Bisnis utama kami</p>
+        <h2 class="h-sec">Pembuatan Kitchen Set &amp; Furniture Custom</h2>
+        <p class="sub-sec">Ini yang kami kerjakan paling sering. Setiap modul potongan sendiri, mengikuti ruang Anda, lalu kami kirim desain 3D sebelum produksi.</p>
       </div>
-      <div class="feat-grid" style="grid-template-columns:1fr 1fr">
-        <article class="feat"><h3>Gratis Survei Lokasi</h3><p>Kami datang ke rumah atau proyek Anda untuk mengukur langsung, tanpa biaya.</p></article>
-        <article class="feat"><h3>Gratis Desain 3D</h3><p>Anda melihat hasil akhirnya sebelum ada satu keping pun yang dipotong.</p></article>
-        <article class="feat"><h3>Gratis Estimasi Biaya</h3><p>Rincian biaya dan material dijelaskan terbuka, termasuk biaya tersembunyi bila ada.</p></article>
-        <article class="feat"><h3>Tim Berkompeten</h3><p>Produksi, pemasangan, dan poles dikerjakan tim tetap yang sejak 2010.</p></article>
+      <div class="feat-grid">
+        <article class="feat">
+          <h3>Desain 3D gratis</h3>
+          <p>Anda lihat hasilnya sebelum satu pun kayu atau HPL terpotong. Revisi sampai cocok.</p>
+        </article>
+        <article class="feat">
+          <h3>Workshop sendiri</h3>
+          <p>Tidak ada markup builder. Potong, pasang, dan QC kami lakukan langsung — harga yang Anda dapat adalah harga biaya.</p>
+        </article>
+        <article class="feat">
+          <h3>Garansi 1 tahun</h3>
+          <p>Berlaku untuk kitchen set: engsel turun, handle karat, lampu LED mati, atau HPL melengkung/mengelupas — kami perbaiki.</p>
+        </article>
+        <article class="feat">
+          <h3>Yang sudah termasuk</h3>
+          <p>Rak sendok, aluminium handle, rak piring, finger-groove, engsel slowmotion, lampu LED, rail double track, dan ventilasi.</p>
+        </article>
       </div>
+      <ul class="chips" style="margin-top:24px">{inclusions.map(([n, d]) => <li><b>{n}</b><span>{d}</span></li>)}</ul>
     </div>
   </section>
 
+  <!-- Layanan -->
   <section class="sec sec--cream" id="layanan" aria-labelledby="svc-title">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Layanan</p>
-        <h2 class="h-sec" id="svc-title">Layanan Kami</h2>
-        <p class="sub-sec">Empat lini pekerjaan yang kami kerjakan setiap minggu — semuanya tanpa subcontractor.</p>
+        <h2 class="h-sec" id="svc-title">Empat Layanan yang Kita Kerjakan</h2>
+        <p class="sub-sec">Semua dikerjakan tim kami, tidak ada subcontractor. Kitchen set adalah fokus; marmer dan poles adalah pendukungnya.</p>
       </div>
       <div class="feat-grid">
         {services.map(s => (
           <article class="feat" id={s.id}>
-            <h3>{s.title}</h3>
+            <h3><a href={s.href}>{s.title}</a></h3>
             <p style="color:var(--green);font-weight:700;margin-bottom:8px">{s.price}</p>
             <p>{s.text}</p>
+            <p style="margin:0;color:var(--muted);font-size:13px">{s.garansi}</p>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="why-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">Keunggulan</p>
-        <h2 class="h-sec" id="why-title">Kenapa Harga di Sini Masuk Akal</h2>
-      </div>
-      <div class="feat-grid">
-        {whyUs.map(([h, p]) => (
-          <article class="feat"><h3>{h}</h3><p set:html={mdLink(p)} /></article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec--cream" id="harga" aria-labelledby="harga-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">Harga</p>
-        <h2 class="h-sec" id="harga-title">Harga Pasang dan Poles Marmer</h2>
-        <p class="sub-sec">Harga di bawah adalah titik awal. Angka final keluar setelah survei, karena luas area, kondisi nat, dan tingkat kilap sangat menentukan.</p>
-      </div>
-      <div class="feat-grid feat-grid--2">
-        {stoneRestoration.map(s => (
-          <article class="price-card">
-            <span class="from">{s.from}</span>
-            <h3 style="margin:0;font-size:18px">{s.name}</h3>
-            <p style="margin:0;color:var(--muted)">{s.text}</p>
-            <a class="btn btn--green" href={waLink(`Halo Kak, saya mau tanya harga ${s.name}.`)} style="margin-top:auto;justify-content:center">Tanya Harga</a>
-          </article>
-        ))}
-      </div>
-      <p class="geo-anchor">Untuk proyek di luar JABODETABEK, harga dan durasi pengerjaan menyesuaikan; hubungi tim kami untuk estimasi resmi.</p>
-    </div>
-  </section>
-
+  <!-- Alur -->
   <section class="sec" aria-labelledby="alur-title">
     <div class="wrap two-col">
       <div>
         <p class="eyebrow">Alur kerja</p>
-        <h2 class="h-sec" id="alur-title" style="text-align:left">Empat Langkah, Tanpa Drama</h2>
-        <p style="color:var(--muted)">Tidak ada revisi diam-diam dan tidak ada biaya yang muncul di akhir. Anda tahu persis apa yang terjadi pada proyek Anda di setiap minggu.</p>
+        <h2 class="h-sec" id="alur-title" style="text-align:left">Empat Langkah</h2>
+        <p style="color:var(--muted)">Tidak ada revisi diam-diam, tidak ada biaya muncul di akhir. Anda tahu progres tiap minggu.</p>
       </div>
       <div class="steps">
         {process.map(([h, p]) => <div class="step"><div><h3>{h}</h3><p>{p}</p></div></div>)}
@@ -112,18 +92,42 @@ const desc = 'Tentang Ray Furniture and Stone: sejak 2010 mengerjakan jasa pembu
     </div>
   </section>
 
-  <section class="sec sec--cream">
+  <!-- Harga -->
+  <section class="sec sec--cream" id="harga" aria-labelledby="harga-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Harga</p>
+        <h2 class="h-sec" id="harga-title">Harga Pasang dan Poles Lantai Marmer</h2>
+        <p class="sub-sec">Harga di bawah titik awal. Angka final keluar setelah kami lihat lantai di lokasi.</p>
+      </div>
+      <div class="feat-grid feat-grid--2">
+        {stoneRestoration.map(s => (
+          <article class="price-card">
+            <span class="from">{s.from}</span>
+            <h3 style="margin:0;font-size:18px">{s.name}</h3>
+            <p style="margin:0;color:var(--muted)">{s.text}</p>
+            <a class="btn btn--green" href={waLink(`Halo Kak, saya mau tanya ${s.name}.`)} style="margin-top:auto;justify-content:center">Tanya Harga</a>
+          </article>
+        ))}
+      </div>
+      <p class="geo-anchor">Untuk proyek di luar JABODETABEK, harga dan durasi menyesuaikan — hubungi tim kami untuk estimasi resmi.</p>
+    </div>
+  </section>
+
+  <!-- FAQ + CTA -->
+  <section class="sec">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Sering ditanya</p>
-        <h2 class="h-sec">Tentang Ray Furniture and Stone</h2>
+        <h2 class="h-sec">Pertanyaan yang Sering Ditanyakan</h2>
+        <p class="sub-sec">WhatsApp kami, jawab hari ini juga.</p>
       </div>
       <Faq />
       <div class="cta" style="margin-top:44px">
-        <h2>Siap Wujudkan Interior Impian Anda?</h2>
-        <p>Konsultasi, survei lokasi, dan desain 3D semuanya diberikan tanpa biaya. Yang perlu Anda siapkan hanya satu: ukuran ruang dan gambaran yang Anda inginkan.</p>
+        <h2>Siap mulai?</h2>
+        <p>Kirim ukuran ruang dan foto area. Kami kirimkan desain 3D singkat dan estimasi biaya — tanpa biaya.</p>
         <div class="btns">
-          <a class="btn" href={waLink()}>Chat WhatsApp</a>
+          <a class="btn" href={waLink('Halo Kak, saya mau konsultasi gratis.')}>Chat WhatsApp</a>
           <a class="btn btn--ghost" href="/contact/">Halaman Kontak</a>
         </div>
       </div>
