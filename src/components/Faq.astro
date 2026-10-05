@@ -1,0 +1,23 @@
+---
+import { faq } from '../data/site.js';
+import { mdLink } from '../lib/mdlink.js';
+const { items = faq, columns = true } = Astro.props;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map(([q, a]) => ({
+    '@type': 'Question',
+    name: q.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'),
+    acceptedAnswer: { '@type': 'Answer', text: a.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1') },
+  })),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<div class="faq">
+  {items.map(([q, a]) => (
+    <details>
+      <summary>{q.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')}</summary>
+      <div class="ans" set:html={mdLink(a)} />
+    </details>
+  ))}
+</div>

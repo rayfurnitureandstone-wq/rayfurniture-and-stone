@@ -1,0 +1,10 @@
+---
+import { brands } from '../data/site.js';
+---
+<section class="trust" aria-label="Keunggulan Ray Furniture and Stone">
+  <div class="wrap">
+    <div class="trust-grid">
+      {brands.map(([b, s]) => <div><b>{b}</b><span>{s}</span></div>)}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+---
+const { post } = Astro.props;
+const { title, excerpt, banner, date, category } = post.data;
+---
+<article class="post">
+  {banner && <a href={`/what-news/${post.id}`}><img src={banner} alt={title} loading="lazy" width="600" height="340"></a>}
+  <div class="post-body">
+    <p class="post-date">{category} · {new Date(date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+    <h3><a href={`/what-news/${post.id}`}>{title}</a></h3>
+    <p>{excerpt}</p>
+    <a class="link-more" href={`/what-news/${post.id}`}>Baca selengkapnya →</a>
+  </div>
+</article>

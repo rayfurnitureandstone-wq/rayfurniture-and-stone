@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+local_backend: true
+publish_mode: editorial_workflow
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://rayfurnitureandstone.id
+display_url: https://rayfurnitureandstone.id
+logo_url: /images/ray-furniture-stone-logo.png
+
+collections:
+  - name: "artikel"
+    label: "Artikel (What News)"
+    folder: "src/content/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} · {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Judul", name: title, widget: string }
+      - { label: "Tanggal", name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Kategori / Area", name: category, widget: select, options: ["Kitchen Set", "Top Table", "Marmer & Granit", "Kuarsa", "Jabodetabek", "Inspirasi"], default: "Kitchen Set" }
+      - { label: "Ringkasan", name: excerpt, widget: text, hint: "1–2 kalimat. Muncul di kartu artikel." }
+      - { label: "Banner Artikel", name: banner, widget: image, required: false, allow_upload: true }
+      - { label: "Tulis artikel", name: body, widget: markdown }
+      - { label: "Draft", name: draft, widget: boolean, default: false }
+
+  - name: "banner"
+    label: "Banner Hero (Home)"
+    files:
+      - name: "slides"
+        label: "Slide Promo"
+        file: "src/data/banners.json"
+        format: "json"
+        fields:
+          - label: "Daftar slide"
+            name: "slides"
+            widget: "list"
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: eyebrow, widget: string }
+              - { label: "Judul baris 1", name: title1, widget: string }
+              - { label: "Judul baris 2 (warna hijau)", name: title2, widget: string }
+              - { label: "Judul baris 3", name: title3, widget: string }
+              - { label: "Deskripsi", name: text, widget: text }
+              - { label: "Teks tombol 1", name: ctaLabel, widget: string }
+              - { label: "Link tombol 1", name: ctaHref, widget: string }
+              - { label: "Teks tombol 2", name: cta2Label, widget: string }
+              - { label: "Link tombol 2", name: cta2Href, widget: string }
+              - { label: "Gambar slide", name: img, widget: image }

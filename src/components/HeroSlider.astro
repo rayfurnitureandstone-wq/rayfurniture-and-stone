@@ -1,0 +1,49 @@
+---
+import { heroSlides } from '../data/site.js';
+---
+<section class="hero">
+  <div class="wrap">
+    <div class="slider" id="heroSlider" aria-roledescription="carousel" aria-label="Promo Ray Furniture and Stone">
+      <div class="slides" id="heroSlides">
+        {heroSlides.map((s, i) => (
+          <article class="slide" role="group" aria-roledescription="slide" aria-label={`${i + 1} dari ${heroSlides.length}`}>
+            <div class="slide-copy">
+              <p class="eyebrow">{s.eyebrow}</p>
+              <h1>{s.title1}<em>{s.title2}</em>{s.title3}</h1>
+              <p>{s.text}</p>
+              <div class="btns">
+                <a class="btn btn--green" href={s.ctaHref}>{s.ctaLabel} →</a>
+                <a class="btn btn--ghost" href={s.cta2Href}>{s.cta2Label}</a>
+              </div>
+            </div>
+            <div class="slide-img" style={`background-image:url('${s.img}')`} role="img" aria-label={[s.title1, s.title2, s.title3].join(' ').trim()}></div>
+          </article>
+        ))}
+      </div>
+      <button class="slider-nav prev" id="heroPrev" aria-label="Slide sebelumnya">‹</button>
+      <button class="slider-nav next" id="heroNext" aria-label="Slide berikutnya">›</button>
+      <div class="slider-dots" id="heroDots">
+        {heroSlides.map((_, i) => <button class={i === 0 ? 'on' : ''} data-i={i} aria-label={`Ke slide ${i + 1}`}></button>)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    const root = document.getElementById('heroSlider');
+    if (!root) return;
+    const track = document.getElementById('heroSlides');
+    const dots = [...root.querySelectorAll('#heroDots button')];
+    const n = dots.length;
+    let i = 0, timer;
+    const go = (k) => { i = (k + n) % n; track.style.transform = `translateX(-${i * 100}%)`; dots.forEach((d, j) => d.classList.toggle('on', j === i)); };
+    const play = () => { clearInterval(timer); timer = setInterval(() => go(i + 1), 6000); };
+    document.getElementById('heroNext').addEventListener('click', () => { go(i + 1); play(); });
+    document.getElementById('heroPrev').addEventListener('click', () => { go(i - 1); play(); });
+    dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.i); play(); }));
+    root.addEventListener('mouseenter', () => clearInterval(timer));
+    root.addEventListener('mouseleave', play);
+    play();
+  })();
+</script>

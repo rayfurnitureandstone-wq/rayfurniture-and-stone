@@ -1,0 +1,29 @@
+---
+import { categories, categoriesSmall } from '../data/site.js';
+---
+<section class="sec" aria-labelledby="cat-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Kategori</p>
+      <h2 class="h-sec" id="cat-title">Ray Furniture &amp; Stone</h2>
+      <p class="sub-sec">Kitchen set custom, top table marmer &amp; granit, sampai perawatan lantai. Semua dikerjakan sendiri, tanpa markup builder.</p>
+    </div>
+    <div class="cat-grid">
+      {categories.map(c => (
+        <a class="cat" href={c.href}>
+          <img src={c.img} alt={`${c.title} — ${c.sub}`} loading="lazy">
+          <div class="cat-body"><h3>{c.title}</h3><p>{c.sub}</p></div>
+        </a>
+      ))}
+    </div>
+    <div class="cat-grid" style="margin-top:16px">
+      {categoriesSmall.map(c => (
+        <a class="cat cat--sm" href={c.href}>
+          <img src={c.img} alt={c.title} loading="lazy">
+          <div class="cat-body"><h3>{c.title}</h3><p>{c.sub}</p></div>
+        </a>
+      ))}
+    </div>
+    <p class="geo-anchor"><a href="/about/">jasa kitchen set custom Bogor</a>, <a href="/top-table/">pemasangan top table marmer dan granit</a>, serta <a href="/about/#harga">jasa poles lantai marmer Bogor</a> oleh Ray Furniture and Stone.</p>
+  </div>
+</section>

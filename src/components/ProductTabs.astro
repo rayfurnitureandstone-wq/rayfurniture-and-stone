@@ -1,0 +1,53 @@
+---
+import { products, waLink } from '../data/site.js';
+const tabs = [
+  { id: 'new', label: 'Produk Terbaru', items: products.filter(p => p.tag === 'new') },
+  { id: 'special', label: 'Layanan Unggulan', items: products.filter(p => p.tag === 'sale') },
+  { id: 'featured', label: 'Paling Laris', items: products },
+];
+---
+<section class="sec sec--cream" aria-labelledby="prod-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Koleksi</p>
+      <h2 class="h-sec" id="prod-title">Pilihan Kitchen Set &amp; Top Table</h2>
+      <p class="sub-sec">Harga di bawah sebagai indikasi — harga final mengikuti ukuran ruang, material, dan hasil survei lokasi.</p>
+    </div>
+    <div class="tabs" id="prodTabs" role="tablist">
+      {tabs.map((t, i) => <button role="tab" class={i === 0 ? 'on' : ''} data-tab={t.id} aria-selected={i === 0 ? 'true' : 'false'}>{t.label}</button>)}
+    </div>
+    {tabs.map((t, i) => (
+      <div class="prod-grid" data-panel={t.id} hidden={i !== 0 ? true : undefined}>
+        {t.items.map(p => (
+          <article class="prod">
+            <div class="prod-imgwrap">
+              {p.tag && <span class={`badge badge--${p.tag}`}>{p.tag === 'new' ? 'Baru' : 'Promo'}</span>}
+              <img src={p.img} alt={p.name} loading="lazy">
+            </div>
+            <h3>{p.name}</h3>
+            <p class="price">{p.price}{p.was && <s>{p.was}</s>}</p>
+            <p class="meta">{'★'.repeat(p.rating)}{'☆'.repeat(5 - p.rating)} <span>({p.reviews})</span></p>
+            <div class="swatches">{p.sw.map(c => <i style={`background:${c}`}></i>)}</div>
+            <p style="margin:0;font-size:12.5px;color:var(--muted)">{p.desc}</p>
+            <div class="prod-actions">
+              <a class="btn" href={waLink(`Halo Kak, saya tertarik dengan ${p.name}. Boleh minta info harga?`)}>Tanya</a>
+              <a class="round-btn" href={waLink()} aria-label="Hubungi WhatsApp"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2z"/></svg></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    ))}
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    const box = document.getElementById('prodTabs');
+    if (!box) return;
+    const btns = [...box.querySelectorAll('button')];
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+      document.querySelectorAll('[data-panel]').forEach(p => { p.hidden = p.dataset.panel !== b.dataset.tab; });
+    }));
+  })();
+</script>

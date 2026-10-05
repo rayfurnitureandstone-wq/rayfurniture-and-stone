@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RAY FURNITURE &amp; STONE — Kitchen Set Simulator</title>
+<style>
+  :root{--bg:#0f1115;--panel:#171a20;--card:#1d2129;--line:#2b3039;--txt:#e8eaee;--dim:#98a0ad;--acc:#f0a24b;--acc2:#4bb3f0;--ok:#48c78e;}
+  *{box-sizing:border-box}html,body{height:100%;margin:0}
+  body{font-family:ui-sans-serif,system-ui,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);overflow:hidden;}
+  #app{display:flex;height:100vh;width:100vw}
+  #panel{width:400px;flex:0 0 400px;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;overflow-y:auto;}
+  #panel::-webkit-scrollbar{width:9px}#panel::-webkit-scrollbar-thumb{background:#2f3540;border-radius:9px}
+  #panel header{padding:16px 18px 12px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);z-index:5;}
+  #panel h1{font-size:15px;margin:0 0 4px}#panel .sub{font-size:11px;color:var(--dim);margin:0;line-height:1.5}
+  .card{padding:14px 18px;border-bottom:1px solid var(--line)}
+  .card h2{font-size:11px;text-transform:uppercase;letter-spacing:.9px;color:var(--acc);margin:0 0 10px;display:flex;align-items:center;gap:7px;}
+  .card h2 .n{width:16px;height:16px;border-radius:50%;background:var(--acc);color:#141414;font-size:10px;display:grid;place-items:center;font-weight:700;}
+  .row{display:flex;align-items:center;gap:8px;margin:8px 0}
+  .row .lbl{font-size:11.5px;color:var(--dim);flex:1 1 auto}
+  .row .val{font-size:11px;color:var(--txt);font-variant-numeric:tabular-nums;min-width:40px;text-align:right}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:3px;background:#333a45;border-radius:3px;outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:var(--acc);cursor:pointer;border:2px solid #12151a;}
+  select,input[type=text],input[type=password],textarea{width:100%;background:#12161c;color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:7px 9px;font-size:12px;outline:none;font-family:inherit;}
+  textarea{font-family:ui-monospace,monospace;font-size:10.5px;line-height:1.55;resize:vertical;min-height:240px}
+  .file{display:block;position:relative;overflow:hidden;border:1px dashed #3a424f;border-radius:8px;padding:9px 10px;text-align:center;font-size:11px;color:var(--dim);cursor:pointer;background:#14181e;margin-top:8px;}
+  .file:hover{border-color:var(--acc);color:var(--txt);background:#181d24}
+  .file input{position:absolute;inset:0;opacity:0;cursor:pointer}
+  .file.has{border-style:solid;border-color:var(--ok);color:var(--ok)}
+  .chk{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--dim);cursor:pointer}
+  .hint{font-size:10.5px;color:#6f7885;margin:8px 0 0;line-height:1.5}
+  .hint a{color:var(--acc2);text-decoration:none}
+  .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+  button{background:#242a33;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px 10px;font-size:11.5px;cursor:pointer;font-weight:500;font-family:inherit;}
+  button:hover{background:#2e3641;border-color:#465060}
+  button.primary{background:var(--acc);color:#161616;border-color:var(--acc);font-weight:700}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  button.full{grid-column:1/-1}
+  #fingerprint{display:flex;justify-content:space-between;font-size:10.5px;color:var(--dim);background:#12161c;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:12px;}
+  #fingerprint b{color:var(--ok);font-family:ui-monospace,monospace;letter-spacing:1px}
+  .field{margin-bottom:10px}.field label{font-size:10.5px;color:var(--dim);display:block;margin-bottom:5px}
+  .key-row{display:flex;gap:6px}.key-row button{padding:7px 9px}.key-row input{flex:1}
+  .status{margin-top:10px;padding:8px 10px;border-radius:7px;font-size:11px;display:none;line-height:1.45;}
+  .status.ok{display:block;background:#152b1e;color:#7fdca0;border:1px solid #265038}
+  .status.err{display:block;background:#2e1518;color:#f19a9a;border:1px solid #4d2226}
+  .status.loading{display:block;background:#1f1a12;color:#f0c779;border:1px solid #453720}
+  .ai-schema{background:#0f1318;border:1px solid var(--line);border-radius:8px;padding:10px;font-family:ui-monospace,monospace;font-size:10.5px;color:#b6c2d1;white-space:pre-wrap;line-height:1.55;max-height:200px;overflow-y:auto;}
+  .ai-schema .k{color:#f0a24b}.ai-schema .s{color:#7fdca0}.ai-schema .n{color:#8bb8ee}
+  .subsection{border:1px solid var(--line);border-radius:8px;padding:10px;margin-bottom:10px;background:#14181e}
+  .subsection h3{font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--acc2);margin:0 0 8px}
+  #stage{flex:1 1 auto;position:relative;background:#0b0d10;min-width:0}
+  #view{display:block;width:100%;height:100%}
+  #sketchOverlay{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;}
+  #sketchOverlay img{max-width:86%;max-height:86%;object-fit:contain;opacity:.35;border-radius:6px;}
+  #badge{position:absolute;left:14px;bottom:14px;display:flex;gap:8px;flex-wrap:wrap;pointer-events:none;}
+  #badge span{font-size:10.5px;padding:5px 9px;border-radius:20px;background:rgba(15,17,21,.78);border:1px solid #2b3039;color:#b9c1cc;backdrop-filter:blur(6px);}
+  #hud{position:absolute;right:14px;top:14px;font-size:10.5px;color:#8d96a3;background:rgba(15,17,21,.85);border:1px solid #2b3039;border-radius:8px;padding:10px;backdrop-filter:blur(6px);text-align:center;pointer-events:auto;}
+  #hud .hud-title{font-size:9px;color:#6f7885;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;}
+  .cam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;width:90px;margin:0 auto;}
+  .cam-btn{background:#2a303b;color:#e8eaee;border:1px solid #3a424f;border-radius:4px;padding:4px 0;font-size:12px;cursor:pointer;text-align:center;font-family:inherit;}
+  .cam-btn:hover{background:#3a424f;border-color:var(--acc);}
+  #spinner{position:absolute;inset:0;display:none;place-items:center;background:rgba(8,10,14,.6);z-index:9;}
+  #spinner.on{display:grid}
+  .spin{width:44px;height:44px;border-radius:50%;border:3px solid #2a303b;border-top-color:var(--acc);animation:sp .9s linear infinite;}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  @media (max-width:860px){#app{flex-direction:column}#panel{width:100%;flex:0 0 50vh}#stage{flex:1 1 auto}}
+
+  #panel header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  #panel h1{font-size:15px;letter-spacing:1.2px;margin:0 0 3px}
+  #panel .sub{font-size:10.5px;letter-spacing:2.2px;color:var(--acc);font-weight:600}
+  .help-btn{flex:0 0 auto;width:30px;height:30px;padding:0;border-radius:50%;background:var(--acc);color:#161616;border-color:var(--acc);font-size:16px;font-weight:800;line-height:1;display:grid;place-items:center}
+  .help-btn:hover{background:#ffb866;border-color:#ffb866}
+  #tutorial,#gemPop{position:fixed;inset:0;display:none;place-items:center;background:rgba(6,8,11,.74);z-index:60;padding:16px;backdrop-filter:blur(3px)}
+  #tutorial.on,#gemPop.on{display:grid}
+  .tut-card{width:min(580px,100%);max-height:90vh;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+  .tut-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .tut-head .t{font-size:11px;letter-spacing:1.6px;color:var(--dim);text-transform:uppercase}
+  .tut-x{width:28px;height:28px;padding:0;border-radius:50%;font-size:14px;line-height:1}
+  .tut-body{padding:18px 20px;overflow-y:auto;font-size:12.5px;line-height:1.65;color:var(--txt);min-height:260px}
+  .tut-body h4{margin:0 0 10px;font-size:16px;color:var(--acc)}
+  .tut-body ol,.tut-body ul{padding-left:20px;margin:8px 0}
+  .tut-body li{margin:5px 0}
+  .tut-body b{color:#fff}
+  .tut-body code{background:#12161c;border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:11px;color:#b6c2d1}
+  .tut-body .tip{margin-top:12px;padding:9px 11px;border-radius:8px;background:#1f1a12;border:1px solid #453720;color:#f0c779;font-size:11.5px}
+  #gemPop .tut-body{min-height:0}
+  #gemPop .tut-foot{justify-content:flex-end}
+  .tut-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;border-top:1px solid var(--line)}
+  .tut-dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+  .tut-dots span{width:8px;height:8px;border-radius:50%;background:#333a45;cursor:pointer}
+  .tut-dots span.on{background:var(--acc)}
+  .tut-foot button{min-width:84px}
+</style>
+</head>
+<body>
+<div id="app">
+  <aside id="panel">
+    <header>
+      <div class="brand">
+        <h1>RAY FURNITURE &amp; STONE</h1>
+        <p class="sub">KITCHEN SET SIMULATOR</p>
+      </div>
+      <button id="btnHelp" class="help-btn" title="Cara pemakaian (tutorial)" aria-label="Buka tutorial">?</button>
+    </header>
+
+    <section class="card">
+      <h2><span class="n">1</span> Sketsa &amp; AI Vision</h2>
+      <div class="field">
+        <label>Gemini API Key</label>
+        <div class="key-row">
+          <input type="password" id="apiKey" placeholder="AIza…" autocomplete="off">
+          <button id="btnShowKey">👁</button>
+          <button id="btnClearKey">🗑</button>
+        </div>
+        <p class="hint">Gratis di <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a>.</p>
+      </div>
+      <label class="file" id="sketchLbl">
+        <input type="file" id="sketchFile" accept="image/*">
+        <span id="sketchTxt">Upload gambar sketsa…</span>
+      </label>
+      <button id="btnAnalyze" class="primary" style="width:100%;margin-top:10px" disabled>✨ Analisa Sketsa (v18.2)</button>
+      <div id="aiStatus" class="status"></div>
+      <div id="aiResult" style="display:none">
+        <p class="hint" style="margin-top:12px">Hasil analisa AI:</p>
+        <div class="ai-schema" id="aiResultBody"></div>
+        <div class="btns" style="margin-top:8px">
+          <button id="btnApplyAI" class="primary">✓ Terapkan ke Model</button>
+          <button id="btnEditAI">✎ Edit JSON</button>
+        </div>
+      </div>
+      <div class="row" style="margin-top:12px"><label class="chk"><input type="checkbox" id="sketchShow" checked> Tampilkan overlay sketsa</label></div>
+      <div class="row">
+        <span class="lbl">Transparansi</span>
+        <input type="range" id="sketchOpacity" min="5" max="100" value="35">
+        <span class="val" id="sketchOpacityV">35%</span>
+      </div>
+    </section>
+
+    <section class="card" id="manualJsonCard">
+      <h2><span class="n">2</span> Input JSON Manual</h2>
+      <p class="hint" style="margin-bottom:8px">Paste hasil JSON dari chat Gemini di sini, lalu klik <b>Build dari JSON</b>. Belum punya JSON? Klik <b>Copy MD</b> untuk menyalin prompt-nya.</p>
+      <textarea id="manualJson" spellcheck="false"></textarea>
+      <div class="btns" style="margin-top:8px">
+        <button id="btnBuildJson" class="primary">🏗 Build dari JSON</button>
+        <button id="btnCopyMd">📋 Copy MD</button>
+      </div>
+      <div id="manualStatus" class="status"></div>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">3</span> Top Table &amp; Edge</h2>
+      <label class="file" id="counterLbl"><input type="file" id="counterFile" accept="image/*"><span id="counterTxt">Upload foto marmer / granit…</span></label>
+      <select id="counterPreset" style="margin-top:8px">
+        <option value="marmer-putih">Marmer Putih Carrara</option>
+        <option value="marmer-cream">Marmer Cream</option>
+        <option value="granit-hitam">Granit Hitam Absolute</option>
+        <option value="granit-abu">Granit Abu</option>
+        <option value="travertine">Travertine Beige</option>
+      </select>
+      <div class="row"><span class="lbl">Skala (m)</span><input type="range" id="counterTile" min="0.4" max="3" step="0.1" value="1.3"><span class="val" id="counterTileV">1.3</span></div>
+      <div class="row"><span class="lbl">Kilap</span><input type="range" id="counterRough" min="2" max="70" value="16"><span class="val" id="counterRoughV">Glossy</span></div>
+      <div class="field" style="margin-top:10px">
+        <label>Edge Profile</label>
+        <select id="edgeProfile">
+          <option value="flat">Flat</option>
+          <option value="eased">Eased</option>
+          <option value="bevel" selected>Bevel</option>
+          <option value="bullnose">Bullnose</option>
+          <option value="dupont">Dupont</option>
+          <option value="laminated">Laminated</option>
+          <option value="ogee">Ogee</option>
+          <option value="waterfall">Waterfall</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">4</span> Backsplash &amp; Plint &amp; Lantai</h2>
+      <div class="subsection">
+        <h3>Backsplash (dinding di atas top table)</h3>
+        <label class="chk" style="margin-bottom:8px"><input type="checkbox" id="backsplashOn" checked> Aktifkan backsplash</label>
+        <label class="file" id="backsplashLbl"><input type="file" id="backsplashFile" accept="image/*"><span id="backsplashTxt">Upload marmer / granit…</span></label>
+        <select id="backsplashPreset" style="margin-top:6px">
+          <option value="marmer-putih">Marmer Putih Carrara</option>
+          <option value="marmer-cream">Marmer Cream</option>
+          <option value="granit-hitam">Granit Hitam Absolute</option>
+          <option value="granit-abu">Granit Abu</option>
+          <option value="travertine">Travertine Beige</option>
+        </select>
+        <div class="row"><span class="lbl">Skala (m)</span><input type="range" id="backsplashTile" min="0.4" max="3" step="0.1" value="1.3"><span class="val" id="backsplashTileV">1.3</span></div>
+        <div class="row"><span class="lbl">Tinggi</span><input type="range" id="backsplashH" min="5" max="100" value="60"><span class="val" id="backsplashHV">60 cm</span></div>
+      </div>
+      <div class="subsection">
+        <h3>Plint (penahan cipratan di atas top table)</h3>
+        <label class="chk" style="margin-bottom:8px"><input type="checkbox" id="plintOn" checked> Aktifkan plint</label>
+        <label class="file" id="plintLbl"><input type="file" id="plintFile" accept="image/*"><span id="plintTxt">Upload marmer / granit…</span></label>
+        <select id="plintPreset" style="margin-top:6px">
+          <option value="marmer-putih">Marmer Putih Carrara</option>
+          <option value="granit-abu">Granit Abu</option>
+          <option value="granit-hitam">Granit Hitam Absolute</option>
+        </select>
+        <div class="row"><span class="lbl">Skala (m)</span><input type="range" id="plintTile" min="0.4" max="3" step="0.1" value="1.0"><span class="val" id="plintTileV">1.0</span></div>
+        <div class="row"><span class="lbl">Tinggi</span><input type="range" id="plintH" min="5" max="20" value="10"><span class="val" id="plintHV">10 cm</span></div>
+      </div>
+      <div class="subsection">
+        <h3>Lantai</h3>
+        <label class="file" id="floorLbl"><input type="file" id="floorFile" accept="image/*"><span id="floorTxt">Upload foto lantai…</span></label>
+        <select id="floorPreset" style="margin-top:6px">
+          <option value="marmer-putih">Marmer Putih Carrara</option>
+          <option value="granit-abu">Granit Abu</option>
+          <option value="keramik-putih">Keramik Putih</option>
+          <option value="keramik-abu">Keramik Abu</option>
+          <option value="kayu">Kayu Parket</option>
+        </select>
+        <div class="row"><span class="lbl">Skala (m)</span><input type="range" id="floorTile" min="0.3" max="2" step="0.1" value="0.8"><span class="val" id="floorTileV">0.8</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">5</span> Kabinet — HPL</h2>
+      <div class="row"><span class="lbl">Tinggi sepatu kabinet</span><input type="range" id="kickH" min="5" max="20" value="10"><span class="val" id="kickHV">10 cm</span></div>
+      <div class="subsection">
+        <h3>Kabinet Bawah</h3>
+        <label class="file" id="hplLowerLbl"><input type="file" id="hplLowerFile" accept="image/*"><span id="hplLowerTxt">Upload foto HPL…</span></label>
+        <select id="hplLowerPreset" style="margin-top:6px">
+          <option value="walnut">HPL Walnut</option>
+          <option value="oak">HPL Oak Terang</option>
+          <option value="putih">HPL Putih Matte</option>
+          <option value="abu">HPL Abu Tua</option>
+          <option value="hitam">HPL Hitam Doff</option>
+        </select>
+        <div class="row"><span class="lbl">Skala (m)</span><input type="range" id="hplLowerTile" min="0.3" max="2" step="0.1" value="0.9"><span class="val" id="hplLowerTileV">0.9</span></div>
+      </div>
+      <div class="subsection">
+        <h3>Kabinet Atas</h3>
+        <label class="file" id="hplUpperLbl"><input type="file" id="hplUpperFile" accept="image/*"><span id="hplUpperTxt">Upload foto HPL…</span></label>
+        <select id="hplUpperPreset" style="margin-top:6px">
+          <option value="walnut">HPL Walnut</option>
+          <option value="oak">HPL Oak Terang</option>
+          <option value="putih" selected>HPL Putih Matte</option>
+          <option value="abu">HPL Abu Tua</option>
+          <option value="hitam">HPL Hitam Doff</option>
+        </select>
+        <div class="row"><span class="lbl">Skala (m)</span><input type="range" id="hplUpperTile" min="0.3" max="2" step="0.1" value="0.9"><span class="val" id="hplUpperTileV">0.9</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">6</span> Posisi Sink &amp; Kompor</h2>
+      <div class="row"><span class="lbl">Geser Sink</span><input type="range" id="sinkOffset" min="-100" max="100" step="1" value="0"><span class="val" id="sinkOffsetV">0 cm</span></div>
+      <div class="row"><span class="lbl">Geser Kompor</span><input type="range" id="cooktopOffset" min="-100" max="100" step="1" value="0"><span class="val" id="cooktopOffsetV">0 cm</span></div>
+    </section>
+
+    <section class="card">
+      <h2><span class="n">7</span> Pencahayaan</h2>
+      <select id="lightPreset">
+        <option value="pagi" selected>Pagi</option>
+        <option value="siang">Siang</option>
+        <option value="sore">Sore</option>
+        <option value="malam">Malam</option>
+        <option value="studio">Studio</option>
+      </select>
+      <div class="row"><span class="lbl">Intensitas</span><input type="range" id="lightMul" min="20" max="180" value="100"><span class="val" id="lightMulV">100%</span></div>
+    </section>
+
+    <section class="card" style="border-bottom:none">
+      <div class="btns">
+        <button id="btnFit">Fit Kamera</button>
+        <button id="btnTopView">📐 Top Table</button>
+        <button id="btnReset">Reset Semua</button>
+        <button id="btnShot" class="primary">⬇ Simpan Render PNG</button>
+      </div>
+      <div id="fingerprint"><span>Fingerprint</span><b id="fpVal">000000</b></div>
+    </section>
+  </aside>
+  <main id="stage">
+    <canvas id="view"></canvas>
+    <div id="sketchOverlay"><img id="sketchImg" alt=""></div>
+    <div id="badge">
+      <span id="bLight">Pagi</span><span id="bLayout">Linear</span>
+      <span id="bCounter">Marmer Putih Carrara</span>
+      <span id="bHplUpper">HPL Putih</span><span id="bHplLower">HPL Walnut</span>
+      <span id="bEdge">Bevel</span>
+    </div>
+    <div id="hud">
+      <div class="hud-title">Geser Kamera</div>
+      <div class="cam-grid">
+        <button class="cam-btn" id="camUp" style="grid-column: 2;">⬆</button>
+        <button class="cam-btn" id="camLeft" style="grid-column: 1; grid-row: 2;">⬅</button>
+        <button class="cam-btn" id="camRight" style="grid-column: 3; grid-row: 2;">➡</button>
+        <button class="cam-btn" id="camDown" style="grid-column: 2; grid-row: 3;">⬇</button>
+      </div>
+      <div style="font-size:9px;margin-top:6px;color:#6f7885;">Klik tombol panah<br>atau Klik Kanan + Drag</div>
+    </div>
+    <div id="spinner"><div class="spin"></div></div>
+  </main>
+</div>
+
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.164.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.164.0/examples/jsm/"}}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RectAreaLightUniformsLib } from 'three/addons/lights/RectAreaLightUniformsLib.js';
+
+const $ = (s) => document.querySelector(s);
+const clamp = (v,a,b) => Math.min(b, Math.max(a, v));
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};}
+function fileToBase64(f){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=rej;r.readAsDataURL(f);});}
+
+const canvas = $('#view'), stageEl = $('#stage');
+const renderer = new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+const MAXA = renderer.capabilities.getMaxAnisotropy();
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x9aa0a6);
+const camera = new THREE.PerspectiveCamera(38,1,0.08,300);
+camera.position.set(3.6,2.2,3.0);
+const controls = new OrbitControls(camera,renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = 0.075;
+controls.maxPolarAngle = Math.PI * 0.495; // Keep camera above floor
+controls.minDistance = 0.4;
+controls.maxDistance = 6.0; // diperbarui otomatis sesuai ukuran ruangan
+controls.target.set(1.5,0.95,0.3);
+
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(),0.04).texture;
+RectAreaLightUniformsLib.init();
+
+function makeStoneTexture(opt={}){
+  const {seed=7,type='marble',base='#f5f3ef',vein='#98a0a8',accent='#c9b79a',speck=['#6f7480','#2b2f36','#e8e4dd'],size=768}=opt;
+  const c=document.createElement('canvas');c.width=c.height=size;const g=c.getContext('2d');const rnd=mulberry32(seed);
+  g.fillStyle=base;g.fillRect(0,0,size,size);
+  for(let i=0;i<50;i++){const x=rnd()*size,y=rnd()*size,r=size*(0.05+rnd()*0.22);const grd=g.createRadialGradient(x,y,0,x,y,r);const a=0.03+rnd()*0.07;grd.addColorStop(0,`rgba(255,255,255,${a})`);grd.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=grd;g.beginPath();g.arc(x,y,r,0,Math.PI*2);g.fill();}
+  if(type==='granite'){for(let i=0;i<11000;i++){const x=rnd()*size,y=rnd()*size;const s=size*(0.0009+rnd()*0.0035);g.globalAlpha=0.12+rnd()*0.55;g.fillStyle=speck[(rnd()*speck.length)|0];g.fillRect(x,y,s,s);}g.globalAlpha=1;}
+  const vc=type==='granite'?7:16;const paths=[];
+  for(let i=0;i<vc;i++){const pts=[];let x=rnd()*size,y=rnd()*size;pts.push({x,y});let ang=rnd()*Math.PI*2;const steps=5+((rnd()*6)|0);for(let s=0;s<steps;s++){ang+=(rnd()-0.5)*1.5;const len=size*(0.07+rnd()*0.2);const nx=x+Math.cos(ang)*len,ny=y+Math.sin(ang)*len;const cx=x+Math.cos(ang)*len*0.5+(rnd()-0.5)*size*0.08,cy=y+Math.sin(ang)*len*0.5+(rnd()-0.5)*size*0.08;pts.push({x:nx,y:ny,cx,cy,q:true});x=nx;y=ny;}paths.push({pts,w:size*(0.0012+rnd()*0.0055),col:rnd()<0.25?accent:vein,a:(type==='granite'?0.05:0.10)+rnd()*0.20});}
+  const sp=(ctx,p)=>{ctx.save();ctx.globalAlpha=p.a;ctx.strokeStyle=p.col;ctx.lineWidth=p.w;ctx.lineCap='round';ctx.shadowColor=p.col;ctx.shadowBlur=p.w*3.2;ctx.beginPath();ctx.moveTo(p.pts[0].x,p.pts[0].y);for(let i=1;i<p.pts.length;i++){const q=p.pts[i];if(q.q)ctx.quadraticCurveTo(q.cx,q.cy,q.x,q.y);else ctx.lineTo(q.x,q.y);}ctx.stroke();ctx.restore();};
+  for(const p of paths){for(let ox=-1;ox<=1;ox++)for(let oy=-1;oy<=1;oy++){g.save();g.translate(ox*size,oy*size);sp(g,p);g.restore();}}
+  for(let i=0;i<2600;i++){const x=rnd()*size,y=rnd()*size;g.globalAlpha=0.02+rnd()*0.06;g.fillStyle=rnd()<0.5?'#fff':'#000';g.fillRect(x,y,1.4,1.4);}g.globalAlpha=1;
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=MAXA;return t;
+}
+function makeHPLTexture(opt={}){
+  const {seed=11,base='#c08b57',dark='#8a5a2f',light='#d9ab77',grain='wood',size=768}=opt;
+  const c=document.createElement('canvas');c.width=c.height=size;const g=c.getContext('2d');const rnd=mulberry32(seed);
+  g.fillStyle=base;g.fillRect(0,0,size,size);
+  if(grain==='wood'){for(let i=0;i<540;i++){const y=rnd()*size,amp=size*(0.0015+rnd()*0.011),frq=1+rnd()*3,ph=rnd()*Math.PI*2;g.beginPath();for(let x=0;x<=size;x+=6){const yy=y+Math.sin((x/size)*Math.PI*2*frq+ph)*amp;if(x===0)g.moveTo(x,yy);else g.lineTo(x,yy);}g.globalAlpha=0.018+rnd()*0.085;g.strokeStyle=rnd()<0.5?dark:light;g.lineWidth=size*(0.0008+rnd()*0.0042);g.stroke();}
+    for(let k=0;k<2;k++){const kx=rnd()*size,ky=rnd()*size;for(let r=3;r<26;r+=2){g.globalAlpha=0.06;g.strokeStyle=dark;g.lineWidth=1.2;g.beginPath();g.ellipse(kx,ky,r*1.9,r*0.65,0,0,Math.PI*2);g.stroke();}}
+  } else {for(let i=0;i<300;i++){const x=rnd()*size,y=rnd()*size,r=size*(0.01+rnd()*0.09);const grd=g.createRadialGradient(x,y,0,x,y,r);const a=0.01+rnd()*0.035;grd.addColorStop(0,rnd()<0.5?`rgba(255,255,255,${a})`:`rgba(0,0,0,${a})`);grd.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=grd;g.beginPath();g.arc(x,y,r,0,Math.PI*2);g.fill();}}
+  g.globalAlpha=1;const img=g.getImageData(0,0,size,size);const d=img.data;
+  for(let i=0;i<d.length;i+=4){const n=(rnd()-0.5)*9;d[i]=clamp(d[i]+n,0,255);d[i+1]=clamp(d[i+1]+n,0,255);d[i+2]=clamp(d[i+2]+n,0,255);}
+  g.putImageData(img,0,0);
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=MAXA;return t;
+}
+function makeTileTexture(opt={}){
+  const {base='#e8e6e0',grout='#a8a8a4',size=512,tiles=4,seed=1}=opt;
+  const c=document.createElement('canvas');c.width=c.height=size;const g=c.getContext('2d');const rnd=mulberry32(seed);
+  g.fillStyle=grout;g.fillRect(0,0,size,size);
+  const t=size/tiles, pad=2;
+  for(let i=0;i<tiles;i++)for(let j=0;j<tiles;j++){
+    g.fillStyle=base;g.fillRect(i*t+pad,j*t+pad,t-2*pad,t-2*pad);
+    g.globalAlpha=0.05;g.fillStyle='#000';
+    for(let k=0;k<8;k++){g.fillRect(i*t+rnd()*t, j*t+rnd()*t, 2, 2);}
+    g.globalAlpha=1;
+  }
+  const tex=new THREE.CanvasTexture(c);tex.colorSpace=THREE.SRGBColorSpace;tex.wrapS=tex.wrapT=THREE.RepeatWrapping;tex.anisotropy=MAXA;return tex;
+}
+
+const STONE_PRESETS={
+  'marmer-putih':{label:'Marmer Putih Carrara',tex:{type:'marble',seed:7,base:'#f6f4f0',vein:'#9aa2ab',accent:'#cbb99b'}},
+  'marmer-cream':{label:'Marmer Cream',tex:{type:'marble',seed:23,base:'#efe6d6',vein:'#b3a68c',accent:'#8d7f63'}},
+  'granit-hitam':{label:'Granit Hitam Absolute',tex:{type:'granite',seed:41,base:'#23262b',vein:'#4a4f57',accent:'#6b7280',speck:['#0d0f12','#5b6270','#9aa3b0','#2f343c']}},
+  'granit-abu':{label:'Granit Abu',tex:{type:'granite',seed:59,base:'#9a9a98',vein:'#7a7a78',accent:'#b8b8b4',speck:['#6a6a68','#c9c9c4','#4a4a48','#dedad2']}},
+  'travertine':{label:'Travertine Beige',tex:{type:'marble',seed:83,base:'#e3d6c0',vein:'#b8a184',accent:'#9c8465'}},
+  'keramik-putih':{label:'Keramik Putih',tex:{type:'tile',base:'#f0efec',grout:'#c8c8c4',tiles:4,seed:3}},
+  'keramik-abu':{label:'Keramik Abu',tex:{type:'tile',base:'#8a8a86',grout:'#5a5a58',tiles:4,seed:5}},
+  'kayu':{label:'Kayu Parket',tex:{type:'wood',base:'#8a6a44',dark:'#5c4425',light:'#b98d5e'}}
+};
+const HPL_PRESETS={
+  'walnut':{label:'HPL Walnut',tex:{seed:11,grain:'wood',base:'#8a5a34',dark:'#5b3819',light:'#b07f4d'}},
+  'oak':{label:'HPL Oak Terang',tex:{seed:29,grain:'wood',base:'#d3ab74',dark:'#a87d46',light:'#eccfa2'}},
+  'putih':{label:'HPL Putih Matte',tex:{seed:5,grain:'plain',base:'#f0efec',dark:'#dcdad5',light:'#ffffff'}},
+  'abu':{label:'HPL Abu Tua',tex:{seed:17,grain:'plain',base:'#5d626b',dark:'#44484f',light:'#767c86'}},
+  'hitam':{label:'HPL Hitam Doff',tex:{seed:31,grain:'plain',base:'#26282c',dark:'#191b1e',light:'#3a3d42'}}
+};
+function buildPresetTexture(preset){
+  if(preset.tex.type==='tile') return makeTileTexture(preset.tex);
+  if(preset.tex.type==='wood') return makeHPLTexture({seed:31,grain:'wood',base:preset.tex.base,dark:preset.tex.dark,light:preset.tex.light});
+  return makeStoneTexture(preset.tex);
+}
+
+const MAT = {
+  counter:new THREE.MeshStandardMaterial({color:0xffffff,roughness:0.16,metalness:0.03,envMapIntensity:0.7}),
+  backsplash:new THREE.MeshStandardMaterial({color:0xffffff,roughness:0.22,metalness:0.03,envMapIntensity:0.7}),
+  plint:new THREE.MeshStandardMaterial({color:0xffffff,roughness:0.5,metalness:0.02,envMapIntensity:0.5}),
+  floor:new THREE.MeshStandardMaterial({color:0xffffff,roughness:0.72,metalness:0.02,envMapIntensity:0.5}),
+  hplLower:new THREE.MeshStandardMaterial({color:0xffffff,roughness:0.36,metalness:0.02,envMapIntensity:0.45}),
+  hplUpper:new THREE.MeshStandardMaterial({color:0xffffff,roughness:0.36,metalness:0.02,envMapIntensity:0.45}),
+  carcass:new THREE.MeshStandardMaterial({color:0x9a9a9a,roughness:0.7}),
+  steel:new THREE.MeshStandardMaterial({color:0xcfd3d6,roughness:0.22,metalness:0.96,envMapIntensity:1.0}),
+  glass:new THREE.MeshStandardMaterial({color:0x0a0b0d,roughness:0.12,metalness:0.35,envMapIntensity:1.0}),
+  burner:new THREE.MeshStandardMaterial({color:0x24262a,roughness:0.55,metalness:0.5}),
+  led:new THREE.MeshStandardMaterial({color:0x2a2a2a,emissive:0xfff0d6,emissiveIntensity:0,roughness:0.5}),
+  handle:new THREE.MeshStandardMaterial({color:0x2d2f34,roughness:0.35,metalness:0.75,envMapIntensity:1.0}),
+  wall:new THREE.MeshStandardMaterial({color:0xdcdcdc,roughness:0.96,side:THREE.DoubleSide}),
+  ovenGlass:new THREE.MeshStandardMaterial({color:0x1a1e24,roughness:0.12,metalness:0.55,envMapIntensity:1.5}),
+  ovenFrame:new THREE.MeshStandardMaterial({color:0xc8ccd0,roughness:0.28,metalness:0.92,envMapIntensity:1.0}),
+  shelf:new THREE.MeshStandardMaterial({color:0xa88a68,roughness:0.6,metalness:0.02}),
+  seal:new THREE.MeshStandardMaterial({color:0x1c1c1c,roughness:0.6}),
+  hood:new THREE.MeshStandardMaterial({color:0xc8ccd0,roughness:0.28,metalness:0.92,envMapIntensity:1.0})
+};
+MAT.glassDoor = new THREE.MeshStandardMaterial({
+  color: 0xb9d9e8, roughness: 0.08, metalness: 0.05,
+  transparent: true, opacity: 0.42, side: THREE.DoubleSide,
+  envMapIntensity: 1.4, depthWrite: false
+});
+
+const texState={
+  counter:{map:null,tile:1.3},
+  backsplash:{map:null,tile:1.3},
+  plint:{map:null,tile:1.0},
+  floor:{map:null,tile:0.8},
+  hplUpper:{map:null,tile:0.9},
+  hplLower:{map:null,tile:0.9}
+};
+function applyMaps(){
+  const set=(mat,st)=>{
+    if(st.map){mat.map=st.map;mat.color.set(0xffffff);st.map.repeat.set(1/st.tile,1/st.tile);st.map.needsUpdate=true;}
+    mat.needsUpdate=true;
+  };
+  set(MAT.counter,texState.counter);
+  set(MAT.backsplash,texState.backsplash);
+  set(MAT.plint,texState.plint);
+  set(MAT.floor,texState.floor);
+  set(MAT.hplUpper,texState.hplUpper);
+  set(MAT.hplLower,texState.hplLower);
+}
+
+const P={
+  layout:'linear',
+  runs:[],
+  H:0.85, upBottom:1.45, upTop:2.15,
+  kickH:0.10, plintH:0.10, backH:0.60, backsplashOn:true, plintOn:true, counterT:0.04, upD:0.34,
+  sinkOffset:0, cooktopOffset:0, edgeProfile:'bevel'
+};
+function fingerprint(){
+  const s = JSON.stringify({l:P.layout, r:P.runs.length, h:P.H, e:P.edgeProfile});
+  let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}
+  return (h>>>0).toString(16).toUpperCase().padStart(8,'0').slice(0,6);
+}
+
+let kitchen=null;
+function disposeKitchen(){if(!kitchen)return;kitchen.traverse(o=>{if(o.isMesh&&o.geometry)o.geometry.dispose();});scene.remove(kitchen);kitchen=null;}
+
+function worldUV(geo,w,h,d){
+  const uv=geo.attributes.uv;if(!uv)return;
+  const dims=[[d,h],[d,h],[w,d],[w,d],[w,h],[w,h]];
+  for(let f=0;f<6;f++){const su=dims[f][0],sv=dims[f][1];for(let i=0;i<4;i++){const k=f*4+i;uv.setXY(k,uv.getX(k)*su,uv.getY(k)*sv);}}
+  uv.needsUpdate=true;
+}
+function mkBox(x0,x1,y0,y1,z0,z1,mat,noShadow){
+  if(![x0,x1,y0,y1,z0,z1].every(Number.isFinite)) return null;
+  const w=Math.max(0.0005,x1-x0),h=Math.max(0.0005,y1-y0),d=Math.max(0.0005,z1-z0);
+  const g=new THREE.BoxGeometry(w,h,d);worldUV(g,w,h,d);
+  const m=new THREE.Mesh(g,mat);m.position.set((x0+x1)/2,(y0+y1)/2,(z0+z1)/2);
+  m.frustumCulled = false;
+  if(!noShadow){m.castShadow=true;m.receiveShadow=true;}
+  kitchen.add(m);return m;
+}
+
+const TIPE_ALIAS = {
+  'open_shelf':'open','rak':'open','rak_terbuka':'open','shelf':'open',
+  'pintu_swing':'single_door','pintu':'single_door','door':'single_door','pintu_tunggal':'single_door',
+  'pintu_ganda':'double_door','double':'double_door',
+  'pintu_kaca':'glass_door','glass':'glass_door','kaca':'glass_door',
+  'laci_2':'drawers_2','drawer_2':'drawers_2','laci_kecil':'drawers_2',
+  'laci_3':'drawers_3','drawer_3':'drawers_3','drawer':'drawers_3','laci':'drawers_3','laci_besar':'drawers_3',
+  'laci_4':'drawers_4','drawer_4':'drawers_4',
+  'laci_pintu':'composite',
+  'kompor':'cooktop_only','kompor_tanam':'cooktop_only','hob':'cooktop_only','cooktop':'cooktop_only',
+  'kompor_oven':'oven_cooktop','oven':'oven','oven_tanam':'oven','oven_kompor':'oven_cooktop','oven_laci':'oven_top',
+  'cooker_hood':'hood','hood':'hood','penghisap':'hood',
+  'sink':'sink','bak_cuci':'sink','kabinet_sudut_sink':'sink',
+  'microwave':'microwave','mikrowave':'microwave','microwave_oven':'microwave',
+  'kabinet_sudut':'corner','kabinet_sudut_penyambung':'corner','sudut':'corner','corner':'corner','blind_corner':'corner'
+};
+const APP_ALIAS = {
+  'microwave':'microwave','mikrowave':'microwave','microwave_oven':'microwave',
+  'kompor':'cooktop','kompor_tanam':'cooktop','hob':'cooktop','cooktop':'cooktop','built_in_hob':'cooktop','gas_hob':'cooktop',
+  'oven_cooktop':'cooktop',
+  'sink':'sink','bak_cuci':'sink',
+  'cooker_hood':'hood','hood':'hood','penghisap':'hood',
+  'oven':'oven','oven_tanam':'oven'
+};
+function pick(obj, ...keys){ if(!obj||typeof obj!=='object')return undefined; for(const k of keys){ if(obj[k]!==undefined && obj[k]!==null) return obj[k]; } return undefined; }
+function toNum(v,def=0){ const n=Number(v); return Number.isFinite(n)?n:def; }
+function normKey(s){ return String(s==null?'':s).toLowerCase().trim().replace(/[\s-]+/g,'_'); }
+const isDrawerType = t => /^drawers_\d+$/.test(t);
+const KNOWN_FRONTS = ['open','single_door','double_door','glass_door','composite','oven','hood','microwave','corner'];
+
+/* Normalisasi 1 kabinet. Aturan penting v18.2:
+   - kompor tanam = appliance 'cooktop' (BUKAN tipe front). Front tetap laci/pintu.
+   - front 'oven' hanya bila memang ada oven tanam. */
+function normCabinet(cab, level){
+  const id = String(pick(cab,'id','nama','label') || (level+'-X'));
+  const width_cm = Math.max(10, toNum(pick(cab,'width_cm','lebar_cm','lebar','width'), 50));
+  const rawFront = pick(cab,'front','muka','face');
+  let rawType = null, rawHandle = null, sections = null;
+  if(rawFront && typeof rawFront === 'object'){
+    rawType = pick(rawFront,'type','tipe','jenis');
+    rawHandle = pick(rawFront,'handle','tarikan','gagang');
+    if(Array.isArray(rawFront.sections)){
+      sections = rawFront.sections.map(sec => ({
+        type: normKey(pick(sec,'type','tipe') || 'door'),
+        ratio: Math.max(0.05, toNum(pick(sec,'ratio','height_ratio','r'), 1))
+      }));
+    }
+  } else if(typeof rawFront === 'string'){ rawType = rawFront; }
+  else { rawType = pick(cab,'tipe','type'); }
+
+  let t = normKey(rawType) || 'single_door';
+  t = TIPE_ALIAS[t] || t;
+  const geometry = normKey(pick(cab,'geometry','bentuk') || 'box');
+  if(geometry === 'corner') t = 'corner';
+
+  let appliance = null;
+  const mkApp = type => ({ type, width_cm:null, height_cm:null, bowls:1, drainboard:'none' });
+  const rawApp = pick(cab,'appliance','peralatan','alat');
+  if(rawApp && typeof rawApp === 'object'){
+    const k = normKey(pick(rawApp,'type','tipe'));
+    const at = APP_ALIAS[k] || k;
+    if(at){
+      appliance = mkApp(at);
+      appliance.width_cm = toNum(pick(rawApp,'width_cm','lebar_cm'), 0) || null;
+      appliance.height_cm = toNum(pick(rawApp,'height_cm','tinggi_cm'), 0) || null;
+      appliance.bowls = toNum(pick(rawApp,'bowls','bak','jumlah_bak'), 1) >= 2 ? 2 : 1;
+      const db = normKey(pick(rawApp,'drainboard','tempat_piring','drain') || 'none');
+      appliance.drainboard = (db==='left'||db==='right') ? db : 'none';
+    }
+  } else if(typeof rawApp === 'string'){
+    const k = normKey(rawApp); appliance = mkApp(APP_ALIAS[k] || k);
+  }
+
+  // legacy front types -> model baru
+  if(t === 'cooktop_only'){ t = 'single_door'; if(!appliance) appliance = mkApp('cooktop'); }
+  else if(t === 'oven_cooktop' || t === 'oven_top'){ t = 'oven'; if(!appliance || appliance.type==='oven') appliance = mkApp('cooktop'); }
+  if(t === 'sink'){ t = width_cm >= 70 ? 'double_door' : 'single_door'; if(!appliance) appliance = mkApp('sink'); }
+  if(t === 'hood' && !appliance) appliance = mkApp('hood');
+  if(t === 'microwave' && !appliance) appliance = mkApp('microwave');
+
+  // sanity berdasarkan level
+  if(level === 'upper'){
+    if(appliance && ['sink','cooktop','oven'].includes(appliance.type)) appliance = null;
+    if(appliance && appliance.type === 'hood') t = 'hood';
+    if(appliance && appliance.type === 'microwave') t = 'microwave';
+    if(t === 'microwave' && (!appliance || appliance.type !== 'microwave')) appliance = mkApp('microwave');
+    if(t === 'oven') t = 'single_door';
+  } else {
+    if(appliance && appliance.type === 'hood') appliance = null;
+    if(t === 'hood') t = 'single_door';
+    if(appliance && appliance.type === 'microwave') appliance = null;
+    if(t === 'microwave') t = 'single_door';
+    if(appliance && appliance.type === 'oven') t = 'oven';
+  }
+  if(!isDrawerType(t) && !KNOWN_FRONTS.includes(t)) t = 'single_door';
+
+  const dr = isDrawerType(t);
+  let side = normKey(pick(rawHandle,'side','posisi','position'));
+  if(!dr && side !== 'left' && side !== 'right') side = 'right';
+  if(dr) side = 'center';
+  const front = {
+    type: t,
+    handle: { orientation: dr ? 'horizontal' : (normKey(pick(rawHandle,'orientation','arah')) || 'vertical'), side },
+    sections
+  };
+
+  let shelves = 0;
+  const rawShelves = pick(cab,'shelves','rak','papan');
+  if(rawShelves){
+    if(typeof rawShelves === 'object') shelves = toNum(pick(rawShelves,'count','jumlah'), 1);
+    else shelves = toNum(rawShelves, 1);
+  }
+  if((t === 'open' || t === 'glass_door') && !shelves) shelves = level==='upper' ? 1 : 2;
+
+  return { id, width_cm, front, shelves, geometry, appliance };
+}
+
+function normRun(run, idx){
+  const id = String(pick(run,'id','nama','label') || ('RUN_'+(idx+1)));
+  const origin_cm = pick(run,'origin_cm','origin','posisi') || [0,0];
+  const axis = normKey(pick(run,'axis','arah') || (idx === 0 ? '+x' : '+z'));
+  const vDir = normKey(pick(run,'vDir','v_dir','arah_dalam') || 'auto');
+  const depth_cm = toNum(pick(run,'depth_cm','kedalaman_cm','kedalaman'), 60);
+  const upper_depth_cm = toNum(pick(run,'upper_depth_cm','kedalaman_atas_cm'), Math.min(34, depth_cm));
+  const o = [toNum(origin_cm[0],0), toNum(origin_cm[1],0)];
+  const lowerRaw = pick(run,'cabinets_lower','modul_bawah','bawah','lower') || [];
+  const upperRaw = pick(run,'cabinets_upper','modul_atas','atas','upper') || [];
+  return {
+    id, origin_cm:o, upper_origin_cm:[o[0],o[1]],
+    axis: ['+x','-x','+z','-z'].includes(axis) ? axis : '+x',
+    vDir: ['+x','-x','+z','-z','auto'].includes(vDir) ? vDir : 'auto',
+    depth_cm, upper_depth_cm,
+    cabinets_lower: lowerRaw.map(c => normCabinet(c, 'lower')),
+    cabinets_upper: upperRaw.map(c => normCabinet(c, 'upper'))
+  };
+}
+
+/* Finalisasi geometri layout:
+   - Run 1 selalu menempel dinding belakang (z=0).
+   - L-shape: ujung run 1 di sisi kaki L = kabinet SUDUT (blind, tertutup). Kaki L (run 2) dimulai tepat
+     SETELAH kedalaman run 1, sehingga tidak ada tumpang tindih / celah dan semua pintu bisa dibuka.
+   - Origin run 2 dihitung otomatis (origin dari JSON/AI diabaikan). */
+function finalizeLayout(out){
+  const sum = a => a.reduce((s,c)=>s+c.width_cm, 0);
+  if(!out.runs.length) return out;
+  if(out.runs.length >= 2) out.layout = 'L';
+  if(out.layout === 'L' && out.runs.length < 2) out.layout = 'linear';
+  const r1 = out.runs[0];
+  r1.axis = '+x'; r1.vDir = '+z'; r1.origin_cm = [0,0]; r1.upper_origin_cm = [0,0];
+  out.legLeft = false;
+  if(out.layout !== 'L'){
+    out.runs = [r1];
+    out.extent = { x: Math.max(sum(r1.cabinets_lower), sum(r1.cabinets_upper))/100, z: r1.depth_cm/100 };
+    return out;
+  }
+  const r2 = out.runs[1]; out.runs = [r1, r2];
+  const legLeft = r2.vDir === '+x';
+  out.legLeft = legLeft;
+  r2.axis = '+z'; r2.vDir = legLeft ? '+x' : '-x';
+  const cornerW = r2.depth_cm;
+  const lower = r1.cabinets_lower;
+  const isC = c => c && c.front.type === 'corner';
+  if(!isC(legLeft ? lower[0] : lower[lower.length-1])){
+    const c = { id:'B-CORNER', width_cm:cornerW, front:{type:'corner',handle:{orientation:'vertical',side:'right'},sections:null}, shelves:0, geometry:'corner', appliance:null };
+    if(legLeft) lower.unshift(c); else lower.push(c);
+  }
+  const ci = legLeft ? 0 : lower.length-1;
+  if(lower[ci].width_cm < cornerW) lower[ci].width_cm = cornerW;
+  let lt = sum(lower), ut = sum(r1.cabinets_upper);
+  const uppers = r1.cabinets_upper;
+  if(ut > lt){
+    if(ut - lt <= 25){ lower[ci].width_cm += ut - lt; lt = ut; }          // kabinet sudut fleksibel
+    else { const k = lt/ut; uppers.forEach(c => c.width_cm *= k); ut = lt; } // atas terlalu panjang -> skala
+  } else if(uppers.length && lt - ut <= 15){
+    uppers[legLeft ? 0 : uppers.length-1].width_cm += lt - ut; ut = lt;    // tutup celah kecil di atas
+  }
+  const x0 = legLeft ? 0 : lt;
+  r2.origin_cm = [x0, r1.depth_cm];
+  r2.upper_origin_cm = [x0, r1.upper_depth_cm];
+  const zLow = r1.depth_cm + sum(r2.cabinets_lower);
+  const zUp  = r1.upper_depth_cm + sum(r2.cabinets_upper);
+  out.extent = { x: Math.max(lt, ut)/100, z: Math.max(zLow, zUp, r1.depth_cm)/100 };
+  return out;
+}
+
+function normalizeLayout(d){
+  if(!d || typeof d !== 'object') return defaultLayout();
+  const out = {
+    layout:'linear',
+    heights:{ base_total_cm:84, gap_cm:60, upper_total_cm:70, counter_thickness_cm:4, kick_cm:10, plint_cm:10, backsplash_cm:60 },
+    runs:[], legLeft:false, extent:{x:2,z:0.6}
+  };
+  const l = String(pick(d,'layout','bentuk') || '').toLowerCase();
+  out.layout = (l==='l'||l.includes('l-shape')||l.includes('l_shape')||l.includes('sudut')||l.includes('corner')) ? 'L' : 'linear';
+  const H = pick(d,'heights','tinggi','dimensi_tinggi');
+  if(H && typeof H === 'object'){
+    out.heights.base_total_cm        = toNum(pick(H,'base_total_cm','bawah_cm','tinggi_bawah_cm','counter_height_cm','bawah'), 84);
+    out.heights.gap_cm               = toNum(pick(H,'gap_cm','jarak_cm','jarak_ke_atas_cm'), 60);
+    out.heights.upper_total_cm       = toNum(pick(H,'upper_total_cm','atas_cm','tinggi_atas_cm'), 70);
+    out.heights.counter_thickness_cm = toNum(pick(H,'counter_thickness_cm','counter_t_cm'), 4);
+    out.heights.kick_cm              = toNum(pick(H,'kick_cm','sepatu_cm','plinth_cm'), 10);
+    out.heights.plint_cm             = toNum(pick(H,'plint_cm','splash_cm'), 10);
+    out.heights.backsplash_cm        = toNum(pick(H,'backsplash_cm','back_cm'), out.heights.gap_cm);
+  }
+  if(Array.isArray(d.runs) && d.runs.length){
+    out.runs = d.runs.slice(0,2).map((r,i)=>normRun(r,i));
+    return finalizeLayout(out);
+  }
+  const sides = pick(d,'sisi','sides','sections') || [];
+  if(Array.isArray(sides) && sides.length){
+    sides.slice(0,2).forEach((s, i)=>{
+      const panjang = toNum(pick(s,'panjang_cm','panjang_total_cm','panjang','length_cm','length','total_cm'), 200);
+      const depth = toNum(pick(s,'kedalaman_cm','kedalaman','depth_cm','depth'), 60);
+      const label = String(pick(s,'label','nama','name') || (i===0?'A':'B'));
+      const lowerRaw = pick(s,'bawah','modul_bawah','lower','base_cabinets') || [];
+      const upperRaw = pick(s,'atas','modul_atas','upper','wall_cabinets') || [];
+      const balance = (arr, target) => {
+        if(!arr.length) return [];
+        const items = arr.map(m => ({ id:pick(m,'id'), width_cm:toNum(pick(m,'width_cm','lebar_cm','lebar','width'),0),
+          front:m.front || { type: pick(m,'tipe','type') || 'single_door' }, geometry:pick(m,'geometry','bentuk'), appliance:pick(m,'appliance') }));
+        const total = items.reduce((a,m)=>a+m.width_cm,0);
+        if(total > 0 && (total < target*0.9 || total > target*1.1)){ const k = target/total; items.forEach(m => m.width_cm *= k); }
+        return items;
+      };
+      out.runs.push(normRun({ id:label, origin_cm:[0,0], axis:i===0?'+x':'+z', vDir:i===0?'+z':'-x', depth_cm:depth,
+        cabinets_lower:balance(lowerRaw,panjang), cabinets_upper:balance(upperRaw,panjang) }, i));
+    });
+    return finalizeLayout(out);
+  }
+  return defaultLayout();
+}
+function defaultLayout(){ return normalizeLayout(MANUAL_EXAMPLE); }
+
+/* ============  RENDERER v18.2  ============ */
+const ROOM_H = 2.6;
+const GAP = 0.0015;   // setengah celah antar panel depan (total 3 mm)
+const FT = 0.018;     // tebal panel depan & papan carcass
+
+function buildRun(run, idx){
+  const axis = run.axis;
+  const vDir = run.vDir === 'auto' ? ((axis==='+x'||axis==='-x') ? '+z' : '+x') : run.vDir;
+  const uVec = {'+x':[1,0], '-x':[-1,0], '+z':[0,1], '-z':[0,-1]}[axis];
+  const vVec = {'+x':[1,0], '-x':[-1,0], '+z':[0,1], '-z':[0,-1]}[vDir];
+  const mkMap = (ox, oz) => {
+    const l2w = (u, v) => [ ox + u*uVec[0] + v*vVec[0], oz + u*uVec[1] + v*vVec[1] ];
+    const mb = (u0, u1, y0, y1, v0, v1, mat, ns) => {
+      const cs = [l2w(u0,v0), l2w(u1,v0), l2w(u0,v1), l2w(u1,v1)];
+      const xs = cs.map(c=>c[0]), zs = cs.map(c=>c[1]);
+      return mkBox(Math.min(...xs), Math.max(...xs), y0, y1, Math.min(...zs), Math.max(...zs), mat, ns);
+    };
+    return { l2w, mb, ox, oz, uVec, vVec };
+  };
+  const LO = mkMap(...run.origin_cm.map(v=>v/100));
+  const UP = mkMap(...(run.upper_origin_cm || run.origin_cm).map(v=>v/100));
+  const depthM = run.depth_cm/100, upDepthM = run.upper_depth_cm/100;
+  const isLeg = P.layout === 'L' && idx === 1;
+  const isMain = P.layout === 'L' && idx === 0;
+
+  /* ===== BAWAH ===== */
+  const lower = run.cabinets_lower;
+  if(lower.length){
+    const yb = P.kickH, yt = P.H - P.counterT;
+    let u = 0;
+    lower.forEach((cab, i) => {
+      const w = cab.width_cm/100;
+      let cornerSide = null;                       // pintu di sebelah sudut: handle di sisi sudut, engsel di sisi jauh
+      if(isMain && !P.legLeft && i === lower.length-2) cornerSide = 'right';
+      if(isMain &&  P.legLeft && i === 1) cornerSide = 'left';
+      if(isLeg && i === 0) cornerSide = 'left';
+      buildCabinet(cab, { mb:LO.mb, l2w:LO.l2w, u0:u, u1:u+w, y0:yb, y1:yt, depth:depthM, level:'lower',
+                          cornerSide, closeU0: cornerSide === 'left', closeU1: cornerSide === 'right', endPanelU1: isLeg && i === lower.length-1 });
+      u += w;
+    });
+    LO.mb(isLeg ? -0.04 : 0, u, 0, P.kickH, 0.0, depthM - 0.04, MAT.hplLower);              // sepatu kabinet (bagian kabinet bawah)
+    buildRunCountertop(run, LO, u, depthM, isLeg);                          // top table + lubang sink/kompor
+    const bsU0 = isLeg ? -LO.oz : 0;                                        // backsplash kaki L mulai dari sudut dinding
+    const trimEnd = isMain && !P.legLeft, trimStart = isMain && P.legLeft;
+    if(P.backsplashOn) LO.mb(bsU0 + (trimStart?0.012:0), u - (trimEnd?0.012:0), P.H, P.H + P.backH, 0, 0.012, MAT.backsplash);          // backsplash: dinding di atas top table
+    if(P.plintOn) LO.mb(isLeg ? bsU0 + 0.012 : bsU0 + (trimStart?0.028:0), u - (trimEnd?0.028:0), P.H, P.H + P.plintH, 0.012, 0.028, MAT.plint);          // plint: penahan cipratan di atas top table
+  }
+
+  /* ===== ATAS ===== */
+  const upper = run.cabinets_upper;
+  if(upper.length){
+    let u = 0;
+    upper.forEach((cab, i) => {
+      const w = cab.width_cm/100;
+      buildCabinet(cab, { mb:UP.mb, l2w:UP.l2w, u0:u, u1:u+w, y0:P.upBottom, y1:P.upTop, depth:upDepthM, level:'upper',
+                          cornerSide: (isLeg && i===0) ? 'left' : null, closeU0: isLeg && i===0, endPanelU1: isLeg && i === upper.length-1 });
+      u += w;
+    });
+    // lampu LED bawah kabinet: cahaya saja (strip kecil di dalam tepi depan), bukan balok besar
+    const [lx, lz] = UP.l2w(u/2, upDepthM - 0.08);
+    const rl = new THREE.RectAreaLight(0xfff0d8, 0, Math.max(0.3, u - 0.1), 0.06);
+    rl.position.set(lx, P.upBottom - 0.012, lz);
+    rl.lookAt(lx + vVec[0]*0.3, P.upBottom - 1, lz + vVec[1]*0.3);
+    kitchen.add(rl); kitchen.userData.strips.push(rl);
+  }
+}
+
+/* ---------- Top table dengan lubang sink / kompor tanam ---------- */
+function planSink(ap, cu, w, depthM){
+  const sl = Math.min((ap.width_cm ? ap.width_cm/100 : 0.80), w - 0.06);
+  const uMid = cu + w/2 + P.sinkOffset;
+  const u0 = clamp(uMid - sl/2, cu + 0.03, cu + w - 0.03 - sl);
+  const v0 = 0.09, v1 = v0 + Math.min(0.44, depthM - 0.17);
+  return { kind:'sink', u0, u1:u0+sl, v0, v1, ap };
+}
+function planHob(ap, cu, w, depthM){
+  const hw = Math.min(ap.width_cm ? ap.width_cm/100 : 0.58, w - 0.04), hd = 0.50;
+  const mid = clamp(cu + w/2 + P.cooktopOffset, cu + hw/2 + 0.02, cu + w - hw/2 - 0.02);
+  const vm = depthM * 0.5;
+  return { kind:'hob', u0:mid-hw/2, u1:mid+hw/2, v0:vm-hd/2, v1:vm+hd/2, ap };
+}
+function edgeFront(profile, F, T){
+  const arc = (cv, cy, r, a0, a1, n) => { const o=[]; for(let i=0;i<=n;i++){ const a=(a0+(a1-a0)*i/n)*Math.PI/180; o.push([cv + r*Math.cos(a), cy + r*Math.sin(a)]); } return o; };
+  const Fm = F + 0.003;
+  switch(profile){
+    case 'eased': return [[F-0.005,T],[F,T-0.005],[F,0]];
+    case 'bevel': { const c = Math.min(0.016, T*0.4); return [[F-c,T],[F,T-c],[F,0]]; }
+    case 'bullnose': { const r = T/2; return arc(F-r, T/2, r, 90, -90, 12); }
+    case 'dupont': { // pencil-round atas, undakan, lalu 1/2 bullnose di bawah
+      const k = Math.min(1, T/0.04), s = 0.020, r1 = 0.005*k, rb = Math.min(0.012, (T - 0.016*k)/2), lt = 2*rb;
+      if(T - lt < 0.008) return [[F-0.005,T],[F,T-0.005],[F,0]];
+      return [...arc(F-s-r1, T-r1, r1, 90, 0, 4), [F-s, lt], ...arc(F-rb, rb, rb, 90, -90, 10)];
+    }
+    case 'laminated': { const d = 0.02; return [[Fm-0.003,T],[Fm,T-0.003],[Fm,-d],[Fm-d,-d],[Fm-d,0]]; }
+    case 'ogee': { // bulat kecil di atas, cekung (cove) di tengah, lalu bulat cembung menonjol di bawah
+      const k = Math.min(1, T/0.04), r1 = 0.005*k, rc = 0.008*k, rb = 0.008*k, vT = F - rb - rc;
+      return [...arc(vT-r1, T-r1, r1, 90, 0, 4), ...arc(vT+rc, T-r1, rc, 180, 270, 8).slice(1), ...arc(F-rb, T-r1-rc-rb, rb, 90, 0, 6).slice(1), [F,0]];
+    }
+    case 'waterfall': return [[F-0.003,T],[F,T-0.003],[F,0]];
+    default: return null;
+  }
+}
+/* Potongan top table bagian depan dengan profil tepi (diekstrusi sepanjang u) */
+function edgeSlab(M, ua, ub, v0, F, yT, yB, profile){
+  const T = yB - yT, pts = edgeFront(profile, F, T);
+  if(!pts || (F - v0) < 0.04 || ub - ua < 1e-4) return false;
+  const shape = new THREE.Shape();
+  shape.moveTo(v0, 0); shape.lineTo(v0, T);
+  for(const q of pts) shape.lineTo(q[0], q[1]);
+  const geo = new THREE.ExtrudeGeometry(shape, { depth: ub - ua, bevelEnabled:false, steps:1 });
+  const pos = geo.attributes.position, nor = geo.attributes.normal, uv = geo.attributes.uv;
+  for(let i=0;i<pos.count;i++){
+    const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i) + ua;
+    const ax = Math.abs(nor.getX(i)), ay = Math.abs(nor.getY(i)), az = Math.abs(nor.getZ(i));
+    if(ay >= ax && ay >= az) uv.setXY(i, z, x);
+    else if(ax >= az) uv.setXY(i, z, y);
+    else uv.setXY(i, x, y);
+  }
+  uv.needsUpdate = true;
+  const mesh = new THREE.Mesh(geo, MAT.counter);
+  const [bx, bz] = M.l2w(ua, 0), vv = M.vVec, uu = M.uVec;
+  mesh.matrixAutoUpdate = false;
+  mesh.matrix.set(vv[0],0,uu[0],bx,  0,1,0,yT,  vv[1],0,uu[1],bz,  0,0,0,1);
+  mesh.matrixWorldNeedsUpdate = true;
+  mesh.castShadow = true; mesh.receiveShadow = true; mesh.frustumCulled = false;
+  kitchen.add(mesh);
+  return true;
+}
+function buildRunCountertop(run, M, total, depthM, isLeg){
+  const yT = P.H - P.counterT, yB = P.H;
+  const cuts = [], noEdge = []; let cu = 0;
+  for(const cab of run.cabinets_lower){
+    const w = cab.width_cm/100, ap = cab.appliance;
+    if(ap && ap.type === 'sink') cuts.push(planSink(ap, cu, w, depthM));
+    else if(ap && ap.type === 'cooktop') cuts.push(planHob(ap, cu, w, depthM));
+    if(P.layout === 'L' && cab.front.type === 'corner') noEdge.push([cu, cu+w]);
+    cu += w;
+  }
+  const edges = [...new Set([0, total, ...cuts.flatMap(c=>[c.u0,c.u1]), ...noEdge.flat()].map(v=>+v.toFixed(5)))].sort((a,b)=>a-b);
+  for(let i=0;i<edges.length-1;i++){
+    const ua = edges[i], ub = edges[i+1];
+    if(ub - ua < 1e-4) continue;
+    const cov = cuts.filter(c => c.u0 <= ua+1e-5 && c.u1 >= ub-1e-5).sort((a,b)=>a.v0-b.v0);
+    let vc = 0;
+    for(const c of cov){ if(c.v0 > vc) M.mb(ua,ub,yT,yB,vc,c.v0,MAT.counter); vc = Math.max(vc, c.v1); }
+    if(vc < depthM){
+      const flat = noEdge.some(r => ua >= r[0]-1e-5 && ub <= r[1]+1e-5);
+      if(flat || !edgeSlab(M, ua, ub, vc, depthM, yT, yB, P.edgeProfile)) M.mb(ua,ub,yT,yB,vc,depthM,MAT.counter);
+    }
+  }
+  for(const c of cuts){ if(c.kind === 'sink') drawSink(M, c); else drawHob(M, c); }
+  if(P.edgeProfile === 'waterfall' && isLeg) M.mb(total, total+0.02, 0, yB, 0, depthM, MAT.counter);
+}
+function drawSink(M, c){
+  const { u0, u1, v0, v1, ap } = c;
+  const t = 0.012, top = P.H - 0.003, bot = P.H - 0.19, mb = M.mb;
+  const db = ap.drainboard;
+  const dbW = (db==='left'||db==='right') ? Math.min((u1-u0)*0.32, 0.38) : 0;
+  const bu0 = db==='left' ? u0 + dbW : u0, bu1 = db==='right' ? u1 - dbW : u1;
+  // bingkai atas (menutup tepi potongan)
+  mb(u0,u1,P.H,P.H+0.003,v0,v0+0.012,MAT.steel); mb(u0,u1,P.H,P.H+0.003,v1-0.012,v1,MAT.steel);
+  mb(u0,u0+0.012,P.H,P.H+0.003,v0,v1,MAT.steel); mb(u1-0.012,u1,P.H,P.H+0.003,v0,v1,MAT.steel);
+  // tempat piring (drainboard) + alur
+  if(dbW > 0){
+    const d0 = db==='left' ? u0 : u1 - dbW, d1 = d0 + dbW;
+    mb(d0+0.012,d1-0.012,P.H-0.008,P.H-0.003,v0+0.012,v1-0.012,MAT.steel);
+    for(let k=1;k<=6;k++){ const uu = d0 + dbW*k/7; mb(uu-0.003,uu+0.003,P.H-0.003,P.H-0.0015,v0+0.03,v1-0.03,MAT.burner,true); }
+  }
+  // bak
+  const n = ap.bowls === 2 ? 2 : 1, pad = 0.012, div = 0.02;
+  const bw = ((bu1 - bu0) - 2*pad - (n-1)*div) / n;
+  for(let b=0;b<n;b++){
+    const a0 = bu0 + pad + b*(bw+div), a1 = a0 + bw;
+    mb(a0,a1,bot,bot+t,v0+pad,v1-pad,MAT.steel);
+    mb(a0,a0+t,bot,top,v0+pad,v1-pad,MAT.steel); mb(a1-t,a1,bot,top,v0+pad,v1-pad,MAT.steel);
+    mb(a0,a1,bot,top,v0+pad,v0+pad+t,MAT.steel); mb(a0,a1,bot,top,v1-pad-t,v1-pad,MAT.steel);
+    const cm = (a0+a1)/2, vm = (v0+v1)/2;
+    mb(cm-0.035,cm+0.035,bot+t,bot+t+0.002,vm-0.035,vm+0.035,MAT.burner,true);
+  }
+  if(n === 2) mb(bu0+pad+bw, bu0+pad+bw+div, bot, top, v0+pad, v1-pad, MAT.steel);
+  // keran (di antara bak, dekat dinding)
+  const fu = (bu0+bu1)/2, fv = Math.max(0.045, v0 - 0.04);
+  mb(fu-0.03,fu+0.03,P.H,P.H+0.012,fv-0.03,fv+0.03,MAT.handle);
+  mb(fu-0.016,fu+0.016,P.H+0.012,P.H+0.26,fv-0.016,fv+0.016,MAT.handle);
+  mb(fu-0.012,fu+0.012,P.H+0.23,P.H+0.26,fv,fv+0.20,MAT.handle);
+  mb(fu-0.012,fu+0.012,P.H+0.18,P.H+0.23,fv+0.17,fv+0.20,MAT.handle);
+}
+function drawHob(M, c){
+  const { u0, u1, v0, v1 } = c;
+  const hw = u1-u0, hd = v1-v0, cm = (u0+u1)/2, vm = (v0+v1)/2;
+  M.mb(u0, u1, P.H - 0.004, P.H + 0.003, v0, v1, MAT.glass);               // kaca hob, rata dengan top table
+  for(const [su,sv] of [[-hw*0.25,-hd*0.23],[hw*0.25,-hd*0.23],[-hw*0.25,hd*0.23],[hw*0.25,hd*0.23]]){
+    const [wx, wz] = M.l2w(cm+su, vm+sv);
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(0.068, 0.006, 8, 40), MAT.burner);
+    ring.rotation.x = -Math.PI/2; ring.position.set(wx, P.H + 0.007, wz); kitchen.add(ring);
+    const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,0.004,28), MAT.burner);
+    disc.position.set(wx, P.H + 0.005, wz); kitchen.add(disc);
+  }
+}
+
+/* ---------- Kabinet ---------- */
+function buildCabinet(cab, ctx){
+  const { mb, u0, u1, y0, y1, depth, level } = ctx;
+  const w = u1 - u0, t = FT, g = GAP, mid = (u0+u1)/2;
+  const front = cab.front, ft = front.type, hc = front.handle || {};
+  const panelMat = level === 'upper' ? MAT.hplUpper : MAT.hplLower;
+  const fv0 = depth - t, fv1 = depth;               // panel depan rata dengan tepi top table
+  const isLower = level === 'lower';
+  const hasSink = !!(cab.appliance && cab.appliance.type === 'sink');
+
+  if(ft === 'hood'){ drawHood(mb, u0, u1, y0, y1, depth, cab); return; }
+  if(ft === 'corner'){ mb(u0, u1, y0, y1, 0, depth, panelMat); return; }   // sudut buta: balok padat
+
+  /* carcass */
+  mb(u0, u1, y0, y1, 0, t, MAT.carcass);
+  mb(u0, u0+t, y0, y1, t, fv0, MAT.carcass);
+  if(ctx.endPanelU1) mb(u1-t, u1, y0, y1, t, fv0, panelMat);                // sisi ujung terlihat -> HPL
+  else mb(u1-t, u1, y0, y1, t, fv0, MAT.carcass);
+  if(!hasSink) mb(u0+t, u1-t, y1-t, y1, t, fv0, MAT.carcass);
+  mb(u0+t, u1-t, y0, y0+t, t, fv0, MAT.carcass);
+  if(ft !== 'open' && ft !== 'glass_door')                                  // papan belakang panel depan: celah tidak tembus
+    mb(u0+t, u1-t, y0+t, y1-t, fv0-0.012, fv0, MAT.carcass);
+
+  const gU0 = ctx.closeU0 ? 0 : g, gU1 = ctx.closeU1 ? 0 : g;               // tanpa celah di sisi yang menghadap sudut
+  const fp = (a,b,c,d) => mb(a+(a===u0?gU0:g), b-(b===u1?gU1:g), c+g, d-g, fv0, fv1, panelMat);
+  const hs = 0.006, hm = MAT.handle;
+  const vbar = (u, y, len) => {
+    mb(u-hs, u+hs, y-len/2, y+len/2, fv1+0.022, fv1+0.034, hm);
+    mb(u-0.0045, u+0.0045, y-len/2+0.012, y-len/2+0.024, fv1, fv1+0.022, hm);
+    mb(u-0.0045, u+0.0045, y+len/2-0.024, y+len/2-0.012, fv1, fv1+0.022, hm);
+  };
+  const hbar = (u, y, len) => {
+    mb(u-len/2, u+len/2, y-hs, y+hs, fv1+0.022, fv1+0.034, hm);
+    for(const pu of [u-len/2+0.02, u+len/2-0.02]) mb(pu-0.0045, pu+0.0045, y-0.0045, y+0.0045, fv1, fv1+0.022, hm);
+  };
+  const doorHandleY = () => isLower ? y1 - 0.13 : y0 + 0.13;               // bawah: dekat tepi atas, atas: dekat tepi bawah
+  const doorHandleLen = () => Math.min(0.16, (y1-y0)*0.35);
+  const sideU = (side) => side === 'left' ? u0 + 0.04 : u1 - 0.04;
+  const shelves = (n) => { for(let i=1;i<=n;i++){ const y = y0 + (y1-y0)*i/(n+1); mb(u0+t, u1-t, y, y+t*0.8, t+0.005, fv0, MAT.shelf); } };
+
+  if(level === 'upper'){ /* LED kecil di bawah kabinet atas */
+    mb(u0+0.03, u1-0.03, y0-0.005, y0, depth-0.07, depth-0.055, MAT.led, true);
+  }
+
+  if(ft === 'microwave'){
+    // kotak kabinet atas (pintu flip-up) + relung microwave menggantung di bawahnya
+    fp(u0, u1, y0, y1);
+    hbar(mid, y0 + 0.05, Math.min(0.30, w*0.55));
+    const ap = cab.appliance || {};
+    const mh = clamp((ap.height_cm || 21)/100, 0.14, 0.42);
+    const yb = y0 - mh;
+    mb(u0, u0+t, yb, y0, 0, depth, panelMat); mb(u1-t, u1, yb, y0, 0, depth, panelMat);
+    mb(u0+t, u1-t, yb, yb+t, 0, depth, panelMat);
+    mb(u0+t, u1-t, yb+t, y0, 0, t, MAT.carcass);
+    const bu0 = u0+t+0.015, bu1 = u1-t-0.015, bw = bu1-bu0, by0 = yb+t+0.002, by1 = y0-0.006, vf = depth-0.03;
+    mb(bu0, bu1, by0, by1, 0.05, vf, MAT.ovenFrame);                         // badan microwave
+    const gu1 = bu0 + bw*0.70;
+    mb(bu0+0.012, gu1-0.006, by0+0.012, by1-0.012, vf, vf+0.004, MAT.ovenGlass); // jendela
+    mb(gu1+0.006, bu1-0.01, by0+0.012, by1-0.012, vf, vf+0.004, MAT.glass);      // panel kontrol
+    mb(gu1-0.004, gu1+0.002, by0+0.015, by1-0.015, vf, vf+0.012, hm);            // gagang
+    const cu = (gu1+bu1)/2;
+    for(let k=0;k<3;k++){ const yy = by0 + (by1-by0)*(0.25+0.25*k); mb(cu-0.012, cu+0.012, yy-0.005, yy+0.005, vf+0.004, vf+0.010, MAT.steel); }
+    return;
+  }
+  if(ft === 'open'){ shelves(Math.max(0, cab.shelves||0)); return; }
+
+  if(ft === 'single_door'){
+    fp(u0, u1, y0, y1);
+    vbar(sideU(ctx.cornerSide || hc.side), doorHandleY(), doorHandleLen());
+    return;
+  }
+  if(ft === 'double_door'){
+    fp(u0, mid, y0, y1); fp(mid, u1, y0, y1);
+    vbar(mid - 0.04, doorHandleY(), doorHandleLen()); vbar(mid + 0.04, doorHandleY(), doorHandleLen());
+    return;
+  }
+  const dm = ft.match(/^drawers_(\d+)$/);
+  if(dm){
+    const n = Math.max(1, +dm[1]), h = (y1 - y0) / n;
+    for(let d=0; d<n; d++){
+      const sy1 = y1 - d*h, sy0 = sy1 - h;
+      fp(u0, u1, sy0, sy1);
+      hbar(mid, (sy0+sy1)/2 + h*0.12, Math.min(0.30, w*0.55));
+    }
+    return;
+  }
+  if(ft === 'composite'){
+    let sections = front.sections;
+    if(!sections || !sections.length) sections = [{type:'drawer',ratio:0.28},{type:'drawer',ratio:0.28},{type:'door',ratio:0.44}];
+    const tot = sections.reduce((a,s)=>a+s.ratio, 0);
+    let yc = y1;
+    for(const sec of sections){
+      const h = (y1-y0) * sec.ratio/tot, sy1 = yc, sy0 = yc - h;
+      fp(u0, u1, sy0, sy1);
+      if(sec.type === 'drawer') hbar(mid, (sy0+sy1)/2 + h*0.12, Math.min(0.30, w*0.55));
+      else vbar(sideU(ctx.cornerSide || hc.side), Math.min(sy1-0.10, (sy0+sy1)/2 + 0.04), Math.min(0.14, h*0.4));
+      yc = sy0;
+    }
+    return;
+  }
+  if(ft === 'glass_door'){
+    const f = 0.045, gl = (a,b,c,d) => { const m = mb(a,b,c,d,fv0+0.006,fv1-0.006,MAT.glassDoor,true); if(m) m.renderOrder = 2; };
+    fp(u0, u0+f, y0, y1); fp(u1-f, u1, y0, y1); fp(u0+f, u1-f, y1-f, y1); fp(u0+f, u1-f, y0, y0+f);
+    if(w >= 0.45){
+      fp(mid-0.012, mid+0.012, y0+f, y1-f);
+      gl(u0+f+g, mid-0.012-g, y0+f+g, y1-f-g); gl(mid+0.012+g, u1-f-g, y0+f+g, y1-f-g);
+      vbar(mid - 0.04, doorHandleY(), doorHandleLen()); vbar(mid + 0.04, doorHandleY(), doorHandleLen());
+    } else {
+      gl(u0+f+g, u1-f-g, y0+f+g, y1-f-g);
+      vbar(sideU(ctx.cornerSide || hc.side), doorHandleY(), doorHandleLen());
+    }
+    shelves(cab.shelves || 2);
+    return;
+  }
+  if(ft === 'oven'){
+    const ovW = Math.min(0.56, w - 0.04), ovH = Math.min(0.46, (y1-y0) - 0.10);
+    const ovU0 = mid - ovW/2, ovU1 = mid + ovW/2, ovY1 = y1 - 0.05, ovY0 = ovY1 - ovH;
+    fp(u0, u1, y0, ovY0);                                   // panel bawah oven
+    fp(u0, u1, ovY1, y1);                                   // panel atas oven
+    fp(u0, ovU0, ovY0, ovY1); fp(ovU1, u1, ovY0, ovY1);     // panel samping oven
+    mb(ovU0, ovU1, ovY0+g, ovY1-g, fv0, fv1, MAT.ovenFrame);
+    mb(ovU0+0.03, ovU1-0.03, ovY0+0.05, ovY1-0.07, fv1, fv1+0.003, MAT.ovenGlass);
+    hbar(mid, ovY1 - 0.035, ovW*0.8);
+    return;
+  }
+  fp(u0, u1, y0, y1);
+  vbar(sideU(ctx.cornerSide || hc.side), doorHandleY(), doorHandleLen());
+}
+
+/* ---------- Hood: kanopi + cerobong, tanpa kabinet bolong ---------- */
+function drawHood(mb, u0, u1, y0, y1, depth, cab){
+  const w = u1 - u0, mid = (u0+u1)/2;
+  const appW = Math.min(w, ((cab.appliance && cab.appliance.width_cm) ? cab.appliance.width_cm : w*100) / 100);
+  const hu0 = mid - appW/2, hu1 = mid + appW/2;
+  const cd = Math.min(0.50, depth + 0.14);
+  mb(hu0, hu1, y0, y0+0.05, 0.0, cd, MAT.hood);                          // badan kanopi bawah
+  mb(hu0+0.04, hu1-0.04, y0+0.05, y0+0.14, 0.0, cd*0.68, MAT.hood);      // badan kanopi atas (miring bertingkat)
+  mb(mid-0.15, mid+0.15, y0+0.14, y1, 0.0, 0.30, MAT.hood);              // cerobong
+  mb(hu0+0.03, hu1-0.03, y0-0.003, y0, 0.06, cd-0.04, MAT.burner, true); // filter gelap di bawah
+}
+
+/* ---------- Ruangan: dinding tepat di belakang/samping kabinet ---------- */
+function addRoom(){
+  const b = getRoomBounds();
+  const addPlane = (wd, ht, pos, rotY, rotX, uvScale) => {
+    const geo = new THREE.PlaneGeometry(wd, ht);
+    if(uvScale){ const uv = geo.attributes.uv; for(let i=0;i<uv.count;i++) uv.setXY(i, uv.getX(i)*wd, uv.getY(i)*ht); }
+    return geo;
+  };
+  const floorGeo = addPlane(b.x, b.z, null, 0, 0, true);
+  const floor = new THREE.Mesh(floorGeo, MAT.floor);
+  floor.rotation.x = -Math.PI/2; floor.position.set(b.x/2, 0, b.z/2); floor.receiveShadow = true; kitchen.add(floor);
+  const ceil = new THREE.Mesh(addPlane(b.x, b.z), MAT.wall);
+  ceil.rotation.x = Math.PI/2; ceil.position.set(b.x/2, b.h, b.z/2); kitchen.add(ceil);
+  const back = new THREE.Mesh(addPlane(b.x, b.h), MAT.wall);              // dinding belakang: z = 0
+  back.position.set(b.x/2, b.h/2, -0.0005); back.receiveShadow = true; kitchen.add(back);
+  const left = new THREE.Mesh(addPlane(b.z, b.h), MAT.wall);              // dinding kiri: x = 0
+  left.rotation.y = Math.PI/2; left.position.set(-0.0005, b.h/2, b.z/2); left.receiveShadow = true; kitchen.add(left);
+  const right = new THREE.Mesh(addPlane(b.z, b.h), MAT.wall);             // dinding kanan: x = lebar ruang
+  right.rotation.y = -Math.PI/2; right.position.set(b.x+0.0005, b.h/2, b.z/2); right.receiveShadow = true; kitchen.add(right);
+  const frontW = new THREE.Mesh(addPlane(b.x, b.h), MAT.wall);            // dinding depan (di belakang kamera)
+  frontW.rotation.y = Math.PI; frontW.position.set(b.x/2, b.h/2, b.z+0.0005); kitchen.add(frontW);
+}
+
+function buildKitchen(){
+  disposeKitchen();
+  kitchen = new THREE.Group(); kitchen.userData.strips = []; scene.add(kitchen);
+  addRoom();
+  for(let i=0;i<P.runs.length;i++){
+    try { buildRun(P.runs[i], i); }
+    catch(e){ console.error('[buildRun] error:', e, P.runs[i]); }
+  }
+  kitchen.traverse(o => { if(o.isMesh) o.frustumCulled = false; });
+  applyStrip();
+}
+
+const LIGHT_PRESETS = {
+  pagi:{label:'Pagi',bg:0xcfd7e2,wall:0xeae7e2,floor:0xc4bcae,hemi:{sky:0xc4d8ff,ground:0xa89c8c,i:0.50},amb:0.12,sun:{c:0xffe7c4,i:2.0,p:[-5,4.5,5]},fill:{c:0xd8e6ff,i:0.55,p:[4.5,3.5,4.5]},strip:0.45,env:0.55,exp:1.00},
+  siang:{label:'Siang',bg:0xdfe6ee,wall:0xf1efeb,floor:0xcdc5b7,hemi:{sky:0xdcecff,ground:0xb8ae9e,i:0.85},amb:0.20,sun:{c:0xfff6e8,i:3.2,p:[-2.5,7.5,4]},fill:{c:0xffffff,i:0.70,p:[4,4,4]},strip:0.25,env:0.80,exp:0.95},
+  sore:{label:'Sore',bg:0xd8b48c,wall:0xe8d9c4,floor:0xbfa487,hemi:{sky:0xffd2a0,ground:0x8a6f56,i:0.55},amb:0.15,sun:{c:0xffab5e,i:2.8,p:[-6.5,2.6,2.2]},fill:{c:0x9fc0ff,i:0.35,p:[4.5,3.5,4.5]},strip:0.70,env:0.60,exp:1.05},
+  malam:{label:'Malam',bg:0x0e1116,wall:0x5d5a55,floor:0x3c3934,hemi:{sky:0x2b3a55,ground:0x1a1714,i:0.18},amb:0.05,sun:{c:0x5f7fb5,i:0.25,p:[-4,5,4]},fill:{c:0x2b3550,i:0.15,p:[4,3,4]},strip:2.60,env:0.12,exp:1.25},
+  studio:{label:'Studio',bg:0x9aa0a6,wall:0xdcdcdc,floor:0xb9b9b9,hemi:{sky:0xffffff,ground:0x888888,i:0.70},amb:0.25,sun:{c:0xffffff,i:2.6,p:[-4,6,5]},fill:{c:0xffffff,i:1.10,p:[5,3,3]},strip:0.90,env:1.00,exp:1.00}
+};
+const L={hemi:new THREE.HemisphereLight(0xffffff,0x444444,0.5),amb:new THREE.AmbientLight(0xffffff,0.15),sun:new THREE.DirectionalLight(0xffffff,2.0),fill:new THREE.DirectionalLight(0xffffff,0.5)};
+L.sun.castShadow=true;L.sun.shadow.mapSize.set(2048,2048);L.sun.shadow.bias=-0.0006;L.sun.shadow.normalBias=0.022;L.sun.shadow.camera.near=0.5;L.sun.shadow.camera.far=26;
+scene.add(L.hemi,L.amb,L.sun,L.sun.target,L.fill);
+let currentLight='pagi',lightMultiplier=1.0;
+
+function applyStrip(){
+  const p = LIGHT_PRESETS[currentLight];
+  if(!p) return;
+  MAT.led.emissiveIntensity = p.strip > 0.05 ? Math.min(2.5, p.strip*1.2) : 0;
+  if(kitchen && kitchen.userData.strips) for(const rl of kitchen.userData.strips) rl.intensity = p.strip * 4 * lightMultiplier;
+}
+function applyLighting(key){
+  currentLight = key; const p = LIGHT_PRESETS[key];
+  const b = getRoomBounds();
+  const cX = b.x/2, cZ = b.z/2;
+  scene.background = new THREE.Color(p.bg); MAT.wall.color.set(p.wall);
+  if(!texState.floor.map) MAT.floor.color.set(p.floor);
+  renderer.toneMappingExposure = p.exp;
+  L.hemi.color.set(p.hemi.sky); L.hemi.groundColor.set(p.hemi.ground); L.hemi.intensity = p.hemi.i*lightMultiplier;
+  L.amb.intensity = p.amb*lightMultiplier;
+  L.sun.color.set(p.sun.c); L.sun.intensity = p.sun.i*lightMultiplier;
+  L.sun.position.set(cX+p.sun.p[0], p.sun.p[1], cZ+p.sun.p[2]);
+  L.sun.target.position.set(cX, 0.9, cZ); L.sun.target.updateMatrixWorld();
+  const sc = L.sun.shadow.camera, span = Math.max(3.5, Math.max(b.x, b.z)*0.9);
+  sc.left = -span; sc.right = span; sc.top = span; sc.bottom = -span; sc.updateProjectionMatrix();
+  L.fill.color.set(p.fill.c); L.fill.intensity = p.fill.i*lightMultiplier;
+  L.fill.position.set(cX+p.fill.p[0], p.fill.p[1], cZ+p.fill.p[2]);
+  L.fill.target.position.set(cX, 0.9, cZ); L.fill.target.updateMatrixWorld();
+  applyStrip();
+  MAT.counter.envMapIntensity = p.env; MAT.backsplash.envMapIntensity = p.env;
+  MAT.hplUpper.envMapIntensity = p.env*0.5; MAT.hplLower.envMapIntensity = p.env*0.5;
+  MAT.steel.envMapIntensity = p.env*1.2; MAT.glass.envMapIntensity = p.env*1.1; MAT.handle.envMapIntensity = p.env*1.0;
+  MAT.glassDoor.envMapIntensity = p.env*1.4;
+  $('#bLight').textContent = p.label;
+}
+
+const sketchImg=$('#sketchImg'),sketchOv=$('#sketchOverlay');
+let currentSketchFile=null,currentSketchBase64=null,currentSketchMime=null;
+const savedKey=localStorage.getItem('gemini_api_key');
+if(savedKey)$('#apiKey').value=savedKey;
+function updateAnalyzeButton(){const b=$('#btnAnalyze');if(b)b.disabled=!($('#apiKey').value.trim().length>20&&currentSketchFile);}
+updateAnalyzeButton();
+$('#apiKey').addEventListener('input',e=>{const k=e.target.value.trim();if(k)localStorage.setItem('gemini_api_key',k);else localStorage.removeItem('gemini_api_key');updateAnalyzeButton();});
+$('#btnShowKey').addEventListener('click',()=>{const el=$('#apiKey');el.type=el.type==='password'?'text':'password';});
+$('#btnClearKey').addEventListener('click',()=>{$('#apiKey').value='';localStorage.removeItem('gemini_api_key');updateAnalyzeButton();});
+$('#sketchFile').addEventListener('change',async e=>{const f=e.target.files&&e.target.files[0];if(!f)return;currentSketchFile=f;currentSketchMime=f.type||'image/jpeg';const url=URL.createObjectURL(f);sketchImg.src=url;sketchImg.onload=()=>URL.revokeObjectURL(url);$('#sketchLbl').classList.add('has');$('#sketchTxt').textContent='✔ '+f.name.slice(0,28);currentSketchBase64=await fileToBase64(f);updateAnalyzeButton();hideAiStatus();});
+$('#sketchShow').addEventListener('change',e=>{sketchOv.style.display=e.target.checked?'grid':'none';});
+$('#sketchOpacity').addEventListener('input',e=>{const v=+e.target.value;sketchImg.style.opacity=v/100;$('#sketchOpacityV').textContent=v+'%';});
+function setAiStatus(kind,msg){const el=$('#aiStatus');el.className='status '+kind;el.innerHTML=msg;}
+function hideAiStatus(){$('#aiStatus').className='status';}
+let aiLayoutResult=null;
+function renderAiResult(data){
+  const el=$('#aiResultBody');const pretty=JSON.stringify(data,null,2);
+  const colored=pretty.replace(/"([^"]+)":/g,'<span class="k">"$1"</span>:').replace(/: "([^"]+)"/g,': <span class="s">"$1"</span>').replace(/: (\d+(\.\d+)?)/g,': <span class="n">$1</span>');
+  el.innerHTML=colored;$('#aiResult').style.display='block';
+}
+
+const GEMINI_FALLBACK = ['gemini-2.5-pro','gemini-2.5-flash','gemini-2.0-flash','gemini-flash-latest'];
+let GEMINI_MODELS=[...GEMINI_FALLBACK];
+function scoreGeminiModel(name){
+  const n=String(name||'').toLowerCase();
+  if(!n.startsWith('gemini'))return -1;
+  if(n.includes('embedding')||n.includes('aqa')||n.includes('image'))return -1;
+  if(n.includes('deprecated'))return -1;
+  let s=0;
+  const v=n.match(/gemini-(\d+)(?:\.(\d+))?/);
+  if(v)s+=(parseInt(v[1],10)*100+parseInt(v[2]||'0',10))*10;
+  if(n.includes('pro'))s+=60; else if(n.includes('flash'))s+=35; else if(n.includes('lite'))s+=15;
+  if(n.includes('thinking'))s+=5;
+  if(n.includes('preview')||n.includes('exp'))s-=8;
+  return s;
+}
+async function discoverGeminiModels(apiKey){
+  const url=`https://generativelanguage.googleapis.com/v1beta/models?key=${encodeURIComponent(apiKey)}&pageSize=1000`;
+  const res=await fetch(url,{method:'GET'});
+  if(!res.ok){let d='';try{const e=await res.json();d=e.error?.message||JSON.stringify(e);}catch(_){d=await res.text();}throw new Error(`HTTP ${res.status}: ${d.slice(0,220)}`);}
+  const data=await res.json();
+  const list=(data.models||[])
+    .filter(m=>Array.isArray(m.supportedGenerationMethods)&&m.supportedGenerationMethods.includes('generateContent'))
+    .map(m=>({name:String(m.name||'').replace(/^models\//,''),score:scoreGeminiModel(m.name)}))
+    .filter(m=>m.score>0).sort((a,b)=>b.score-a.score);
+  if(!list.length)throw new Error('Tidak ada model Gemini dengan generateContent.');
+  GEMINI_MODELS=list.map(m=>m.name);
+  return GEMINI_MODELS;
+}
+
+const GEMINI_PROMPT = `Anda adalah DRAFTER KITCHEN SET profesional. Baca gambar SKETSA/blueprint kitchen set dan ubah menjadi JSON v18.2 yang PERSIS sesuai gambar. Jangan menambah atau mengurangi kabinet.
+
+LANGKAH MEMBACA (ikuti berurutan):
+1. LAYOUT: "L" bila ada dua deret kabinet yang membentuk siku, "linear" bila satu garis lurus.
+2. RUN 1 = deret kabinet yang menempel di dinding belakang (deret panjang horizontal di gambar). RUN 2 = kaki L (hanya untuk layout L).
+3. Untuk setiap run, baca kabinet BAWAH lalu kabinet ATAS dari KIRI KE KANAN persis sesuai urutan di gambar. Satu kotak/modul di gambar = satu objek kabinet.
+4. width_cm = angka label dimensi dari gambar. Jangan mengarang; bila tidak ada label, perkirakan dari proporsi gambar. Jumlah lebar kabinet bawah dan atas pada run yang sama harus mendekati satu sama lain.
+5. Tinggi: bila ada label tinggi, pakai. base_total_cm = tinggi dari lantai sampai permukaan top table; upper_total_cm = tinggi kabinet atas; gap_cm = jarak top table ke dasar kabinet atas (default 60). Bila tidak ada label: base 84, upper 70, gap 60, counter_thickness 4, kick_cm 10 (sepatu/kaki kabinet bawah), plint_cm 10 (penahan cipratan di atas top table), backsplash_cm = gap_cm (dinding antara top table dan kabinet atas).
+
+KOORDINAT:
+- Run 1: origin_cm [0,0], axis "+x", vDir "+z", depth_cm 60, upper_depth_cm 34.
+- Run 2 (hanya L): axis "+z", origin_cm [0,0] (dihitung otomatis oleh aplikasi), vDir "-x" bila kaki L ada di sisi KANAN, vDir "+x" bila di sisi KIRI. Urutkan kabinet run 2 dari yang paling dekat sudut ke ujung bebas.
+- SUDUT L: kabinet bawah paling ujung run 1 (di sisi pertemuan dengan kaki L) adalah kabinet sudut: front.type "corner", lebar = kedalaman kaki L (sekitar 60). Kabinet sudut HANYA ditulis di run 1, jangan diulang di run 2.
+
+TIPE FRONT (front.type): open (rak terbuka), single_door, double_door, glass_door, drawers_2, drawers_3, drawers_4 (jumlah laci = jumlah panel laci yang terlihat), composite (laci + pintu, isi front.sections), oven, hood, microwave, corner.
+- handle: {"orientation":"vertical"|"horizontal","side":"left"|"right"|"center"}. Laci: horizontal + center. Pintu: vertical, side = sisi gagang.
+
+PERALATAN (appliance) — PENTING, jangan tertukar:
+- KOMPOR TANAM (hob/kompor gas/listrik yang menyatu dengan top table): tulis appliance {"type":"cooktop","width_cm":58} pada kabinet BAWAH tepat di bawah kompor. front TETAP mengikuti badan kabinet di bawahnya (laci -> drawers_2/3/4, pintu -> single_door). JANGAN memakai oven_cooktop atau front "oven" kecuali di gambar jelas terlihat kotak OVEN TANAM berpintu kaca.
+- SINK/bak cuci: appliance {"type":"sink","width_cm":80-120,"bowls":1|2,"drainboard":"left"|"right"|"none"}; front kabinet di bawahnya single_door atau double_door.
+- HOOD/penghisap asap: kabinet ATAS dengan front.type "hood" dan appliance {"type":"cooker_hood","width_cm":60}, diletakkan tepat di atas kompor.
+- MICROWAVE: bila ada microwave tergambar menggantung di bawah kotak kabinet atas, tulis pada kabinet ATAS tersebut front.type "microwave" dan appliance {"type":"microwave","height_cm":21}. width_cm = lebar modul. height_cm = tinggi label total modul (mis. 81) dikurangi tinggi kabinet atas (60). upper_total_cm tetap tinggi kabinet atas biasa (60).
+- Sink dan kompor hanya di kabinet bawah; hood dan microwave hanya di kabinet atas.
+
+CEK AKHIR sebelum menjawab: urutan kiri-ke-kanan benar; jumlah kabinet sama dengan jumlah modul di gambar; kompor tanam bukan oven; sink di posisi yang benar; kabinet sudut ada di ujung run 1.
+
+Balas HANYA JSON valid sesuai schema.`;
+
+const FRONT_SCHEMA = { type:'object', properties:{
+  type:{type:'string', enum:['open','single_door','double_door','glass_door','drawers_2','drawers_3','drawers_4','composite','oven','hood','microwave','corner']},
+  handle:{type:'object', properties:{ orientation:{type:'string', enum:['vertical','horizontal']}, side:{type:'string', enum:['left','right','center']} }},
+  sections:{type:'array', items:{type:'object', properties:{ type:{type:'string', enum:['drawer','door']}, ratio:{type:'number'} }}}
+}, required:['type'] };
+const APPLIANCE_SCHEMA = { type:'object', properties:{
+  type:{type:'string', enum:['sink','cooktop','oven','cooker_hood','microwave']},
+  width_cm:{type:'number'}, height_cm:{type:'number'}, bowls:{type:'number'}, drainboard:{type:'string', enum:['left','right','none']}
+}, required:['type'] };
+const CABINET_SCHEMA = { type:'object', properties:{
+  id:{type:'string'}, width_cm:{type:'number'}, front:FRONT_SCHEMA, shelves:{type:'number'}, appliance:APPLIANCE_SCHEMA
+}, required:['width_cm','front'] };
+const GEMINI_SCHEMA_V17 = {
+  type:'object',
+  properties: {
+    layout:{type:'string', enum:['linear','L']},
+    heights:{type:'object', properties:{ base_total_cm:{type:'number'}, gap_cm:{type:'number'}, upper_total_cm:{type:'number'}, counter_thickness_cm:{type:'number'}, kick_cm:{type:'number'}, plint_cm:{type:'number'}, backsplash_cm:{type:'number'} }},
+    runs:{ type:'array', minItems:1, maxItems:2, items:{ type:'object', properties:{
+      id:{type:'string'}, origin_cm:{type:'array', items:{type:'number'}},
+      axis:{type:'string', enum:['+x','-x','+z','-z']}, vDir:{type:'string', enum:['+x','-x','+z','-z']},
+      depth_cm:{type:'number'}, upper_depth_cm:{type:'number'},
+      cabinets_lower:{type:'array', items:CABINET_SCHEMA},
+      cabinets_upper:{type:'array', items:CABINET_SCHEMA}
+    }, required:['id','origin_cm','axis','vDir','cabinets_lower','cabinets_upper']}}
+  }, required:['layout','heights','runs']
+};
+
+async function callGeminiModel(modelName,apiKey){
+  const url=`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${encodeURIComponent(apiKey)}`;
+  const body={ contents:[{ parts:[ {text:GEMINI_PROMPT}, {inline_data:{mime_type:currentSketchMime, data:currentSketchBase64}} ] }],
+    generationConfig:{ temperature:0.05, responseMimeType:'application/json', responseSchema:GEMINI_SCHEMA_V17 } };
+  const res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!res.ok){let d='';try{const e=await res.json();d=e.error?.message||JSON.stringify(e);}catch(_){d=await res.text();}const e=new Error(`HTTP ${res.status}: ${d.slice(0,300)}`);e.status=res.status;throw e;}
+  const j=await res.json();
+  const text=j.candidates?.[0]?.content?.parts?.[0]?.text;
+  if(!text)throw new Error('Respons Gemini kosong.');
+  try{return JSON.parse(text);}catch(e){throw new Error('JSON tidak valid: '+e.message);}
+}
+
+async function analyzeSketchWithGemini(){
+  const apiKey=$('#apiKey').value.trim();
+  if(!apiKey){setAiStatus('err','API key belum diisi.');return;}
+  if(!currentSketchBase64){setAiStatus('err','Sketsa belum di-upload.');return;}
+  $('#spinner').classList.add('on');$('#btnAnalyze').disabled=true;
+  try{ await discoverGeminiModels(apiKey); }
+  catch(err){ console.warn('[Gemini] discover gagal:', err.message); GEMINI_MODELS=[...GEMINI_FALLBACK]; }
+  let lastError=null,success=null;
+  for(let i=0;i<GEMINI_MODELS.length;i++){
+    const model=GEMINI_MODELS[i];
+    setAiStatus('loading',`⏳ Analisa v17 dengan <b>${model}</b>… (${i+1}/${GEMINI_MODELS.length})`);
+    try{
+      const raw=await callGeminiModel(model,apiKey);
+      const parsed=normalizeLayout(raw);
+      success={model, data:parsed};
+      break;
+    }catch(err){
+      lastError=err;
+      console.warn(`[Gemini] ${model} gagal:`, err.message);
+      if(err.status===401||err.status===403) break;
+    }
+  }
+  $('#spinner').classList.remove('on');updateAnalyzeButton();
+  if(!success){ const msg=lastError?String(lastError.message||lastError):'Semua model gagal.'; setAiStatus('err',`✗ Gagal: ${msg.slice(0,420)}`); return; }
+  aiLayoutResult=success.data;renderAiResult(aiLayoutResult);
+  const totalCabs = success.data.runs.reduce((a,r)=>a + (r.cabinets_lower||[]).length + (r.cabinets_upper||[]).length, 0);
+  setAiStatus('ok',`✓ Berhasil via <b>${success.model}</b>. ${success.data.layout.toUpperCase()}, ${success.data.runs.length} run, ${totalCabs} kabinet.`);
+}
+
+function applyLayout(data){
+  if(!data) return false;
+  try{
+    P.layout = data.layout; P.runs = data.runs; P.legLeft = !!data.legLeft; P.extent = data.extent || {x:2.7,z:0.6};
+    P.H = clamp(data.heights.base_total_cm/100, 0.7, 1.0);
+    P.counterT = clamp(data.heights.counter_thickness_cm/100, 0.02, 0.08);
+    P.kickH = clamp(data.heights.kick_cm/100, 0.05, 0.2);
+    P.plintH = clamp(data.heights.plint_cm/100, 0.03, 0.3);
+    P.backH = clamp(data.heights.backsplash_cm/100, 0.05, 1.0);
+    P.upBottom = P.H + clamp(data.heights.gap_cm/100, 0.4, 0.9);
+    P.upTop = Math.min(ROOM_H - 0.05, P.upBottom + clamp(data.heights.upper_total_cm/100, 0.4, 1.0));
+    $('#backsplashH').value = Math.round(P.backH*100); $('#backsplashHV').textContent = Math.round(P.backH*100)+' cm';
+    $('#plintH').value = Math.round(P.plintH*100); $('#plintHV').textContent = Math.round(P.plintH*100)+' cm';
+    $('#kickH').value = Math.round(P.kickH*100); $('#kickHV').textContent = Math.round(P.kickH*100)+' cm';
+    $('#bLayout').textContent = P.layout === 'L' ? 'L-Shape' : 'Linear';
+    buildKitchen();
+    updateFingerprint();
+    applyLighting(currentLight);
+    fitCamera();
+    return true;
+  } catch(err){ console.error('[applyLayout] ERROR:', err); return false; }
+}
+
+$('#btnAnalyze').addEventListener('click', analyzeSketchWithGemini);
+$('#btnApplyAI').addEventListener('click', ()=>{ if(!aiLayoutResult) return; const ok = applyLayout(aiLayoutResult); if(ok) setAiStatus('ok','✓ Model diterapkan.'); else setAiStatus('err','✗ Gagal menerapkan.'); });
+$('#btnEditAI').addEventListener('click', ()=>{
+  if(!aiLayoutResult)return;
+  const txt=prompt('Edit JSON v17:', JSON.stringify(aiLayoutResult, null, 2));
+  if(!txt)return;
+  try{ const parsed=JSON.parse(txt); aiLayoutResult=normalizeLayout(parsed); renderAiResult(aiLayoutResult); setAiStatus('ok','✓ JSON diperbarui.'); }
+  catch(e){ setAiStatus('err','✗ JSON tidak valid: '+e.message); }
+});
+
+const MANUAL_EXAMPLE = {
+  layout:"L",
+  heights:{ base_total_cm:74, gap_cm:60, upper_total_cm:60, counter_thickness_cm:4, kick_cm:10, plint_cm:10, backsplash_cm:60 },
+  runs:[
+    {
+      id:"back", origin_cm:[0, 0], axis:"+x", vDir:"+z",
+      depth_cm: 60, upper_depth_cm: 34,
+      cabinets_lower:[
+        { id:"B01", width_cm: 60, front:{ type:"drawers_4" } },
+        { id:"B02", width_cm: 45, front:{ type:"single_door", handle:{ orientation:"vertical", side:"left" } } },
+        { id:"B03", width_cm: 60, front:{ type:"drawers_2" }, appliance:{ type:"cooktop", width_cm: 58 } },
+        { id:"B04", width_cm: 45, front:{ type:"single_door", handle:{ orientation:"vertical", side:"right" } } },
+        { id:"B05", width_cm: 60, front:{ type:"corner" } }
+      ],
+      cabinets_upper:[
+        { id:"U01", width_cm: 60, front:{ type:"microwave" }, appliance:{ type:"microwave", height_cm: 21 } },
+        { id:"U02", width_cm: 45, front:{ type:"open" }, shelves: 1 },
+        { id:"U03", width_cm: 62, front:{ type:"hood" }, appliance:{ type:"cooker_hood", width_cm: 60 } },
+        { id:"U04", width_cm: 45, front:{ type:"open" }, shelves: 1 },
+        { id:"U05", width_cm: 60, front:{ type:"single_door", handle:{ orientation:"vertical", side:"left" } } }
+      ]
+    },
+    {
+      id:"right", origin_cm:[0, 0], axis:"+z", vDir:"-x",
+      depth_cm: 60, upper_depth_cm: 34,
+      cabinets_lower:[
+        { id:"B-R01", width_cm: 103, front:{ type:"double_door" }, appliance:{ type:"sink", width_cm: 95, bowls: 2, drainboard:"left" } }
+      ],
+      cabinets_upper:[]
+    }
+  ]
+};
+
+function setManualStatus(kind, msg){ const el = $('#manualStatus'); el.className = 'status ' + kind; el.innerHTML = msg; }
+$('#btnBuildJson').addEventListener('click', ()=>{
+  let raw = $('#manualJson').value.trim();
+  raw = raw.replace(/^```[a-zA-Z]*\s*/,'').replace(/\s*```\s*$/,'').trim(); // buang pagar ```json dari hasil Gemini
+  if(!raw){ setManualStatus('err','✗ Textarea kosong.'); return; }
+  let parsed;
+  try{ parsed = JSON.parse(raw); } catch(e){ setManualStatus('err','✗ JSON tidak valid: '+e.message); return; }
+  const norm = normalizeLayout(parsed);
+  aiLayoutResult = norm; renderAiResult(norm);
+  const ok = applyLayout(norm);
+  if(ok){ const totalCabs = norm.runs.reduce((a,r)=>a + (r.cabinets_lower||[]).length + (r.cabinets_upper||[]).length, 0);
+    setManualStatus('ok',`✓ Build sukses. ${norm.layout.toUpperCase()}, ${norm.runs.length} run, ${totalCabs} kabinet.`); }
+  else setManualStatus('err','✗ Build gagal — cek console.');
+});
+
+function loadTextureFromFile(f,cb){ const url=URL.createObjectURL(f);const img=new Image();
+  img.onload=()=>{const t=new THREE.Texture(img);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=MAXA;t.needsUpdate=true;URL.revokeObjectURL(url);cb(t);};
+  img.onerror=()=>URL.revokeObjectURL(url);img.src=url; }
+function bindStoneSlot(fileSel,lblSel,txtSel,presetSel,tileSel,tileV,tstate,onApply){
+  const fEl=$(fileSel),lEl=$(lblSel),tEl=$(txtSel),pEl=$(presetSel),tiEl=$(tileSel),tvEl=$(tileV);
+  if(fEl) fEl.addEventListener('change',e=>{ const f=e.target.files&&e.target.files[0];if(!f)return;
+    loadTextureFromFile(f,t=>{tstate.map=t;applyMaps();
+      if(lEl)lEl.classList.add('has'); if(tEl)tEl.textContent='✔ '+f.name.slice(0,24);
+      onApply && onApply('Upload');}); });
+  if(pEl) pEl.addEventListener('change',e=>{ const p=STONE_PRESETS[e.target.value];if(!p)return;
+    tstate.map=buildPresetTexture(p);applyMaps();
+    if(lEl)lEl.classList.remove('has'); if(tEl)tEl.textContent='Upload marmer / granit…';
+    onApply && onApply(p.label); });
+  if(tiEl&&tvEl) tiEl.addEventListener('input',e=>{tstate.tile=+e.target.value;tvEl.textContent=(+e.target.value).toFixed(1);applyMaps();});
+}
+function bindHPLSlot(fileSel,lblSel,txtSel,presetSel,tileSel,tileV,tstate,onApply){
+  const fEl=$(fileSel),lEl=$(lblSel),tEl=$(txtSel),pEl=$(presetSel),tiEl=$(tileSel),tvEl=$(tileV);
+  if(fEl) fEl.addEventListener('change',e=>{ const f=e.target.files&&e.target.files[0];if(!f)return;
+    loadTextureFromFile(f,t=>{tstate.map=t;applyMaps();
+      if(lEl)lEl.classList.add('has'); if(tEl)tEl.textContent='✔ '+f.name.slice(0,24);
+      onApply && onApply('Upload');}); });
+  if(pEl) pEl.addEventListener('change',e=>{ const p=HPL_PRESETS[e.target.value];if(!p)return;
+    tstate.map=makeHPLTexture(p.tex);applyMaps();
+    if(lEl)lEl.classList.remove('has'); if(tEl)tEl.textContent='Upload foto HPL…';
+    onApply && onApply(p.label); });
+  if(tiEl&&tvEl) tiEl.addEventListener('input',e=>{tstate.tile=+e.target.value;tvEl.textContent=(+e.target.value).toFixed(1);applyMaps();});
+}
+bindStoneSlot('#counterFile','#counterLbl','#counterTxt','#counterPreset','#counterTile','#counterTileV',texState.counter,label=>$('#bCounter').textContent=label);
+bindStoneSlot('#backsplashFile','#backsplashLbl','#backsplashTxt','#backsplashPreset','#backsplashTile','#backsplashTileV',texState.backsplash);
+bindStoneSlot('#plintFile','#plintLbl','#plintTxt','#plintPreset','#plintTile','#plintTileV',texState.plint);
+bindStoneSlot('#floorFile','#floorLbl','#floorTxt','#floorPreset','#floorTile','#floorTileV',texState.floor);
+bindHPLSlot('#hplUpperFile','#hplUpperLbl','#hplUpperTxt','#hplUpperPreset','#hplUpperTile','#hplUpperTileV',texState.hplUpper,label=>$('#bHplUpper').textContent=label);
+bindHPLSlot('#hplLowerFile','#hplLowerLbl','#hplLowerTxt','#hplLowerPreset','#hplLowerTile','#hplLowerTileV',texState.hplLower,label=>$('#bHplLower').textContent=label);
+
+$('#counterRough').addEventListener('input',e=>{const v=+e.target.value/100;MAT.counter.roughness=v;MAT.counter.metalness=v<0.15?0.05:0.02;$('#counterRoughV').textContent=v<0.15?'Glossy':(v<0.4?'Semi':'Matte');});
+$('#edgeProfile').addEventListener('change',e=>{P.edgeProfile=e.target.value;$('#bEdge').textContent=e.target.value.charAt(0).toUpperCase()+e.target.value.slice(1);buildKitchen();updateFingerprint();});
+$('#backsplashH').addEventListener('input',e=>{P.backH=+e.target.value/100;$('#backsplashHV').textContent=e.target.value+' cm';buildKitchen();});
+$('#plintH').addEventListener('input',e=>{P.plintH=+e.target.value/100;$('#plintHV').textContent=e.target.value+' cm';buildKitchen();});
+$('#kickH').addEventListener('input',e=>{P.kickH=+e.target.value/100;$('#kickHV').textContent=e.target.value+' cm';buildKitchen();});
+$('#sinkOffset').addEventListener('input',e=>{P.sinkOffset=+e.target.value/100;$('#sinkOffsetV').textContent=e.target.value+' cm';buildKitchen();});
+$('#cooktopOffset').addEventListener('input',e=>{P.cooktopOffset=+e.target.value/100;$('#cooktopOffsetV').textContent=e.target.value+' cm';buildKitchen();});
+$('#lightPreset').addEventListener('change',e=>applyLighting(e.target.value));
+$('#backsplashOn').addEventListener('change',e=>{P.backsplashOn=e.target.checked;buildKitchen();});
+$('#plintOn').addEventListener('change',e=>{P.plintOn=e.target.checked;buildKitchen();});
+$('#lightMul').addEventListener('input',e=>{lightMultiplier=+e.target.value/100;$('#lightMulV').textContent=e.target.value+'%';applyLighting(currentLight);});
+
+function updateFingerprint(){$('#fpVal').textContent=fingerprint();}
+
+/* ============ v18.2: Kamera dibatasi di dalam ruangan ============ */
+function getRoomBounds() {
+  const ex = P.extent || { x:2.7, z:0.6 };
+  const nearZ = Math.max(ex.z + 1.9, 3.4);
+  return { x: Math.max(ex.x, 1.8), z: nearZ + 1.8, h: ROOM_H, nearZ };
+}
+
+function panCamera(dx, dy) {
+  const camDir = new THREE.Vector3();
+  camera.getWorldDirection(camDir);
+  const camRight = new THREE.Vector3().crossVectors(camera.up, camDir).normalize();
+  const camUp = new THREE.Vector3().crossVectors(camDir, camRight).normalize();
+  const moveVec = new THREE.Vector3().addScaledVector(camRight, dx).addScaledVector(camUp, dy);
+  camera.position.add(moveVec);
+  controls.target.add(moveVec);
+}
+
+function clampCamera() {
+  const b = getRoomBounds(), m = 0.18;
+  camera.position.set(
+    clamp(camera.position.x, m, b.x - m),
+    clamp(camera.position.y, 0.25, b.h - 0.15),
+    clamp(camera.position.z, m, b.z - m));
+  controls.target.set(
+    clamp(controls.target.x, 0, b.x),
+    clamp(controls.target.y, 0.1, b.h - 0.2),
+    clamp(controls.target.z, 0, b.z));
+}
+
+$('#camUp').addEventListener('click', () => panCamera(0, 0.2));
+$('#camDown').addEventListener('click', () => panCamera(0, -0.2));
+$('#camLeft').addEventListener('click', () => panCamera(-0.2, 0));
+$('#camRight').addEventListener('click', () => panCamera(0.2, 0));
+
+function fitCamera(){
+  const b = getRoomBounds(), ex = P.extent || { x:2.7, z:0.6 };
+  controls.maxDistance = Math.hypot(b.x, b.z);
+  const isL = P.layout === 'L';
+  const tx = isL ? (P.legLeft ? ex.x*0.55 : ex.x*0.45) : ex.x*0.5;
+  const tz = isL ? Math.min(ex.z*0.45, 1.0) : 0.3;
+  const cx = isL ? (P.legLeft ? ex.x*0.8 : ex.x*0.2) : ex.x*0.5;
+  camera.position.set(cx, 1.65, b.nearZ - 0.35);
+  controls.target.set(tx, 1.0, tz);
+  clampCamera(); controls.update();
+}
+$('#btnFit').addEventListener('click', fitCamera);
+
+/* Tombol Top Table: kamera rendah di dalam ruangan, permukaan top table terlihat jelas */
+$('#btnTopView').addEventListener('click', ()=>{
+  const b = getRoomBounds(), ex = P.extent || { x:2.7, z:0.6 };
+  camera.position.set(ex.x*0.5, 1.55, Math.min(b.z - 0.3, ex.z + 1.2));
+  controls.target.set(ex.x*0.5, P.H, Math.min(ex.z*0.4, 0.8));
+  clampCamera(); controls.update();
+});
+
+$('#btnReset').addEventListener('click', ()=>{
+  aiLayoutResult = null; $('#aiResult').style.display = 'none'; hideAiStatus();
+  $('#manualStatus').className = 'status';
+  texState.counter.map=makeStoneTexture(STONE_PRESETS['marmer-putih'].tex);
+  texState.backsplash.map=makeStoneTexture(STONE_PRESETS['marmer-putih'].tex);
+  texState.plint.map=makeStoneTexture(STONE_PRESETS['marmer-putih'].tex);
+  texState.floor.map=makeTileTexture(STONE_PRESETS['keramik-putih'].tex);
+  texState.hplUpper.map=makeHPLTexture(HPL_PRESETS['putih'].tex);
+  texState.hplLower.map=makeHPLTexture(HPL_PRESETS['walnut'].tex);
+  applyMaps();
+  P.sinkOffset=0; P.cooktopOffset=0; P.edgeProfile='bevel';
+  P.backsplashOn=true; P.plintOn=true; $('#backsplashOn').checked=true; $('#plintOn').checked=true;
+  $('#sinkOffset').value=0; $('#sinkOffsetV').textContent='0 cm';
+  $('#cooktopOffset').value=0; $('#cooktopOffsetV').textContent='0 cm';
+  $('#edgeProfile').value='bevel'; $('#bEdge').textContent='Bevel';
+  lightMultiplier=1.0; $('#lightMul').value=100; $('#lightMulV').textContent='100%';
+  $('#lightPreset').value='pagi'; currentLight='pagi';
+  $('#manualJson').value = JSON.stringify(MANUAL_EXAMPLE, null, 2);
+  applyLayout(normalizeLayout(MANUAL_EXAMPLE));
+});
+
+$('#btnShot').addEventListener('click',()=>{
+  renderer.render(scene,camera);
+  const a=document.createElement('a');
+  a.href=renderer.domElement.toDataURL('image/png');
+  a.download='kitchen-set-'+fingerprint()+'.png';a.click();
+});
+
+function resize(){const w=stageEl.clientWidth||1,h=stageEl.clientHeight||1;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+new ResizeObserver(resize).observe(stageEl);
+window.addEventListener('resize',resize);
+
+let __rc=0;
+function animate(){
+  requestAnimationFrame(animate);
+  try{
+    controls.update();
+    clampCamera();
+    renderer.render(scene,camera);
+    __rc++;
+    if(__rc===1) console.log('[animate] render loop started');
+  } catch(err){ if(__rc<3) console.error('[animate] error:',err); }
+}
+
+function init(){
+  console.log('[init] v18.2 starting…');
+  texState.counter.map=makeStoneTexture(STONE_PRESETS['marmer-putih'].tex);
+  texState.backsplash.map=makeStoneTexture(STONE_PRESETS['marmer-putih'].tex);
+  texState.plint.map=makeStoneTexture(STONE_PRESETS['marmer-putih'].tex);
+  texState.floor.map=makeTileTexture(STONE_PRESETS['keramik-putih'].tex);
+  texState.hplUpper.map=makeHPLTexture(HPL_PRESETS['putih'].tex);
+  texState.hplLower.map=makeHPLTexture(HPL_PRESETS['walnut'].tex);
+  applyMaps();
+  $('#counterRoughV').textContent='Glossy';
+  $('#bCounter').textContent=STONE_PRESETS['marmer-putih'].label;
+  $('#bHplUpper').textContent=HPL_PRESETS['putih'].label;
+  $('#bHplLower').textContent=HPL_PRESETS['walnut'].label;
+  $('#bEdge').textContent='Bevel';
+  $('#manualJson').value = JSON.stringify(MANUAL_EXAMPLE, null, 2);
+  resize();
+  applyLayout(normalizeLayout(MANUAL_EXAMPLE));
+  animate();
+  console.log('[init] done. Runs:', P.runs.length);
+}
+try{ init(); } catch(err){ console.error('[init] FATAL:', err); }
+
+/* ============ v18.2: Tutorial pop-up ============ */
+const TUT_STEPS = [
+  { t:'Selamat datang', h:`<h4>RAY FURNITURE &amp; STONE<br><span style="font-size:12px;color:var(--dim);font-weight:500">Kitchen Set Simulator</span></h4>
+    <p>Aplikasi ini mengubah <b>sketsa/blueprint kitchen set</b> menjadi model 3D yang bisa diputar, diganti material, dan disimpan sebagai gambar.</p>
+    <ol><li><b>Buat model</b> dari sketsa (AI) atau dari JSON manual.</li>
+    <li><b>Atur material</b>: top table, backsplash, plint, lantai, HPL kabinet.</li>
+    <li><b>Atur tampilan</b>: sink, kompor, pencahayaan, kamera.</li>
+    <li><b>Simpan render</b> sebagai PNG.</li></ol>
+    <div class="tip">Panel di kiri dikerjakan dari atas ke bawah. Tombol <b>?</b> di pojok kanan atas panel membuka tutorial ini kapan saja.</div>` },
+  { t:'Langkah 1 · Dari sketsa', h:`<h4>1. Analisa sketsa dengan AI</h4>
+    <ol><li>Buat <b>Gemini API Key</b> gratis di <code>aistudio.google.com/apikey</code>, lalu tempel di kolom API Key (disimpan hanya di browser ini).</li>
+    <li>Klik <b>Upload gambar sketsa</b> dan pilih foto/gambar blueprint. Pastikan label ukuran (cm) terbaca jelas.</li>
+    <li>Klik <b>✨ Analisa Sketsa</b> dan tunggu hasilnya.</li>
+    <li>Periksa hasil JSON, lalu klik <b>✓ Terapkan ke Model</b>. Gunakan <b>✎ Edit JSON</b> bila ada yang perlu dikoreksi.</li></ol>
+    <div class="tip">Gunakan <b>overlay sketsa</b> (centang + slider transparansi) untuk membandingkan model 3D dengan gambar aslinya.</div>` },
+  { t:'Langkah 2 · JSON manual', h:`<h4>2. Input JSON manual</h4>
+    <ol><li>Klik <b>📋 Copy MD</b> untuk menyalin prompt, lalu paste di chat Gemini dan lampirkan gambar layout kitchen set.</li>
+    <li>Paste hasil JSON dari Gemini ke kotak teks. Lebar kabinet, tipe front, atau peralatan bisa diubah langsung di situ.</li>
+    <li>Klik <b>🏗 Build dari JSON</b> untuk menampilkan hasilnya.</li></ol>
+    <p><b>Tipe front:</b> <code>open</code>, <code>single_door</code>, <code>double_door</code>, <code>glass_door</code>, <code>drawers_2/3/4</code>, <code>composite</code>, <code>oven</code>, <code>hood</code>, <code>microwave</code>, <code>corner</code>.</p>
+    <p><b>Peralatan:</b> <code>cooktop</code> (kompor tanam), <code>sink</code>, <code>cooker_hood</code>, <code>microwave</code>.</p>
+    <div class="tip">Tombol <b>Copy MD</b> menyalin prompt lengkap untuk Gemini.</div>` },
+  { t:'Material meja', h:`<h4>3. Top table, backsplash &amp; plint</h4>
+    <ul><li><b>Top table:</b> pilih preset marmer/granit atau upload foto bahan sendiri. Atur <b>skala</b> motif dan <b>kilap</b>.</li>
+    <li><b>Edge Profile:</b> Flat, Eased, Bevel, Bullnose, Dupont, Laminated, Ogee, Waterfall.</li>
+    <li><b>Backsplash:</b> dinding antara top table dan kabinet atas. Atur tinggi dengan slider.</li>
+    <li><b>Plint:</b> strip penahan cipratan air di atas top table (default 10 cm).</li>
+    <li>Backsplash dan plint punya centang <b>Aktifkan</b> untuk menyalakan atau mematikannya.</li>
+    <li><b>Lantai:</b> pilih preset atau upload foto lantai.</li></ul>` },
+  { t:'Kabinet, sink & kompor', h:`<h4>4. Kabinet, sink &amp; kompor</h4>
+    <ul><li><b>HPL kabinet bawah dan atas</b> dipilih terpisah (preset atau upload foto). Atur skala motif kayu.</li>
+    <li><b>Tinggi sepatu kabinet</b> (kaki kabinet bawah) diatur dengan slider di bagian HPL.</li>
+    <li><b>Geser Sink</b> dan <b>Geser Kompor</b> menggeser lubang di top table ke kiri/kanan dalam kabinetnya.</li></ul>
+    <div class="tip">Sink dan kompor selalu berada di dalam kabinet bawah yang bersangkutan, jadi geseran dibatasi oleh lebar kabinet itu.</div>` },
+  { t:'Cahaya & kamera', h:`<h4>5. Pencahayaan &amp; kamera</h4>
+    <ul><li><b>Pencahayaan:</b> Pagi, Siang, Sore, Malam, atau Studio, plus slider intensitas. Mode Malam menyalakan lampu LED di bawah kabinet atas.</li>
+    <li><b>Putar:</b> klik kiri + geser.</li>
+    <li><b>Zoom:</b> scroll mouse (atau cubit di layar sentuh).</li>
+    <li><b>Geser kamera:</b> klik kanan + geser, atau pakai tombol panah di pojok kanan atas.</li>
+    <li><b>Fit Kamera</b> mengembalikan sudut pandang awal. <b>📐 Top Table</b> mengarahkan kamera ke permukaan meja.</li></ul>` },
+  { t:'Simpan & reset', h:`<h4>6. Simpan hasil</h4>
+    <ul><li><b>⬇ Simpan Render PNG</b> menyimpan tampilan saat ini sebagai gambar.</li>
+    <li><b>Reset Semua</b> mengembalikan material dan layout ke contoh awal.</li>
+    <li>Tombol <b>?</b> di header membuka tutorial ini lagi.</li></ul>
+    <div class="tip">Sebelum menyimpan, atur sudut kamera dan pencahayaan dulu. Gambar yang tersimpan sama persis dengan yang terlihat di layar.</div>` }
+];
+const tutEl = document.createElement('div');
+tutEl.id = 'tutorial';
+tutEl.innerHTML = `<div class="tut-card" role="dialog" aria-modal="true" aria-label="Tutorial penggunaan">
+  <div class="tut-head"><span class="t" id="tutTitle"></span><button class="tut-x" id="tutClose" aria-label="Tutup">✕</button></div>
+  <div class="tut-body" id="tutBody"></div>
+  <div class="tut-foot"><button id="tutPrev">← Kembali</button><div class="tut-dots" id="tutDots"></div><button id="tutNext" class="primary">Lanjut →</button></div>
+</div>`;
+document.body.appendChild(tutEl);
+let tutIdx = 0;
+function renderTutorial(){
+  const st = TUT_STEPS[tutIdx];
+  $('#tutTitle').textContent = `Tutorial · ${tutIdx+1}/${TUT_STEPS.length} · ${st.t}`;
+  $('#tutBody').innerHTML = st.h; $('#tutBody').scrollTop = 0;
+  $('#tutDots').innerHTML = TUT_STEPS.map((_,i)=>`<span class="${i===tutIdx?'on':''}" data-i="${i}"></span>`).join('');
+  $('#tutPrev').style.visibility = tutIdx === 0 ? 'hidden' : 'visible';
+  $('#tutNext').textContent = tutIdx === TUT_STEPS.length-1 ? 'Mulai ✓' : 'Lanjut →';
+}
+function openTutorial(i=0){ tutIdx = i; renderTutorial(); tutEl.classList.add('on'); }
+function closeTutorial(){ tutEl.classList.remove('on'); try{ localStorage.setItem('rf_tutorial_seen','1'); }catch(_){} }
+$('#btnHelp').addEventListener('click', ()=>openTutorial(0));
+$('#tutClose').addEventListener('click', closeTutorial);
+$('#tutPrev').addEventListener('click', ()=>{ if(tutIdx>0){ tutIdx--; renderTutorial(); } });
+$('#tutNext').addEventListener('click', ()=>{ if(tutIdx<TUT_STEPS.length-1){ tutIdx++; renderTutorial(); } else closeTutorial(); });
+$('#tutDots').addEventListener('click', e=>{ const i = e.target.dataset && e.target.dataset.i; if(i!==undefined){ tutIdx=+i; renderTutorial(); } });
+tutEl.addEventListener('click', e=>{ if(e.target === tutEl) closeTutorial(); });
+window.addEventListener('keydown', e=>{
+  if(!tutEl.classList.contains('on')) return;
+  if(e.key === 'Escape') closeTutorial();
+  else if(e.key === 'ArrowRight') $('#tutNext').click();
+  else if(e.key === 'ArrowLeft') $('#tutPrev').click();
+});
+let tutSeen = false; try{ tutSeen = localStorage.getItem('rf_tutorial_seen') === '1'; }catch(_){}
+if(!tutSeen) openTutorial(0);
+
+
+/* ============ Copy MD + pop-up petunjuk Gemini ============ */
+const KS_PROMPT_TPL = "# TUGAS\n\nAnda adalah drafter kitchen set profesional. Baca gambar sketsa/blueprint kitchen set yang saya lampirkan, lalu ubah menjadi JSON yang PERSIS sesuai gambar.\nJangan menambah atau mengurangi kabinet, dan jangan mengarang bagian yang tidak ada di gambar.\n\n# LANGKAH MEMBACA GAMBAR\n\n1. **Layout**: \"L\" bila ada dua deret kabinet yang membentuk siku, \"linear\" bila hanya satu garis lurus.\n2. **Run**: Run 1 = deret kabinet yang menempel di dinding belakang (deret panjang horizontal di gambar). Run 2 = kaki L (hanya untuk layout L).\n3. **Urutan**: pada setiap run, baca kabinet BAWAH lebih dulu, lalu kabinet ATAS, masing-masing dari KIRI ke KANAN persis seperti di gambar. Satu kotak/modul di gambar = satu objek kabinet.\n4. **Lebar**: width_cm = angka label dimensi pada gambar. Bila tidak ada label, perkirakan dari proporsi gambar. Total lebar kabinet bawah dan atas pada run yang sama harus mendekati sama.\n5. **Tinggi**: pakai label tinggi bila ada. Bila tidak ada, pakai nilai bawaan pada tabel berikut.\n\n| Kunci | Arti | Bawaan |\n|---|---|---|\n| base_total_cm | tinggi dari lantai sampai permukaan top table | 84 |\n| upper_total_cm | tinggi kabinet atas | 70 |\n| gap_cm | jarak top table ke dasar kabinet atas | 60 |\n| counter_thickness_cm | tebal top table | 4 |\n| kick_cm | tinggi sepatu/kaki kabinet bawah | 10 |\n| plint_cm | tinggi plint penahan cipratan di atas top table | 10 |\n| backsplash_cm | tinggi dinding antara top table dan kabinet atas | sama dengan gap_cm |\n\n# KOORDINAT RUN\n\n- **Run 1**: origin_cm [0,0], axis \"+x\", vDir \"+z\", depth_cm 60, upper_depth_cm 34.\n- **Run 2** (hanya layout L): axis \"+z\", origin_cm [0,0], depth_cm 60, upper_depth_cm 34. vDir \"-x\" bila kaki L ada di sisi KANAN, vDir \"+x\" bila di sisi KIRI. Urutkan kabinet dari yang paling dekat sudut sampai ujung bebas.\n- **Kabinet sudut**: kabinet bawah paling ujung pada Run 1 (di sisi pertemuan dengan kaki L) adalah kabinet sudut, dengan front.type \"corner\" dan lebar sekitar 60 (sama dengan kedalaman kaki L). Tulis HANYA di Run 1, jangan diulang di Run 2.\n\n# TIPE FRONT (front.type)\n\n| Tipe | Kegunaan |\n|---|---|\n| open | rak terbuka tanpa pintu |\n| single_door | satu pintu |\n| double_door | dua pintu |\n| glass_door | pintu kaca |\n| drawers_2, drawers_3, drawers_4 | laci bersusun; angka = jumlah panel laci yang terlihat |\n| composite | gabungan laci dan pintu; isi front.sections |\n| oven | oven tanam berpintu kaca |\n| hood | penghisap asap (kabinet atas) |\n| microwave | microwave menggantung di bawah kabinet atas |\n| corner | kabinet sudut |\n\n**Handle**: {\"orientation\":\"vertical\" atau \"horizontal\", \"side\":\"left\", \"right\", atau \"center\"}. Laci: horizontal + center. Pintu: vertical, side = sisi gagang.\n\n**Composite**: front.sections berisi daftar {\"type\":\"drawer\" atau \"door\", \"ratio\":angka}, diurutkan dari ATAS ke BAWAH. ratio = perbandingan tinggi tiap bagian.\n\n# PERALATAN (appliance)\n\nPerhatikan dengan teliti, jangan sampai tertukar.\n\n- **Kompor tanam** (hob gas/listrik yang menyatu dengan top table): tulis appliance {\"type\":\"cooktop\",\"width_cm\":58} pada kabinet BAWAH tepat di bawah kompor. Front tetap mengikuti badan kabinet (laci menjadi drawers_2/3/4, pintu menjadi single_door). JANGAN memakai front \"oven\" kecuali di gambar jelas terlihat kotak OVEN TANAM berpintu kaca.\n- **Sink / bak cuci**: appliance {\"type\":\"sink\",\"width_cm\":80 sampai 120,\"bowls\":1 atau 2,\"drainboard\":\"left\", \"right\", atau \"none\"} pada kabinet bawah. Front: single_door atau double_door.\n- **Hood**: pada kabinet ATAS tepat di atas kompor, front.type \"hood\" dan appliance {\"type\":\"cooker_hood\",\"width_cm\":60}.\n- **Microwave**: pada kabinet ATAS, front.type \"microwave\" dan appliance {\"type\":\"microwave\",\"height_cm\":21}. width_cm = lebar modul. height_cm = tinggi label total modul (misalnya 81) dikurangi tinggi kabinet atas (60). upper_total_cm tetap tinggi kabinet atas biasa.\n- Sink dan kompor hanya untuk kabinet bawah. Hood dan microwave hanya untuk kabinet atas.\n\n# FORMAT JSON\n\n- Objek utama: \"layout\", \"heights\", \"runs\" (maksimal 2 run).\n- Setiap run: \"id\", \"origin_cm\", \"axis\", \"vDir\", \"depth_cm\", \"upper_depth_cm\", \"cabinets_lower\", \"cabinets_upper\".\n- Setiap kabinet: \"id\", \"width_cm\", \"front\" (wajib), serta \"shelves\" dan \"appliance\" bila ada.\n- Beri id berurutan: B01, B02, ... untuk kabinet bawah dan U01, U02, ... untuk kabinet atas. Pada Run 2 boleh memakai awalan B-R01, U-R01, dan seterusnya.\n\n# CONTOH FORMAT\n\nContoh ini hanya untuk menunjukkan bentuk penulisan. Isi angka dan susunan kabinet harus mengikuti gambar saya, bukan contoh ini.\n\n```json\n{{EXAMPLE}}\n```\n\n# PEMERIKSAAN AKHIR (lakukan sebelum menjawab)\n\n- Urutan kiri ke kanan sudah benar.\n- Jumlah kabinet sama dengan jumlah modul di gambar.\n- Kompor tanam ditulis sebagai appliance cooktop, bukan oven.\n- Sink berada di posisi yang benar.\n- Kabinet sudut ada di ujung Run 1 (untuk layout L).\n\n# ATURAN OUTPUT\n\nBalas HANYA dengan satu blok kode JSON yang valid. Tanpa penjelasan, tanpa komentar di dalam JSON.\n";
+function buildGeminiPrompt(){ return KS_PROMPT_TPL.replace('{{EXAMPLE}}', JSON.stringify(MANUAL_EXAMPLE, null, 2)); }
+const gemEl = document.createElement('div');
+gemEl.id = 'gemPop';
+gemEl.innerHTML = `<div class="tut-card" role="dialog" aria-modal="true" aria-label="Langkah berikutnya">
+  <div class="tut-head"><span class="t">✓ Prompt tersalin</span><button class="tut-x" id="gemClose" aria-label="Tutup">✕</button></div>
+  <div class="tut-body">
+    <h4>Lanjutkan di chat Gemini</h4>
+    <ol><li>Buka chat Gemini (<code>gemini.google.com</code>).</li>
+    <li><b>Paste</b> (Ctrl+V) teks yang baru disalin.</li>
+    <li><b>Lampirkan gambar layout</b> kitchen set Anda, lalu kirim.</li>
+    <li>Salin hasil JSON dari Gemini, lalu paste ke kotak <b>Input JSON Manual</b> di sini.</li>
+    <li>Klik <b>🏗 Build dari JSON</b>.</li></ol>
+    <div class="tip">Pagar kode <code>\`\`\`json</code> dari Gemini tidak masalah, otomatis diabaikan saat Build.</div>
+  </div>
+  <div class="tut-foot"><button id="gemOpen">Buka Gemini ↗</button><button id="gemOk" class="primary">Mengerti</button></div>
+</div>`;
+document.body.appendChild(gemEl);
+function closeGemPop(){ gemEl.classList.remove('on'); }
+function copyTextFallback(txt){
+  const ta = document.createElement('textarea'); ta.value = txt; ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
+  document.body.appendChild(ta); ta.select(); let ok = false;
+  try{ ok = document.execCommand('copy'); }catch(_){}
+  ta.remove(); return ok;
+}
+$('#btnCopyMd').addEventListener('click', async ()=>{
+  let ok = false;
+  try{ await navigator.clipboard.writeText(buildGeminiPrompt()); ok = true; }catch(_){ ok = copyTextFallback(buildGeminiPrompt()); }
+  if(ok){ setManualStatus('ok','✓ Prompt tersalin ke clipboard.'); gemEl.classList.add('on'); }
+  else setManualStatus('err','✗ Gagal menyalin. Izinkan akses clipboard di browser lalu coba lagi.');
+});
+$('#gemClose').addEventListener('click', closeGemPop);
+$('#gemOk').addEventListener('click', closeGemPop);
+$('#gemOpen').addEventListener('click', ()=>window.open('https://gemini.google.com/app','_blank','noopener'));
+gemEl.addEventListener('click', e=>{ if(e.target === gemEl) closeGemPop(); });
+window.addEventListener('keydown', e=>{ if(e.key === 'Escape' && gemEl.classList.contains('on')) closeGemPop(); });
+
+</script>
+</body>
+</html>

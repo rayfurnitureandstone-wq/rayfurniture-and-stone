@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+import GeoBlock from '../components/GeoBlock.astro';
+import Faq from '../components/Faq.astro';
+import ProductTabs from '../components/ProductTabs.astro';
+import { waLink } from '../data/site.js';
+
+const desc = 'Jasa pasang marmer dan granit serta jasa pasang dan poles marmer untuk top table, lantai, dan dinding. Simulasikan kitchen set Anda sendiri dengan Kitchen Set Simulator 3D.';
+const faqTT = [
+  ['Bahan apa yang terbaik untuk top table kitchen set?', 'Untuk usage harian dengan banyak air dan panas, granit lebih tahan noda dan lebih tahan panas. Marmer lebih elegan dan mewah, tetapi perlu sealing lebih rutin agar noda tidak meresap. Untuk hasil paling aman pada kitchen set yang dipakai setiap hari, kami sarankan granit atau marmer dengan ketebalan 2 cm ke atas.'],
+  ['Berapa ketebalan marble atau granit yang ideal?', 'Untuk top table kitchen set, 2 cm adalah standar minimum yang aman, 3 cm untuk tampilan lebih tebal dan luxury. Untuk lantai, 2 cm sudah cukup; 3 cm bila ingin kesan lebih kokoh atau ada risiko nat goyang.'],
+  ['Apakah sambungan nat di area basah perlu di sealant?', 'Ya. Semua sambungan nat dan bagian yang terkena air kami lem khusus batu, lalu finishing dan sealing agar tidak menyerap air dan tidak mudah retak.'],
+  ['Berapa lama pengerjaan jasa pasang marmer dan granit?', 'Untuk top table standar 2–3 hari kerja di lokasi, tergantung panjang, jumlah potongan, dan kondisi dinding. Estimasi pasti diberikan setelah survei lokasi.'],
+  ['Bisa menggunakan marmer yang sama dengan di gambar referensi?', 'Bisa. Anda bisa mengunggah foto marmer atau granit pilihan Anda ke Kitchen Set Simulator di bawah, supaya terlihat sendiri hasilnya sebelum memutuskan.'],
+];
+---
+
+<Base title="Top Table — Jasa Pasang Marmer & Granit Bogor" description={desc}>
+  <div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / Top Table</nav></div>
+
+  <section class="page-hero">
+    <div class="wrap two-col" style="align-items:center">
+      <div>
+        <p class="eyebrow">Top table</p>
+        <h1>Batu Alam yang Terpasang <em>Rapih Sampai ke Nat</em></h1>
+        <p class="lead">Kami menangani jasa pasang marmer dan granit untuk top table, lantai, serta dinding — mulai dari pengukuran presisi di lokasi sampai poles akhir yang langsung bersih. Pemotongan dilakukan di workshop, jadi ukurannya persis sama dengan yang Anda setujui.</p>
+        <p style="margin-top:22px">
+          <a class="btn btn--green" href={waLink('Halo Kak, saya mau tanya jasa pasang marmer dan granit.')}>Tanya Pasang Top Table</a>
+          <a class="btn btn--ghost" href="#simulator">Coba Simulator ↓</a>
+        </p>
+      </div>
+      <div><img src="/images/warm-modern-kitchen-set-advertisement.png" alt="Top table marmer dan granit yang dipasang Ray Furniture and Stone" width="800" height="560" style="border-radius:16px" loading="eager"></div>
+    </div>
+  </section>
+
+  <GeoBlock links={['/', '/about', '/top-table']} />
+
+  <section class="sec sec--cream" id="simulator" aria-labelledby="sim-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Simulator</p>
+        <h2 class="h-sec" id="sim-title">Coba Kitchen Set Anda Sendiri, Gratis</h2>
+        <p class="sub-sec">Unggah foto marmer atau granit pilihan Anda, atur layout, dan lihat hasilnya dalam 3D — lalu simpan sebagai gambar untuk dibawa ke konsultasi.</p>
+      </div>
+      <div class="sim-wrap">
+        <iframe src="/simulator/index.html" title="Kitchen Set Simulator 3D Ray Furniture and Stone" loading="lazy" allow="fullscreen"></iframe>
+      </div>
+      <p class="sim-note">Simulator berjalan penuh di browser Anda — tidak ada yang dikirim ke server kami. Butuh API key Gemini? Anda bisa menempelkannya langsung di panel kiri, kuncinya hanya tersimpan di browser perangkat ini.</p>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="step-title">
+    <div class="wrap two-col">
+      <div>
+        <p class="eyebrow">Proses</p>
+        <h2 class="h-sec" id="step-title" style="text-align:left">Empat Tahap, dari Survei sampai QC</h2>
+        <p style="color:var(--muted)">Batu alam tidak bisa dipaksa. Karena itu semua ukuran diverifikasi ulang di lokasi sebelum satu pun bahan dipotong — supaya tidak ada lembar marmer terbuang karena selisih 2 mm.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div><h3>Survei & pengukuran</h3><p>Kami datang ke lokasi, mengukur panjang, kedalaman, tinggi, dan kondisi dinding. Gratis, tanpa minimum order.</p></div></div>
+        <div class="step"><div><h3>Pemilihan material & pola</h3><p>Anda pilih marmer, granit, atau travertin beserta edge profile. Pola potongan disusun agar buku-buku marmer tetap utuh dan bahan terbuang seminimal mungkin.</p></div></div>
+        <div class="step"><div><h3>Pemotongan di workshop</h3><p>Pemotongan, pembuatan lubang sink dan kompor, serta penghalusan tepi dilakukan dengan mesin di workshop kami.</p></div></div>
+        <div class="step"><div><h3>Pemasangan & poles</h3><p>Lem khusus batu, leveling, lalu poles atau sealing. Area kerja bersih, tidak ada abu-abu di sisa pekerjaan.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <ProductTabs />
+
+  <section class="sec sec--cream" aria-labelledby="tt-faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Sering ditanya</p>
+        <h2 class="h-sec" id="tt-faq">Tanya Jawab Top Table</h2>
+        <p class="sub-sec">Kalau pertanyaan Anda belum ada di sini, WhatsApp kami. Dijawab hari itu juga.</p>
+      </div>
+      <Faq items={faqTT} />
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Siapkan Dapur Anda Bersama Kami</h2>
+        <p>Kirim foto area dan ukuran kasar. Kami balik dengan estimasi material, edge profile, dan jadwal pengerjaan.</p>
+        <div class="btns">
+          <a class="btn" href={waLink('Halo Kak, saya mau tanya top table marmer/granit.')}>Chat WhatsApp</a>
+          <a class="btn btn--ghost" href="/what-news/">Baca Panduan Top Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

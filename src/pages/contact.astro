@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import GeoBlock from '../components/GeoBlock.astro';
+import Faq from '../components/Faq.astro';
+import { site, waLink, services } from '../data/site.js';
+
+const desc = 'Hubungi Ray Furniture and Stone untuk jasa pasang marmer dan granit, jasa pembuatan kitchen set dan furniture custom, serta jasa pasang dan poles marmer. Konsultasi gratis.';
+const waMsgs = {
+  'pemasangan-top-table': 'Halo Kak, saya mau tanya jasa pasang top table marmer/granit.',
+  'pasang-poles-marmer': 'Halo Kak, saya mau tanya jasa pasang dan poles marmer.',
+  'kitchen-set-custom': 'Halo Kak, saya mau tanya jasa pembuatan kitchen set dan furniture custom.',
+  'perbaikan-furniture': 'Halo Kak, furniture saya perlu perbaikan. Boleh cek?',
+};
+---
+
+<Base title="Contact — Konsultasi Gratis Kitchen Set & Marmer" description={desc}>
+  <div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / Contact</nav></div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1>Ceritakan Kebutuhan Anda, <em>Kami Hitung</em></h1>
+      <p class="lead">Kirim ukuran ruang, foto area, atau sekadar kebutuhan singkat. Anda akan mendapat estimasi material dan biaya pada hari yang sama. Tidak ada biaya konsultasi, survei, maupun desain.</p>
+    </div>
+  </section>
+
+  <GeoBlock links={['/', '/about', '/top-table']} />
+
+  <section class="sec" style="padding-top:28px">
+    <div class="wrap two-col">
+      <div>
+        <div class="feat" style="padding:26px">
+          <h3 style="margin-bottom:14px">Kontak langsung</h3>
+          <p style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:11px;letter-spacing:.1em;color:var(--muted);width:74px;display:inline-block">WHATSAPP</span> <a href={waLink()} style="color:var(--green);font-weight:700">{site.waDisplay}</a></p>
+          <p style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:11px;letter-spacing:.1em;color:var(--muted);width:74px;display:inline-block">TELEPON</span> <a href={`tel:+${site.waNumber}`} style="color:var(--green);font-weight:700">{site.phoneDisplay}</a></p>
+          <p style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:11px;letter-spacing:.1em;color:var(--muted);width:74px;display:inline-block">EMAIL</span> <a href={`mailto:${site.email}`} style="color:var(--green);font-weight:700">{site.email}</a></p>
+          <p style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:11px;letter-spacing:.1em;color:var(--muted);width:74px;display:inline-block">ALAMAT</span> <span>{site.address}</span></p>
+          <p style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:11px;letter-spacing:.1em;color:var(--muted);width:74px;display:inline-block">JAM</span> <span>Senin–Sabtu, {site.hours}</span></p>
+          <a class="btn btn--wa" href={waLink()} style="margin-top:16px;justify-content:center;width:100%">Chat WhatsApp Sekarang</a>
+        </div>
+        <div class="feat" style="margin-top:14px;padding:26px">
+          <h3 style="margin-bottom:8px">Cakupan wilayah</h3>
+          <p>Bogor, Bekasi, Jakarta, Depok, Tangerang, dan seluruh JABODETABEK. Untuk luar wilayah dan luar pulau berlaku minimal order — hubungi kami untuk estimasinya.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="eyebrow">Pilih layanan</p>
+        <h2 class="h-sec" style="text-align:left">Mau Tanya tentang Apa?</h2>
+        <p style="color:var(--muted)">Pilih salah satu untuk langsung masuk ke WhatsApp dengan pesan yang sudah terisi. Ganti saja detailnya sesuai kebutuhan Anda.</p>
+        <div class="feat-grid" style="grid-template-columns:1fr;margin-top:18px">
+          {services.map(s => (
+            <article class="feat" id={s.id}>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+              <a class="btn btn--green" style="margin-top:12px" href={waLink(waMsgs[s.id])}>{s.price} — Tanya Harga</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Sebelum Anda Menulis</p>
+        <h2 class="h-sec">Pertanyaan yang Sering Muncul</h2>
+      </div>
+      <Faq />
+      <p class="geo-anchor">Untuk enquiry yang lebih cepat, sertakan kota lokasi, ukuran ruang (panjang × kedalaman), dan pilihan material bila sudah ada.</p>
+    </div>
+  </section>
+</Base>

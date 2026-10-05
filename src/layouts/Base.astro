@@ -1,0 +1,135 @@
+---
+import '../styles/global.css';
+import { site, nav, waLink } from '../data/site.js';
+const { title = site.name, description = 'Jasa kitchen set custom, top table marmer dan granit, serta poles lantai di Bogor dan Jabodetabek.', noindex = false, bodyClass = '' } = Astro.props;
+const path = Astro.url.pathname;
+const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));
+---
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f5d46">
+  <title>{title} — {site.name}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={`${site.origin}${path === '/' ? '/' : path}`}>
+  {noindex && <meta name="robots" content="noindex"> }
+  <link rel="icon" href="/images/ray-furniture-stone-logo.png">
+  <meta property="og:site_name" content={site.name}>
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:url" content={`${site.origin}${path}`}>
+  <meta property="og:image" content={`${site.origin}/images/warm-modern-kitchen-set-advertisement.png`}>
+  <meta property="og:image:alt" content="Kitchen set custom dan top table marmer oleh Ray Furniture and Stone">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:title" content={`${title} — ${site.name}`}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context':'https://schema.org','@type':'FurnitureStore',name:site.name,url:site.origin,
+      description:'Jasa pasang marmer dan granit, jasa pembuatan kitchen set dan furniture custom, serta jasa pasang dan poles marmer di Bogor dan Jabodetabek.',
+      telephone:site.phoneDisplay,email:site.email,
+      image:`${site.origin}/images/warm-modern-kitchen-set-advertisement.png`,
+      priceRange:'Rp',currencies:'IDR',foundingDate:String(site.since),
+      address:{'@type':'PostalAddress',streetAddress:'Jl. Transyogi No.60, Nagrak',addressLocality:'Gunung Putri',addressRegion:'Jawa Barat',postalCode:'16967',addressCountry:'ID'},
+      areaServed:site.areaServed.map(n=>({'@type':'City',name:n})),
+      openingHoursSpecification:[{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],opens:'09:00',closes:'17:00'}],
+      aggregateRating:{'@type':'AggregateRating',ratingValue:'4.9',reviewCount:'221',bestRating:'5'},
+      sameAs:['https://instagram.com/rayfurnitureandstone','https://tiktok.com/@rayfurnitureandstone'],
+    })} />
+</head>
+<body class={bodyClass}>
+  <header class="site-head">
+    <div class="wrap head-bar">
+      <a class="logo" href="/">
+        <img src="/images/ray-furniture-stone-logo.png" alt="Logo Ray Furniture and Stone" width="36" height="36">
+        <span>Ray Furniture <b>&amp; Stone</b></span>
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        {nav.map(n => <a href={n.href} aria-current={isOn(n.href) ? 'page' : undefined}>{n.label}</a>)}
+        <a class="head-cta" href={waLink()}>Konsultasi</a>
+      </nav>
+      <div class="head-tools">
+        <a class="icon-btn" href="/what-news/" aria-label="Cari artikel"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
+        <a class="icon-btn" href={waLink('Halo Kak, mau tanya info Ray Furniture and Stone.')} aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-3.1-6.3"/><path d="M8 11h8M8 15h5"/></svg></a>
+        <button class="icon-btn burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="drawer">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-panel">
+      <button class="drawer-x" id="drawerClose" aria-label="Tutup menu">✕</button>
+      <a class="logo" href="/" style="margin-bottom:6px"><img src="/images/ray-furniture-stone-logo.png" alt="" width="30" height="30"><span>Ray Furniture <b>&amp; Stone</b></span></a>
+      <h4>Menu</h4>
+      {nav.map(n => <a href={n.href}>{n.label}</a>)}
+      <h4>Hubungi Kami</h4>
+      <a href={waLink()}>WhatsApp {site.waDisplay}</a>
+      <a href={`tel:+${site.waNumber}`}>Telepon {site.phoneDisplay}</a>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </div>
+  </div>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div>
+        <a class="logo" href="/" style="color:#fff"><img src="/images/ray-furniture-stone-logo.png" alt="" width="34" height="34"><span style="color:#fff">Ray Furniture <b style="color:#7fbf9a">&amp; Stone</b></span></a>
+        <p style="margin-top:12px">Mitra-builder kitchen set custom dan batuan alami di Bogor. Satu stop solution untuk furniture, top table marmer &amp; granit, sampai poles lantai.</p>
+        <div class="social">
+          <a href="https://instagram.com/rayfurnitureandstone" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c0-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.1.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 8.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.4-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
+          <a href="https://tiktok.com/@rayfurnitureandstone" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 3c.3 2.1 1.6 3.6 3.7 3.9v2.7c-1.3.1-2.5-.3-3.7-1v5.9c0 3.7-2.9 6.1-6.1 5.8-2.9-.3-5-2.7-5-5.6 0-3.4 3-5.9 6.4-5.4v2.8c-1.9-.5-3.7.8-3.7 2.7 0 1.6 1.3 2.8 2.9 2.8 1.7 0 2.9-1.2 2.9-3V3h2.6z"/></svg></a>
+          <a href={waLink()} aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.8-5c-.4-.7-.5-1.3-.5-1.8 0-.5.3-1.2.8-1.5.2-.1.5-.1.6 0l.8 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.2-.1.4 0 .6a9 9 0 0 0 4.1 4c.2.1.4.1.6-.1l.6-.7c.2-.2.3-.2.6-.1l1.6.8c.2.1.3.2.3.4.1.2.1.6-.1 1.1z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        {nav.map(n => <a href={n.href}>{n.label}</a>)}
+      </div>
+      <div>
+        <h4>Layanan</h4>
+        <a href="/about/">Kitchen Set Custom</a>
+        <a href="/top-table/">Pemasangan Top Table</a>
+        <a href="/about/#layanan">Pasang Poles Lantai</a>
+        <a href="/about/#layanan">Perbaikan Furniture</a>
+        <a href="/about/#harga">Shine Restoration</a>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <p>{site.address}</p>
+        <a href={`tel:+${site.waNumber}`}>{site.phoneDisplay}</a>
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+        <p style="margin-top:8px">Buka {site.hours}</p>
+      </div>
+    </div>
+    <div class="wrap foot-bot">
+      <span>© {new Date().getFullYear()} {site.domain} — Ray Furniture &amp; Stone. Hak cipta dilindungi.</span>
+      <span>Bekerja sama dengan supplier marmer &amp; granit lokal dan impor.</span>
+    </div>
+  </footer>
+
+  <a class="wa-float" href={waLink()} aria-label="Hubungi WhatsApp Ray Furniture and Stone">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.8-5c-.4-.7-.5-1.3-.5-1.8 0-.5.3-1.2.8-1.5.2-.1.5-.1.6 0l.8 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.2-.1.4 0 .6a9 9 0 0 0 4.1 4c.2.1.4.1.6-.1l.6-.7c.2-.2.3-.2.6-.1l1.6.8c.2.1.3.2.3.4.1.2.1.6-.1 1.1z"/></svg>
+  </a>
+
+  <script is:inline>
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    const close = document.getElementById('drawerClose');
+    const open = () => { drawer.classList.add('on'); drawer.setAttribute('aria-hidden','false'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow = 'hidden'; };
+    const shut = () => { drawer.classList.remove('on'); drawer.setAttribute('aria-hidden','true'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow = ''; };
+    burger.addEventListener('click', open);
+    close.addEventListener('click', shut);
+    drawer.addEventListener('click', e => { if (e.target === drawer) shut(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') shut(); });
+  </script>
+</body>
+</html>

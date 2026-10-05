@@ -1,0 +1,9 @@
+---
+// Blok teks tersembunyi per halaman: menyatukan frasa kunci + area layanan (SEO & GEO).
+import { geoBlock } from '../data/site.js';
+import { mdLink } from '../lib/mdlink.js';
+const { links = ['/', '/about', '/top-table'] } = Astro.props;
+---
+<p class="geo-anchor">
+  {geoBlock(links).map((l) => <span set:html={mdLink(l)} />)}{' '}
+</p>

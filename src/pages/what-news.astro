@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import GeoBlock from '../components/GeoBlock.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { waLink } from '../data/site.js';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date));
+const latest = posts.slice(0, 6);
+
+const desc = 'Blog Ray Furniture and Stone: panduan praktis memilih marmer dan granit, menjaga kilap lantai, dan menghitung biaya kitchen set custom dari workshop kami.';
+---
+
+<Base title="What News — Panduan Marmer, Granit & Kitchen Set" description={desc}>
+  <div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / What News</nav></div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">What news</p>
+      <h1>Inspirasi Langsung dari <em>Workshop Kami</em></h1>
+      <p class="lead">Tidak ada teori marketing di sini. Setiap artikel berasal dari proyek yang benar-benar kami kerjakan — mulai dari memilih marmer yang tepat, menjaga kilau lantai, sampai hitung biaya custom versus ready stock.</p>
+    </div>
+  </section>
+
+  <GeoBlock links={['/', '/about', '/top-table']} />
+
+  {latest[0] && (
+    <section class="sec" style="padding-top:24px">
+      <div class="wrap">
+        <a class="banner-news" href={`/what-news/${latest[0].id}`}>
+          {latest[0].data.banner && <img src={latest[0].data.banner} alt={latest[0].data.title} width="1200" height="420" loading="eager">}
+        </a>
+        <p class="eyebrow">Artikel terbaru</p>
+        <h2 class="h-sec" style="text-align:left;margin-top:6px"><a href={`/what-news/${latest[0].id}`}>{latest[0].data.title}</a></h2>
+        <p style="color:var(--muted);max-width:70ch">{latest[0].data.excerpt}</p>
+        <a class="link-more" href={`/what-news/${latest[0].id}`}>Baca selengkapnya →</a>
+      </div>
+    </section>
+  )}
+
+  <section class="sec sec--cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Semua artikel</p>
+        <h2 class="h-sec">Enam Postingan Terbaru</h2>
+        <p class="sub-sec">Diperbarui setiap kali ada proyek baru yang selesai. Semua ditulis oleh tim yang mengerjakan langsung.</p>
+      </div>
+      <div class="post-grid">
+        {latest.map(p => <PostCard post={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Punya Pertanyaan soal Proyek Anda?</h2>
+        <p>Kalau artikel di atas belum menjawab pertanyaan Anda, kirim saja pertanyaannya. Konsultasi gratis, dan kami jawab berdasarkan pengalaman kerja, bukan tebakan.</p>
+        <div class="btns">
+          <a class="btn" href={waLink('Halo Kak, saya ada pertanyaan soal jasa pasang marmer dan granit.')}>Tanya Tim Kami</a>
+          <a class="btn btn--ghost" href="/top-table/#simulator">Coba Simulator</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
