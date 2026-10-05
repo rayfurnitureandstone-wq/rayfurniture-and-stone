@@ -130,5 +130,21 @@ const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));
     drawer.addEventListener('click', e => { if (e.target === drawer) shut(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') shut(); });
   </script>
+  <!-- Bottom nav: mobile only -->
+  <nav class="mtabbar" aria-label="Navigasi utama mobile">
+    <a href="/" class={isOn('/') ? 'on' : ''} aria-current={isOn('/') ? 'page' : undefined}>
+      <svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg><span>Home</span>
+    </a>
+    <a href="/top-table/" class={isOn('/top-table/') ? 'on' : ''} aria-current={isOn('/top-table/') ? 'page' : undefined}>
+      <svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>Katalog</span>
+    </a>
+    <a href="/what-news/" class={isOn('/what-news/') ? 'on' : ''} aria-current={isOn('/what-news/') ? 'page' : undefined}>
+      <svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M9 8h7M9 12h7"/></svg><span>Artikel</span>
+    </a>
+    <a href="/contact/" class={isOn('/contact/') ? 'on' : ''} aria-current={isOn('/contact/') ? 'page' : undefined}>
+      <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg><span>Kontak</span>
+    </a>
+  </nav>
+
 </body>
 </html>
