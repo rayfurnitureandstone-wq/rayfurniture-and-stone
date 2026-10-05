@@ -1,0 +1,276 @@
+/* ============================================================
+   MOBILE NATIVE-APP LAYER — aktif hanya max-width:560px
+   Desktop (>=561px) tidak tersentuh sama sekali.
+   Standar: body text min 16px, touch target >=48px, tap delay 0,
+   safe-area, horizontal scroll-snap untuk konten panjang.
+   ============================================================ */
+@media (max-width:560px){
+
+  :root{
+    --m-bg:#F9F6F0; --m-ink:#2A2724; --m-accent:#F27E34;
+    --m-white:#FFFFFF; --m-muted:#857A6D; --m-line:#E8E2D8;
+    --m-serif:"Playfair Display",Georgia,"Times New Roman",serif;
+    --m-sans:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+    --m-r:16px; --m-r-lg:20px;
+  }
+
+  /* --- canvas --- */
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--m-bg); color:var(--m-ink);
+    font-family:var(--m-sans);
+    font-size:16px; line-height:1.6;      /* >=16px: readability */
+    -webkit-font-smoothing:antialiased;
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;              /* kill 300ms tap delay */
+    overscroll-behavior-y:contain;          /* no pull-to-refresh */
+    overflow-x:hidden;
+    padding-bottom:calc(72px + env(safe-area-inset-bottom));
+  }
+  html,body{scrollbar-width:none}
+  ::-webkit-scrollbar{width:0;height:0;display:none}
+
+  /* semua media fluid & tidak meluber */
+  img,svg,video{max-width:100%;height:auto;display:block}
+  *{min-width:0}
+
+  /* --- header sticky --- */
+  .site-head{
+    position:sticky;top:0;z-index:80;
+    background:rgba(249,246,240,.9);
+    -webkit-backdrop-filter:blur(16px) saturate(180%);
+    backdrop-filter:blur(16px) saturate(180%);
+    border-bottom:1px solid var(--m-line);
+  }
+  .head-bar{height:56px;padding:0 16px;gap:10px}
+  .nav{display:none}
+  .logo{font-size:15px;font-weight:700;gap:8px;min-width:0}
+  .logo span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .logo img{width:32px;height:32px;flex:0 0 auto}
+  .head-tools{gap:2px;flex:0 0 auto}
+  .icon-btn{width:44px;height:44px;min-width:44px}
+
+  /* --- ritme section --- */
+  .wrap{padding:0 16px;max-width:100%}
+  .sec{padding:36px 0;background:var(--m-bg)}
+  .sec--cream{background:#F2EDE4}
+  .sec-head{margin-bottom:18px}
+  .sec-head h2,.h-sec{
+    font-family:var(--m-serif);font-weight:600;
+    font-size:24px;line-height:1.22;letter-spacing:-.01em;
+    color:var(--m-ink);text-wrap:balance;overflow-wrap:anywhere}
+  .eyebrow{
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--m-accent);margin-bottom:6px;font-weight:700}
+  .lead{font-size:16px;line-height:1.6;color:var(--m-ink)}
+  .sub-sec{font-size:15px;line-height:1.58;color:var(--m-muted)}
+
+  /* --- tipografi flux: clamp, bukan px mati --- */
+  h1{font-size:clamp(26px,7.4vw,32px);line-height:1.14;overflow-wrap:anywhere}
+  p{overflow-wrap:break-word;hyphens:auto}
+
+  /* --- tombol: pill, 48px, tap area penuh --- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:48px;min-width:48px;padding:14px 22px;
+    border-radius:24px;font-size:15px;font-weight:600;letter-spacing:.01em;
+    background:var(--m-accent);color:#fff;
+    border:1px solid var(--m-accent);border-radius:24px;
+  }
+  .btn.btn--green{background:var(--m-accent);border-color:var(--m-accent);color:#fff}
+  .btn.btn--ghost,.btn.btn--wa{
+    background:transparent;color:var(--m-ink);border-color:var(--m-line)}
+  .link-more{
+    display:inline-flex;align-items:center;min-height:44px;
+    font-size:15px;font-weight:600;color:var(--m-accent)}
+  .btns{display:flex;flex-direction:column;gap:10px;width:100%}
+  .btns .btn{width:100%}
+}
+
+@media (max-width:560px){
+
+  /* ============ HERO SLIDER: 1 kolom, tanpa bleed ============ */
+  .hero{padding:0 0 4px}
+  .slider{border-radius:var(--m-r-lg);overflow:hidden;background:var(--m-white);
+    border:1px solid var(--m-line)}
+  .slides{display:flex;width:100%;transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+  .slide{flex:0 0 100%;min-width:0;grid-template-columns:1fr;display:grid}
+  .slide-img{order:-1;min-height:0;aspect-ratio:4/3;background-size:cover;
+    background-position:center}
+  .slide-copy{padding:20px 16px 22px;background:var(--m-white);
+    display:flex;flex-direction:column;gap:10px;max-width:100%;overflow:hidden}
+  .slide-copy h1{font-family:var(--m-serif);font-weight:600;
+    font-size:clamp(23px,6.6vw,28px);line-height:1.16;
+    text-transform:none;letter-spacing:-.01em;margin:0;color:var(--m-ink);
+    overflow-wrap:anywhere}
+  .slide-copy h1 em{font-style:normal;color:var(--m-accent)}
+  .slide-copy p{margin:0;font-size:15px;line-height:1.56;color:var(--m-muted);
+    max-width:100%;display:-webkit-box;-webkit-line-clamp:3;
+    -webkit-box-orient:vertical;overflow:hidden}
+  .slide-copy .eyebrow{font-size:11px;letter-spacing:.1em}
+  .slide-copy .btns{flex-direction:column;gap:8px;margin-top:2px}
+  .slide-copy .btns .btn{width:100%}
+  .slider-nav{display:none}
+  .slider-dots{position:static;justify-content:center;gap:8px;
+    padding:12px 0;background:var(--m-white)}
+  .slider-dots button{width:8px;height:8px;border-color:var(--m-line);
+    background:#D8D2C8}
+  .slider-dots button.on{background:var(--m-accent);border-color:var(--m-accent)}
+
+  /* ============ hero 2-kolom jadi 1 kolom ============ */
+  .two-col{grid-template-columns:1fr;gap:18px;align-items:start}
+  .two-col img{border-radius:var(--m-r-lg);aspect-ratio:4/3;object-fit:cover;width:100%}
+
+  /* ============ kartu: radius 16, tanpa kotakRUNNING ============ */
+  .feat,.price-card,.guarantee-grid article{
+    background:var(--m-white);border:1px solid var(--m-line);
+    border-radius:var(--m-r);padding:18px 16px;box-shadow:none;gap:8px}
+  .feat h3,.price-card h3{font-size:17px;font-weight:700;line-height:1.3;margin:0}
+  .feat p,.price-card p{font-size:15px;line-height:1.56;color:var(--m-muted);margin:0}
+  .feat-grid,.feat-grid--2,.guarantee-grid,.post-grid,.trust-grid{
+    grid-template-columns:1fr;gap:12px}
+
+  /* harga: nilai besar & tegas */
+  .price-card .amt{font-size:28px;font-weight:800;color:var(--m-accent);
+    line-height:1.1}
+  .price-card .from{font-size:11px;letter-spacing:.12em;color:var(--m-muted)}
+  .price-card .btn{width:100%;margin-top:8px}
+
+  /* ============ brand strip: horizontal snap ============ */
+  .trust{background:var(--m-white);border-top:1px solid var(--m-line);
+    border-bottom:1px solid var(--m-line);padding:0}
+  .trust .wrap{padding:0;max-width:none}
+  .trust-grid{
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;gap:0;scrollbar-width:none}
+  .trust-grid::-webkit-scrollbar{display:none}
+  .trust-grid div{
+    flex:0 0 78%;scroll-snap-align:center;padding:20px 16px;
+    border-right:1px solid var(--m-line);background:transparent}
+  .trust-grid div:last-child{border-right:0}
+  .trust-grid b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    font-weight:800}
+  .trust-grid span{font-size:13.5px;color:var(--m-muted);margin-top:5px;
+    display:block;line-height:1.5}
+}
+
+@media (max-width:560px){
+
+  /* ============ ARTIKEL: horizontal snap card rail ============ */
+  .post{border-radius:var(--m-r);border:1px solid var(--m-line);
+    background:var(--m-white);overflow:hidden;display:flex;flex-direction:column}
+  .post img{height:auto;aspect-ratio:16/10;width:100%;object-fit:cover}
+  .post-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:6px}
+  .post-body h3{font-size:16.5px;line-height:1.32;margin:0;font-weight:700}
+  .post-body h3 a{color:var(--m-ink)}
+  .post-body p{margin:0;font-size:14.5px;line-height:1.55;color:var(--m-muted);
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+    overflow:hidden}
+  .post-date{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--m-accent);font-weight:700;margin:0}
+  .post .link-more{font-size:14px;font-weight:600;min-height:40px}
+
+  /* rail: satu baris, geser dengan jari */
+  .post-grid{
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;gap:12px;
+    margin:0 -16px;padding:4px 16px 14px;scrollbar-width:none}
+  .post-grid::-webkit-scrollbar{display:none}
+  .post-grid .post{flex:0 0 78%;scroll-snap-align:center}
+
+  /* ============ CHIPS / INCLUSIONS: rail 2-up snap ============ */
+  .chips{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;gap:10px;
+    margin:0 -16px;padding:4px 16px 8px;list-style:none;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chips li{
+    flex:0 0 68%;scroll-snap-align:center;
+    background:var(--m-white);border:1px solid var(--m-line);
+    border-radius:var(--m-r);padding:14px 15px;box-shadow:none}
+  .chips b{display:block;font-size:14.5px;font-weight:800;margin-bottom:4px;
+    color:var(--m-ink)}
+  .chips span{font-size:13.5px;line-height:1.5;color:var(--m-muted)}
+
+  /* ============ FAQ: accordion app-like ============ */
+  .faq{display:block;max-width:none;background:transparent}
+  .faq details{
+    background:var(--m-white);border:1px solid var(--m-line);
+    border-radius:var(--m-r);margin-bottom:10px;overflow:hidden}
+  .faq summary{
+    list-style:none;cursor:pointer;position:relative;
+    min-height:56px;display:flex;align-items:center;
+    padding:14px 44px 14px 16px;font-size:15.5px;font-weight:600;
+    line-height:1.4;color:var(--m-ink)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{
+    content:"+";position:absolute;right:14px;top:50%;
+    transform:translateY(-50%);width:26px;height:26px;border-radius:50%;
+    background:var(--m-bg);color:var(--m-accent);
+    display:grid;place-items:center;font-size:19px;font-weight:400;line-height:1}
+  .faq details[open] summary::after{content:"\2212";color:#fff;background:var(--m-accent)}
+  .faq details[open] summary{border-bottom:1px solid var(--m-line)}
+  .faq .ans{padding:14px 16px 16px;font-size:15px;line-height:1.6;
+    color:var(--m-muted)}
+
+  /* ============ CTA block ============ */
+  .cta{background:var(--m-accent);color:#fff;border-radius:var(--m-r-lg);
+    padding:26px 20px;text-align:left;margin-top:28px !important}
+  .cta h2{font-family:var(--m-serif);font-weight:600;font-size:23px;
+    line-height:1.24;color:#fff;margin:0 0 10px;letter-spacing:-.01em}
+  .cta p{color:rgba(255,255,255,.94);font-size:15px;line-height:1.56;margin:0 0 18px}
+  .cta .btn{width:100%}
+  .cta .btn:not(.btn--green){background:#fff;color:var(--m-accent);border-color:#fff}
+  .cta .btn.btn--green{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+
+  /* ============ filter tabs: rail pill ============ */
+  .tabs{display:flex;overflow-x:auto;scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;gap:8px;
+    margin:0 -16px;padding:4px 16px 12px;background:transparent;
+    border-radius:0;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs button{
+    flex:0 0 auto;scroll-snap-align:center;
+    min-height:44px;padding:11px 18px;border-radius:22px;
+    font-size:14px;font-weight:600;white-space:nowrap;
+    background:var(--m-white);color:var(--m-ink);border:1px solid var(--m-line)}
+  .tabs button.on,.tabs button[aria-selected="true"]{
+    background:var(--m-ink);color:#fff;border-color:var(--m-ink)}
+
+  /* ============ footer ============ */
+  .site-foot{background:var(--m-white);border-top:1px solid var(--m-line);
+    padding:36px 0 20px}
+  .foot-grid{grid-template-columns:1fr;gap:24px}
+  .site-foot p,.site-foot a{font-size:14.5px;line-height:1.6}
+}
+
+/* ============================================================
+   BOTTOM NAV — fixed, hanya mobile
+   ============================================================ */
+.mtabbar{display:none}
+
+@media (max-width:560px){
+  .mtabbar{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:999;
+    background:rgba(255,255,255,.96);
+    -webkit-backdrop-filter:blur(16px) saturate(180%);
+    backdrop-filter:blur(16px) saturate(180%);
+    border-top:1px solid var(--m-line);
+    box-shadow:0 -1px 12px rgba(42,39,36,.05);
+    padding:4px 2px calc(4px + env(safe-area-inset-bottom));
+  }
+  .mtabbar a{
+    flex:1 1 0;min-width:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:3px;
+    min-height:56px;padding:6px 2px;
+    color:var(--m-muted);font-size:10px;font-weight:600;
+    letter-spacing:.01em;text-align:center;line-height:1.1}
+  .mtabbar a svg{width:23px;height:23px;flex:0 0 auto;
+    fill:none;stroke:currentColor;stroke-width:1.7;
+    stroke-linecap:round;stroke-linejoin:round}
+  .mtabbar a.on{color:var(--m-ink)}
+  .mtabbar a.on svg{stroke-width:2.3}
+  .mtabbar a:active{opacity:.55}
+}
+
+/* pengaman: nav tidak pernah muncul di desktop */
+@media (min-width:561px){ .mtabbar{display:none !important} }
