@@ -1,9 +1,9 @@
 ---
-title: "Jasa Pasang Top Table Marmer dan Granit di Bogor: Ketebalan, Lem, dan Biaya"
+title: "Jasa Pasang Top Table Marmer di Bogor: Ketebalan dan Biaya"
 date: 2026-10-06
 category: "Top Table"
 banner: "/images/ai/jasa-pasang-top-table-marmer-bogor.jpg"
-excerpt: "Top table marmer tidak boleh dipasang asal. Ini penjelasan ketebalan ideal, cara memasang dengan lem khusus batu, dan alasan harga per meter bisa berubah di tengah pengerjaan."
+excerpt: "Ketebalan ideal top table marmer, cara memasang dengan lem khusus batu, dan alasan harga berubah di tengah pengerjaan."
 ---
 
 Top table adalah bagian dapur yang paling terlihat, dan salah satu yang paling sering gagal dipasang. Bukan karena marmer kurang bagus, tapi karena cara pemasangannya tidak sesuai standar.

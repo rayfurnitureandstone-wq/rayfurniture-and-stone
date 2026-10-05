@@ -1,9 +1,9 @@
 ---
-title: "Jasa Poles Lantai Marmer dan Granit Bogor: Shine Restoration vs Full Restoration"
+title: "Jasa Poles Lantai Marmer Bogor: Shine vs Full Restoration"
 date: 2026-10-07
 category: "Perawatan"
 banner: "/images/ai/jasa-poles-lantai-marmer-bogor.jpg"
-excerpt: "Lantai marmer kusam tidak selalu harus dibongkar. Ini bedanya Shine Restoration dan Full Stone Restoration, kapan salah satu cukup, dan kenapa poles tanpa perbaiki nat akan cepat kusam lagi."
+excerpt: "Lantai marmer kusam tidak selalu harus dibongkar. Ini bedanya Shine dan Full Stone Restoration, dan kapan cukup satu."
 ---
 
 Lantai marmer yang dulu mengkilap, setelah dua tahun biasanya sudah redup dan kusam. Owners sering mengira itu akhir — padahal severity-nya berbeda.

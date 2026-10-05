@@ -3,7 +3,7 @@ title: "Kenapa Kitchen Set Custom Lebih Hemat Dibandingkan Ready Stock?"
 date: 2026-08-12
 category: "Jabodetabek"
 banner: "/images/ai/kenapa-kitchen-set-custom-lebih-hemat.jpg"
-excerpt: "Banyak orang mengira ready stock lebih murah karena harganya tercantum. Kenyataannya, untuk kitchen set, custom justru lebih hemat kalau dihitung total biaya kepemilikan."
+excerpt: "Ready stock terlihat lebih murah, tapi kalau dihitung total biaya kepemilikan, kitchen set custom justru lebih hemat."
 ---
 
 Banyak orang mengira ready stock lebih murah karena harganya tercantum. Kenyataannya, untuk kitchen set, custom justru lebih hemat kalau dihitung total biaya kepemilikan.

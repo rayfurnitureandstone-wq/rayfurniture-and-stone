@@ -3,7 +3,7 @@ title: "Faktor yang Menentukan Biaya Pasang Marmer & Granit"
 date: 2026-10-05
 category: "Top Table"
 banner: "/images/ai/faktor-biaya-pasang-marmer-granit.jpg"
-excerpt: "Harga pasang marmer dan granit tidak bisa dibaca dari luas meter saja. Empat faktor benar-benar menggerakkan biaya, dan tiga di antaranya bisa Anda kendalikan sebelum order."
+excerpt: "Harga pasang marmer tidak bisa dibaca dari luas meter saja. Empat faktor yang benar-benar menggerakkan biaya."
 ---
 
 Banyak yang bertanya, "berapa biaya pasang marmer per meter?" Jawabannya selalu sama: mulai Rp 700.000/m². Tapi angka itu cuma titik awal, bukan harga akhir. Yang menentukan tagihan akhir ada empat hal.

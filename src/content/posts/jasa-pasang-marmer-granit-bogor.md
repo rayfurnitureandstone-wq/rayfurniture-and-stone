@@ -1,9 +1,9 @@
 ---
-title: "Jasa Pasang Marmer dan Granit Bogor: Top Table, Lantai, Dinding, dan Backsplash"
+title: "Jasa Pasang Marmer dan Granit Bogor"
 date: 2026-10-07
 category: "Top Table"
 banner: "/images/ai/jasa-pasang-marmer-granit-bogor.jpg"
-excerpt: "Marmer bisa dipakai di top table, lantai, dinding, sampai backsplash. Ini area yang cocok untuk masing-masing, ketebalan yang dipakai, dan hal yang perlu disiapkan sebelum menghubungi vendor."
+excerpt: "Marmer untuk top table, lantai, dinding, atau backsplash. Ini area yang cocok untuk masing-masing dan ketebalannya."
 ---
 
 Tidak semua area bisa ditangani dengan cara yang sama. Top table butuh ketebalan berbeda dari dinding. Lantai butuh nat yang rata. Backsplash punya urutan pengerjaan sendiri.

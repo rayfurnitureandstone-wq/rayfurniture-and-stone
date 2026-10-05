@@ -1,9 +1,9 @@
 ---
-title: "Jasa Furniture Custom Bogor: Built-in, Rak Dinding, dan Meja Kerja"
+title: "Jasa Furniture Custom Bogor: Built-in dan Rak Dinding"
 date: 2026-10-07
 category: "Kitchen Set"
 banner: "/images/ai/jasa-furniture-custom-bogor.jpg"
-excerpt: "Rak dinding tidak pas, meja kerja kekecilan, lemari lebih tinggi dari dinding. Ini kenapa furniture custom lebih hemat untuk ruang yang tidak beraturan, dan apa yang perlu ditanyakan sebelum order."
+excerpt: "Rak dinding tidak pas, lemari lebih tinggi dari dinding. Kenapa furniture custom lebih hemat untuk ruang tidak beraturan."
 ---
 
 Rak dinding yang tidak pas. Meja kerja yang bagus tapi kekecilan. Lemari yang lebih tinggi dari dinding kamar.
