@@ -7,6 +7,11 @@
   <title>Content Manager — Ray Furniture &amp; Stone</title>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.3.3/dist/decap-cms.js"></script>
+  <script src="/admin/decap-cms.js"></script>
+  <script>
+    // Path config eksplisit: tanpa ini Decap menebak relatif terhadap URL,
+    // dan saat halaman dibuka sebagai /admin (tanpa slash) dia cari /config.yml → 404.
+    CMS.init({ config: { load_config_file: '/admin/config.yml' } });
+  </script>
 </body>
 </html>
