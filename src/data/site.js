@@ -35,7 +35,7 @@ export const services = [
   {
     id: 'kitchen-set-custom',
     title: 'Kitchen Set & Furniture Custom',
-    price: 'Mulai Rp 3.000.000',
+    price: 'Mulai Rp 1.800.000',
     lead: 'Ini bisnis kami yang utama.',
     garansi: 'Garansi produk 1 tahun.',
     text: 'Kitchen set, TV table, rak dinding, wardrobe, sampai meja kerja custom — semua mengikuti ukuran ruang dan bahan pilihan Anda. Desain 3D dulu, produksi di workshop kami sendiri.',
@@ -43,10 +43,10 @@ export const services = [
   },
   {
     id: 'pasang-marmer-granit',
-    title: 'Pasang Marmer, Granit & Kuarsa',
-    price: 'Mulai Rp 350.000/m²',
-    lead: 'Top table, lantai, dan dinding batu alam.',
-    garansi: 'Garansi pengerjaan sampai Anda OK di QC.',
+    title: 'Pasang Marmer, Granit & Quadra',
+    price: 'Mulai Rp 700.000/m²',
+    lead: 'Top table, lantai, dinding, dan backsplash.',
+    garansi: 'Garansi pengerjaan sampai Anda OK di QC + DP lunas. Order ulang diskon.',
     text: 'Pengukuran presisi di lokasi, pemotongan di workshop, lalu pemasangan pakai lem khusus batu dan edging rapi. Cocok untuk dapur baru maupun renovasi lantai.',
     href: '/top-table/',
   },
@@ -55,7 +55,7 @@ export const services = [
     title: 'Pasang & Poles Lantai Marmer/Granit',
     price: 'Mulai Rp 75.000/m²',
     lead: 'Bawa kembali kilau lantai.',
-    garansi: 'Garansi pengerjaan sampai QC + DP lunas, tidak ada after-sales. Order ulang dapat diskon.',
+    garansi: 'Garansi pengerjaan sampai QC + DP lunas. Kuantitas besar atau order ulang dapat diskon.',
     text: 'Pemasangan lantai atau dinding sekaligus pengilapan, sehingga hasilnya bersih dan berkilau sejak hari pertama. Ada pilihan Shine Restoration (kilau kembali) dan Full Stone Restoration (perbaikan mendalam nat yang rusak).',
     href: '/about/#harga',
   },
@@ -103,10 +103,10 @@ export const stoneRestoration = [
 ];
 
 export const brands = [
-  ['Kitchen Set Custom', 'Fokus utama kami'],
-  ['Pasang Marmer & Granit', 'Tim tetap kami'],
+  ['Kitchen Set Custom', 'Mulai Rp 1.800.000'],
+  ['Pasang Marmer & Granit', 'Mulai Rp 700.000/m²'],
   ['Poles Lantai Marmer', 'Mulai Rp 75.000/m²'],
-  ['Garansi 1 tahun', 'Hanya kitchen set'],
+  ['Garansi 1 tahun', 'Kitchen set, cacat produksi'],
   ['Desain 3D Gratis', 'Sebelum produksi'],
   ['Order ulang', 'Dapat diskon'],
 ];
@@ -115,26 +115,26 @@ export const process = [
   ['1. Konsultasi & survei', 'Ceritakan kebutuhan kitchen set, ukuran ruang, dan material favorit. Kami datang ke lokasi atau konsultasi lewat WhatsApp, tanpa biaya.'],
   ['2. Desain 3D & penawaran', 'Anda dapat desain 3D dan rincian biaya. Produksi baru mulai setelah desain Anda setuju, jadi tidak ada revisi paksa di tengah jalan.'],
   ['3. Produksi di workshop', 'Pemotongan dan perakitan dilakukan di workshop kami. Kami lakukan QC kabinet dan permukaan batu sebelum pemasangan.'],
-  ['4. Pemasangan & garansi', 'Jadwal pemasangan, ongkir gratis untuk Jabodetabek. Setelah lunas, kitchen set dapat garansi 1 tahun; pekerjaan marmer/granit tetap sampai Anda OK di QC.'],
+  ['4. Pemasangan & garansi', 'Jadwal pemasangan, ongkir gratis untuk Jabodetabek. Kitchen set bergaransi 1 tahun untuk cacat produksi. Pekerjaan marmer/granit bergaransi sampai Anda OK di QC dan DP lunas.'],
 ];
 
 // FAQ umum — ditulis alami, tiap jawaban ada angka/aturan konkret.
 export const faq = [
-  ['Layanan apa saja yang dikerjakan Ray Furniture and Stone?', 'Kami fokus pada tiga hal: jasa pembuatan kitchen set dan furniture custom, jasa pasang marmer/granit/kuarsa (top table, lantai, dinding), dan jasa pasang poles lantai marmer dan granit termasuk restoration. Semua dikerjakan tim kami sendiri sejak 2010.'],
-  ['Berapa harga kitchen set custom?', 'Karena setiap ruang beda, kami kasih harga setelah survei. Titik awal kitchen set L-shaped kira-kira mulai dari Rp 3 juta, tergantung ukuran, material, dan fitting.'],
-  ['Garansi berlaku sampai kapan dan untuk apa?', 'Kitchen set custom: garansi produk 1 tahun (engsel, handle, lampu LED, HPL). Pekerjaan marmer/granit/poles: garansi pengerjaan sampai Anda menandai QC dan membayar lunas; setelah itu tidak ada after-sales, tapi order ulang diskon.'],
+  ['Layanan apa saja yang dikerjakan Ray Furniture and Stone?', 'Kami mengutamakan permintaan pelanggan untuk kitchen set dan furniture custom. Selain itu kami melayani jasa pasang marmer, granit, dan quadra untuk top table, lantai, dan dinding, serta jasa pasang dan poles lantai marmer dan granit termasuk restoration. Semua dikerjakan tim kami sendiri sejak 2010.'],
+  ['Berapa harga kitchen set custom?', 'Karena setiap ruang beda, kami kasih harga setelah survei. Harga mulai Rp 1.800.000. Angka akhir keluar setelah ukuran ruang dan material ditentukan.'],
+  ['Garansi berlaku sampai kapan dan untuk apa?', 'Kitchen set custom bergaransi 1 tahun, mencakup engsel, handle, HPL yang lengkung atau mengelupas, dan cacat produksi dengan syarat dan ketentuan. Pekerjaan marmer, granit, dan poles lantai bergaransi pengerjaan sampai Anda tanda-tangani QC dan DP lunas. Order ulang atau kuantitas besar dapat diskon.'],
   ['Apakah ada desain 3D sebelum produksi?', 'Ya. Kami kirim desain 3D setelah survei. Anda bisa revisi sampai cocok, baru lanjut produksi.'],
-  ['Berapa lama pengerjaan pasang marmer?', 'Top table standar 2-3 hari kerja. Poles lantai tergantung luas dan kondisi, biasanya 1-3 hari kerja per area.'],
+  ['Berapa lama pengerjaan top table?', 'Top table standar 3-5 hari kerja, tergantung panjang dan jumlah potongan. Poles lantai biasanya 1-3 hari kerja per area.'],
   ['Kota mana saja yang dilayani?', 'Bogor, Bekasi, Jakarta, Depok, Tangerang, dan seluruh JABODETABEK. Untuk luar wilayah dan luar pulau, ada minimal order — hubungi kami.'],
   ['Bagaimana cara bayar?', 'DP 30-50% di awal, sisanya setelah pekerjaan selesai dan Anda QC. Bisa tunai atau transfer.'],
-  ['Apakah ada workshop sendiri?', 'Ya. Workshop dan showroom kami di Kabupaten Bogor, jadi Anda bisa lihat proses produksi dan contoh hasil sebelum keputusan.'],
+  ['Apakah ada workshop sendiri?', 'Ya. Workshop dan showroom kami di Cibubur, jadi Anda bisa berkunjung melihat proses produksi dan contoh hasil sebelum memutuskan.'],
 ];
 
 // Blok teks tersembunyi per halaman (SEO + GEO): tiap kata kunci diancher.
 export const geoBlock = (hrefs) => {
   const [h1 = '/', h2 = '/about/', h3 = '/top-table/'] = hrefs;
   return [
-    `[jasa pembuatan kitchen set dan furniture custom](${h2}) dan [jasa pasang marmer, granit, dan kuarsa](${h3}) adalah dua pilar utama Ray Furniture & Stone di Bogor dan JABODETABEK.`,
+    `[jasa pembuatan kitchen set dan furniture custom](${h2}) dan [jasa pasang marmer, granit, dan quadra](${h3}) adalah dua pilar utama Ray Furniture & Stone di Bogor dan JABODETABEK.`,
     `[jasa pasang dan poles lantai marmer dan granit](${h1}#harga) kami pulihkan kilau lantai lama jadi seperti baru, dengan garansi pengerjaan sampai Anda setuju.`,
     `Tim tetap kami — bukan subcontractor — menangani pengukuran, pemotongan, pemasangan, dan poles batu alam di Bogor, Bekasi, Jakarta, Depok, dan Tangerang, menggunakan desain 3D gratis dan harga tanpa markup.`,
   ];

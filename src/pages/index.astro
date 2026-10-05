@@ -11,10 +11,10 @@ import { services, inclusions, customVsStock, stoneRestoration, process, waLink,
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft))
   .sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date)).slice(0, 6);
-const desc = 'Ray Furniture & Stone — kitchen set custom, pasang marmer/granit, dan poles lantai marmer di Bogor dan JABODETABEK. Desain 3D gratis, harga tanpa markup.';
+const desc = 'Selain produksi kitchen set dan furniture custom, Ray Furniture & Stone juga menyediakan jasa pasang marmer dan granit serta poles lantai. Desain 3D gratis, garansi 1 tahun.';
 ---
 
-<Base title="Kitchen Set Custom, Pasang Marmer & Granit Bogor" description={desc}>
+<Base title="Kitchen Set Custom — Fokus Utama Kami" description={desc}>
   <HeroSlider />
   <GeoBlock links={['/', '/about/', '/top-table/']} />
 
@@ -22,11 +22,11 @@ const desc = 'Ray Furniture & Stone — kitchen set custom, pasang marmer/granit
   <section class="sec" aria-labelledby="main-title">
     <div class="wrap two-col" style="align-items:center;gap:40px">
       <div>
-        <p class="eyebrow">Bisnis kami yang utama</p>
+        <p class="eyebrow">Kitchen Set Custom Bogor — Garansi 1 Tahun</p>
         <h1 id="main-title">Kitchen Set & Furniture Custom</h1>
         <p class="lead">Setiap kitchen set dibuat mengikuti ukuran ruang Anda. Bukan ready stock yang pas-pasan.</p>
-        <p>Anda ingin desain ramping, rak banyak, atau laci penuh yang pas? Kami potong sendiri di workshop, pakai HPL, marmer, granit, atau kayu pilihan. Sebelum produksi, kami kirimkan desain 3D gratis — baru di-setujui lanjut ke produksi.</p>
-        <p style="margin-top:18px"><strong>Garansi 1 tahun.</strong> Engsel, handle, lampu LED, dan HPL (lengkung/mengelupas) kami tanggung.</p>
+        <p>Anda ingin desain ramping, rak banyak, atau laci penuh yang pas? Setiap modul kami potong sendiri di workshop, pakai HPL, marmer, granit, atau bahan pilihan. Sebelum produksi, kami kirimkan desain 3D gratis — baru di-setujui lanjut ke produksi.</p>
+        <p style="margin-top:18px"><strong>Garansi 1 tahun</strong> untuk engsel, handle, HPL yang lengkung atau mengelupas, dan cacat produksi, dengan syarat dan ketentuan.</p>
         <p style="margin-top:16px"><a class="btn btn--green" href={waLink('Halo Kak, saya mau diskusi kitchen set custom untuk dapur saya.')}>Mulai Konsultasi Gratis →</a></p>
       </div>
       <div><img src="/images/mbr-1421x983.jpg" alt="Contoh hasil kitchen set custom Ray Furniture and Stone" width="800" height="560" style="border-radius:16px" loading="eager"></div>
@@ -38,20 +38,20 @@ const desc = 'Ray Furniture & Stone — kitchen set custom, pasang marmer/granit
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Layanan pendukung</p>
-        <h2 class="h-sec" id="svc-title">Pasang Marmer, Granit &amp; Kuarsa · Pasang &amp; Poles Lantai</h2>
-        <p class="sub-sec">Ini bukan bisnis kami yang utama, jadi kami tidak menawarkan paket mewah. Cukup hasil bagus sampai Anda OK.</p>
+        <h2 class="h-sec" id="svc-title">Pasang Marmer, Granit &amp; Quadra · Pasang &amp; Poles Lantai</h2>
+        <p class="sub-sec">Selain produksi kitchen set dan furniture custom, kami juga menyediakan jasa pasang marmer, granit, dan quadra serta poles lantai.</p>
       </div>
       <div class="feat-grid">
         <article class="feat">
-          <h3>Pasang Marmer, Granit &amp; Kuarsa</h3>
-          <p style="color:var(--green);font-weight:700;margin-bottom:8px">Mulai Rp 350.000/m²</p>
+          <h3>Pasang Marmer, Granit &amp; Quadra</h3>
+          <p style="color:var(--green);font-weight:700;margin-bottom:8px">Mulai Rp 700.000/m²</p>
           <p>Top table, lantai, dinding, atau backsplash. Diukur presisi di lokasi, dipotong di workshop, lalu dipasang pakai lem khusus batu. Cocok untuk dapur baru atau renovasi lantai.</p>
           <p><a class="link-more" href="/top-table/">Coba Kitchen Set Simulator →</a></p>
         </article>
         <article class="feat">
           <h3>Pasang &amp; Poles Lantai Marmer/Granit</h3>
           <p style="color:var(--green);font-weight:700;margin-bottom:8px">Mulai Rp 75.000/m²</p>
-          <p>Kilau lantai redup kembali bersinar. Ada Shine Restoration (kilau puli) dan Full Stone Restoration (perbaiki nat yang rusak). Garansi sampai QC + DP lunas; order ulang dapat diskon.</p>
+          <p>Kilau lantai redup kembali bersinar. Ada Shine Restoration (kilau puli) dan Full Stone Restoration (perbaiki nat yang rusak). Garansi sampai QC + DP lunas; kuantitas besar atau order ulang dapat diskon.</p>
           <p><a class="link-more" href="/about/#harga">Cek harga restoration →</a></p>
         </article>
       </div>
@@ -63,7 +63,7 @@ const desc = 'Ray Furniture & Stone — kitchen set custom, pasang marmer/granit
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Garansi &amp; harga</p>
-        <h2 class="h-sec" id="garansi-title">Garansi 1 tahun hanya untuk kitchen set</h2>
+        <h2 class="h-sec" id="garansi-title">Garansi</h2>
         <p class="sub-sec">Kami jujur: pekerjaan marmer/granit dan poles lantai tidak ada garansi after-sales. Garansi tetap sampai Anda tanda-tangani QC dan DP lunas. Order ulang dapat diskon.</p>
       </div>
       <div class="trust-grid">
@@ -77,7 +77,7 @@ const desc = 'Ray Furniture & Stone — kitchen set custom, pasang marmer/granit
   <!-- Yang sudah termasuk paket kitchen set -->
   <section class="sec" aria-labelledby="incl-title">
     <div class="wrap">
-      <div class="sec-head"><p class="eyebrow">Termasuk</p><h2 class="h-sec" id="incl-title">Yang sudah termasuk paket kitchen set Anda</h2></div>
+      <div class="sec-head"><p class="eyebrow">Termasuk</p><h2 class="h-sec" id="incl-title">Apa yang Anda Dapatkan Saat Order Kitchen Set?</h2></div>
       <ul class="chips">{inclusions.map(([n, d]) => <li><b>{n}</b><span>{d}</span></li>)}</ul>
     </div>
   </section>

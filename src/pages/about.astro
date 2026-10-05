@@ -4,10 +4,10 @@ import GeoBlock from '../components/GeoBlock.astro';
 import Faq from '../components/Faq.astro';
 import { site, services, stoneRestoration, process, inclusions, waLink } from '../data/site.js';
 
-const desc = 'Tentang Ray Furniture & Stone: sejak 2010 mengerjakan kitchen set custom, pasang marmer/granit, dan poles lantai di Bogor dan Jabodetabek. Desain 3D gratis, harga transparan.';
+const desc = 'Selain produksi kitchen set dan furniture custom, kami juga menyediakan jasa pasang marmer atau granit dan poles lantai. Desain 3D gratis.';
 ---
 
-<Base title="Tentang Kami — Kitchen Set Custom & Marmer Bogor" description={desc}>
+<Base title="Kitchen Set Custom — Fokus Utama Kami" description={desc}>
   <div class="wrap">
     <nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / About</nav>
   </div>
@@ -16,8 +16,8 @@ const desc = 'Tentang Ray Furniture & Stone: sejak 2010 mengerjakan kitchen set 
     <div class="wrap two-col" style="align-items:center">
       <div>
         <p class="eyebrow">Tentang kami</p>
-        <h1>Kitchen Set Pertama, Lantai Kedua</h1>
-        <p class="lead">Sejak 2010, kami fokus pada kitchen set custom. Di samping itu, kami juga pasang marmer, granit, dan kuarsa, serta poles lantai — semuanya dengan tim tetap kami sendiri.</p>
+        <h1>Kitchen Set Custom — Fokus Utama Kami</h1>
+        <p class="lead">Selain produksi kitchen set dan furniture custom, kami juga menyediakan jasa pasang marmer atau granit dan poles lantai. Kami selalu mengutamakan keinginan pelanggan.</p>
         <p style="margin-top:22px"><a class="btn btn--green" href={waLink('Halo Kak, saya mau konsultasi gratis untuk kitchen set.')}>Konsultasi Gratis →</a>
         <a class="btn btn--ghost" href="/top-table/">Coba Simulator Top Table →</a></p>
       </div>
@@ -33,7 +33,7 @@ const desc = 'Tentang Ray Furniture & Stone: sejak 2010 mengerjakan kitchen set 
       <div class="sec-head">
         <p class="eyebrow">Bisnis utama kami</p>
         <h2 class="h-sec">Pembuatan Kitchen Set &amp; Furniture Custom</h2>
-        <p class="sub-sec">Ini yang kami kerjakan paling sering. Setiap modul potongan sendiri, mengikuti ruang Anda, lalu kami kirim desain 3D sebelum produksi.</p>
+        <p class="lead">Kami selalu mengutamakan keinginan pelanggan. Tiap kitchen set potong sendiri mengikuti ruang Anda, bukan ready stock yang meleset.</p>
       </div>
       <div class="feat-grid">
         <article class="feat">
@@ -62,10 +62,10 @@ const desc = 'Tentang Ray Furniture & Stone: sejak 2010 mengerjakan kitchen set 
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Layanan</p>
-        <h2 class="h-sec" id="svc-title">Empat Layanan yang Kita Kerjakan</h2>
-        <p class="sub-sec">Semua dikerjakan tim kami, tidak ada subcontractor. Kitchen set adalah fokus; marmer dan poles adalah pendukungnya.</p>
+        <h2 class="h-sec" id="svc-title">Apa Saja Layanan yang Ray Furniture &amp; Stone Sediakan?</h2>
+        <p class="sub-sec">Semua dikerjakan tim kami sendiri, tanpa subcontractor.</p>
       </div>
-      <div class="feat-grid">
+      <div class="feat-grid feat-grid--2">
         {services.map(s => (
           <article class="feat" id={s.id}>
             <h3><a href={s.href}>{s.title}</a></h3>

@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { site, nav, waLink } from '../data/site.js';
-const { title = site.name, description = 'Jasa kitchen set custom, top table marmer dan granit, serta poles lantai di Bogor dan Jabodetabek.', noindex = false, bodyClass = '' } = Astro.props;
+const { title = site.name, description = 'Jasa pembuatan kitchen set custom dan jasa pasang poles marmer atau granit di Cibubur, Bogor dan JABODETABEK.', noindex = false, bodyClass = '' } = Astro.props;
 const path = Astro.url.pathname;
 const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));
 ---
@@ -30,7 +30,7 @@ const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));
   <meta property="og:type" content="website">
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context':'https://schema.org','@type':'FurnitureStore',name:site.name,url:site.origin,
-      description:'Jasa pasang marmer dan granit, jasa pembuatan kitchen set dan furniture custom, serta jasa pasang dan poles marmer di Bogor dan Jabodetabek.',
+      description:'Jasa pembuatan kitchen set custom dan jasa pasang poles marmer atau granit di Cibubur, Bogor dan JABODETABEK.',
       telephone:site.phoneDisplay,email:site.email,
       image:`${site.origin}/images/warm-modern-kitchen-set-advertisement.png`,
       priceRange:'Rp',currencies:'IDR',foundingDate:String(site.since),
@@ -50,7 +50,6 @@ const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));
       </a>
       <nav class="nav" aria-label="Navigasi utama">
         {nav.map(n => <a href={n.href} aria-current={isOn(n.href) ? 'page' : undefined}>{n.label}</a>)}
-        <a class="head-cta" href={waLink()}>Konsultasi</a>
       </nav>
       <div class="head-tools">
         <a class="icon-btn" href="/what-news/" aria-label="Cari artikel"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
@@ -83,7 +82,7 @@ const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));
     <div class="wrap foot-grid">
       <div>
         <a class="logo" href="/" style="color:#fff"><img src="/images/ray-furniture-stone-logo.png" alt="" width="34" height="34"><span style="color:#fff">Ray Furniture <b style="color:#7fbf9a">&amp; Stone</b></span></a>
-        <p style="margin-top:12px">Mitra-builder kitchen set custom dan batuan alami di Bogor. Satu stop solution untuk furniture, top table marmer &amp; granit, sampai poles lantai.</p>
+        <p style="margin-top:12px">Jasa pembuatan kitchen set custom dan jasa pasang poles marmer atau granit di Cibubur. One stop solution untuk furniture, top table marmer &amp; granit, sampai poles lantai.</p>
         <div class="social">
           <a href="https://instagram.com/rayfurnitureandstone" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c0-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.1.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 8.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.4-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
           <a href="https://tiktok.com/@rayfurnitureandstone" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 3c.3 2.1 1.6 3.6 3.7 3.9v2.7c-1.3.1-2.5-.3-3.7-1v5.9c0 3.7-2.9 6.1-6.1 5.8-2.9-.3-5-2.7-5-5.6 0-3.4 3-5.9 6.4-5.4v2.8c-1.9-.5-3.7.8-3.7 2.7 0 1.6 1.3 2.8 2.9 2.8 1.7 0 2.9-1.2 2.9-3V3h2.6z"/></svg></a>
