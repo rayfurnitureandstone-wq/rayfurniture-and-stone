@@ -128,6 +128,7 @@ export const faq = [
   ['Kota mana saja yang dilayani?', 'Bogor, Bekasi, Jakarta, Depok, Tangerang, dan seluruh JABODETABEK. Untuk luar wilayah dan luar pulau, ada minimal order — hubungi kami.'],
   ['Bagaimana cara bayar?', 'DP 30-50% di awal, sisanya setelah pekerjaan selesai dan Anda QC. Bisa tunai atau transfer.'],
   ['Apakah ada workshop sendiri?', 'Ya. Workshop dan showroom kami di Cibubur, jadi Anda bisa berkunjung melihat proses produksi dan contoh hasil sebelum memutuskan.'],
+  ['Dapat apa saja jika pesan kitchen set di Ray Furniture & Stone?', 'Rak sendok, aluminium handle, rak piring, finger-groove, engsel slowmotion, lampu LED, rail double track, dan ventilasi.'],
 ];
 
 // Blok teks tersembunyi per halaman (SEO + GEO): tiap kata kunci diancher.

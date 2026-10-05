@@ -300,6 +300,9 @@ details .ans{padding:0 0 16px;color:var(--muted);font-size:13.8px}
 .price-card{text-align:left}
 @media (max-width:860px){.feat-grid--2{grid-template-columns:1fr}}
 
-/* guarantee columns on garansi section */
-.guarantee-grid{display:grid;grid-template-columns:repeat(2,1fr);max-width:820px;margin-inline:auto}
+/* guarantee boxes on garansi section */
+.guarantee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:960px;margin-inline:auto}
+.guarantee-grid article{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:20px 18px;text-align:center}
+.guarantee-grid b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.guarantee-grid span{font-size:12.5px;color:var(--muted);display:block}
 @media (max-width:860px){.guarantee-grid{grid-template-columns:1fr}}
