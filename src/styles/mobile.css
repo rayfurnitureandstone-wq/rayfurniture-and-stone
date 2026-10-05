@@ -283,3 +283,49 @@
   details.more[open] summary::after{content:"\2212 ";color:var(--m-ink)}
   details.more p{padding:10px 16px 16px;font-size:15px;line-height:1.6;color:var(--m-muted)}
 }
+
+/* ============================================================
+   PASS 2: hamburger pojok kanan, WA float di atas nav,
+   footer rapi + warna, nav label
+   ============================================================ */
+@media (max-width:560px){
+
+  /* --- hamburger tampil, pojok kanan --- */
+  .burger{display:grid !important;place-items:center}
+  .head-bar{justify-content:space-between}
+  .head-search,.head-wa{display:none}
+  .head-tools{gap:0}
+
+  /* --- tombol WA di atas bottom nav --- */
+  .wa-float{
+    bottom:calc(76px + env(safe-area-inset-bottom)) !important;
+    right:14px !important;width:52px;height:52px;
+    box-shadow:0 4px 14px rgba(37,211,102,.4)}
+
+  /* --- footer: gelap elegan, bukan putih --- */
+  .site-foot{background:#1B1F23 !important;color:#B9C0C8;
+    border-top:3px solid var(--m-accent);
+    padding:32px 0 20px}
+  .site-foot h4{color:#fff;font-size:12px;letter-spacing:.1em;margin-bottom:10px}
+  .site-foot a{color:#B9C0C8;font-size:14.5px;padding:6px 0;
+    border-bottom:1px solid rgba(255,255,255,.06)}
+  .site-foot p{color:#8F969E;font-size:14px;line-height:1.6}
+  .site-foot .logo span,.site-foot .logo span b{color:#fff !important}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:20px 16px;padding:0 0 20px}
+  .foot-grid>div:first-child{grid-column:1/-1;
+    padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .foot-grid a:last-child{border-bottom:0}
+  .social a{background:rgba(255,255,255,.08);color:#fff}
+}
+
+/* ============================================================
+   PASS 3: rails (chips/posts) + rail-hint
+   ============================================================ */
+@media (max-width:560px){
+  .rail-hint{
+    font-size:12px;color:var(--m-muted);letter-spacing:.04em;
+    margin:-8px 0 10px;display:flex;align-items:center;gap:5px;
+    font-weight:600}
+  .chips-rail li{flex:0 0 72%}
+  .post-rail .post{flex:0 0 80%}
+}

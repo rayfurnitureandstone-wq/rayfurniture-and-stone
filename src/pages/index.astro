@@ -80,7 +80,8 @@ const desc = 'Selain produksi kitchen set dan furniture custom, Ray Furniture & 
   <section class="sec" aria-labelledby="incl-title">
     <div class="wrap">
       <div class="sec-head"><p class="eyebrow">Termasuk</p><h2 class="h-sec" id="incl-title">Apa yang Anda Dapatkan Saat Order Kitchen Set?</h2></div>
-      <ul class="chips">{inclusions.map(([n, d]) => <li><b>{n}</b><span>{d}</span></li>)}</ul>
+      <p class="rail-hint">Geser ke samping →</p>
+      <ul class="chips chips-rail">{inclusions.map(([n, d]) => <li><b>{n}</b><span>{d}</span></li>)}</ul>
     </div>
   </section>
 
@@ -113,8 +114,9 @@ const desc = 'Selain produksi kitchen set dan furniture custom, Ray Furniture & 
   <!-- Artikel 6 terbaru -->
   <section class="sec sec--cream" aria-labelledby="news-title">
     <div class="wrap">
-      <div class="sec-head"><p class="eyebrow">Inspirasi</p><h2 class="h-sec" id="news-title">Enam postingan terbaru</h2><p class="sub-sec">Panduan dari lapangan: memilih marmer, menjaga kilap, harga custom vs ready stock.</p></div>
-      <div class="post-grid">{posts.map(p => <PostCard post={p} />)}</div>
+      <div class="sec-head"><p class="eyebrow">Inspirasi</p><h2 class="h-sec" id="news-title">Postingan Terbaru</h2><p class="sub-sec">Panduan dari lapangan: memilih marmer, menjaga kilap, harga custom vs ready stock.</p>
+      <p class="rail-hint">Geser ke samping →</p></div>
+      <div class="post-grid post-rail">{posts.map(p => <PostCard post={p} />)}</div>
       {posts.length < 6 && <p style="text-align:center;margin:26px 0 0">Artikel bertambah sesuai proyek. Cek lagi nanti.</p>}
       <p style="text-align:center;margin:26px 0 0"><a class="btn btn--ghost" href="/what-news/">Lihat semua artikel</a></p>
     </div>

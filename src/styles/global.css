@@ -309,3 +309,5 @@ details .ans{padding:0 0 16px;color:var(--muted);font-size:13.8px}
 .guarantee-grid b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
 .guarantee-grid span{font-size:12.5px;color:var(--muted);display:block}
 @media (max-width:860px){.guarantee-grid{grid-template-columns:1fr}}
+
+.rail-hint{display:none}
