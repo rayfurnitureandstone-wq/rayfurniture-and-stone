@@ -1,6 +1,6 @@
 ---
 title: "Berapa Biaya Renovasi Dapur? Rincian yang Sering Luput"
-date: 2026-10-08
+date: 2026-10-05
 category: "Kitchen Set"
 banner: "/images/ai/berapa-biaya-renovasi-dapur.jpg"
 excerpt: "Ada biaya yang baru muncul setelah penawaran disepakati. Ini rincian komponen renovasi dapur, mana yang bisa dipotong, dan mana yang sebaiknya tidak dihemat."

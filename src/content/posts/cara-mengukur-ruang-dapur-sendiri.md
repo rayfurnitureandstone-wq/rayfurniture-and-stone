@@ -1,6 +1,6 @@
 ---
 title: "Cara Mengukur Ruang Dapur Sendiri Sebelum Survei"
-date: 2026-10-08
+date: 2026-10-05
 category: "Kitchen Set"
 banner: "/images/ai/cara-mengukur-ruang-dapur-sendiri.jpg"
 excerpt: "Vendor butuh ukuran presisi, tapi kamu bisa hitung sendiri. Ini cara mengukur ruang dapur dan bagian yang sering terlewat."

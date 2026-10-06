@@ -1,6 +1,6 @@
 ---
 title: "HPL atau Marmer untuk Top Table?"
-date: 2026-10-08
+date: 2026-10-05
 category: "Material"
 banner: "/images/ai/hpl-atau-marmer-untuk-top-table.jpg"
 excerpt: "HPL lebih murah dan cepat, marmer lebih tahan panas dan tampil lebih premium. Ini perbandingan lengkapnya, supaya kamu bisa putuskan sesuai anggaran dan pemakaian."

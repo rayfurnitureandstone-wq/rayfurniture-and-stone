@@ -7,7 +7,7 @@ import { waLink } from '../data/site.js';
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft))
   .sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date));
-const latest = posts.slice(0, 6);
+const latest = posts;
 
 const desc = 'Blog Ray Furniture and Stone: panduan praktis memilih marmer dan granit, menjaga kilap lantai, dan menghitung biaya kitchen set custom dari workshop kami.';
 ---
@@ -43,7 +43,7 @@ const desc = 'Blog Ray Furniture and Stone: panduan praktis memilih marmer dan g
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Semua artikel</p>
-        <h2 class="h-sec">Enam Postingan Terbaru</h2>
+        <h2 class="h-sec">Semua Postingan</h2>
         <p class="sub-sec">Diperbarui setiap kali ada proyek baru yang selesai. Semua ditulis oleh tim yang mengerjakan langsung.</p>
       </div>
       <div class="post-grid">

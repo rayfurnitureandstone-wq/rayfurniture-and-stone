@@ -1,6 +1,6 @@
 ---
 title: "Tips Memilih Tukang Pasang Marmer yang Berpengalaman dan Teruji"
-date: 2026-10-08
+date: 2026-10-05
 category: "Top Table"
 banner: "/images/ai/tips-memilih-tukang-pasang-marmer.jpg"
 excerpt: "Harga marmer mahal bisa sia-sia kalau pemasangan ceroboh. Tanda tukang inexperienced dan pertanyaan sebelum kontrak."

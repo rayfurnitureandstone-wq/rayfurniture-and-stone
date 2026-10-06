@@ -1,6 +1,6 @@
 ---
 title: "Kenapa Top Table Marmer Perlu Ditopang?"
-date: 2026-10-08
+date: 2026-10-05
 category: "Top Table"
 banner: "/images/ai/kenapa-top-table-marmer-perlu-ditopang.jpg"
 excerpt: "Countertop marmer panjang bisa turun kalau tidak disangga. Kapan penopang dibutuhkan dan kenapa ini bukan biaya tambahan."
