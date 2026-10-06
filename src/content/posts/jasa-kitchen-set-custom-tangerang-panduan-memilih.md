@@ -2,6 +2,7 @@
 title: "Jasa Kitchen Set Custom Tangerang: Panduan Memilih Sebelum Bayar DP"
 date: 2026-10-06
 category: "Kitchen Set"
+banner: "/images/ai/jasa-kitchen-set-custom-tangerang-panduan-memilih.jpg"
 excerpt: "Memilih jasa kitchen set custom di Tangerang tidak cukup dari harga. Ini yang perlu dicek: workshop sendiri, desain 3D, isi garansi, dan cara membaca penawaran."
 ---
 
