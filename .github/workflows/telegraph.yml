@@ -1,0 +1,60 @@
+name: Publish ke Telegraph
+
+on:
+  push:
+    branches: [main]
+    paths: ['src/content/posts/**']
+  workflow_dispatch:
+
+jobs:
+  changed:
+    runs-on: ubuntu-latest
+    outputs:
+      files: ${{ steps.diff.outputs.files }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - id: diff
+        run: |
+          BEFORE="${{ github.event.before }}"
+          if [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
+            FILES=$(git diff --name-only "$BEFORE" "${{ github.sha }}" -- 'src/content/posts/*.md' || true)
+          else
+            FILES=$(git diff --name-only HEAD~1 HEAD -- 'src/content/posts/*.md' || true)
+            # Dispatch manual tanpa perubahan artikel: terbitkan artikel terbaru saja
+            if [ -z "$FILES" ]; then
+              FILES=$(grep -m1 '^date:' src/content/posts/*.md | sed 's/^\(.*\.md\):date: */\1 /' | sort -r | head -1 | cut -d' ' -f1)
+            fi
+          fi
+          echo "$FILES" | grep '\.md$' | jq -R -s -c 'split("\n") | map(select(length > 0))' > files.json || echo "[]" > files.json
+          echo "files=$(cat files.json)" >> "$GITHUB_OUTPUT"
+
+  publish:
+    needs: changed
+    if: needs.changed.outputs.files != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        file: ${{ fromJSON(needs.changed.outputs.files) }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: meta
+        run: |
+          TITLE=$(grep -m1 '^title:' "${{ matrix.file }}" | sed 's/^title:[[:space:]]*"//; s/"[[:space:]]*$//')
+          # Buang frontmatter — Telegraph hanya butuh isi markdown
+          awk 'BEGIN{fm=0} NR==1&&/^---[[:space:]]*$/{fm=1;next} fm&&/^---[[:space:]]*$/{fm=0;next} fm{next} {print}' "${{ matrix.file }}" > body_clean.md
+          echo "title=$TITLE" >> "$GITHUB_OUTPUT"
+      - name: Publish ${{ matrix.file }}
+        uses: jiacai2050/telegraph-action@v1
+        id: tg
+        with:
+          token: ${{ secrets.TELEGRAPH_TOKEN }}
+          title: ${{ steps.meta.outputs.title }}
+          body-file: body_clean.md
+          author-name: Ray Furniture and Stone
+          author-url: https://rayfurnitureandstone.id
+      - name: Catat hasil
+        run: |
+          echo "### 📡 Telegraph: [${{ steps.tg.outputs.title }}](${{ steps.tg.outputs.url }})" >> "$GITHUB_STEP_SUMMARY"
+          echo "URL: ${{ steps.tg.outputs.url }}"
