@@ -14,9 +14,9 @@ Untuk pemilik rumah di Bogor, Bekasi, Depok, Tangerang, dan Jakarta, berikut rin
 
 **Kitchen set itu sendiri.** Ukuran linier dikali harga per meter, ditambah biaya modifikasi kalau ada bentuk khusus.
 
-**Countertop.** Kalau bahannya dari keramik atau HPL, biayanya masuk ke paket. Kalau marmer atau granit, dihitung terpisah per meter persegi karena harga batu cukup berbeda.
+**Countertop.** Kalau bahannya dari keramik atau HPL, biayanya masuk ke paket. Kalau marmer atau granit, dihitung terpisah per meter lari mengikuti panjang meja, karena harga batu cukup berbeda.
 
-**Pemasangan batu.** Untuk marmer dan granit, biaya tukang pemasangan dihitung sendiri, terpisah dari pemasangan kitchen set, dengan satuan per meter persegi.
+**Pemasangan batu.** Untuk marmer dan granit, biaya tukang pemasangan dihitung sendiri, terpisah dari pemasangan kitchen set, dengan satuan per meter persegi untuk bidang yang dipasang.
 
 **Listrik dan air.** Kalau kompor dipindah posisi atau wastafel tempatnya berubah, pemindahan titik listrik dan pipa air punya biaya tersendiri.
 

@@ -34,8 +34,8 @@ Beberapa penawaran sudah termasuk pasang, yang lain belum. Ada juga yang belum t
 
 ## Patokan harga di JABODETABEK
 
-- Kitchen set sederhana mulai **Rp1.800.000**
-- Top table marmer atau granit dihitung terpisah, mulai **Rp700.000 per meter persegi**
+- Kitchen set sederhana mulai **Rp1.800.000** per meter lari
+- Top table marmer atau granit dihitung terpisah per meter lari, mulai **Rp700.000**
 - DP 30 sampai 50 persen, sisanya setelah QC
 
 Angka ini titik awal. Harga final baru keluar setelah ukuran ruang dan material ditentukan.
