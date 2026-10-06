@@ -10,9 +10,9 @@ Lantai marmer yang tadinya mengkilap, setelah dua tahun biasanya sudah redup dan
 
 ## Shine Restoration vs Full Restoration
 
-**Shine Restoration** (mulai 75rb/m²) cocok untuk lantai yang masih bisa diselamatkan: cleaning noda tipis, merapikan permukaan, lalu sealing ulang.
+**Shine Restoration** (mulai 100rb/m²) cocok untuk lantai yang masih bisa diselamatkan: cleaning noda tipis, merapikan permukaan, lalu sealing ulang.
 
-**Full Stone Restoration** (mulai 100rb/m²) untuk yang sudah rusak parah: merapikan nat yang tidak rata, mengupas lapisan lama, lalu mengembalikan kilau alami material dari dasar.
+**Full Stone Restoration** (mulai 130rb/m²) untuk yang sudah rusak parah: merapikan nat yang tidak rata, mengupas lapisan lama, lalu mengembalikan kilau alami material dari dasar.
 
 ## Kapan harus dipoles?
 

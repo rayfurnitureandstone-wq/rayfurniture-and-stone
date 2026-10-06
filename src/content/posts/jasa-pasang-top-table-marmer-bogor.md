@@ -41,7 +41,7 @@ Lem khusus batu dibuat agar bisa sedikit elastis mengikuti gerak batu. Sifat ini
 Untuk [jasa pasang top table](https://rayfurnitureandstone.id/top-table/#simulator) di Bogor dan JABODETABEK, angka yang biasanya muncul di tangan kedua:
 
 - **Mulai Rp 700.000 per meter persegi** untuk pemasangan top table, lantai, atau dinding
-- **Mulai Rp 75.000 per meter persegi** untuk poles lantai, atau Rp 100.000 untuk Full Stone Restoration
+- **Mulai Rp 100.000 per meter persegi** untuk poles lantai, atau Rp 130.000 untuk Full Stone Restoration
 - **3 sampai 5 hari kerja** untuk top table standar
 
 Angka itu titik awal, bukan harga final. Harga akhir keluar setelah area dilihat dan material ditentukan.

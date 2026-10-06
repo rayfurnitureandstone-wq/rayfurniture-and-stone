@@ -53,7 +53,7 @@ export const services = [
   {
     id: 'pasang-poles-marmer',
     title: 'Pasang & Poles Lantai Marmer/Granit',
-    price: 'Mulai Rp 75.000/m²',
+    price: 'Mulai Rp 100.000/m²',
     lead: 'Bawa kembali kilau lantai.',
     garansi: 'Garansi pengerjaan sampai QC + DP lunas. Kuantitas besar atau order ulang dapat diskon.',
     text: 'Pemasangan lantai atau dinding sekaligus pengilapan, sehingga hasilnya bersih dan berkilau sejak hari pertama. Ada pilihan Shine Restoration (kilau kembali) dan Full Stone Restoration (perbaikan mendalam nat yang rusak).',
@@ -92,12 +92,12 @@ export const customVsStock = [
 export const stoneRestoration = [
   {
     name: 'Shine Restoration',
-    from: 'Mulai Rp 75.000/m²',
+    from: 'Mulai Rp 100.000/m²',
     text: 'Kilau lantai yang redup kembali bersinar, noda tipis dibersihkan, lalu dilapisi pelindung agar tidak cepat kusam lagi.',
   },
   {
     name: 'Full Stone Restoration',
-    from: 'Mulai Rp 100.000/m²',
+    from: 'Mulai Rp 130.000/m²',
     text: 'Perbaikan mendalam: meratakan nat atau sambungan tak rata, mengupas lapisan lama, dan mengembalikan kilau alami batu dari dasar.',
   },
 ];
@@ -105,7 +105,7 @@ export const stoneRestoration = [
 export const brands = [
   ['Kitchen Set Custom', 'Mulai Rp 1.800.000'],
   ['Pasang Marmer & Granit', 'Mulai Rp 700.000/m²'],
-  ['Poles Lantai Marmer', 'Mulai Rp 75.000/m²'],
+  ['Poles Lantai Marmer', 'Mulai Rp 100.000/m²'],
   ['Garansi 1 tahun', 'Kitchen set, cacat produksi'],
   ['Desain 3D Gratis', 'Sebelum produksi'],
   ['Order ulang', 'Dapat diskon'],
