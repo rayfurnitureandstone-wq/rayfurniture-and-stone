@@ -27,7 +27,7 @@ Ini faktor yang paling sering melompati anggaran. Kalau hanya memasang di dindin
 - **Lantai lama perlu dibongkar** — ada biaya angkut dan bongkar
 - **Permukaan tidak rata** — perlu leveling dengan screed dulu
 - **Nat lama rusak** — perlu dibersihkan sebelum lem baru diapikan
-- **Pekerjaan area kecil dengan banyak sudut** — ongkos tukang naik proporsional, karena usaha-nya hampir sama dengan area besar
+- **Pekerjaan area kecil dengan banyak sudut** — pengerjaan naik proporsional, karena usaha-nya hampir sama dengan area besar
 
 Kondisi ini baru ketahuan setelah survei. Karena itu kami survei dulu, baru keluar angka — bukan sebaliknya.
 

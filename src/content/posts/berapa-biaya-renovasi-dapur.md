@@ -16,7 +16,7 @@ Untuk pemilik rumah di Bogor, Bekasi, Depok, Tangerang, dan Jakarta, berikut rin
 
 **Countertop.** Kalau bahannya dari keramik atau HPL, biayanya masuk ke paket. Kalau marmer atau granit, dihitung terpisah per meter lari mengikuti panjang meja, karena harga batu cukup berbeda.
 
-**Pemasangan batu.** Untuk marmer dan granit, biaya tukang pemasangan dihitung sendiri, terpisah dari pemasangan kitchen set, dengan satuan per meter persegi untuk bidang yang dipasang.
+**Pemasangan batu.** Untuk marmer dan granit, biaya pasang top table masuk sebagai satu paket jasa dan barang — dipasang oleh tim kami, material dari kami. Satu angka, bukan dipecah antara ongkos tukang dan harga batu.
 
 **Listrik dan air.** Kalau kompor dipindah posisi atau wastafel tempatnya berubah, pemindahan titik listrik dan pipa air punya biaya tersendiri.
 

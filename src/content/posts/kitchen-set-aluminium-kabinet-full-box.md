@@ -37,7 +37,7 @@ Untuk satuan per meter lari, harga kitchen set aluminium di area JABODETABEK ber
 - Kabinet atas aluminium: mulai **Rp2.500.000** per meter
 - Kabinet bawah aluminium full box: mulai **Rp2.400.000** per meter
 
-Angka ini belum menghitung top table, karena bagian atas meja dihitung terpisah tergantung material yang dipilih. Top table marmer dan granit dihitung per meter lari mengikuti panjang meja, mulai Rp700.000. HPL lebih murah tapi tidak tahan panas.
+Angka ini belum menghitung top table, karena bagian atas meja dihitung terpisah tergantung material yang dipilih. Pasang top table marmer atau granit mulai Rp700.000 per meter lari, mengikuti panjang meja dan sudah termasuk material. HPL lebih murah tapi tidak tahan panas.
 
 Dapur berukuran tiga meter biasanya membutuhkan kabinet atas dan bawah sekaligus, jadi siapkan anggaran untuk dua hitungan itu, bukan salah satu saja.
 

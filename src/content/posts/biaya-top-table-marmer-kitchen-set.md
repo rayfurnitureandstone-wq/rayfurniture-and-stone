@@ -28,19 +28,30 @@ Salah satunya bukan berarti lebih murah atau lebih mahal. Yang penting tahu peke
 
 **Pemotongan dan edge profile.** Bentuk L, lubang kompor, dan lubang wastafel menambah biaya pengerjaan. Semakin banyak potongan, semakin besar porsinya.
 
-**Pemasangan.** Biaya tukang untuk pasang marmer atau granit dihitung per meter persegi luas yang dipasang — untuk top table mulai dari Rp700.000 per meter persegi, untuk lantai, dinding, dan tangga patokannya sama. Termasuk lem khusus batu dan nat yang rapi.
-
-Perlu dibedakan: harga jual top table ke Anda dihitung per meter lari, sedangkan ongkos pemasangannya per meter persegi. Dua hal berbeda yang sering tertukar saat membandingkan penawaran.
+**Pemasangan.** Harga pasang top table sudah mencakup jasa dan barang sekaligus — material batu dari kami, dipasang tim kami, satu angka mulai dari Rp700.000 per meter lari. Termasuk lem khusus batu dan nat yang rapi. Tidak ada ongkos tukang terpisah yang muncul belakangan.
 
 **Aksesoris.** Sink clips, bracket, dan bahan perekat kadang ditagih terpisah. Tanyakan sejak awal apakah sudah masuk atau belum.
 
+## Kalau hanya butuh bahannya saja (cutting size)
+
+Ada juga yang sudah punya tukang sendiri dan hanya butuh batunya. Untuk itu narasinya **cutting size**: batu dipotong sesuai ukuran yang Anda minta, termasuk lubang kompor dan wastafel, lalu diserahkan siap pasang.
+
+Bedanya jelas dengan harga pasang top table:
+
+- **Cutting size** — barang saja. Kami potong presisi sesuai ukuran, Anda yang memasang.
+- **Harga pasang top table** — jasa dan barang sekaligus. Material dari kami, dipasang tim kami, ada QC dan garansi pengerjaan.
+
+Sebutkan ukuran panjang, lebar, dan posisi lubang saat meminta hitungan cutting size. Semakin lengkap ukurannya, semakin kecil sisa potongan yang terbuang.
+
 ## Mulai dari berapa
 
-Patokan yang bisa dipakai di JABODETABEK, termasuk Tangerang:
+Patokan yang bisa dipakai di JABODETABEK, termasuk Tangerang. Semua angka sudah termasuk jasa dan barang:
 
-- Pasang marmer atau granit mulai **Rp700.000 per meter persegi** (untuk top table, lantai, dinding, dan tangga)
+- Pasang top table marmer atau granit, mulai **Rp700.000 per meter lari** (mengikuti panjang meja)
+- Pasang lantai, dinding, atau tangga marmer dan granit, patokannya **per meter persegi**
+- Poles lantai mulai **Rp100.000 per meter persegi**, Full Stone Restoration **Rp130.000**
 - Kitchen set sederhana mulai **Rp1.800.000** per meter lari
-- Top table dihitung terpisah setelah panjang meja dan jenis batu ditentukan
+- Kalau hanya butuh bahannya saja, minta hitungan **cutting size**
 
 Angka ini titik awal, bukan harga final. Harga keluar setelah ukuran ruang dan pilihan batu dipastikan.
 

@@ -52,7 +52,7 @@ Yang tidak masuk: noda cairan, goresan benda tajam, dan kerusakan akibat genanga
 
 **Punya portofolio di area yang sama.** Minta alamat proyek di kecamatan kamu. Kalau semua bisa dikerjakan di mana saja tanpa contoh khusus, artinya belum fokus lokal.
 
-**Bisa menjelaskan struktur biaya.** Vendor yang bisa memisahkan biaya material dan tenaga kerja menunjukkan biaya mereka nyata.
+**Bisa menjelaskan struktur biaya.** Vendor yang bisa merinci apa saja yang masuk dalam satu harga pasang menunjukkan hitungannya nyata, bukan angka yang dikira-kira.
 
 Hindari diskon besar yang menempel pada DP besar. Itu beban, bukan keuntungan.
 
