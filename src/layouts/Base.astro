@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import '../styles/mobile.css';
 import { site, nav, waLink } from '../data/site.js';
-const { title = site.name, description = 'Jasa pembuatan kitchen set custom dan jasa pasang poles marmer atau granit di Cibubur, Bogor dan JABODETABEK.', noindex = false, bodyClass = '' } = Astro.props;
+const { title = site.name, description = 'Jasa pembuatan kitchen set custom dan jasa pasang poles marmer atau granit di Cibubur, Bogor dan JABODEBEK.', noindex = false, bodyClass = '' } = Astro.props;
 const path = Astro.url.pathname;
 const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));
 ---
@@ -32,7 +32,7 @@ const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));
   <meta property="og:type" content="website">
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context':'https://schema.org','@type':'FurnitureStore',name:site.name,url:site.origin,
-      description:'Jasa pembuatan kitchen set custom dan jasa pasang poles marmer atau granit di Cibubur, Bogor dan JABODETABEK.',
+      description:'Jasa pembuatan kitchen set custom dan jasa pasang poles marmer atau granit di Cibubur, Bogor dan JABODEBEK.',
       telephone:site.phoneDisplay,email:site.email,
       image:`${site.origin}/images/warm-modern-kitchen-set-advertisement.png`,
       priceRange:'Rp',currencies:'IDR',foundingDate:String(site.since),

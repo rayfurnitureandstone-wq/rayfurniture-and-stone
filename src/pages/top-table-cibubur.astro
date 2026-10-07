@@ -1,0 +1,339 @@
+---
+import Base from '../layouts/Base.astro';
+import GeoBlock from '../components/GeoBlock.astro';
+import Faq from '../components/Faq.astro';
+import { waLink, site } from '../data/site.js';
+
+const desc = 'Jasa pemasangan top table marmer dan granit di JABODEBEK. Mulai Rp850.000/meter lari. Termasuk pelubangan, edge profile, nat, coating, sealant. Gratis ongkir 3 meter pertama.';
+
+// Galeri marmer & granit — nama + file di-/images/, nama diambil dari Gemaraya/top_table.html
+const stones = [
+  // Granit
+  { name: 'Black Gold',        type: 'Granit', img: 'black-gold-980x487-487x487.jpeg' },
+  { name: 'Black Nero',        type: 'Granit', img: '20171009-152625-1-1471x1336-800x800.jpeg' },
+  { name: 'Blue Pearl',        type: 'Granit', img: 'blue-pearl-1200x800-800x800.jpeg' },
+  { name: 'Tan Brown',         type: 'Granit', img: 'tan-brown-1200x800-800x800.jpeg' },
+  { name: 'White Phanter',     type: 'Granit', img: 'img-20170808-114839-2000x1482-800x800.jpeg' },
+  { name: 'Starwhite',         type: 'Granit', img: '20171009-153546-2000x1125-800x800.jpeg' },
+  { name: 'Polychrome',        type: 'Granit', img: 'new-polychrome-2000x1200-800x800.jpeg' },
+  { name: 'Egypt Red',         type: 'Granit', img: 'img-20170808-114722-2000x1482-800x800.jpeg' },
+  // Marmer
+  { name: 'Ujung Pandang O.K', type: 'Marmer', img: 'p61123-104426-2000x1481-800x800.jpeg' },
+  { name: 'Caffelate',         type: 'Marmer', img: 'img-20170727-wa0039-1052x592-419x419.jpeg' },
+  { name: 'Monalisa Biege',    type: 'Marmer', img: 'img-20190514-wa0023-1280x720-576x576.jpeg' },
+  { name: 'White Carrara',     type: 'Marmer', img: 'img-20181015-wa0002-1040x780-418x418.jpeg' },
+  { name: 'White Volakas',     type: 'Marmer', img: 'img-20190226-wa0008-1032x774-453x453.jpeg' },
+  { name: 'Super White',       type: 'Marmer', img: 'img-20170922-wa0021-1280x1280-661x661.jpeg' },
+  { name: 'Nero Marquina',     type: 'Marmer', img: 'img-20170815-wa0011-1280x829-800x800.jpeg' },
+  { name: 'Emerador Brown',    type: 'Marmer', img: 'img-20170920-wa0010-1280x960-525x525.jpeg' },
+];
+
+const faqItems = [
+  ['Apakah harga sudah termasuk jasa pasang?', 'Ya. Paket Rp850rb/meter lari sudah termasuk top table, pelubangan (sink, kompor, keran), edge profile, nat, lubang sink under mount, coating, dan sealant. Kecuali untuk semen, pasir, dan rangka besi.'],
+  ['Bagaimana perhitungan meter lari?', 'Meter lari dihitung berdasarkan panjang saja, jika lebar standar 60 cm. Contoh: top table panjang 3 meter dengan lebar 60 cm = 3 meter lari.'],
+  ['Apakah ada garansi?', 'Garansi pengerjaan saja, sampai Anda OK di QC dan DP lunas. Untuk detail lengkap, lihat di web utama kami.'],
+  ['Apakah gratis ongkir?', 'Ya, gratis ongkir untuk pemesanan minimal 3 meter JABODEBEK. Untuk wilayah lain hubungi sales kami.'],
+  ['Bagaimana cara memesan?', 'Klik tombol WhatsApp di atas. Admin akan konsultasikan kebutuhan Anda, kirimkan penawaran, lalu tim kami kunjungi lokasi untuk ukur ulang.'],
+];
+---
+
+<Base title="Top Table Marmer & Granit | Jasa Pemasangan Profesional" description={desc}>
+  <div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / Top Table Cibubur</nav></div>
+
+  <!-- ===== HERO ===== -->
+  <section class="page-hero">
+    <div class="wrap two-col" style="align-items:center">
+      <div>
+        <p class="eyebrow">Top Table Marmer & Granit</p>
+        <h1>Investasi Keindahan <em>yang Abadi</em></h1>
+        <p class="lead">Not everyone can appreciate the timeless beauty of natural stone. Anda telah membuat pilihan yang tepat — investasi dalam keindahan yang tidak hanya bertahan, tetapi semakin berharga seiring waktu.</p>
+        <p style="margin-top:22px">
+          <a class="btn btn--green" href={waLink('Halo Kak, saya mau tanya jasa pasang top table marmer/granit.')}>Chat via WhatsApp</a>
+          <a class="btn btn--ghost" href="#harga">Lihat Harga</a>
+        </p>
+      </div>
+      <div>
+        <img src="/images/banner-top-table-new.png" alt="Top table marmer & granit — contoh profil marmer buatan Ray Furniture & Stone" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;display:block" />
+      </div>
+    </div>
+  </section>
+
+  <GeoBlock links={['/', '/about', '/top-table']} />
+
+  <!-- ===== MASALAH → SOLUSI ===== -->
+  <section class="sec sec--cream" aria-labelledby="story-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Kenapa Pilih Kami</p>
+        <h2 class="h-sec" id="story-title">Interior Anda Layak Mendapatkan yang Terbaik</h2>
+        <p class="sub-sec">Banyak langkah penting yang sering terlewat ketika memilih jasa pemasangan. Kami kupas satu per satu agar Anda tahu apa yang seharusnya ada.</p>
+      </div>
+      <div class="two-col" style="align-items:start">
+        <div class="feat" style="border-top:3px solid #c0392b">
+          <h3 style="color:#c0392b"><i class="fas fa-exclamation-triangle" style="margin-right:8px"></i>Keindahan Interior Terganggu?</h3>
+          <p>Setiap detail top table bisa memengaruhi keseluruhan nuansa ruangan. Berikut masalah umum yang sering ditemui:</p>
+          <ul style="margin-top:14px;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.8">
+            <li>Kualitas batu tidak dicermati → ketebalan tidak seragam, permukaan tidak mulus</li>
+            <li>Pengerjaan lubang tidak presisi → bocor, retak, atau material sekitarnya rusak</li>
+            <li>Edge profile yang salah → mudah tersenggol, terlihat tidak rapi</li>
+            <li>Nat dan coating yang kurang tahan lama → berjamur, memudar, atau mengelupas</li>
+            <li>Biaya tersembunyi dari bahan pendukung yang tidak dicantumkan</li>
+          </ul>
+        </div>
+        <div class="feat" style="border-top:3px solid var(--green)">
+          <h3 style="color:var(--green)"><i class="fas fa-check-circle" style="margin-right:8px"></i>Solusi dari Ray Furniture & Stone</h3>
+          <p>Setiap pemasangan top table kami melewati proses yang terstruktur untuk hasil yang Anda benar-benar bangga tunjukkan:</p>
+          <ul style="margin-top:14px;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.8">
+            <li>Ukur ulang di lokasi 100% sesuai spesifikasi ruangan Anda</li>
+            <li>Pemilihan batu dengan ketebalan dan motif yang konsisten</li>
+            <li>Edge profile sesuai preferensi — lurus rapi, tidak tumpul</li>
+            <li>Nat, coating, dan sealant yang tahan lama</li>
+            <li>Garansi pengerjaan untuk seluruh pekerjaan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEUNGGULAN (5 Banner) ===== -->
+  <section class="sec" id="keunggulan" aria-labelledby="adv-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Keunggulan</p>
+        <h2 class="h-sec" id="adv-title">Lima Alasan untuk Memilih Kami</h2>
+        <p class="sub-sec">Bukan sekadar pemasangan — kami adalah mitra yang memastikan setiap detail tepat agar interior Anda benar-benar mewah.</p>
+      </div>
+      <div class="feat-grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+        <div class="feat">
+          <img src="/images/adv-stone-premium.png" alt="Batu Asli Premium — marmer granit asli impor" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
+          <h3>Batu Asli Premium</h3>
+          <p>Marmer dan granit asli impor dengan motif alami yang unik. Setiap potongan dipilih teliti agar warna dan teksturnya konsisten.</p>
+        </div>
+        <div class="feat">
+          <img src="/images/adv-edge-profile.png" alt="Edge Profile Presisi — profil tepi marmer yang halus" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
+          <h3>Edge Profile Presisi</h3>
+          <p>Profil tepi yang dirancang khusus untuk keselamatan dan estetika. Semua sudut halus dan tidak tumpul — nyaman disentuh dan tampak premium.</p>
+        </div>
+        <div class="feat">
+          <img src="/images/adv-coating-sealant.png" alt="Coating & Sealant Tahan Lama — pelindungan permukaan marmer" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
+          <h3>Coating & Sealant Tahan Lama</h3>
+          <p>Pelindungan permukaan dari coating anti noda dan sealant anti air. Top table tetap kinclong, tidak mudah retak atau berjamur.</p>
+        </div>
+        <div class="feat">
+          <img src="/images/adv-pasang-cepat.png" alt="Pasang Cepat & Rapi — tim teknisi profesional" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
+          <h3>Pasang Cepat & Rapi</h3>
+          <p>Tim teknisi yang berpengalaman menyiapkan dan memasang top table dalam waktu singkat. Kami bersihkan area pasang pasca pekerjaan.</p>
+        </div>
+        <div class="feat">
+          <img src="/images/adv-garansi.png" alt="Garansi Pengerjaan — jaminan kualitas Ray Furniture & Stone" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
+          <h3>Garansi Pengerjaan</h3>
+          <p>Kami berikan garansi pengerjaan untuk setiap proyek. Ada kendala setelah pemasangan? Kami siap bantu — tanpa repot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HARGA ===== -->
+  <section class="sec sec--cream" id="harga" aria-labelledby="price-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Harga</p>
+        <h2 class="h-sec" id="price-title">Harga Top Table & Jasa Pasang</h2>
+        <p class="sub-sec">Harga sudah transparan. Tidak ada biaya tersembunyi.</p>
+      </div>
+      <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px">
+        <div class="price-card" style="flex:1 1 380px;border-color:var(--accent);box-shadow:0 6px 30px rgba(212,175,55,.15)">
+          <div class="from">Paket Lengkap</div>
+          <div class="amt">Rp850rb<span style="font-size:14px;font-weight:400;color:var(--muted)">/meter lari</span></div>
+          <ul>
+            <li>Top table marmer & granit</li>
+            <li>Meter lari dihitung panjang saja (lebar standar 60 cm)</li>
+            <li>Pelubangan (sink, kompor, keran)</li>
+            <li>Edge profile</li>
+            <li>Nat</li>
+            <li>Lubang sink under mount</li>
+            <li>Coating</li>
+            <li>Sealant</li>
+          </ul>
+          <a class="btn btn--green" href={waLink('Halo Kak, saya mau tanya paket lengkap top table marmer/granit.')}>Pesan Sekarang</a>
+        </div>
+        <div class="price-card" style="flex:1 1 380px">
+          <div class="from">Pasang Saja</div>
+          <div class="amt">Rp600rb<span style="font-size:14px;font-weight:400;color:var(--muted)">/meter lari</span></div>
+          <ul>
+            <li>Top table marmer & granit <strong>(bahan anda sendiri)</strong></li>
+            <li>Meter lari dihitung panjang saja (lebar standar 60 cm)</li>
+            <li>Pelubangan (sink, kompor, keran)</li>
+            <li>Edge profile</li>
+            <li>Nat</li>
+            <li>Lubang sink under mount</li>
+            <li>Coating</li>
+            <li>Sealant</li>
+          </ul>
+          <a class="btn btn--ghost" href={waLink('Halo Kak, saya mau tanya jasa pasang top table saja.')}>Tanya Jasa Pasang</a>
+        </div>
+      </div>
+      <div style="margin-top:24px;display:flex;justify-content:center;align-items:center;gap:30px;flex-wrap:wrap;font-size:13px;color:var(--muted);text-align:center">
+        <div style="text-align:center"><i class="fas fa-check" style="color:var(--green);margin-right:6px"></i>Termasuk: pelubangan, edge profile, nat, lubang sink under mount, coating, sealant</div>
+        <div style="text-align:center"><i class="fas fa-times" style="color:#c0392b;margin-right:6px"></i>Tidak termasuk: semen, pasir, rangka besi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ZONA + MAP ===== -->
+  <section class="sec" id="zona" aria-labelledby="zona-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Zona Layanan</p>
+        <h2 class="h-sec" id="zona-title">Layanan di Wilayah JABODEBEK</h2>
+        <p class="sub-sec">Kami melayani pemasangan top table di seluruh area JABODEBEK. Gratis ongkir untuk pemesanan minimal 3 meter lari.</p>
+      </div>
+      <div class="feat-grid--2" style="max-width:800px;margin:0 auto 30px">
+        <div class="feat" style="text-align:center">
+          <div style="font-size:2rem;color:var(--green);margin-bottom:8px"><i class="fas fa-truck"></i></div>
+          <h3>Gratis Ongkir</h3>
+          <p>Pemesanan minimal 3 meter JABODEBEK — ongkir GRATIS. Untuk wilayah lain hubungi sales.</p>
+        </div>
+        <div class="feat" style="text-align:center">
+          <div style="font-size:2rem;color:var(--accent);margin-bottom:8px"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>JABODEBEK</h3>
+          <p>Jakarta Selatan, Jakarta Timur, Bogor, Depok, Tangerang, dan sekitarnya.</p>
+        </div>
+      </div>
+      <div style="border-radius:12px;overflow:hidden;border:1px solid var(--line);max-width:900px;margin:0 auto">
+        <iframe
+          width="100%" height="450" frameborder="0" style="border:0" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.0658898417787!2d106.93409457619944!3d-6.385498062460643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69954fddb3eed9%3A0x86336978e01325a3!2sRAY%20FURNITURE%20%26%20STONE!5e0!3m2!1sid!2sid!4v1791310929456!5m2!1sid!2sid">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KETENTUAN ===== -->
+  <section class="sec sec--cream" id="ketentuan" aria-labelledby="terms-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Ketentuan</p>
+        <h2 class="h-sec" id="terms-title">Ketentuan Jasa Pemasangan Top Table</h2>
+      </div>
+      <div class="feat-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+        <div class="feat">
+          <h3><i class="fas fa-calculator" style="margin-right:8px;color:var(--accent)"></i>Perhitungan Harga</h3>
+          <p>Meter lari dihitung berdasarkan panjang saja, jika lebar standar 60 cm. Kami ukur ulang di lokasi sebelum pemasangan. Berlaku tambahan biaya jika ada perubahan desain, ukuran, atau material setelah ini.</p>
+        </div>
+        <div class="feat">
+          <h3><i class="fas fa-wifi" style="margin-right:8px;color:var(--accent)"></i>Kontak & Pemesanan</h3>
+          <p>Semua pemesanan melalui WhatsApp langsung dengan admin. Kami kirim tim untuk kunjungan perkiraan sebelum order dikonfirmasi. Minimal 3 meter JABODEBEK untuk layanan gratis ongkir. Untuk wilayah lain hubungi sales.</p>
+        </div>
+        <div class="feat">
+          <h3><i class="fas fa-shield-alt" style="margin-right:8px;color:var(--accent)"></i>Garansi Pengerjaan</h3>
+          <p>Garansi pengerjaan saja, sampai Anda OK di QC dan DP lunas. Untuk detail lengkap, lihat di <a href="https://rayfurnitureandstone.id/" style="color:var(--green);text-decoration:underline">web utama</a>.</p>
+        </div>
+        <div class="feat">
+          <h3><i class="fas fa-box" style="margin-right:8px;color:var(--accent)"></i>Pengiriman & Transportasi</h3>
+          <p>Biaya angkutan sudah termasuk dalam harga. Kami antar ke lokasi pasang dengan aman dan cepat. Jika ada biaya tambahan akibat lokasi yang jauh, kami kabari sebelum mulai pekerjaan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERI MARMMER & GRANIT ===== -->
+  <section class="sec" id="galeri" aria-labelledby="galeri-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Material</p>
+        <h2 class="h-sec" id="galeri-title">Galeri Marmer & Granit</h2>
+        <p class="sub-sec">16 varian marmer dan granit asli untuk top table dapur Anda. Klik tombol di bawah untuk lihat semua.</p>
+      </div>
+      <div style="text-align:center;margin-bottom:22px">
+        <button id="galleryOpen" class="btn btn--green" type="button">Lihat Galeri Marmer & Granit</button>
+      </div>
+      <div id="galleryGrid" class="gallery-grid">
+        {stones.filter(s => s.type === 'Granit').map(s => (
+          <div class="gal-item">
+            <img src={`/images/${s.img}`} alt={s.name} loading="lazy" />
+            <div class="gal-name">{s.name}</div>
+          </div>
+        ))}
+        {stones.filter(s => s.type === 'Marmer').map(s => (
+          <div class="gal-item">
+            <img src={`/images/${s.img}`} alt={s.name} loading="lazy" />
+            <div class="gal-name">{s.name}</div>
+          </div>
+        ))}
+      </div>
+      <div id="imgOverlay" class="gal-overlay hidden">
+        <span id="imgClose" class="gal-close" aria-label="Tutup">✕</span>
+        <img id="imgOverlayImg" class="gal-overlay-img" alt="" />
+        <div id="imgCaption" class="gal-caption"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="sec" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Sering Ditanya</p>
+        <h2 class="h-sec" id="faq-title">Pertanyaan yang Sering Ditanyakan</h2>
+      </div>
+      <Faq items={faqItems} />
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Siap Membuat Interior Impian Anda?</h2>
+        <p>Hubungi kami via WhatsApp untuk konsultasi gratis. Tim ahli kami akan bantu rencanakan top table yang sesuai selera dan anggaran Anda.</p>
+        <div class="btns">
+          <a class="btn" href={waLink('Halo Kak, saya mau tanya top table marmer/granit.')}>Chat via WhatsApp</a>
+          <a class="btn btn--ghost" href="https://rayfurnitureandstone.id/">Lihat Web Utama</a>
+        </div>
+      </div>
+    </div>
+  </section>
+<style>
+  .gallery-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+  .gallery-grid.on { display: grid; }
+  .gal-item { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; }
+  .gal-item img { display: block; width: 100%; height: 180px; object-fit: contain; }
+  .gal-name { text-align: center; padding: 8px; font-size: 12.5px; font-weight: 700; text-transform: uppercase; color: var(--green); border-top: 1px solid var(--line); }
+  .gal-sub { margin: 6px 0 8px; color: var(--muted); font-size: 12.5px; text-transform: uppercase; letter-spacing: .06em; }
+  .gal-overlay { position: fixed; inset: 0; z-index: 999; background: rgba(0, 0, 0, .88); display: grid; place-items: center; }
+  .gal-overlay.hidden { display: none; }
+  .gal-overlay-img { max-width: 90vw; max-height: 82vh; border-radius: var(--radius-lg); box-shadow: 0 6px 30px rgba(0, 0, 0, .5); }
+  .gal-close { position: absolute; top: 18px; right: 22px; font-size: 26px; color: #fff; cursor: pointer; }
+  .gal-caption { margin-top: 12px; color: #fff; text-align: center; font-size: 13px; max-width: 70vw; }
+  @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById('galleryOpen');
+    const grid = document.getElementById('galleryGrid');
+    const ov = document.getElementById('imgOverlay');
+    const ovImg = document.getElementById('imgOverlayImg');
+    const cap = document.getElementById('imgCaption');
+    if (btn && grid) {
+      btn.addEventListener('click', () => grid.classList.toggle('on'));
+      grid.addEventListener('click', (e) => {
+        const img = e.target.closest('img');
+        if (!img || e.target === grid) return;
+        const item = img.closest('.gal-item');
+        ovImg.src = img.src;
+        cap.textContent = item ? item.querySelector('.gal-name').textContent : '';
+        ov.classList.remove('hidden');
+      });
+    }
+    if (ov) {
+      const close = () => { ov.classList.add('hidden'); ovImg.src = ''; };
+      const closeBtn = document.getElementById('imgClose');
+      if (closeBtn) closeBtn.addEventListener('click', close);
+      ov.addEventListener('click', (e) => { if (e.target === ov) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    }
+  })();
+</script>
+</Base>

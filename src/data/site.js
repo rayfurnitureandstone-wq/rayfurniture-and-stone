@@ -12,7 +12,7 @@ export const site = {
   email: 'rayfurnitureandstone@gmail.com',
   address: 'Jl. Transyogi No.60, Nagrak, Kec. Gn. Putri, Kabupaten Bogor, Jawa Barat 16967',
   city: 'Bogor',
-  areaServed: ['Bogor', 'Bekasi', 'Jakarta', 'Depok', 'Tangerang', 'Jabodetabek'],
+  areaServed: ['Bogor', 'Bekasi', 'Jakarta', 'Depok', 'Tangerang', 'JABODEBEK'],
   hours: '09.00 – 17.00 WIB',
   since: 2010,
 };
@@ -115,7 +115,7 @@ export const process = [
   ['1. Konsultasi & survei', 'Ceritakan kebutuhan kitchen set, ukuran ruang, dan material favorit. Kami datang ke lokasi atau konsultasi lewat WhatsApp, tanpa biaya.'],
   ['2. Desain 3D & penawaran', 'Anda dapat desain 3D dan rincian biaya. Produksi baru mulai setelah desain Anda setuju, jadi tidak ada revisi paksa di tengah jalan.'],
   ['3. Produksi di workshop', 'Pemotongan dan perakitan dilakukan di workshop kami. Kami lakukan QC kabinet dan permukaan batu sebelum pemasangan.'],
-  ['4. Pemasangan & garansi', 'Jadwal pemasangan, ongkir gratis untuk Jabodetabek. Kitchen set bergaransi 1 tahun untuk cacat produksi. Pekerjaan marmer/granit bergaransi sampai Anda OK di QC dan DP lunas.'],
+  ['4. Pemasangan & garansi', 'Jadwal pemasangan, ongkir gratis untuk JABODEBEK. Kitchen set bergaransi 1 tahun untuk cacat produksi. Pekerjaan marmer/granit bergaransi sampai Anda OK di QC dan DP lunas.'],
 ];
 
 // FAQ umum — ditulis alami, tiap jawaban ada angka/aturan konkret.
@@ -125,7 +125,7 @@ export const faq = [
   ['Garansi berlaku sampai kapan dan untuk apa?', 'Kitchen set custom bergaransi 1 tahun, mencakup engsel, handle, HPL yang lengkung atau mengelupas, dan cacat produksi dengan syarat dan ketentuan. Pekerjaan marmer, granit, dan poles lantai bergaransi pengerjaan sampai Anda tanda-tangani QC dan DP lunas. Order ulang atau kuantitas besar dapat diskon.'],
   ['Apakah ada desain 3D sebelum produksi?', 'Ya. Kami kirim desain 3D setelah survei. Anda bisa revisi sampai cocok, baru lanjut produksi.'],
   ['Berapa lama pengerjaan top table?', 'Top table standar 3-5 hari kerja, tergantung panjang dan jumlah potongan. Poles lantai biasanya 1-3 hari kerja per area.'],
-  ['Kota mana saja yang dilayani?', 'Bogor, Bekasi, Jakarta, Depok, Tangerang, dan seluruh JABODETABEK. Untuk luar wilayah dan luar pulau, ada minimal order — hubungi kami.'],
+  ['Kota mana saja yang dilayani?', 'Bogor, Bekasi, Jakarta, Depok, Tangerang, dan seluruh JABODEBEK. Untuk luar wilayah dan luar pulau, ada minimal order — hubungi kami.'],
   ['Bagaimana cara bayar?', 'DP 30-50% di awal, sisanya setelah pekerjaan selesai dan Anda QC. Bisa tunai atau transfer.'],
   ['Apakah ada workshop sendiri?', 'Ya. Workshop dan showroom kami di Cibubur, jadi Anda bisa berkunjung melihat proses produksi dan contoh hasil sebelum memutuskan.'],
   ['Dapat apa saja jika pesan kitchen set di Ray Furniture & Stone?', 'Rak sendok, aluminium handle, rak piring, finger-groove, engsel slowmotion, lampu LED, rail double track, dan ventilasi.'],
@@ -135,7 +135,7 @@ export const faq = [
 export const geoBlock = (hrefs) => {
   const [h1 = '/', h2 = '/about/', h3 = '/top-table/'] = hrefs;
   return [
-    `[jasa pembuatan kitchen set dan furniture custom](${h2}) dan [jasa pasang marmer, granit, dan quadra](${h3}) adalah dua pilar utama Ray Furniture & Stone di Bogor dan JABODETABEK.`,
+    `[jasa pembuatan kitchen set dan furniture custom](${h2}) dan [jasa pasang marmer, granit, dan quadra](${h3}) adalah dua pilar utama Ray Furniture & Stone di Bogor dan JABODEBEK.`,
     `[jasa pasang dan poles lantai marmer dan granit](${h1}#harga) kami pulihkan kilau lantai lama jadi seperti baru, dengan garansi pengerjaan sampai Anda setuju.`,
     `Tim tetap kami — bukan subcontractor — menangani pengukuran, pemotongan, pemasangan, dan poles batu alam di Bogor, Bekasi, Jakarta, Depok, dan Tangerang, menggunakan desain 3D gratis dan harga tanpa markup.`,
   ];
