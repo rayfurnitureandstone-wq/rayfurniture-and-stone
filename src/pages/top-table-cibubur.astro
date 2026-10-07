@@ -53,7 +53,7 @@ const faqItems = [
         </p>
       </div>
       <div>
-        <img src="/images/banner-top-table-new.png" alt="Top table marmer & granit — contoh profil marmer buatan Ray Furniture & Stone" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;display:block" />
+        <img src="../images/banner-top-table-new.png" alt="Top table marmer & granit — contoh profil marmer buatan Ray Furniture & Stone" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;display:block" />
       </div>
     </div>
   </section>
@@ -105,27 +105,27 @@ const faqItems = [
       </div>
       <div class="feat-grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
         <div class="feat">
-          <img src="/images/adv-stone-premium.png" alt="Batu Asli Premium — marmer granit asli impor" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
+          <img src="../images/adv-stone-premium.png" alt="Batu Asli Premium — marmer granit asli impor" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
           <h3>Batu Asli Premium</h3>
           <p>Marmer dan granit asli impor dengan motif alami yang unik. Setiap potongan dipilih teliti agar warna dan teksturnya konsisten.</p>
         </div>
         <div class="feat">
-          <img src="/images/adv-edge-profile.png" alt="Edge Profile Presisi — profil tepi marmer yang halus" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
+          <img src="../images/adv-edge-profile.png" alt="Edge Profile Presisi — profil tepi marmer yang halus" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
           <h3>Edge Profile Presisi</h3>
           <p>Profil tepi yang dirancang khusus untuk keselamatan dan estetika. Semua sudut halus dan tidak tumpul — nyaman disentuh dan tampak premium.</p>
         </div>
         <div class="feat">
-          <img src="/images/adv-coating-sealant.png" alt="Coating & Sealant Tahan Lama — pelindungan permukaan marmer" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
+          <img src="../images/adv-coating-sealant.png" alt="Coating & Sealant Tahan Lama — pelindungan permukaan marmer" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
           <h3>Coating & Sealant Tahan Lama</h3>
           <p>Pelindungan permukaan dari coating anti noda dan sealant anti air. Top table tetap kinclong, tidak mudah retak atau berjamur.</p>
         </div>
         <div class="feat">
-          <img src="/images/adv-pasang-cepat.png" alt="Pasang Cepat & Rapi — tim teknisi profesional" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
+          <img src="../images/adv-pasang-cepat.png" alt="Pasang Cepat & Rapi — tim teknisi profesional" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
           <h3>Pasang Cepat & Rapi</h3>
           <p>Tim teknisi yang berpengalaman menyiapkan dan memasang top table dalam waktu singkat. Kami bersihkan area pasang pasca pekerjaan.</p>
         </div>
         <div class="feat">
-          <img src="/images/adv-garansi.png" alt="Garansi Pengerjaan — jaminan kualitas Ray Furniture & Stone" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
+          <img src="../images/adv-garansi.png" alt="Garansi Pengerjaan — jaminan kualitas Ray Furniture & Stone" style="width:100%;height:200px;object-fit:contain;border-radius:8px;margin-bottom:12px" />
           <h3>Garansi Pengerjaan</h3>
           <p>Kami berikan garansi pengerjaan untuk setiap proyek. Ada kendala setelah pemasangan? Kami siap bantu — tanpa repot.</p>
         </div>
@@ -251,13 +251,13 @@ const faqItems = [
       <div id="galleryGrid" class="gallery-grid">
         {stones.filter(s => s.type === 'Granit').map(s => (
           <div class="gal-item">
-            <img src={`/images/${s.img}`} alt={s.name} loading="lazy" />
+            <img src={`../images/${s.img}`} alt={s.name} loading="lazy" />
             <div class="gal-name">{s.name}</div>
           </div>
         ))}
         {stones.filter(s => s.type === 'Marmer').map(s => (
           <div class="gal-item">
-            <img src={`/images/${s.img}`} alt={s.name} loading="lazy" />
+            <img src={`../images/${s.img}`} alt={s.name} loading="lazy" />
             <div class="gal-name">{s.name}</div>
           </div>
         ))}
