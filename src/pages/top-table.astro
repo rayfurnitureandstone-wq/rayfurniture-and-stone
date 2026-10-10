@@ -48,28 +48,77 @@ const faqTT = [
     </div>
   </section>
 
-  <section class="sec" id="inspirasi">
+    <section class="filters" id="katalog" aria-label="Filter katalog batu">
     <div class="wrap">
-      <div class="sec-head" style="margin-bottom: 30px;"><p class="eyebrow">Sorotan</p><h2 class="h-sec">Koleksi yang Paling Diburu</h2></div>
-      <div class="strip">
-        <img src="/images/nero-marquina.jpg" alt="Nero Marquina — Marble" loading="lazy" width="480" height="600" />
-        <img src="/images/marquina-nero-matte.jpg" alt="Marquina Nero Matte — Quadra" loading="lazy" width="480" height="600" />
-        <img src="/images/cosmic-black.jpg" alt="Cosmic Black — Granite" loading="lazy" width="480" height="600" />
-        <img src="/images/nero-absolute.jpg" alt="Nero Absolute — Granite" loading="lazy" width="480" height="600" />
-        <img src="/images/carrara-white.jpg" alt="Carrara White — Marble" loading="lazy" width="480" height="600" />
-        <img src="/images/statuario.jpg" alt="Statuario — Marble" loading="lazy" width="480" height="600" />
-        <img src="/images/calacatta-gold-matte.jpg" alt="Calacatta Gold Matte — Quadra" loading="lazy" width="480" height="600" />
-        <img src="/images/imperial-white.jpg" alt="Imperial White — Granite" loading="lazy" width="480" height="600" />
-        <img src="/images/ujung-pandang.jpg" alt="Ujung Pandang — Marble" loading="lazy" width="480" height="600" />
-        <img src="/images/dino-beige.jpg" alt="Dino Beige — Marble" loading="lazy" width="480" height="600" />
-        <img src="/images/travertino-silver-light.jpg" alt="Travertino Silver Light — Travertine" loading="lazy" width="480" height="600" />
-        <img src="/images/crema-rosa.jpg" alt="Crema Rosa — Marble" loading="lazy" width="480" height="600" />
+      <div style="margin-bottom: 24px;">
+        <h2 style="font-family: var(--serif); font-size: 32px;">Pilihan Status Anda.</h2>
+        <p style="color: var(--ink-2); font-size: 16px;">Tentukan corak material yang akan menjadi pusat perhatian di rumah Anda. (Klik nama untuk konsultasi ketersediaan slab minggu ini).</p>
       </div>
-      <div style="text-align:center; margin-top: 40px;">
-        <a class="btn btn--green" href={waLink('Halo Ray Furniture, saya mau minta dikirimkan foto-foto real slab marmer/granit dari gudang hari ini yang cocok untuk rumah saya.')}>Minta Foto Slab Real dari Gudang Hari ini</a>
+      <div class="filters__row">
+        <span class="filters__label" id="f-type">Kategori</span>
+        <ul class="chips" aria-labelledby="f-type"><li><a class="chip chip--filter" href="#katalog" data-f="type:All" aria-current="true">Semua jenis</a></li><li><a class="chip chip--filter" href="#katalog" data-f="type:Marble">Marble</a></li><li><a class="chip chip--filter" href="#katalog" data-f="type:Granite">Granite</a></li><li><a class="chip chip--filter" href="#katalog" data-f="type:Travertine">Travertine</a></li><li><a class="chip chip--filter" href="#katalog" data-f="type:Quadra">Quadra</a></li></ul>
+      </div>
+      <div class="filters__row">
+        <span class="filters__label" id="f-colour">Tone Warna</span>
+        <ul class="chips" aria-labelledby="f-colour"><li><a class="chip chip--filter" href="#katalog" data-f="colour:All" aria-current="true">Semua warna</a></li><li><a class="chip chip--filter" href="#katalog" data-f="colour:White"><span class="swatch" style="background:#FFFFFF"></span>White</a></li><li><a class="chip chip--filter" href="#katalog" data-f="colour:Cream"><span class="swatch" style="background:#E9DDC4"></span>Cream</a></li><li><a class="chip chip--filter" href="#katalog" data-f="colour:Grey"><span class="swatch" style="background:#9A9894"></span>Grey</a></li><li><a class="chip chip--filter" href="#katalog" data-f="colour:Black"><span class="swatch" style="background:#1A1917"></span>Black</a></li><li><a class="chip chip--filter" href="#katalog" data-f="colour:Brown"><span class="swatch" style="background:#7A5436"></span>Brown</a></li><li><a class="chip chip--filter" href="#katalog" data-f="colour:Green"><span class="swatch" style="background:#3F6B4F"></span>Green</a></li><li><a class="chip chip--filter" href="#katalog" data-f="colour:Blue"><span class="swatch" style="background:#4A6C8F"></span>Blue</a></li><li><a class="chip chip--filter" href="#katalog" data-f="colour:Red"><span class="swatch" style="background:#9E3B2E"></span>Red</a></li><li><a class="chip chip--filter" href="#katalog" data-f="colour:Gold"><span class="swatch" style="background:#D8A640"></span>Gold</a></li></ul>
       </div>
     </div>
   </section>
+
+  <section class="results" aria-live="polite">
+    <div class="wrap">
+      <div class="results__head">
+        <p class="results__count" id="stoneCount">43 mahakarya tersedia</p>
+        <p class="results__where">Stok Gudang Langsung · Jabodetabek</p>
+      </div>
+      <div class="stone-grid" id="stoneGrid">
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Arabescato%20untuk%20top%20table." data-type="Marble" data-colour="White"><span class="stone-card__img"><img src="/images/arabescato.jpg" alt="Arabescato — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Arabescato</span><span class="stone-card__meta">Marble · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Carrara%20White%20untuk%20top%20table." data-type="Marble" data-colour="White"><span class="stone-card__img"><img src="/images/carrara-white.jpg" alt="Carrara White — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Carrara White</span><span class="stone-card__meta">Marble · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Crema%20Rosa%20untuk%20top%20table." data-type="Marble" data-colour="Cream"><span class="stone-card__img"><img src="/images/crema-rosa.jpg" alt="Crema Rosa — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Crema Rosa</span><span class="stone-card__meta">Marble · Cream</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Dark%20Emperador%20untuk%20top%20table." data-type="Marble" data-colour="Brown"><span class="stone-card__img"><img src="/images/dark-emperador.jpg" alt="Dark Emperador — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Dark Emperador</span><span class="stone-card__meta">Marble · Brown</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Dino%20Beige%20untuk%20top%20table." data-type="Marble" data-colour="Cream"><span class="stone-card__img"><img src="/images/dino-beige.jpg" alt="Dino Beige — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Dino Beige</span><span class="stone-card__meta">Marble · Cream</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Emperador%20Light%20untuk%20top%20table." data-type="Marble" data-colour="Brown"><span class="stone-card__img"><img src="/images/emperador-light.jpg" alt="Emperador Light — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Emperador Light</span><span class="stone-card__meta">Marble · Brown</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Hermes%20Grey%20untuk%20top%20table." data-type="Marble" data-colour="Grey"><span class="stone-card__img"><img src="/images/hermes-grey.jpg" alt="Hermes Grey — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Hermes Grey</span><span class="stone-card__meta">Marble · Grey</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Nero%20Marquina%20untuk%20top%20table." data-type="Marble" data-colour="Black"><span class="stone-card__img"><img src="/images/nero-marquina.jpg" alt="Nero Marquina — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Nero Marquina</span><span class="stone-card__meta">Marble · Black</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Portoro%20Silver%20untuk%20top%20table." data-type="Marble" data-colour="Grey"><span class="stone-card__img"><img src="/images/portoro-silver.jpg" alt="Portoro Silver — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Portoro Silver</span><span class="stone-card__meta">Marble · Grey</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Prada%20White%20untuk%20top%20table." data-type="Marble" data-colour="White"><span class="stone-card__img"><img src="/images/prada-white.jpg" alt="Prada White — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Prada White</span><span class="stone-card__meta">Marble · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Rosso%20Levanto%20untuk%20top%20table." data-type="Marble" data-colour="Red"><span class="stone-card__img"><img src="/images/rosso-levanto.jpg" alt="Rosso Levanto — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Rosso Levanto</span><span class="stone-card__meta">Marble · Red</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Royal%20Beige%20untuk%20top%20table." data-type="Marble" data-colour="Cream"><span class="stone-card__img"><img src="/images/royal-beige.jpg" alt="Royal Beige — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Royal Beige</span><span class="stone-card__meta">Marble · Cream</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Serpeggiante%20Classico%20untuk%20top%20table." data-type="Marble" data-colour="Cream"><span class="stone-card__img"><img src="/images/serpeggiante-classico.jpg" alt="Serpeggiante Classico — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Serpeggiante Classico</span><span class="stone-card__meta">Marble · Cream</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Serpe%20Silvabella%20untuk%20top%20table." data-type="Marble" data-colour="Cream"><span class="stone-card__img"><img src="/images/serpe-silvabella.jpg" alt="Serpe Silvabella — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Serpe Silvabella</span><span class="stone-card__meta">Marble · Cream</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Statuario%20untuk%20top%20table." data-type="Marble" data-colour="White"><span class="stone-card__img"><img src="/images/statuario.jpg" alt="Statuario — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Statuario</span><span class="stone-card__meta">Marble · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Ujung%20Pandang%20untuk%20top%20table." data-type="Marble" data-colour="Cream"><span class="stone-card__img"><img src="/images/ujung-pandang.jpg" alt="Ujung Pandang — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Ujung Pandang</span><span class="stone-card__meta">Marble · Cream</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Verde%20Patricia%20untuk%20top%20table." data-type="Marble" data-colour="Green"><span class="stone-card__img"><img src="/images/verde-patricia.jpg" alt="Verde Patricia — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Verde Patricia</span><span class="stone-card__meta">Marble · Green</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Volakas%20Classic%20untuk%20top%20table." data-type="Marble" data-colour="White"><span class="stone-card__img"><img src="/images/volakas-classic.jpg" alt="Volakas Classic — Marble Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Volakas Classic</span><span class="stone-card__meta">Marble · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Bianco%20Perla%20untuk%20top%20table." data-type="Granite" data-colour="White"><span class="stone-card__img"><img src="/images/bianco-perla.jpg" alt="Bianco Perla — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Bianco Perla</span><span class="stone-card__meta">Granite · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Black%20Gold%20untuk%20top%20table." data-type="Granite" data-colour="Black"><span class="stone-card__img"><img src="/images/black-gold.jpg" alt="Black Gold — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Black Gold</span><span class="stone-card__meta">Granite · Black</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Blue%20Pearl%20untuk%20top%20table." data-type="Granite" data-colour="Blue"><span class="stone-card__img"><img src="/images/blue-pearl.jpg" alt="Blue Pearl — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Blue Pearl</span><span class="stone-card__meta">Granite · Blue</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Cosmic%20Black%20untuk%20top%20table." data-type="Granite" data-colour="Black"><span class="stone-card__img"><img src="/images/cosmic-black.jpg" alt="Cosmic Black — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Cosmic Black</span><span class="stone-card__meta">Granite · Black</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Granite%20Star%20White%20untuk%20top%20table." data-type="Granite" data-colour="White"><span class="stone-card__img"><img src="/images/granite-star-white.jpg" alt="Granite Star White — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Granite Star White</span><span class="stone-card__meta">Granite · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Impala%20Black%20untuk%20top%20table." data-type="Granite" data-colour="Black"><span class="stone-card__img"><img src="/images/impala-black.jpg" alt="Impala Black — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Impala Black</span><span class="stone-card__meta">Granite · Black</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Imperial%20White%20untuk%20top%20table." data-type="Granite" data-colour="White"><span class="stone-card__img"><img src="/images/imperial-white.jpg" alt="Imperial White — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Imperial White</span><span class="stone-card__meta">Granite · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Imperial%20Gold%20untuk%20top%20table." data-type="Granite" data-colour="Gold"><span class="stone-card__img"><img src="/images/imperial-gold.jpg" alt="Imperial Gold — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Imperial Gold</span><span class="stone-card__meta">Granite · Gold</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Multicolour%20Red%20untuk%20top%20table." data-type="Granite" data-colour="Red"><span class="stone-card__img"><img src="/images/multicolour-red.jpg" alt="Multicolour Red — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Multicolour Red</span><span class="stone-card__meta">Granite · Red</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Nero%20India%20untuk%20top%20table." data-type="Granite" data-colour="Black"><span class="stone-card__img"><img src="/images/nero-india.jpg" alt="Nero India — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Nero India</span><span class="stone-card__meta">Granite · Black</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Nero%20untuk%20top%20table." data-type="Granite" data-colour="Black"><span class="stone-card__img"><img src="/images/nero.jpg" alt="Nero — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Nero</span><span class="stone-card__meta">Granite · Black</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Nero%20Absolute%20untuk%20top%20table." data-type="Granite" data-colour="Black"><span class="stone-card__img"><img src="/images/nero-absolute.jpg" alt="Nero Absolute — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Nero Absolute</span><span class="stone-card__meta">Granite · Black</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20New%20Imperial%20Red%20untuk%20top%20table." data-type="Granite" data-colour="Red"><span class="stone-card__img"><img src="/images/new-imperial-red.jpg" alt="New Imperial Red — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">New Imperial Red</span><span class="stone-card__meta">Granite · Red</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Paradiso%20untuk%20top%20table." data-type="Granite" data-colour="Brown"><span class="stone-card__img"><img src="/images/paradiso.jpg" alt="Paradiso — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Paradiso</span><span class="stone-card__meta">Granite · Brown</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Portoro%20Gold%20untuk%20top%20table." data-type="Granite" data-colour="Gold"><span class="stone-card__img"><img src="/images/portoro-gold.jpg" alt="Portoro Gold — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Portoro Gold</span><span class="stone-card__meta">Granite · Gold</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Viscount%20White%20untuk%20top%20table." data-type="Granite" data-colour="White"><span class="stone-card__img"><img src="/images/viscount-white.jpg" alt="Viscount White — Granite Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Viscount White</span><span class="stone-card__meta">Granite · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Travertine%20Aniene%20Classic%20untuk%20top%20table." data-type="Travertine" data-colour="Cream"><span class="stone-card__img"><img src="/images/travertine-aniene-classic.jpg" alt="Travertine Aniene Classic — Travertine Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Travertine Aniene Classic</span><span class="stone-card__meta">Travertine · Cream</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Travertine%20Silver%20Gold%20untuk%20top%20table." data-type="Travertine" data-colour="Cream"><span class="stone-card__img"><img src="/images/travertine-silver-gold.jpg" alt="Travertine Silver Gold — Travertine Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Travertine Silver Gold</span><span class="stone-card__meta">Travertine · Cream</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Travertino%20Brown%20untuk%20top%20table." data-type="Travertine" data-colour="Brown"><span class="stone-card__img"><img src="/images/travertino-brown.jpg" alt="Travertino Brown — Travertine Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Travertino Brown</span><span class="stone-card__meta">Travertine · Brown</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Travertino%20Silver%20Light%20untuk%20top%20table." data-type="Travertine" data-colour="Cream"><span class="stone-card__img"><img src="/images/travertino-silver-light.jpg" alt="Travertino Silver Light — Travertine Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Travertino Silver Light</span><span class="stone-card__meta">Travertine · Cream</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Batu%20Canggu%20Matte%20untuk%20top%20table." data-type="Quadra" data-colour="Grey"><span class="stone-card__img"><img src="/images/batu-canggu-matte.jpg" alt="Batu Canggu Matte — Quadra Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Batu Canggu Matte</span><span class="stone-card__meta">Quadra · Grey</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Calacatta%20Gold%20Matte%20untuk%20top%20table." data-type="Quadra" data-colour="White"><span class="stone-card__img"><img src="/images/calacatta-gold-matte.jpg" alt="Calacatta Gold Matte — Quadra Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Calacatta Gold Matte</span><span class="stone-card__meta">Quadra · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Calacatta%20Lucent%20Matte%20untuk%20top%20table." data-type="Quadra" data-colour="White"><span class="stone-card__img"><img src="/images/calacatta-lucent-matte.jpg" alt="Calacatta Lucent Matte — Quadra Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Calacatta Lucent Matte</span><span class="stone-card__meta">Quadra · White</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Irish%20Valley%20untuk%20top%20table." data-type="Quadra" data-colour="Green"><span class="stone-card__img"><img src="/images/irish-valley.jpg" alt="Irish Valley — Quadra Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Irish Valley</span><span class="stone-card__meta">Quadra · Green</span></a>
+<a class="stone-card" href="https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20spesifikasi%20%26%20harga%20Marquina%20Nero%20Matte%20untuk%20top%20table." data-type="Quadra" data-colour="Black"><span class="stone-card__img"><img src="/images/marquina-nero-matte.jpg" alt="Marquina Nero Matte — Quadra Top Table Jabodetabek" loading="lazy" width="480" height="600"></span><span class="stone-card__name">Marquina Nero Matte</span><span class="stone-card__meta">Quadra · Black</span></a>
+      </div>
+    </div>
+  </section>
+
 
   <section class="sec sec--cream" aria-labelledby="step-title">
     <div class="wrap two-col">
@@ -112,3 +161,86 @@ const faqTT = [
     </div>
   </section>
 </Base>
+<script>
+
+// Logic filter katalog: Jenis + warna swatch
+(function(){
+  const grid=document.getElementById('stoneGrid'), cards=[...grid.querySelectorAll('.stone-card')], count=document.getElementById('stoneCount');
+  const f={type:'All',colour:'All'};
+  function apply(){
+    let n=0;
+    cards.forEach(c=>{
+      const ok=(f.type==='All'||c.dataset.type===f.type)&&(f.colour==='All'||c.dataset.colour===f.colour);
+      c.style.display=ok?'':'none'; if(ok)n++;
+    });
+    count.textContent=n+' mahakarya tersedia';
+  }
+  document.querySelectorAll('.chip--filter').forEach(ch=>{
+    ch.addEventListener('click',e=>{
+      e.preventDefault();
+      const[k,v]=ch.dataset.f.split(':'); f[k]=v;
+      document.querySelectorAll(`.chip--filter[data-f^="${k}:"]`).forEach(x=>x.removeAttribute('aria-current'));
+      ch.setAttribute('aria-current','true');
+      apply();
+    });
+  });
+  const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+  grid.addEventListener('click',e=>{
+    const card=e.target.closest('.stone-card'); if(!card)return;
+    e.preventDefault();
+    const img=card.querySelector('img');
+    lbImg.src=img.src; lbImg.alt=img.alt; lbCap.textContent=card.querySelector('.stone-card__name').textContent;
+    lb.classList.add('on');
+  });
+  const close=()=>{lb.classList.remove('on');lbImg.src='';};
+  document.getElementById('lbX').addEventListener('click',close);
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+
+  // Slider Logic
+  const slidesContainer = document.getElementById('heroSlides');
+  const dots = document.querySelectorAll('.slider-dot');
+  if(slidesContainer && dots.length > 0) {
+    let slideIndex = 0;
+    const totalSlides = dots.length;
+    let slideInterval;
+    
+    const updateDots = (index) => {
+      dots.forEach(d => d.classList.remove('active'));
+      if(dots[index]) dots[index].classList.add('active');
+    };
+    
+    // Auto slide
+    const playSlide = () => {
+      slideInterval = setInterval(() => {
+        slideIndex = (slideIndex + 1) % totalSlides;
+        slidesContainer.scrollTo({ left: slidesContainer.clientWidth * slideIndex, behavior: 'smooth' });
+        updateDots(slideIndex);
+      }, 4000);
+    };
+    
+    // Scroll event (listener for user manual swipe)
+    slidesContainer.addEventListener('scroll', () => {
+      const idx = Math.round(slidesContainer.scrollLeft / slidesContainer.clientWidth);
+      if(idx !== slideIndex && idx >= 0 && idx < totalSlides) {
+        slideIndex = idx;
+        updateDots(slideIndex);
+      }
+    });
+
+    // Dot click
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        slideIndex = idx;
+        slidesContainer.scrollTo({ left: slidesContainer.clientWidth * slideIndex, behavior: 'smooth' });
+        updateDots(slideIndex);
+        playSlide(); // reset interval
+      });
+    });
+    
+    playSlide();
+  }
+})();
+
+</script>

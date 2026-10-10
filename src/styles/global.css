@@ -315,3 +315,5 @@ details .ans{padding:0 0 16px;color:var(--muted);font-size:13.8px}
 /* ---------- Gallery strip ---------- */
 .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
 .strip img{aspect-ratio:4/5;object-fit:cover;border-radius:12px}
+
+
