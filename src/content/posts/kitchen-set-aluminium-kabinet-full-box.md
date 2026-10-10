@@ -3,7 +3,7 @@ title: "Kitchen Set Aluminium Bogor: Kenapa Kabinet Bawah Harus Full Box"
 date: 2026-10-07
 category: "Kitchen Set"
 banner: "/images/ai/kitchen-set-aluminium-kabinet-full-box.jpg"
-excerpt: "Kabinet atas aluminium 2,5 juta dan kabinet bawah full box 2,4 juta per meter. Ini yang membedakan full box dari kabinet biasa, dan kapan aluminium lebih tepat dari kayu."
+excerpt: "Kabinet atas aluminium 2,5 juta dan kabinet bawah full box 2,6 juta per meter. Ini yang membedakan full box dari kabinet biasa, dan kapan aluminium lebih tepat dari kayu."
 ---
 
 Dapur yang sering kena air dan minyak butuh material yang tidak takut lembap. Kayu bisa bertahan bertahun-tahun, tapi hanya kalau perawatannya rutin dan area dapurnya punya sirkulasi bagus. Kalau tidak, bagian bawah kabinet yang paling sering kena cipratan biasanya yang lebih dulu menggelembung.
@@ -35,7 +35,7 @@ Yang perlu diketahui: aluminium bukan material yang hangat secara tampilan. Warn
 Untuk satuan per meter lari, harga kitchen set aluminium di area JABODETABEK berkisar:
 
 - Kabinet atas aluminium: mulai **Rp2.500.000** per meter
-- Kabinet bawah aluminium full box: mulai **Rp2.400.000** per meter
+- Kabinet bawah aluminium full box: mulai **Rp2.600.000** per meter
 
 Angka ini belum menghitung top table, karena bagian atas meja dihitung terpisah tergantung material yang dipilih. Pasang top table marmer atau granit mulai Rp700.000 per meter lari, mengikuti panjang meja dan sudah termasuk material. HPL lebih murah tapi tidak tahan panas.
 

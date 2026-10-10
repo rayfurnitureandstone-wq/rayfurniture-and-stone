@@ -277,7 +277,7 @@ details .ans{padding:0 0 16px;color:var(--muted);font-size:13.8px}
   .nav,.head-cta{display:none}
   .burger{display:grid;place-items:center}
   .slide{grid-template-columns:1fr}
-  .slide-img{min-height:210px;order:-1}
+  .slide-img{aspect-ratio:4/3;min-height:0;order:-1}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
   .cat-grid{grid-template-columns:repeat(2,1fr)}
   .cat--sm{grid-template-columns:84px 1fr}

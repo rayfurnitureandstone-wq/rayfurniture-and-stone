@@ -2,7 +2,7 @@
 title: "Keunggulan Kitchen Set Aluminium: Bebas Rayap dan Tahan Air Seumur Hidup"
 date: 2026-10-10
 category: "Kitchen Set"
-banner: "https://files.catbox.moe/example.jpg"
+banner: "/images/ai/keunggulan-kitchen-set-aluminium-bebas-rayap.jpg"
 excerpt: "Mengenal solusi dapur modern bebas rayap, anti lembap, dan kokoh dengan kitchen set material aluminium premium dari Ray Furniture & Stone."
 draft: false
 ---

@@ -12,10 +12,10 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft))
   .sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date))
   .slice(0, 6);
 
-const desc = `Hub layanan kitchen set custom Ray Furniture & Stone: proses, harga mulai Rp 1.800.000/meter lari, material, bonus, dan area layanan Jabodebek. Desain 3D gratis, garansi 1 tahun.`;
+const desc = `Hub layanan kitchen set custom Ray Furniture & Stone: proses, harga mulai Rp 1.800.000/meter lari (HPL) dan Rp 2.500.000/meter lari (aluminium anti rayap), material, bonus, dan area layanan Jabodebek. Desain 3D gratis, garansi 1 tahun.`;
 
 const faqKitchen = [
-  ['Berapa harga kitchen set custom per meter?', 'Mulai Rp 1.800.000 per meter lari untuk lebar standar 60 cm. Angka final keluar setelah survei ukuran ruang dan pilihan material Anda.'],
+  ['Berapa harga kitchen set custom per meter?', 'Mulai Rp 1.800.000 per meter lari untuk material plywood + blokmin finishing HPL, dan mulai Rp 2.500.000 per meter lari untuk full aluminium (anti rayap). Lebar standar 60 cm. Angka final keluar setelah survei ukuran ruang dan pilihan material Anda.'],
   ['Apa saja bonus standar kitchen set?', 'Rak sendok, aluminium handle, rak piring bawah, finger-groove handle, engsel slowmotion, lampu kabinet LED, rail double track, dan ventilasi kabinet.'],
   ['Apakah melayani seluruh Jabodebek?', 'Ya — Bogor, Jakarta, Bekasi, Depok, Tangerang, dan Cibubur. Untuk luar wilayah ada minimal order, silakan hubungi kami.'],
   ['Berapa lama pengerjaan?', 'Rata-rata 10–21 hari kerja tergantung ukuran dan tingkat kerumitan, dihitung setelah desain 3D disetujui.'],
@@ -61,7 +61,7 @@ const breadcrumb = {
       <div class="sec-head">
         <p class="eyebrow">Harga &amp; Spesifikasi</p>
         <h2 class="h-sec">Mulai Rp 1.800.000 / meter lari</h2>
-        <p class="sub-sec">Harga per meter lari dengan lebar standar 60 cm, sudah termasuk jasa pasang dan bonus standar.</p>
+        <p class="sub-sec">Harga per meter lari dengan lebar standar 60 cm, sudah termasuk jasa pasang dan bonus standar. Material plywood + blokmin finishing HPL mulai Rp 1.800.000; full aluminium (anti rayap) mulai Rp 2.500.000.</p>
       </div>
       <div class="two-col" style="align-items:start;gap:32px">
         <div>

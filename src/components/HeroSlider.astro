@@ -18,7 +18,7 @@ import { heroSlides } from '../data/site.js';
                 <a class="btn btn--ghost" href={s.cta2Href}>{s.cta2Label}</a>
               </div>
             </div>
-            <div class="slide-img" style={`background-image:url('${s.img}')`} role="img" aria-label={[s.title1, s.title2, s.title3].join(' ').trim()}></div>
+            <div class="slide-img" style={`background-image:url('${s.img}')${s.imgMobile ? `;--img-mobile:url('${s.imgMobile}')` : ''}`} role="img" aria-label={[s.title1, s.title2, s.title3].join(' ').trim()}></div>
           </article>
         ))}
       </div>

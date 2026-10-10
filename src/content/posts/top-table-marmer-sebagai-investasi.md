@@ -2,7 +2,7 @@
 title: "Mengapa Top Table Marmer dan Granit Adalah Investasi Jangka Panjang Dapur Anda"
 date: 2026-10-09
 category: "Top Table"
-banner: "https://d.uguu.se/HDemxSFP.jpg"
+banner: "/images/ai/top-table-marmer-sebagai-investasi.jpg"
 excerpt: "Bingung memilih antara marmer atau granit? Ketahui keunggulan keduanya untuk dapur yang lebih elegan dan tahan lama."
 draft: false
 ---

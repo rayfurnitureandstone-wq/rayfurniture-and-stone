@@ -2,7 +2,7 @@
 title: "Transformasi Dapur Elegan dengan Top Table Granit & Marmer"
 date: "2026-10-09"
 category: "Edukasi"
-banner: "https://files.catbox.moe/0qo81s.jpg"
+banner: "/images/ai/transformasi-dapur-elegan-top-table-granit.jpg"
 excerpt: "Upgrade meja dapur lama kamu jadi lebih elegan dengan top table granit dan marmer. Ketahui mengapa material ini sangat direkomendasikan!"
 draft: false
 ---

@@ -60,7 +60,8 @@ Hindari diskon besar yang menempel pada DP besar. Itu beban, bukan keuntungan.
 
 Untuk jasa kitchen set custom di Bogor dan JABODETABEK, angka yang biasanya muncul:
 
-- **Mulai Rp 1.800.000** untuk unit sederhana
+- **Mulai Rp 1.800.000** untuk unit sederhana (plywood + blokmin finishing HPL)
+- **Mulai Rp 2.500.000** untuk full aluminium (anti rayap)
 - **DP 30 sampai 50 persen** di awal, sisanya setelah QC
 - **3 sampai 7 hari kerja** tergantung ukuran
 

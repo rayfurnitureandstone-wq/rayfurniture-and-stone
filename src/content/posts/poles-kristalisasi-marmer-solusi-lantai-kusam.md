@@ -2,7 +2,7 @@
 title: "Poles Kristalisasi Marmer: Solusi Hemat Kembalikan Kilau Mewah Tanpa Ganti Baru"
 date: "2026-10-10"
 category: "Poles Marmer"
-banner: "https://files.catbox.moe/gz2xai.jpg"
+banner: "/images/ai/poles-kristalisasi-marmer-solusi-lantai-kusam.jpg"
 excerpt: "Lantai atau top table marmer mulai kusam dan tergores? Temukan alasan mengapa poles kristalisasi profesional jauh lebih hemat, cepat, dan mengembalikan kilau cermin alami tanpa perlu renovasi total."
 draft: false
 ---

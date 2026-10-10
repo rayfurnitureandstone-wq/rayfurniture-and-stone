@@ -13,7 +13,7 @@ const { c } = Astro.props;
 const cp = cityCopy(c);
 
 const faqCity = [
-  [`Berapa harga kitchen set custom di ${c.nama}?`, `Mulai Rp 1.800.000 per meter lari (lebar standar 60 cm), sudah termasuk jasa pasang dan bonus standar. Angka final keluar setelah survei ukuran ruang di ${c.nama}. ${c.ongkir}.`],
+  [`Berapa harga kitchen set custom di ${c.nama}?`, `Mulai Rp 1.800.000 per meter lari untuk material plywood + blokmin finishing HPL, dan mulai Rp 2.500.000 per meter lari untuk full aluminium (anti rayap). Lebar standar 60 cm, sudah termasuk jasa pasang dan bonus standar. Angka final keluar setelah survei ukuran ruang di ${c.nama}. ${c.ongkir}.`],
   [`Apakah survei ke ${c.nama} dikenakan biaya?`, `Tidak. Survei dan pengukuran di ${c.namaPanjang} kami lakukan tanpa biaya, ${c.ongkir}.`],
   [`Berapa lama pengerjaan kitchen set untuk area ${c.nama}?`, `Rata-rata 10–21 hari kerja setelah desain 3D disetujui. ${c.catatan}`],
   [`Material apa yang tersedia untuk kitchen set ${c.nama}?`, `HPL motif kayu/marmer, aluminium (anti rayap, cocok untuk dapur lembap), serta top table marmer, granit, dan quadra. Pilihan bisa disesuaikan dengan anggaran Anda.`],
@@ -25,7 +25,7 @@ const ld = {
   serviceType: `Jasa Kitchen Set Custom ${c.nama}`,
   provider: { '@type': 'FurnitureStore', name: site.name, url: site.origin },
   areaServed: { '@type': 'City', name: c.nama },
-  offers: { '@type': 'Offer', priceCurrency: 'IDR', price: '1800000', description: 'Harga mulai per meter lari' },
+  offers: { '@type': 'AggregateOffer', priceCurrency: 'IDR', lowPrice: '1800000', highPrice: '2500000', offerCount: '2', description: 'Harga mulai per meter lari — plywood + blokmin finishing HPL Rp 1.800.000, full aluminium Rp 2.500.000' },
 };
 
 const breadcrumb = {

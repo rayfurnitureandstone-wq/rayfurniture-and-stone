@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
 import '../styles/mobile.css';
-import { site, nav, waLink } from '../data/site.js';
+import { site, nav as allNav, waLink } from '../data/site.js';
+const nav = allNav.filter(n => !n.hideInNav);
 const { title = site.name, description = 'Jasa pembuatan kitchen set custom dan jasa pasang poles marmer atau granit di Cibubur, Bogor dan JABODEBEK.', noindex = false, bodyClass = '' } = Astro.props;
 const path = Astro.url.pathname;
 const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));

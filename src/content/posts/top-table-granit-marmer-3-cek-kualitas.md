@@ -2,7 +2,7 @@
 title: "Top Table Granit & Marmer: Pilihan Terbaik untuk Ruang Makan Anda"
 date: 2026-10-09
 category: Top Table
-banner: https://files.catbox.moe/rjqyzl.jpg
+banner: "/images/ai/top-table-granit-marmer-3-cek-kualitas.jpg"
 excerpt: Bukan hanya soal tampilan. Setiap top table granit dan marmer di Ray Furniture & Stone melewati 3 tahap pemeriksaan sebelum dinyatakan layak untuk ruang makan Anda.
 draft: false
 ---

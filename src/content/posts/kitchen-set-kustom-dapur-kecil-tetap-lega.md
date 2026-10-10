@@ -2,7 +2,7 @@
 title: "Kitchen Set Kustom: Rahasia Dapur Kecil Tetap Lega dan Rapi"
 date: "2026-10-10"
 category: "Kitchen Set"
-banner: "https://files.catbox.moe/hei7uq.jpg"
+banner: "/images/ai/kitchen-set-kustom-dapur-kecil-tetap-lega.jpg"
 excerpt: "Ruang dapur sempit bukan alasan menunda kitchen set. Kuncinya bukan luas ruangan, melainkan seberapa presisi kabinet dirancang mengikuti bentuk dinding. Ini panduan lengkapnya."
 draft: false
 ---

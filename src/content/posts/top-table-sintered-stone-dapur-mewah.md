@@ -2,7 +2,7 @@
 title: "Top Table Sintered Stone: Solusi Meja Dapur Mewah Tahan Panas dan Gores"
 date: 2026-10-10
 category: "Top Table"
-banner: "https://files.catbox.moe/te8fqc.jpg"
+banner: "/images/ai/top-table-sintered-stone-dapur-mewah.jpg"
 excerpt: "Mengenal keunggulan top table sintered stone dan Quadra untuk kitchen set modern mewah: tahan panas ekstrem, anti gores, nol pori-pori, dan minim perawatan."
 ---
 

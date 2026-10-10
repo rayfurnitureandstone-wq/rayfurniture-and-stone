@@ -21,9 +21,11 @@ export const waLink = (msg = 'Halo Kak, saya mau tanya kitchen set custom, top t
   `https://wa.me/${site.waNumber}?text=${encodeURIComponent(msg)}`;
 
 // Semua tautan internal memakai trailing slash — situs pakai trailingSlash "always".
+// hideInNav: halaman tetap ada & terindeks Google (untuk keyword), tapi tidak
+// ditampilkan di menu navigasi. Dipakai untuk halaman keyword-only.
 export const nav = [
   { href: '/', label: 'Home' },
-  { href: '/kitchen-set/', label: 'Kitchen Set' },
+  { href: '/kitchen-set/', label: 'Kitchen Set', hideInNav: true },
   { href: '/top-table/', label: 'Top Table' },
   { href: '/about/', label: 'About' },
   { href: '/what-news/', label: 'What News' },
@@ -36,7 +38,7 @@ export const services = [
   {
     id: 'kitchen-set-custom',
     title: 'Kitchen Set & Furniture Custom',
-    price: 'Mulai Rp 1.800.000',
+    price: 'Mulai Rp 1.800.000 (HPL) · Rp 2.500.000 (aluminium)',
     lead: 'Ini bisnis kami yang utama.',
     garansi: 'Garansi produk 1 tahun.',
     text: 'Kitchen set, TV table, rak dinding, wardrobe, sampai meja kerja custom — semua mengikuti ukuran ruang dan bahan pilihan Anda. Desain 3D dulu, produksi di workshop kami sendiri.',
@@ -104,7 +106,7 @@ export const stoneRestoration = [
 ];
 
 export const brands = [
-  ['Kitchen Set Custom', 'Mulai Rp 1.800.000'],
+  ['Kitchen Set Custom', 'Mulai Rp 1.800.000 (HPL)'],
   ['Pasang Marmer & Granit', 'Mulai Rp 850.000/m1'],
   ['Poles Lantai Marmer', 'Mulai Rp 100.000/m²'],
   ['Garansi 1 tahun', 'Kitchen set, cacat produksi'],
@@ -122,7 +124,7 @@ export const process = [
 // FAQ umum — ditulis alami, tiap jawaban ada angka/aturan konkret.
 export const faq = [
   ['Layanan apa saja yang dikerjakan Ray Furniture and Stone?', 'Kami mengutamakan permintaan pelanggan untuk kitchen set dan furniture custom. Selain itu kami melayani jasa pasang marmer, granit, dan quadra untuk top table, lantai, dan dinding, serta jasa pasang dan poles lantai marmer dan granit termasuk restoration. Semua dikerjakan tim kami sendiri sejak 2010.'],
-  ['Berapa harga kitchen set custom?', 'Karena setiap ruang beda, kami kasih harga setelah survei. Harga mulai Rp 1.800.000. Angka akhir keluar setelah ukuran ruang dan material ditentukan.'],
+  ['Berapa harga kitchen set custom?', 'Karena setiap ruang beda, kami kasih harga setelah survei. Harga mulai Rp 1.800.000 per meter lari untuk material plywood + blokmin finishing HPL, dan mulai Rp 2.500.000 per meter lari untuk full aluminium (anti rayap). Angka akhir keluar setelah ukuran ruang dan material ditentukan.'],
   ['Garansi berlaku sampai kapan dan untuk apa?', 'Kitchen set custom bergaransi 1 tahun, mencakup engsel, handle, HPL yang lengkung atau mengelupas, dan cacat produksi dengan syarat dan ketentuan. Pekerjaan marmer, granit, dan poles lantai bergaransi pengerjaan sampai Anda tanda-tangani QC dan DP lunas. Order ulang atau kuantitas besar dapat diskon.'],
   ['Apakah ada desain 3D sebelum produksi?', 'Ya. Kami kirim desain 3D setelah survei. Anda bisa revisi sampai cocok, baru lanjut produksi.'],
   ['Berapa lama pengerjaan top table?', 'Top table standar 3-5 hari kerja, tergantung panjang dan jumlah potongan. Poles lantai biasanya 1-3 hari kerja per area.'],
