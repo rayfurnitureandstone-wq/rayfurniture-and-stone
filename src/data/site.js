@@ -45,7 +45,7 @@ export const services = [
   {
     id: 'pasang-marmer-granit',
     title: 'Pasang Marmer, Granit & Quadra',
-    price: 'Mulai Rp 700.000/m²',
+    price: 'Mulai Rp 850.000/m1',
     lead: 'Top table, lantai, dinding, dan backsplash.',
     garansi: 'Garansi pengerjaan sampai Anda OK di QC + DP lunas. Order ulang diskon.',
     text: 'Pengukuran presisi di lokasi, pemotongan di workshop, lalu pemasangan pakai lem khusus batu dan edging rapi. Cocok untuk dapur baru maupun renovasi lantai.',
@@ -105,7 +105,7 @@ export const stoneRestoration = [
 
 export const brands = [
   ['Kitchen Set Custom', 'Mulai Rp 1.800.000'],
-  ['Pasang Marmer & Granit', 'Mulai Rp 700.000/m²'],
+  ['Pasang Marmer & Granit', 'Mulai Rp 850.000/m1'],
   ['Poles Lantai Marmer', 'Mulai Rp 100.000/m²'],
   ['Garansi 1 tahun', 'Kitchen set, cacat produksi'],
   ['Desain 3D Gratis', 'Sebelum produksi'],
