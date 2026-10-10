@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import GeoBlock from '../components/GeoBlock.astro';
 import Faq from '../components/Faq.astro';
 import { waLink, site } from '../data/site.js';
+import { kitchenCities } from '../data/cities.js';
 
 const desc = 'Jasa pemasangan top table marmer dan granit di JABODEBEK. Mulai Rp850.000/meter lari. Termasuk pelubangan, edge profile, nat, coating, sealant. Gratis ongkir 3 meter pertama.';
 
@@ -278,6 +279,39 @@ const faqItems = [
         <h2 class="h-sec" id="faq-title">Pertanyaan yang Sering Ditanyakan</h2>
       </div>
       <Faq items={faqItems} />
+    </div>
+  </section>
+
+  <!-- ===== Backlink silang ke web utama (SEO) ===== -->
+  <section class="sec sec--cream" id="layanan-utama">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Layanan Terkait</p>
+        <h2 class="h-sec">Layanan Lengkap di Web Utama Kami</h2>
+        <p class="sub-sec">Selain pasang top table, Ray Furniture &amp; Stone juga membuat kitchen set custom dan melayani pemasangan di seluruh Jabodetabek. Lihat detailnya di situs utama.</p>
+      </div>
+      <div class="feat-grid feat-grid--2">
+        <article class="feat">
+          <h3><a class="link-more" href="https://rayfurnitureandstone.id/kitchen-set/">Jasa Kitchen Set Custom →</a></h3>
+          <p>Harga mulai Rp 1.800.000/meter lari, desain 3D gratis, garansi 1 tahun. Hub lengkap proses, bonus, dan spesifikasi.</p>
+        </article>
+        <article class="feat">
+          <h3><a class="link-more" href="https://rayfurnitureandstone.id/top-table/">Jasa Pasang Top Table Marmer, Granit &amp; Quadra →</a></h3>
+          <p>Panduan material, ketebalan, edge profile, dan estimasi biaya pemasangan top table untuk dapur Anda.</p>
+        </article>
+      </div>
+      <p style="margin-top:20px;line-height:1.9">
+        <strong>Layanan per wilayah:</strong>{' '}
+        {kitchenCities.map((c, i) => (
+          <>{i > 0 && ', '}<a class="link-more" href={`https://rayfurnitureandstone.id/top-table/${c.slug}/`}>Top Table {c.nama}</a></>
+        ))}
+      </p>
+      <p style="margin-top:10px;line-height:1.9">
+        <strong>Kitchen set per wilayah:</strong>{' '}
+        {kitchenCities.map((c, i) => (
+          <>{i > 0 && ', '}<a class="link-more" href={`https://rayfurnitureandstone.id/kitchen-set/${c.slug}/`}>Kitchen Set {c.nama}</a></>
+        ))}
+      </p>
     </div>
   </section>
 
