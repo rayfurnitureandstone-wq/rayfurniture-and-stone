@@ -1,5 +1,16 @@
 /* Ray Furniture & Stone — tema FurniLux-style: putih, krem, hijau hutan */
 :root{
+  /* Fallback for catalog */
+  --stone: var(--cream);
+  --paper: var(--white);
+  --chip: var(--line);
+  --ink-2: var(--muted);
+  --on-dark: var(--white);
+  --dark-line: var(--line-2);
+  --caps: var(--font);
+  --serif: var(--font);
+  --band: 80px;
+
   --white:#ffffff;
   --cream:#f6f2ec;
   --cream-2:#efe9df;
@@ -317,3 +328,38 @@ details .ans{padding:0 0 16px;color:var(--muted);font-size:13.8px}
 .strip img{aspect-ratio:4/5;object-fit:cover;border-radius:12px}
 
 
+
+/* ---------- Catalog / filters (gaya katalog batu) ---------- */
+.filters{background:var(--stone);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0}
+.filters .wrap{display:flex;flex-direction:column;gap:16px}
+.filters__row{display:flex;align-items:center;gap:12px 20px;flex-wrap:wrap}
+.filters__label{font-weight:700;width:80px;flex-shrink:0;font-family:var(--caps);text-transform:uppercase;letter-spacing:.08em;font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;flex:1 1 480px}
+.chip{min-height:42px;padding:0 18px;display:inline-flex;align-items:center;gap:9px;border:1.5px solid var(--chip);border-radius:999px;background:var(--paper);color:var(--ink);font-family:var(--caps);letter-spacing:.04em;font-size:14px;text-decoration:none;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"],.chip--filter[aria-current="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-dark)}
+.swatch{width:14px;height:14px;border-radius:50%;border:1px solid var(--line-2);display:inline-block}
+.results{padding:48px 0 var(--band)}
+.results__head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 24px;margin-bottom:28px}
+.results__count{font-family:var(--serif);font-size:28px}
+.results__where{color:var(--ink-2);font-family:var(--caps);text-transform:uppercase;letter-spacing:.06em;font-size:13px}
+.stone-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 28px}
+.stone-card{display:flex;flex-direction:column;gap:10px;color:var(--ink);text-decoration:none}
+.stone-card__img{display:block;aspect-ratio:4/5;background:var(--stone);overflow:hidden}
+.stone-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.stone-card:hover img{transform:scale(1.04)}
+.stone-card__name{font-family:var(--caps);font-size:16px;letter-spacing:.1em;text-transform:uppercase;line-height:1.3}
+.stone-card:hover .stone-card__name{text-decoration:underline;text-underline-offset:4px}
+.stone-card__meta{font-size:14.5px;color:var(--ink-2)}
+.empty{grid-column:1/-1;padding:40px 0;color:var(--ink-2)}
+@media(max-width:1100px){.stone-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.stone-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 18px}}
+
+/* ---------- Lightbox ---------- */
+.lb{position:fixed;inset:0;background:#000000e6;display:none;place-items:center;z-index:100;padding:24px}
+.lb.on{display:grid}
+.lb img{max-width:min(92vw,900px);max-height:82vh;object-fit:contain;border:1px solid var(--dark-line)}
+.lb .cap{color:var(--on-dark);text-align:center;margin-top:14px;font-family:var(--caps);letter-spacing:.1em;text-transform:uppercase}
+.lb .x{position:absolute;top:18px;right:24px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+
+/* ---------- FAQ ---------- */
