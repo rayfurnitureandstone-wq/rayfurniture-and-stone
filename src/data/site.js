@@ -23,8 +23,9 @@ export const waLink = (msg = 'Halo Kak, saya mau tanya kitchen set custom, top t
 // Semua tautan internal memakai trailing slash — situs pakai trailingSlash "always".
 export const nav = [
   { href: '/', label: 'Home' },
-  { href: '/about/', label: 'About' },
+  { href: '/kitchen-set/', label: 'Kitchen Set' },
   { href: '/top-table/', label: 'Top Table' },
+  { href: '/about/', label: 'About' },
   { href: '/what-news/', label: 'What News' },
   { href: '/contact/', label: 'Contact' },
 ];

@@ -104,8 +104,8 @@ a{color:inherit;text-decoration:none}
 .slides{display:flex;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
 .slide{min-width:100%;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
 .slide-copy{padding:clamp(28px,4.5vw,58px);display:flex;flex-direction:column;justify-content:center;gap:14px;background:var(--cream)}
-.slide-copy h1{font-size:clamp(26px,4.2vw,44px);line-height:1.08;font-weight:800;text-transform:uppercase;margin:0;letter-spacing:-.02em}
-.slide-copy h1 em{font-style:normal;color:var(--green)}
+.slide-copy h1,.slide-copy .h1-look{font-size:clamp(26px,4.2vw,44px);line-height:1.08;font-weight:800;text-transform:uppercase;margin:0;letter-spacing:-.02em}
+.slide-copy h1 em,.slide-copy .h1-look em{font-style:normal;color:var(--green)}
 .slide-copy p{margin:0;color:#5b6169;max-width:44ch}
 .slide-copy .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
 .slide-img{min-height:340px;background:#ddd center/cover no-repeat}

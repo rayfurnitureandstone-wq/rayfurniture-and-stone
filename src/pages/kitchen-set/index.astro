@@ -1,0 +1,131 @@
+---
+import Base from '../../layouts/Base.astro';
+import GeoBlock from '../../components/GeoBlock.astro';
+import Faq from '../../components/Faq.astro';
+import { getCollection } from 'astro:content';
+import { site, waLink, services, inclusions, process } from '../../data/site.js';
+import { kitchenCities, cityCopy } from '../../data/cities.js';
+
+const kitchens = services.find(s => s.id === 'kitchen-set-custom');
+const posts = (await getCollection('posts', ({ data }) => !data.draft))
+  .filter(p => /kitchen|dapur/i.test(p.data.title + ' ' + (p.data.category || '')))
+  .sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date))
+  .slice(0, 6);
+
+const desc = `Hub layanan kitchen set custom Ray Furniture & Stone: proses, harga mulai Rp 1.800.000/meter lari, material, bonus, dan area layanan Jabodebek. Desain 3D gratis, garansi 1 tahun.`;
+
+const faqKitchen = [
+  ['Berapa harga kitchen set custom per meter?', 'Mulai Rp 1.800.000 per meter lari untuk lebar standar 60 cm. Angka final keluar setelah survei ukuran ruang dan pilihan material Anda.'],
+  ['Apa saja bonus standar kitchen set?', 'Rak sendok, aluminium handle, rak piring bawah, finger-groove handle, engsel slowmotion, lampu kabinet LED, rail double track, dan ventilasi kabinet.'],
+  ['Apakah melayani seluruh Jabodebek?', 'Ya — Bogor, Jakarta, Bekasi, Depok, Tangerang, dan Cibubur. Untuk luar wilayah ada minimal order, silakan hubungi kami.'],
+  ['Berapa lama pengerjaan?', 'Rata-rata 10–21 hari kerja tergantung ukuran dan tingkat kerumitan, dihitung setelah desain 3D disetujui.'],
+];
+
+const breadcrumb = {
+  '@context': 'https://***',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.origin + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Kitchen Set', item: site.origin + '/kitchen-set/' },
+  ],
+};
+---
+
+<Base title="Kitchen Set Custom — Hub Layanan & Harga" description={desc}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+
+  <!-- Hero hub -->
+  <section class="sec">
+    <div class="wrap">
+      <nav aria-label="Breadcrumb" style="font-size:13px;color:#8a9099;margin-bottom:10px">
+        <a href="/">Home</a> › <span>Kitchen Set</span>
+      </nav>
+      <h1 style="font-size:clamp(28px,4.4vw,46px);line-height:1.1;margin:0 0 14px">
+        Kitchen Set Custom — <em style="font-style:normal;color:var(--green)">Harga, Proses &amp; Area Layanan</em>
+      </h1>
+      <p class="lead" style="max-width:70ch">
+        Ray Furniture &amp; Stone membuat kitchen set custom dan furniture custom sejak 2010.
+        Setiap modul dibuat mengikuti ukuran ruang Anda — bukan ready stock yang pas-pasan.
+        Desain 3D <strong>gratis</strong>, garansi <strong>1 tahun</strong> untuk cacat produksi.
+      </p>
+      <p style="margin-top:20px">
+        <a class="btn btn--green" href={waLink('Halo Kak, saya mau tanya harga kitchen set custom dan minta desain 3D.')}>Konsultasi Gratis via WhatsApp →</a>
+      </p>
+      <GeoBlock links={['/', '/kitchen-set/', '/top-table/']} />
+    </div>
+  </section>
+
+  <!-- Harga & spesifikasi -->
+  <section class="sec sec--cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Harga &amp; Spesifikasi</p>
+        <h2 class="h-sec">Mulai Rp 1.800.000 / meter lari</h2>
+        <p class="sub-sec">Harga per meter lari dengan lebar standar 60 cm, sudah termasuk jasa pasang dan bonus standar.</p>
+      </div>
+      <div class="two-col" style="align-items:start;gap:32px">
+        <div>
+          <h3>Yang sudah termasuk</h3>
+          <ul style="line-height:1.9">
+            {inclusions.map(([t]) => <li>{t}</li>)}
+          </ul>
+        </div>
+        <div>
+          <h3>Proses pemesanan</h3>
+          <ol style="line-height:1.7">
+            {process.map(([t, d]) => <li><strong>{t}</strong> — {d}</li>)}
+          </ol>
+        </div>
+      </div>
+      <p style="margin-top:22px">{kitchens && kitchens.garansi}</p>
+    </div>
+  </section>
+
+  <!-- Area layanan: hub ke halaman kota -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Area Layanan</p>
+        <h2 class="h-sec">Kitchen Set Custom di Seluruh Jabodetabek &amp; Sekitarnya</h2>
+        <p class="sub-sec">Kami melayani DKI Jakarta, Bogor Raya, Depok, Tangerang Raya, Bekasi Raya, dan wilayah sekitarnya. Pilih kota Anda untuk informasi, estimasi, dan jadwal survei yang paling relevan.</p>
+      </div>
+      {['DKI Jakarta', 'Bogor Raya', 'Depok', 'Tangerang Raya', 'Bekasi Raya', 'Sekitarnya'].map(g => (() => {
+        const grp = kitchenCities.filter(c => c.group === g);
+        if (!grp.length) return null;
+        return (
+          <div style="margin-bottom:28px">
+            <h3 style="font-size:18px;color:var(--green);margin:0 0 12px">{g}</h3>
+            <div class="feat-grid feat-grid--2">
+              {grp.map(c => (
+                <article class="feat">
+                  <h4 style="margin:0 0 6px"><a class="link-more" href={`/kitchen-set/${c.slug}/`}>Kitchen Set Custom {c.nama} →</a></h4>
+                  <p>Melayani {c.landmark}. {c.ongkir}.</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        );
+      })())}
+    </div>
+  </section>
+
+  <!-- Artikel terkait -->
+  <section class="sec sec--cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Bacaan</p>
+        <h2 class="h-sec">Artikel Kitchen Set</h2>
+      </div>
+      <div class="feat-grid feat-grid--2">
+        {posts.map(p => (
+          <article class="feat">
+            <h3><a class="link-more" href={`/what-news/${p.slug}/`}>{p.data.title} →</a></h3>
+            <p>{p.data.excerpt}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqKitchen} title="Pertanyaan Seputar Kitchen Set Custom" />
+</Base>

@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import GeoBlock from '../components/GeoBlock.astro';
 import Faq from '../components/Faq.astro';
 import { waLink } from '../data/site.js';
+import { kitchenCities } from '../data/cities.js';
 
 const desc = 'Jasa pasang marmer, granit, dan quadra untuk top table, lantai, dan dinding, plus jasa pasang dan poles lantai marmer atau granit. Simulasikan dengan Kitchen Set Simulator 3D.';
 const faqTT = [
@@ -148,6 +149,30 @@ const faqTT = [
     </div>
   </section>
 
+  <section class="sec sec--cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Area Layanan</p>
+        <h2 class="h-sec">Pasang Top Table di Seluruh Jabodetabek</h2>
+        <p class="sub-sec">Pilih kota Anda untuk informasi jasa pasang top table marmer/granit/quadra yang lebih spesifik.</p>
+      </div>
+      {['DKI Jakarta', 'Bogor Raya', 'Depok', 'Tangerang Raya', 'Bekasi Raya', 'Sekitarnya'].map(g => (() => {
+        const grp = kitchenCities.filter(c => c.group === g);
+        if (!grp.length) return null;
+        return (
+          <div style="margin-bottom:22px">
+            <h3 style="font-size:17px;color:var(--green);margin:0 0 8px">{g}</h3>
+            <p style="line-height:1.9">
+              {grp.map((c, i) => (
+                <>{i > 0 && ', '}<a class="link-more" href={`/top-table/${c.slug}/`}>Top Table {c.nama}</a></>
+              ))}
+            </p>
+          </div>
+        );
+      })())}
+    </div>
+  </section>
+
   <section class="sec">
     <div class="wrap">
       <div class="cta">
@@ -162,85 +187,165 @@ const faqTT = [
   </section>
 </Base>
 <script>
-
-// Logic filter katalog: Jenis + warna swatch
-(function(){
-  const grid=document.getElementById('stoneGrid'), cards=[...grid.querySelectorAll('.stone-card')], count=document.getElementById('stoneCount');
-  const f={type:'All',colour:'All'};
-  function apply(){
-    let n=0;
-    cards.forEach(c=>{
-      const ok=(f.type==='All'||c.dataset.type===f.type)&&(f.colour==='All'||c.dataset.colour===f.colour);
-      c.style.display=ok?'':'none'; if(ok)n++;
-    });
-    count.textContent=n+' mahakarya tersedia';
-  }
-  document.querySelectorAll('.chip--filter').forEach(ch=>{
-    ch.addEventListener('click',e=>{
-      e.preventDefault();
-      const[k,v]=ch.dataset.f.split(':'); f[k]=v;
-      document.querySelectorAll(`.chip--filter[data-f^="${k}:"]`).forEach(x=>x.removeAttribute('aria-current'));
-      ch.setAttribute('aria-current','true');
-      apply();
-    });
-  });
-  const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
-  grid.addEventListener('click',e=>{
-    const card=e.target.closest('.stone-card'); if(!card)return;
-    e.preventDefault();
-    const img=card.querySelector('img');
-    lbImg.src=img.src; lbImg.alt=img.alt; lbCap.textContent=card.querySelector('.stone-card__name').textContent;
-    lb.classList.add('on');
-  });
-  const close=()=>{lb.classList.remove('on');lbImg.src='';};
-  document.getElementById('lbX').addEventListener('click',close);
-  lb.addEventListener('click',e=>{if(e.target===lb)close();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
-
-  // Slider Logic
-  const slidesContainer = document.getElementById('heroSlides');
-  const dots = document.querySelectorAll('.slider-dot');
-  if(slidesContainer && dots.length > 0) {
-    let slideIndex = 0;
-    const totalSlides = dots.length;
-    let slideInterval;
-    
-    const updateDots = (index) => {
-      dots.forEach(d => d.classList.remove('active'));
-      if(dots[index]) dots[index].classList.add('active');
-    };
-    
-    // Auto slide
-    const playSlide = () => {
-      slideInterval = setInterval(() => {
-        slideIndex = (slideIndex + 1) % totalSlides;
-        slidesContainer.scrollTo({ left: slidesContainer.clientWidth * slideIndex, behavior: 'smooth' });
-        updateDots(slideIndex);
-      }, 4000);
-    };
-    
-    // Scroll event (listener for user manual swipe)
-    slidesContainer.addEventListener('scroll', () => {
-      const idx = Math.round(slidesContainer.scrollLeft / slidesContainer.clientWidth);
-      if(idx !== slideIndex && idx >= 0 && idx < totalSlides) {
-        slideIndex = idx;
-        updateDots(slideIndex);
-      }
-    });
-
-    // Dot click
-    dots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => {
-        clearInterval(slideInterval);
-        slideIndex = idx;
-        slidesContainer.scrollTo({ left: slidesContainer.clientWidth * slideIndex, behavior: 'smooth' });
-        updateDots(slideIndex);
-        playSlide(); // reset interval
-      });
-    });
-    
-    playSlide();
-  }
-})();
+
+
+// Logic filter katalog: Jenis + warna swatch
+
+(function(){
+
+  const grid=document.getElementById('stoneGrid'), cards=[...grid.querySelectorAll('.stone-card')], count=document.getElementById('stoneCount');
+
+  const f={type:'All',colour:'All'};
+
+  function apply(){
+
+    let n=0;
+
+    cards.forEach(c=>{
+
+      const ok=(f.type==='All'||c.dataset.type===f.type)&&(f.colour==='All'||c.dataset.colour===f.colour);
+
+      c.style.display=ok?'':'none'; if(ok)n++;
+
+    });
+
+    count.textContent=n+' mahakarya tersedia';
+
+  }
+
+  document.querySelectorAll('.chip--filter').forEach(ch=>{
+
+    ch.addEventListener('click',e=>{
+
+      e.preventDefault();
+
+      const[k,v]=ch.dataset.f.split(':'); f[k]=v;
+
+      document.querySelectorAll(`.chip--filter[data-f^="${k}:"]`).forEach(x=>x.removeAttribute('aria-current'));
+
+      ch.setAttribute('aria-current','true');
+
+      apply();
+
+    });
+
+  });
+
+  const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+
+  grid.addEventListener('click',e=>{
+
+    const card=e.target.closest('.stone-card'); if(!card)return;
+
+    e.preventDefault();
+
+    const img=card.querySelector('img');
+
+    lbImg.src=img.src; lbImg.alt=img.alt; lbCap.textContent=card.querySelector('.stone-card__name').textContent;
+
+    lb.classList.add('on');
+
+  });
+
+  const close=()=>{lb.classList.remove('on');lbImg.src='';};
+
+  document.getElementById('lbX').addEventListener('click',close);
+
+  lb.addEventListener('click',e=>{if(e.target===lb)close();});
+
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+
+
+
+  // Slider Logic
+
+  const slidesContainer = document.getElementById('heroSlides');
+
+  const dots = document.querySelectorAll('.slider-dot');
+
+  if(slidesContainer && dots.length > 0) {
+
+    let slideIndex = 0;
+
+    const totalSlides = dots.length;
+
+    let slideInterval;
+
+    
+
+    const updateDots = (index) => {
+
+      dots.forEach(d => d.classList.remove('active'));
+
+      if(dots[index]) dots[index].classList.add('active');
+
+    };
+
+    
+
+    // Auto slide
+
+    const playSlide = () => {
+
+      slideInterval = setInterval(() => {
+
+        slideIndex = (slideIndex + 1) % totalSlides;
+
+        slidesContainer.scrollTo({ left: slidesContainer.clientWidth * slideIndex, behavior: 'smooth' });
+
+        updateDots(slideIndex);
+
+      }, 4000);
+
+    };
+
+    
+
+    // Scroll event (listener for user manual swipe)
+
+    slidesContainer.addEventListener('scroll', () => {
+
+      const idx = Math.round(slidesContainer.scrollLeft / slidesContainer.clientWidth);
+
+      if(idx !== slideIndex && idx >= 0 && idx < totalSlides) {
+
+        slideIndex = idx;
+
+        updateDots(slideIndex);
+
+      }
+
+    });
+
+
+
+    // Dot click
+
+    dots.forEach((dot, idx) => {
+
+      dot.addEventListener('click', () => {
+
+        clearInterval(slideInterval);
+
+        slideIndex = idx;
+
+        slidesContainer.scrollTo({ left: slidesContainer.clientWidth * slideIndex, behavior: 'smooth' });
+
+        updateDots(slideIndex);
+
+        playSlide(); // reset interval
+
+      });
+
+    });
+
+    
+
+    playSlide();
+
+  }
+
+})();
+
 
 </script>
