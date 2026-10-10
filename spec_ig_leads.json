@@ -1,0 +1,733 @@
+{
+ "sheets": [
+  {
+   "name": "Lead",
+   "rows": [
+    [
+     {
+      "value": "No",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Akun",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Kategori",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Skor Match",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Jumlah Like",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Komentar",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Tipe Post",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Kode Post",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Link Post",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     }
+    ],
+    [
+     1,
+     "@alyahanif11",
+     "Lainnya",
+     1,
+     null,
+     "Spill kode hpl nya kak",
+     "Foto",
+     "DYL1r8NEiXs",
+     {
+      "value": "https://www.instagram.com/p/DYL1r8NEiXs/",
+      "hyperlink": "https://www.instagram.com/p/DYL1r8NEiXs/"
+     }
+    ],
+    [
+     2,
+     "@firdanafissa",
+     "Lainnya",
+     1,
+     null,
+     "kak ini kode hpl nya apa?",
+     "Foto",
+     "DUCdI-Wkm40",
+     {
+      "value": "https://www.instagram.com/p/DUCdI-Wkm40/",
+      "hyperlink": "https://www.instagram.com/p/DUCdI-Wkm40/"
+     }
+    ],
+    [
+     3,
+     "@firdanafissa",
+     "Lainnya",
+     1,
+     null,
+     "kak kode hpl taco nya apa?",
+     "Foto",
+     "DWBDIRyEoti",
+     {
+      "value": "https://www.instagram.com/p/DWBDIRyEoti/",
+      "hyperlink": "https://www.instagram.com/p/DWBDIRyEoti/"
+     }
+    ],
+    [
+     4,
+     "@givanaaii",
+     "Lainnya",
+     1,
+     null,
+     "kode hpl taconya apa kak?",
+     "Foto",
+     "DR1e747EooN",
+     {
+      "value": "https://www.instagram.com/p/DR1e747EooN/",
+      "hyperlink": "https://www.instagram.com/p/DR1e747EooN/"
+     }
+    ],
+    [
+     5,
+     "@lala_elhabsyii",
+     "Lainnya",
+     1,
+     null,
+     "@ndukk.e tolong wujudin ini akhir tahun nanti❤️",
+     "Foto",
+     "Daea5xxSALx",
+     {
+      "value": "https://www.instagram.com/p/Daea5xxSALx/",
+      "hyperlink": "https://www.instagram.com/p/Daea5xxSALx/"
+     }
+    ],
+    [
+     6,
+     "@melanisavini",
+     "Lainnya",
+     1,
+     1,
+     "Saya whatsapp sudah 6 hari ga dibales, admin nya gimana ya",
+     "Foto",
+     "DR1e747EooN",
+     {
+      "value": "https://www.instagram.com/p/DR1e747EooN/",
+      "hyperlink": "https://www.instagram.com/p/DR1e747EooN/"
+     }
+    ],
+    [
+     7,
+     "@moestnatha",
+     "Lainnya",
+     1,
+     null,
+     "Alamat nya dmna mas",
+     "Foto",
+     "DX-zSFnk6lB",
+     {
+      "value": "https://www.instagram.com/p/DX-zSFnk6lB/",
+      "hyperlink": "https://www.instagram.com/p/DX-zSFnk6lB/"
+     }
+    ],
+    [
+     8,
+     "@rdiaaan",
+     "Lainnya",
+     1,
+     null,
+     "Spill kode hpl kak",
+     "Foto",
+     "DV2BBrCEu8k",
+     {
+      "value": "https://www.instagram.com/p/DV2BBrCEu8k/",
+      "hyperlink": "https://www.instagram.com/p/DV2BBrCEu8k/"
+     }
+    ],
+    [
+     9,
+     "@simutchi",
+     "Lainnya",
+     1,
+     null,
+     "boleh share info mengenai spc di tangga? terima kasih",
+     "Foto",
+     "DX5uFXJEihi",
+     {
+      "value": "https://www.instagram.com/p/DX5uFXJEihi/",
+      "hyperlink": "https://www.instagram.com/p/DX5uFXJEihi/"
+     }
+    ],
+    [
+     10,
+     "@yuliantisilviaa",
+     "Lainnya",
+     1,
+     null,
+     "Kak info kode HPL yg motif di kabinet tv nya dongg",
+     "Foto",
+     "DWBDIRyEoti",
+     {
+      "value": "https://www.instagram.com/p/DWBDIRyEoti/",
+      "hyperlink": "https://www.instagram.com/p/DWBDIRyEoti/"
+     }
+    ]
+   ],
+   "column_widths": {
+    "A": 6,
+    "B": 30,
+    "C": 22,
+    "D": 12,
+    "E": 12,
+    "F": 70,
+    "G": 11,
+    "H": 14,
+    "I": 45
+   },
+   "freeze_panes": "A2",
+   "autofilter": "A1:I11"
+  },
+  {
+   "name": "Semua Komentar",
+   "rows": [
+    [
+     {
+      "value": "No",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Akun",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Kategori",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Jumlah Like",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Komentar",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Tipe Post",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Kode Post",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Link Post",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Ditandai Lead?",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     }
+    ],
+    [
+     1,
+     "@givanaaii",
+     "Lainnya",
+     null,
+     "kode hpl taconya apa kak?",
+     "Foto",
+     "DR1e747EooN",
+     {
+      "value": "https://www.instagram.com/p/DR1e747EooN/",
+      "hyperlink": "https://www.instagram.com/p/DR1e747EooN/"
+     },
+     "tidak"
+    ],
+    [
+     2,
+     "@melanisavini",
+     "Lainnya",
+     1,
+     "Saya whatsapp sudah 6 hari ga dibales, admin nya gimana ya",
+     "Foto",
+     "DR1e747EooN",
+     {
+      "value": "https://www.instagram.com/p/DR1e747EooN/",
+      "hyperlink": "https://www.instagram.com/p/DR1e747EooN/"
+     },
+     "tidak"
+    ],
+    [
+     3,
+     "@rkrk_30500282",
+     "Lainnya",
+     null,
+     "❤️",
+     "Foto",
+     "DR1e747EooN",
+     {
+      "value": "https://www.instagram.com/p/DR1e747EooN/",
+      "hyperlink": "https://www.instagram.com/p/DR1e747EooN/"
+     },
+     "tidak"
+    ],
+    [
+     4,
+     "@quickchallan",
+     "Harga / biaya",
+     null,
+     "Plywood and hardware businesses use QuickChallan to manage stock, purchase/sales bills, party ledgers, and generate PDF challans easily.",
+     "Foto",
+     "DRWHSjyEy2z",
+     {
+      "value": "https://www.instagram.com/p/DRWHSjyEy2z/",
+      "hyperlink": "https://www.instagram.com/p/DRWHSjyEy2z/"
+     },
+     "YA"
+    ],
+    [
+     5,
+     "@firdanafissa",
+     "Lainnya",
+     null,
+     "kak ini kode hpl nya apa?",
+     "Foto",
+     "DUCdI-Wkm40",
+     {
+      "value": "https://www.instagram.com/p/DUCdI-Wkm40/",
+      "hyperlink": "https://www.instagram.com/p/DUCdI-Wkm40/"
+     },
+     "tidak"
+    ],
+    [
+     6,
+     "@homedecoregram",
+     "Lainnya",
+     null,
+     "Send me this post 💖",
+     "Foto",
+     "DV2BBrCEu8k",
+     {
+      "value": "https://www.instagram.com/p/DV2BBrCEu8k/",
+      "hyperlink": "https://www.instagram.com/p/DV2BBrCEu8k/"
+     },
+     "tidak"
+    ],
+    [
+     7,
+     "@rdiaaan",
+     "Lainnya",
+     null,
+     "Spill kode hpl kak",
+     "Foto",
+     "DV2BBrCEu8k",
+     {
+      "value": "https://www.instagram.com/p/DV2BBrCEu8k/",
+      "hyperlink": "https://www.instagram.com/p/DV2BBrCEu8k/"
+     },
+     "tidak"
+    ],
+    [
+     8,
+     "@_rezaanggraini",
+     "Lainnya",
+     1,
+     "😍",
+     "Foto",
+     "DVsHniyEnf0",
+     {
+      "value": "https://www.instagram.com/p/DVsHniyEnf0/",
+      "hyperlink": "https://www.instagram.com/p/DVsHniyEnf0/"
+     },
+     "tidak"
+    ],
+    [
+     9,
+     "@lala_elhabsyii",
+     "Lainnya",
+     1,
+     "🔥🔥🔥",
+     "Foto",
+     "DVsHniyEnf0",
+     {
+      "value": "https://www.instagram.com/p/DVsHniyEnf0/",
+      "hyperlink": "https://www.instagram.com/p/DVsHniyEnf0/"
+     },
+     "tidak"
+    ],
+    [
+     10,
+     "@lala_elhabsyii",
+     "Lainnya",
+     null,
+     "Arsy interior selalu totalitas🔥 yang murah? banyak.. tapi cuma arsy interior yang berani menjamin kualitas dan after salesnya ga main²🔥",
+     "Foto",
+     "DW8huxjktxu",
+     {
+      "value": "https://www.instagram.com/p/DW8huxjktxu/",
+      "hyperlink": "https://www.instagram.com/p/DW8huxjktxu/"
+     },
+     "tidak"
+    ],
+    [
+     11,
+     "@pvcboardjambi",
+     "Lainnya",
+     null,
+     "❤️",
+     "Foto",
+     "DW8huxjktxu",
+     {
+      "value": "https://www.instagram.com/p/DW8huxjktxu/",
+      "hyperlink": "https://www.instagram.com/p/DW8huxjktxu/"
+     },
+     "tidak"
+    ],
+    [
+     12,
+     "@firdanafissa",
+     "Lainnya",
+     null,
+     "kak kode hpl taco nya apa?",
+     "Foto",
+     "DWBDIRyEoti",
+     {
+      "value": "https://www.instagram.com/p/DWBDIRyEoti/",
+      "hyperlink": "https://www.instagram.com/p/DWBDIRyEoti/"
+     },
+     "tidak"
+    ],
+    [
+     13,
+     "@gruhakaladesignstudio",
+     "Lainnya",
+     null,
+     "👏",
+     "Foto",
+     "DWBDIRyEoti",
+     {
+      "value": "https://www.instagram.com/p/DWBDIRyEoti/",
+      "hyperlink": "https://www.instagram.com/p/DWBDIRyEoti/"
+     },
+     "tidak"
+    ],
+    [
+     14,
+     "@harriesjim7",
+     "Lainnya",
+     null,
+     "😍",
+     "Foto",
+     "DWBDIRyEoti",
+     {
+      "value": "https://www.instagram.com/p/DWBDIRyEoti/",
+      "hyperlink": "https://www.instagram.com/p/DWBDIRyEoti/"
+     },
+     "tidak"
+    ],
+    [
+     15,
+     "@yuliantisilviaa",
+     "Lainnya",
+     null,
+     "Kak info kode HPL yg motif di kabinet tv nya dongg",
+     "Foto",
+     "DWBDIRyEoti",
+     {
+      "value": "https://www.instagram.com/p/DWBDIRyEoti/",
+      "hyperlink": "https://www.instagram.com/p/DWBDIRyEoti/"
+     },
+     "tidak"
+    ],
+    [
+     16,
+     "@moestnatha",
+     "Lainnya",
+     null,
+     "Alamat nya dmna mas",
+     "Foto",
+     "DX-zSFnk6lB",
+     {
+      "value": "https://www.instagram.com/p/DX-zSFnk6lB/",
+      "hyperlink": "https://www.instagram.com/p/DX-zSFnk6lB/"
+     },
+     "tidak"
+    ],
+    [
+     17,
+     "@simutchi",
+     "Lainnya",
+     null,
+     "boleh share info mengenai spc di tangga? terima kasih",
+     "Foto",
+     "DX5uFXJEihi",
+     {
+      "value": "https://www.instagram.com/p/DX5uFXJEihi/",
+      "hyperlink": "https://www.instagram.com/p/DX5uFXJEihi/"
+     },
+     "tidak"
+    ],
+    [
+     18,
+     "@dolli.lubis",
+     "Lainnya",
+     null,
+     "Ini TH seri yang mana?",
+     "Foto",
+     "DXdaBrfktcO",
+     {
+      "value": "https://www.instagram.com/p/DXdaBrfktcO/",
+      "hyperlink": "https://www.instagram.com/p/DXdaBrfktcO/"
+     },
+     "tidak"
+    ],
+    [
+     19,
+     "@alyahanif11",
+     "Lainnya",
+     null,
+     "Spill kode hpl nya kak",
+     "Foto",
+     "DYL1r8NEiXs",
+     {
+      "value": "https://www.instagram.com/p/DYL1r8NEiXs/",
+      "hyperlink": "https://www.instagram.com/p/DYL1r8NEiXs/"
+     },
+     "tidak"
+    ],
+    [
+     20,
+     "@duwiputraa",
+     "Lainnya",
+     1,
+     "Mantab 🔥🔥",
+     "Foto",
+     "DYqw2mnSt9e",
+     {
+      "value": "https://www.instagram.com/p/DYqw2mnSt9e/",
+      "hyperlink": "https://www.instagram.com/p/DYqw2mnSt9e/"
+     },
+     "tidak"
+    ],
+    [
+     21,
+     "@lala_elhabsyii",
+     "Lainnya",
+     null,
+     "@ndukk.e tolong wujudin ini akhir tahun nanti❤️",
+     "Foto",
+     "Daea5xxSALx",
+     {
+      "value": "https://www.instagram.com/p/Daea5xxSALx/",
+      "hyperlink": "https://www.instagram.com/p/Daea5xxSALx/"
+     },
+     "tidak"
+    ]
+   ],
+   "column_widths": {
+    "A": 6,
+    "B": 28,
+    "C": 22,
+    "D": 12,
+    "E": 70,
+    "F": 11,
+    "G": 14,
+    "H": 45,
+    "I": 15
+   },
+   "freeze_panes": "A2",
+   "autofilter": "A1:I22"
+  },
+  {
+   "name": "Info",
+   "rows": [
+    [
+     {
+      "value": "Keterangan",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     },
+     {
+      "value": "Nilai",
+      "style": [
+       "bold",
+       "bg_color"
+      ]
+     }
+    ],
+    [
+     "Akun target",
+     "@?"
+    ],
+    [
+     "Link profil",
+     {
+      "value": "https://www.instagram.com/?/",
+      "hyperlink": "https://www.instagram.com/?/"
+     }
+    ],
+    [
+     "Tanggal scraping",
+     {
+      "value": "2026-10-10",
+      "type": "date"
+     }
+    ],
+    [
+     "Posting yang berhasil discan",
+     13
+    ],
+    [
+     "Total komentar terkumpul",
+     21
+    ],
+    [
+     "Komentar lead",
+     10
+    ],
+    [
+     "Akun unik",
+     9
+    ],
+    [
+     "Keyword",
+     "harga, berapa, brpa, biaya, price, cost, budget, estimasi, borongan, borcat, juta, million, hargaan, rate, start from, mulai dari, open order, quotes"
+    ],
+    [
+     "Batasan",
+     ""
+    ],
+    [
+     "",
+     ""
+    ],
+    [
+     "Posting yang discan",
+     "Jumlah komentar"
+    ],
+    [
+     "https://www.instagram.com/p/DR1e747EooN/",
+     3
+    ],
+    [
+     "https://www.instagram.com/p/DRWHSjyEy2z/",
+     1
+    ],
+    [
+     "https://www.instagram.com/p/DUCdI-Wkm40/",
+     1
+    ],
+    [
+     "https://www.instagram.com/p/DV2BBrCEu8k/",
+     2
+    ],
+    [
+     "https://www.instagram.com/p/DVsHniyEnf0/",
+     2
+    ],
+    [
+     "https://www.instagram.com/p/DW8huxjktxu/",
+     2
+    ],
+    [
+     "https://www.instagram.com/p/DWBDIRyEoti/",
+     4
+    ],
+    [
+     "https://www.instagram.com/p/DX-zSFnk6lB/",
+     1
+    ],
+    [
+     "https://www.instagram.com/p/DX5uFXJEihi/",
+     1
+    ],
+    [
+     "https://www.instagram.com/p/DXdaBrfktcO/",
+     1
+    ],
+    [
+     "https://www.instagram.com/p/DYL1r8NEiXs/",
+     1
+    ],
+    [
+     "https://www.instagram.com/p/DYqw2mnSt9e/",
+     1
+    ],
+    [
+     "https://www.instagram.com/p/Daea5xxSALx/",
+     1
+    ]
+   ],
+   "column_widths": {
+    "A": 32,
+    "B": 60
+   },
+   "freeze_panes": "A2",
+   "autofilter": "A1:B25"
+  }
+ ]
+}
