@@ -19,10 +19,12 @@ jobs:
         run: |
           BEFORE="${{ github.event.before }}"
           if [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
-            FILES=$(git diff --name-only "$BEFORE" "${{ github.sha }}" -- 'src/content/posts/*.md' || true)
+            # HANYA file yang BARU DITAMBAH (status A). File yang diedit (M) TIDAK
+            # dipublish ulang -> menghindari duplikat halaman telegra.ph.
+            FILES=$(git diff --name-only --diff-filter=A "$BEFORE" "${{ github.sha }}" -- 'src/content/posts/*.md' || true)
           else
-            FILES=$(git diff --name-only HEAD~1 HEAD -- 'src/content/posts/*.md' || true)
-            # Dispatch manual tanpa perubahan artikel: terbitkan artikel terbaru saja
+            FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'src/content/posts/*.md' || true)
+            # Dispatch manual tanpa artikel baru: terbitkan artikel terbaru saja
             if [ -z "$FILES" ]; then
               FILES=$(grep -m1 '^date:' src/content/posts/*.md | sed 's/^\(.*\.md\):date: */\1 /' | sort -r | head -1 | cut -d' ' -f1)
             fi

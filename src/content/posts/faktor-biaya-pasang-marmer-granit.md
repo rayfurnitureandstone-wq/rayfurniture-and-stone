@@ -56,3 +56,7 @@ Level yang lebih tinggi bukan sekadar "poles biar mengkilap". Untuk lantai yang 
 Biaya pasang marmer dan granit bergerak dari empat hal: luas nyata, jenis batu, kondisi area, dan level pengerjaan. Tiga di antaranya baru pasti setelah survei — itulah sebabnya kami tidak memberi angka pasti sebelum melihat lokasi.
 
 Kalau butuh estimasi, kirim foto area dan ukuran panjangnya. Kami balas dengan rencana material dan rentang biaya, tanpa biaya.
+
+---
+
+Butuh bantuan untuk top table marmer/granit? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20jasa%20pasang%20top%20table%20marmer%2Fgranit.). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

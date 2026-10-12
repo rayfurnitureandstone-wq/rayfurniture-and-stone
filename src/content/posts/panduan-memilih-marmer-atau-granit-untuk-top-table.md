@@ -25,3 +25,7 @@ Banyak Clients menanyakan: marmer atau granit? Keduanya sama-sama bagus, tapi be
 Untuk dapur yang dipakai masak setiap hari, granit lebih awet. Untuk dapur yang cenderung show case dan ingin kesan mewah, marmer Carrara atau Calacatta adalah pilihan klasik.
 
 Minta sampel marmer dan granit ke workshop kami sebelum memutuskan.
+
+---
+
+Butuh bantuan untuk top table marmer/granit? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20jasa%20pasang%20top%20table%20marmer%2Fgranit.). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

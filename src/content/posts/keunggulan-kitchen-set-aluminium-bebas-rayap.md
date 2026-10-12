@@ -28,3 +28,7 @@ Kami menyediakan:
 - Pemasangan rapi oleh teknisi berpengalaman
 
 Wujudkan dapur idaman yang awet dan bebas repot sekarang juga. Hubungi tim Ray Furniture & Stone melalui WhatsApp di **0821-1899-4860** untuk jadwal survei dan konsultasi desain.
+
+---
+
+Butuh bantuan untuk kitchen set? Lihat [jasa kitchen set custom Bogor](https://rayfurnitureandstone.id/kitchen-set/bogor/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20kitchen%20set%20custom.). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

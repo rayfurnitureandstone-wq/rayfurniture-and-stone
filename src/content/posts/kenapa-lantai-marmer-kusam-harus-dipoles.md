@@ -21,3 +21,7 @@ Lantai marmer yang tadinya mengkilap, setelah dua tahun biasanya sudah redup dan
 - Kilau hilang setelah terkena air atau minyak
 
 Kondisi lantai yang sudah redup tidak bisa dikembalikan hanya dengan dipoles tanpa perbaikan nat terlebih dahulu. Tim kami biasanya datang survei dulu, baru memberi estimasi.
+
+---
+
+Butuh bantuan untuk top table marmer/granit? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20jasa%20pasang%20top%20table%20marmer%2Fgranit.). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

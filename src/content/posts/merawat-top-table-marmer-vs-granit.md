@@ -37,3 +37,7 @@ Granit lebih tahan gores dan panas, tetap butuh perawatan.
 Marmer cocok untuk dapur yang lebih tampil mewah dan dirawat rutin. Granit cocok untuk dapur aktif yang butuh perawatan ringan. Keduanya awet bila sealing dan poles dilakukan tepat jadwal.
 
 Minta sampel dan konsultasi perawatan ke workshop kami sebelum memutuskan material.
+
+---
+
+Butuh bantuan untuk top table marmer/granit? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20jasa%20pasang%20top%20table%20marmer%2Fgranit.). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

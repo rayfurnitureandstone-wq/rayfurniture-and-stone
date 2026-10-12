@@ -23,3 +23,7 @@ Rak yang salah ukuran akan sering diganti. Pintu yang tidak presisi membuat engs
 ## Kesimpulan
 
 Hitung total biaya, bukan harga awal. Kitchen set custom dari Ray Furniture and Stone dikerjakan di workshop sendiri, jadi tidak ada markup builder maupun harga pihak ketiga.
+
+---
+
+Butuh bantuan untuk kitchen set? Lihat [jasa kitchen set custom Bogor](https://rayfurnitureandstone.id/kitchen-set/bogor/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20kitchen%20set%20custom.). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.
