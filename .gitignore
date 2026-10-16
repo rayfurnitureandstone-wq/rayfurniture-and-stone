@@ -25,3 +25,6 @@ pnpm-debug.log*
 .idea/
 /dist
 node_modules/
+
+# staging deploy Pages subdomain
+_deploy/

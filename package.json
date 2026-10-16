@@ -10,8 +10,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "cms": "decap-server",
-    "astro": "astro"
-  },
+        "astro": "astro",
+        "deploy:sub": "astro build && node scripts/stage-sub.mjs top-table-cibubur && wrangler pages deploy _deploy/top-table-cibubur --project-name=top-table-cibubur"
+      },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.3.5"
