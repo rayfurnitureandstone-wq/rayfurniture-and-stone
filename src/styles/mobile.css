@@ -179,17 +179,19 @@
   .post-grid .post{flex:0 0 78%;scroll-snap-align:center}
 
   /* ============ CHIPS / INCLUSIONS: rail 2-up snap ============ */
-  .chips{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;gap:10px;
-    margin:0 -16px;padding:4px 16px 8px;list-style:none;scrollbar-width:none}
-  .chips::-webkit-scrollbar{display:none}
-  .chips li{
-    flex:0 0 68%;scroll-snap-align:center;
-    background:var(--m-white);border:1px solid var(--m-line);
-    border-radius:var(--m-r);padding:14px 15px;box-shadow:none}
-  .chips b{display:block;font-size:14.5px;font-weight:800;margin-bottom:4px;
-    color:var(--m-ink)}
-  .chips span{font-size:13.5px;line-height:1.5;color:var(--m-muted)}
+    /* .chips-rail saja. Filter katalog (ul.chips di .filters__row) tidak ikut,
+       supaya chip pil tidak jadi kartu 68% satu per baris. */
+    .chips-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;gap:10px;
+      margin:0 -16px;padding:4px 16px 8px;list-style:none;scrollbar-width:none}
+    .chips-rail::-webkit-scrollbar{display:none}
+    .chips-rail li{
+      flex:0 0 68%;scroll-snap-align:center;
+      background:var(--m-white);border:1px solid var(--m-line);
+      border-radius:var(--m-r);padding:14px 15px;box-shadow:none}
+    .chips-rail b{display:block;font-size:14.5px;font-weight:800;margin-bottom:4px;
+      color:var(--m-ink)}
+    .chips-rail span{font-size:13.5px;line-height:1.5;color:var(--m-muted)}
 
   /* ============ FAQ: accordion app-like ============ */
   .faq{display:block;max-width:none;background:transparent}
@@ -327,5 +329,37 @@
     margin:-8px 0 10px;display:flex;align-items:center;gap:5px;
     font-weight:600}
   .chips-rail li{flex:0 0 72%}
-  .post-rail .post{flex:0 0 80%}
-}
+    .post-rail .post{flex:0 0 80%}
+  }
+
+  /* ============================================================
+     PASS 4: filter katalog (/top-table/) — label jadi judul kecil di
+     atas chip (susun vertikal), chip pil ikut gutter 16px dan membungkus
+     rapi. Hanya <=560px, desktop tidak tersentuh.
+     ============================================================ */
+  @media (max-width:560px){
+    .filters{padding:26px 0}
+    .filters .wrap{gap:14px}
+    .filters > .wrap > div:first-child{margin-bottom:16px !important}
+    .filters h2{font-size:23px !important;line-height:1.24 !important}
+    .filters p{font-size:15px !important;line-height:1.55}
+
+    .filters__row{display:block;margin-top:14px}
+    .filters__row:first-of-type{margin-top:0}
+    .filters__label{
+      display:block;width:auto;margin:0 0 8px;
+      font-size:11.5px;letter-spacing:.12em;color:var(--m-muted)}
+
+    /* chip: pil rapi, tidak meluber ke tepi layar, tap target 44px */
+    .filters__row .chips{
+      display:flex;flex-wrap:wrap;gap:8px;
+      flex:1 1 auto;width:auto;margin:0;padding:0;
+      overflow:visible;scroll-snap-type:none}
+    .filters__row .chips li{
+      flex:0 0 auto;width:auto;padding:0;margin:0;
+      background:none;border:0;border-radius:0}
+    .filters__row .chip{
+      min-height:44px;padding:0 14px;gap:7px;
+      font-size:14px;border-radius:22px;background:var(--m-white)}
+    .filters__row .swatch{width:12px;height:12px}
+  }
