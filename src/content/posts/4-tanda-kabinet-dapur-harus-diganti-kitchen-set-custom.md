@@ -37,5 +37,5 @@ Dengan pemilihan material dan engsel yang tepat, kitchen set custom dapat bertah
 Sedang merencanakan renovasi dapur? Tim Ray Furniture & Stone siap membantu mulai dari survei lokasi, pengukuran, desain, hingga pemasangan kitchen set custom yang presisi dan rapi di lokasi.
 
 - **Wilayah Layanan:** Jakarta Timur, Depok, Bogor, Kabupaten Bogor, Bekasi, Tangerang, dan sekitarnya.
-- **WhatsApp:** 0821-1899-4860
+- **WhatsApp:** 0821-2184-1119
 - **Website Resmi:** [rayfurnitureandstone.id](https://rayfurnitureandstone.id)

@@ -53,4 +53,4 @@ Langkah pertama cukup sederhana: kirim foto dapur dan ukuran kasarnya. Dari situ
 
 ---
 
-Butuh meja dapur dari granit atau marmer yang sambungannya rapi? Lihat [jasa top table granit dan marmer](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%2C%20saya%20mau%20tanya%20harga%20meja%20dapur%20granit). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.
+Butuh meja dapur dari granit atau marmer yang sambungannya rapi? Lihat [jasa top table granit dan marmer](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282121841119?text=Halo%2C%20saya%20mau%20tanya%20harga%20meja%20dapur%20granit). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

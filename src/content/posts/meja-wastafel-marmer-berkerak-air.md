@@ -38,4 +38,4 @@ Batu yang tersedia marmer, granit, dan quadra sintered stone. Untuk kamar mandi 
 
 Kalau kamar mandi Anda sedang direnovasi atau wastafel lama mau diganti, atur survei lokasi dulu. Tim kami yang datang mengukur, tanpa biaya survei, dan Anda sudah tahu perkiraan totalnya sebelum satu batu dipotong.
 
-Hubungi Ray Furniture & Stone di WhatsApp 0821-1899-4860. Workshop kami di Jl. Transyogi No. 60, Nagrak, Kab. Bogor. Area layanan Jakarta Timur, Depok, Bogor, Bekasi, dan Tangerang.
+Hubungi Ray Furniture & Stone di WhatsApp 0821-2184-1119. Workshop kami di Jl. Transyogi No. 60, Nagrak, Kab. Bogor. Area layanan Jakarta Timur, Depok, Bogor, Bekasi, dan Tangerang.

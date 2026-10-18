@@ -26,4 +26,4 @@ Hitung total biaya, bukan harga awal. Kitchen set custom dari Ray Furniture and 
 
 ---
 
-Butuh bantuan untuk kitchen set? Lihat [jasa kitchen set custom Bogor](https://rayfurnitureandstone.id/kitchen-set/bogor/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20kitchen%20set%20custom.). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.
+Butuh bantuan untuk kitchen set? Lihat [jasa kitchen set custom Bogor](https://rayfurnitureandstone.id/kitchen-set/bogor/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282121841119?text=Halo%20Kak%2C%20saya%20mau%20tanya%20kitchen%20set%20custom.). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

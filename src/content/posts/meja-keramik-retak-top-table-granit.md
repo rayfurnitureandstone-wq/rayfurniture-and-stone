@@ -40,4 +40,4 @@ Ray Furniture & Stone melayani pengukuran dan pemasangan top table granit untuk 
 
 ---
 
-Butuh bantuan untuk top table granit dapur Anda? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20top%20table%20granit%20untuk%20dapur%20saya.). Kami melayani Jakarta Timur, Depok, Bogor, Kabupaten Bogor, Bekasi, dan Tangerang.
+Butuh bantuan untuk top table granit dapur Anda? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282121841119?text=Halo%20Kak%2C%20saya%20mau%20tanya%20top%20table%20granit%20untuk%20dapur%20saya.). Kami melayani Jakarta Timur, Depok, Bogor, Kabupaten Bogor, Bekasi, dan Tangerang.

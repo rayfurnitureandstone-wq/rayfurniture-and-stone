@@ -41,4 +41,4 @@ Jika salah satu gejala ini muncul, segera periksa ke profesional. Memperbaiki se
 
 Kalau meja dapur Anda sedang bermasalah atau mau pasang baru, silakan jadwalkan survei lokasi dulu. Tim kami akan langsung datang, mengukur ruang, dan memberikan estimasi harga transparan tanpa biaya tambahan tersembunyi.
 
-Workshop kami berlokasi di Jl. Transyogi No. 60, Nagrak, Kab. Bogor. Hubungi WhatsApp **0821-1899-4860** untuk konsultasi atau janji temu.
+Workshop kami berlokasi di Jl. Transyogi No. 60, Nagrak, Kab. Bogor. Hubungi WhatsApp **0821-2184-1119** untuk konsultasi atau janji temu.

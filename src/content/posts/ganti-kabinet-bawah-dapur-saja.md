@@ -53,4 +53,4 @@ Kalau kabinet dapur Anda sudah menunjukkan tanda-tanda di atas, langkah pertama 
 
 ---
 
-Butuh bantuan mengganti kabinet bawah dapur tanpa membongkar seluruh dapur? Lihat [jasa kitchen set custom Bogor](https://rayfurnitureandstone.id/kitchen-set/bogor/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%2C%20saya%20mau%20tanya%20ganti%20kabinet%20bawah%20dapur%20saja). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.
+Butuh bantuan mengganti kabinet bawah dapur tanpa membongkar seluruh dapur? Lihat [jasa kitchen set custom Bogor](https://rayfurnitureandstone.id/kitchen-set/bogor/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282121841119?text=Halo%2C%20saya%20mau%20tanya%20ganti%20kabinet%20bawah%20dapur%20saja). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

@@ -63,4 +63,4 @@ Kalau setelah survei ternyata kondisi lantai lebih ringan dari perkiraan, angkan
 
 ---
 
-Butuh bantuan menghitung biaya poles lantai marmer di rumah Anda? Lihat [layanan top table dan perawatan batu kami](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%2C%20saya%20mau%20tanya%20harga%20poles%20marmer%20per%20meter%20persegi). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.
+Butuh bantuan menghitung biaya poles lantai marmer di rumah Anda? Lihat [layanan top table dan perawatan batu kami](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282121841119?text=Halo%2C%20saya%20mau%20tanya%20harga%20poles%20marmer%20per%20meter%20persegi). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

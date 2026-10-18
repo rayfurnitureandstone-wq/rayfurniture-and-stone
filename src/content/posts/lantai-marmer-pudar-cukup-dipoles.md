@@ -41,4 +41,4 @@ Ray Furniture & Stone melayani jasa poles dan restorasi marmer untuk lantai, din
 
 ---
 
-Butuh bantuan untuk lantai atau top table marmer dan granit? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20tanya%20jasa%20poles%20dan%20perawatan%20marmer.). Kami melayani Jakarta Timur, Depok, Bogor, Kabupaten Bogor, Bekasi, dan Tangerang.
+Butuh bantuan untuk lantai atau top table marmer dan granit? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282121841119?text=Halo%20Kak%2C%20saya%20mau%20tanya%20jasa%20poles%20dan%20perawatan%20marmer.). Kami melayani Jakarta Timur, Depok, Bogor, Kabupaten Bogor, Bekasi, dan Tangerang.

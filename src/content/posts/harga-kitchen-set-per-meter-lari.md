@@ -56,4 +56,4 @@ Kalau dapur Anda sempit, pembagian isi kabinet justru lebih menentukan dibanding
 
 ---
 
-Butuh bantuan menghitung kitchen set untuk dapur Anda? Lihat [jasa kitchen set custom Bogor](https://rayfurnitureandstone.id/kitchen-set/bogor/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%2C%20saya%20mau%20tanya%20harga%20kitchen%20set%20per%20meter%20lari). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.
+Butuh bantuan menghitung kitchen set untuk dapur Anda? Lihat [jasa kitchen set custom Bogor](https://rayfurnitureandstone.id/kitchen-set/bogor/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282121841119?text=Halo%2C%20saya%20mau%20tanya%20harga%20kitchen%20set%20per%20meter%20lari). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

@@ -6,9 +6,9 @@ export const site = {
   name: 'Ray Furniture & Stone',
   domain: 'rayfurnitureandstone.id',
   origin: 'https://rayfurnitureandstone.id',
-  waNumber: '6282118994860',
-  waDisplay: '0821-1899-4860',
-  phoneDisplay: '0821-1899-4860',
+  waNumber: '6282121841119',
+  waDisplay: '0821-2184-1119',
+  phoneDisplay: '0821-2184-1119',
   email: 'rayfurnitureandstone@gmail.com',
   address: 'Jl. Transyogi No.60, Nagrak, Kec. Gn. Putri, Kabupaten Bogor, Jawa Barat 16967',
   city: 'Bogor',
@@ -28,7 +28,7 @@ export const nav = [
   { href: '/kitchen-set/', label: 'Kitchen Set', hideInNav: true },
   { href: '/top-table/', label: 'Top Table' },
   { href: '/about/', label: 'About' },
-  { href: '/what-news/', label: 'What News' },
+  { href: '/what-news/', label: "What's New" },
   { href: '/contact/', label: 'Contact' },
 ];
 

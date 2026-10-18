@@ -29,5 +29,5 @@ Kekuatan meja dapur bukan hanya ditentukan oleh material batu di atasnya, melain
 Sedang merencanakan renovasi dapur atau pembangunan interior rumah baru? Tim Ray Furniture & Stone siap membantu mulai dari survei lokasi, pemilihan motif batu slab, visualisasi desain 3D gratis, hingga fabrikasi dan instalasi rapi di lokasi.
 
 - **Wilayah Layanan:** Jakarta Timur, Depok, Bogor, Tangerang, Bekasi, dan sekitarnya.
-- **WhatsApp:** 0821-1899-4860
+- **WhatsApp:** 0821-2184-1119
 - **Website Resmi:** [rayfurnitureandstone.id](https://rayfurnitureandstone.id)

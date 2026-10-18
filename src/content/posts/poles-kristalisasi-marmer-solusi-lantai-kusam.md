@@ -49,5 +49,5 @@ Setiap pengerjaan dilakukan oleh tukang spesialis batu alam dengan peralatan mod
 
 Ingin lantai atau top table marmer di rumah Anda kembali berkilau sempurna?
 
-- **Konsultasi & Estimasi:** [0821-1899-4860](https://wa.me/6282118994860)
+- **Konsultasi & Estimasi:** [0821-2184-1119](https://wa.me/6282121841119)
 - **Website:** [rayfurnitureandstone.id](https://rayfurnitureandstone.id)

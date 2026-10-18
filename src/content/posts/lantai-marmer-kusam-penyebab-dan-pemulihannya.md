@@ -50,4 +50,4 @@ Biaya poles lantai mulai Rp100.000 per meter persegi, dan untuk pemulihan menyel
 
 ---
 
-Butuh bantuan untuk memulihkan kilap marmer di rumah Anda? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282118994860?text=Halo%2C%20lantai%20marmer%20di%20rumah%20saya%20kusam.%20Bisa%20dibantu%20poles%20dan%20kristalisasi%3F). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.
+Butuh bantuan untuk memulihkan kilap marmer di rumah Anda? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282121841119?text=Halo%2C%20lantai%20marmer%20di%20rumah%20saya%20kusam.%20Bisa%20dibantu%20poles%20dan%20kristalisasi%3F). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

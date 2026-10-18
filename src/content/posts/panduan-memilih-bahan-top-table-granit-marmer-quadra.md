@@ -53,4 +53,4 @@ Ingin tahu bahan mana yang paling pas untuk dapur Anda? Konsultasikan dulu tanpa
 
 **Butuh panduan pemasangan top table marmer dan granit?** Lihat selengkapnya di [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/).
 
-**Konsultasi gratis via WhatsApp:** [chat tim Ray Furniture & Stone](https://wa.me/6282118994860?text=Halo%20Ray%20Furniture%20%26%20Stone%2C%20saya%20ingin%20konsultasi%20pemilihan%20bahan%20top%20table%20granit%2C%20marmer%2C%20atau%20Quadra%20untuk%20dapur%20saya.)
+**Konsultasi gratis via WhatsApp:** [chat tim Ray Furniture & Stone](https://wa.me/6282121841119?text=Halo%20Ray%20Furniture%20%26%20Stone%2C%20saya%20ingin%20konsultasi%20pemilihan%20bahan%20top%20table%20granit%2C%20marmer%2C%20atau%20Quadra%20untuk%20dapur%20saya.)

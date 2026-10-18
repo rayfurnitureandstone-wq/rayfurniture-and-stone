@@ -36,5 +36,5 @@ Di Ray Furniture & Stone, setiap top table granit dipotong dan dipasang sesuai u
 
 Ingin tahu material yang paling cocok untuk dapur Anda? Konsultasikan kebutuhan top table granit Anda sekarang sebelum salah pilih material.
 
-📲 WhatsApp: 0821-1899-4860
+📲 WhatsApp: 0821-2184-1119
 🌐 Website: rayfurnitureandstone.id

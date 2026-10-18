@@ -17,4 +17,4 @@ Yang membedakan harga akhir sebenarnya bukan cuma jenis batunya. Dua penawaran b
 
 Sebelum membandingkan penawaran, ada tiga hal yang perlu Anda tanyakan. Pertama, satuan hitungannya apa. Kedua, apa saja yang sudah termasuk di dalamnya. Ketiga, siapa yang mengerjakan pemasangannya, karena potong batu yang presisi di tempat sangat menentukan hasil akhirnya.
 
-Top table yang dihitung jujur sejak awal membuat Anda tahu biaya totalnya sebelum batu dipotong. Untuk konsultasi hitungan sesuai ukuran dapur Anda, kirim denah atau foto dapur ke WhatsApp 0821-1899-4860. Survei ke lokasi gratis untuk area Jabodetabek, workshop kami di Jl. Transyogi No.60, Nagrak, Kab. Bogor.
+Top table yang dihitung jujur sejak awal membuat Anda tahu biaya totalnya sebelum batu dipotong. Untuk konsultasi hitungan sesuai ukuran dapur Anda, kirim denah atau foto dapur ke WhatsApp 0821-2184-1119. Survei ke lokasi gratis untuk area Jabodetabek, workshop kami di Jl. Transyogi No.60, Nagrak, Kab. Bogor.

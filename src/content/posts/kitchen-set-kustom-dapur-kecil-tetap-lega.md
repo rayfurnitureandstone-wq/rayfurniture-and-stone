@@ -34,6 +34,6 @@ Ray Furniture & Stone membantu proses ini mulai dari survei, pengukuran, hingga 
 
 Konsultasikan kebutuhan dapur Anda sekarang, sebelum salah ukuran:
 
-📲 WhatsApp: 0821-1899-4860
+📲 WhatsApp: 0821-2184-1119
 📍 Melayani: Jakarta Timur, Depok, Bogor, Kabupaten Bogor, Bekasi & Tangerang
 🌐 Website: [rayfurnitureandstone.id](https://rayfurnitureandstone.id)

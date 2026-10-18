@@ -43,4 +43,4 @@ Ray Furniture & Stone melayani survei lokasi, pengukuran presisi, pemilihan lemp
 
 ---
 
-Ingin mempercantik dapur bersih atau meja island Anda dengan top table marmer pilihan? Kunjungi layanan [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung diskusikan rencana Anda melalui [WhatsApp kami](https://wa.me/6282118994860?text=Halo%20Kak%2C%20saya%20mau%20konsultasi%20top%20table%20marmer%20kitchen%20island.).
+Ingin mempercantik dapur bersih atau meja island Anda dengan top table marmer pilihan? Kunjungi layanan [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung diskusikan rencana Anda melalui [WhatsApp kami](https://wa.me/6282121841119?text=Halo%20Kak%2C%20saya%20mau%20konsultasi%20top%20table%20marmer%20kitchen%20island.).

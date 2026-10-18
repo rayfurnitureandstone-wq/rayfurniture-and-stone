@@ -36,5 +36,5 @@ Biaya kitchen set custom bervariasi tergantung material, ukuran, dan kompleksita
 
 Melayani area Jakarta Timur, Depok, Bogor, Bekasi, dan Tangerang.
 
-**WhatsApp: 0821-1899-4860**
+**WhatsApp: 0821-2184-1119**
 **Website: rayfurnitureandstone.id**

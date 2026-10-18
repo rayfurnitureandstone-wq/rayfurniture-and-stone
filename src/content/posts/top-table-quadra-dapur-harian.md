@@ -39,5 +39,5 @@ Di Ray Furniture & Stone, kami membantu mulai dari survei, pengukuran presisi, h
 
 Konsultasikan kebutuhan dapur Anda sekarang, tanpa biaya, sebelum memutuskan material untuk dapur impian Anda.
 
-📲 WhatsApp: 0821-1899-4860
+📲 WhatsApp: 0821-2184-1119
 🌐 Website: rayfurnitureandstone.id
