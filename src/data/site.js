@@ -51,7 +51,7 @@ export const services = [
     lead: 'Top table, lantai, dinding, dan backsplash.',
     garansi: 'Garansi pengerjaan sampai Anda OK di QC + DP lunas. Order ulang diskon.',
     text: 'Pengukuran presisi di lokasi, pemotongan di workshop, lalu pemasangan pakai lem khusus batu dan edging rapi. Cocok untuk dapur baru maupun renovasi lantai.',
-    href: '/top-table/',
+    href: '/pasang-marmer-granit/',
   },
   {
     id: 'pasang-poles-marmer',

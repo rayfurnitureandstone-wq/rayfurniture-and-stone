@@ -1,0 +1,182 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import { waLink } from '../data/site.js';
+
+const desc = 'Jasa pasang marmer, granit, quadra, dan sintered stone untuk lantai, dinding, tangga, dan top table. Jasa pasang mulai Rp700.000 per meter persegi, top table pasang saja mulai Rp600.000 per meter lari. Ukur di lokasi dulu, tanpa biaya. Melayani Bogor, Depok, Jakarta, Bekasi, Tangerang, dan Cibubur.';
+
+const faqPasang = [
+  ['Berapa harga jasa pasang marmer atau granit per meter?',
+   'Jasa pasang lantai, dinding, atau tangga mulai Rp700.000 per meter persegi, tenaga dan perlengkapan pasang. Bahan batunya bisa Anda beli sendiri atau kami bantu carikan. Untuk top table, kalau bahannya Anda beli sendiri, jasa pasang dan potongnya mulai Rp600.000 per meter lari. Angka pasti keluar setelah ukur di lokasi, tanpa biaya.'],
+  ['Bahan marmer, granit, atau sintered stone sebaiknya saya beli sendiri?',
+   'Dua-duanya bisa. Kalau Anda sudah punya bahan atau ingin memilih sendiri di toko langganan Anda, kami ukur dan pasang. Kalau Anda ingin praktis, kami bantu carikan bahan berikut contohnya saat ukur di lokasi, lalu biayanya masuk di rincian penawaran.'],
+  ['Apakah lantai lama harus dibongkar dulu?',
+   'Tergantung kondisi. Kalau lantai lama masih rata dan menempel kuat, pemasangan bisa langsung di atasnya dengan perekat khusus. Kalau ada bagian yang kopong atau bergelombang, bagian itu diperbaiki dulu. Semuanya kami periksa saat ukur, dan hasilnya diberitahukan sebelum pekerjaan mulai supaya tidak ada biaya yang muncul di tengah.'],
+  ['Berapa lama pengerjaan pasang marmer atau granit?',
+   'Jadwalnya keluar setelah ukur, karena tergantung luas area dan jumlah potongan. Untuk satu area dapur atau kamar mandi, biasanya bisa diselesaikan dalam beberapa hari kerja dan selesai bersih tanpa menyisakan puing.'],
+  ['Apakah ada garansi untuk pekerjaan batu?',
+   'Garansi pengerjaan berlaku sampai Anda tanda tangan QC dan DP lunas. Kami tidak memakai istilah garansi tahunan untuk pekerjaan batu, karena yang menentukan hasil akhir adalah pemeriksaan bersama di akhir pekerjaan. Order ulang mendapat diskon.'],
+  ['Apakah melayani di luar Jabodetabek?',
+   'Kami melayani Bogor, Kabupaten Bogor, Depok, Bekasi, Kabupaten Bekasi, Jakarta Timur, Jakarta Selatan, Tangerang, dan seluruh Jabodetabek. Untuk luar wilayah itu, ada minimal order supaya biaya perjalanan tetap wajar.'],
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Jasa Pasang Marmer, Granit & Sintered Stone',
+  serviceType: 'Pemasangan marmer, granit, quadra, dan sintered stone untuk lantai, dinding, tangga, dan top table',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Ray Furniture & Stone',
+    telephone: '+6282121841119',
+    url: 'https://rayfurnitureandstone.id/',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Jl. Transyogi No.60, Nagrak',
+      addressLocality: 'Gunung Putri',
+      addressRegion: 'Jawa Barat',
+      postalCode: '16967',
+      addressCountry: 'ID',
+    },
+  },
+  areaServed: ['Bogor', 'Depok', 'Jakarta', 'Bekasi', 'Tangerang', 'Cibubur'],
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'IDR',
+    price: '700000',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: '700000',
+      priceCurrency: 'IDR',
+      unitText: 'per meter persegi',
+    },
+  },
+};
+---
+
+<Base title="Jasa Pasang Marmer, Granit & Sintered Stone" description={desc}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/top-table/">Top Table</a> / Pasang Marmer &amp; Granit</nav></div>
+
+  <section class="page-hero">
+    <div class="wrap two-col" style="align-items:center">
+      <div>
+        <p class="eyebrow">Pasang marmer &amp; granit</p>
+        <h1>Pasang Marmer, Granit, <em>dan Sintered Stone</em></h1>
+        <p class="lead">Untuk lantai, dinding, tangga, dan top table. Kami ukur dulu di lokasi, potong di workshop sendiri, lalu pasang dengan perekat khusus batu dan sambungan yang dirapikan. Jasa pasang mulai Rp700.000 per meter persegi.</p>
+        <p style="margin-top:22px">
+          <a class="btn btn--green" href={waLink('Halo Kak, saya mau tanya jasa pasang marmer atau granit. Luas area yang mau dikerjakan: ... m2.')}>Tanya Harga Pasang Marmer</a>
+        </p>
+        <p style="margin-top:14px;font-size:14px;color:var(--ink-2)">Ukur dan konsultasi tidak dikenakan biaya. Workshop di Jl. Alternatif Cibubur 60.</p>
+      </div>
+      <div><img src="/images/granit-meja-dapur-hero.jpg" alt="Pemasangan lempeng granit oleh tim Ray Furniture and Stone di rumah pelanggan" width="800" height="450" style="border-radius:16px" loading="eager"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--cream" aria-labelledby="harga-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Harga</p>
+        <h2 class="h-sec" id="harga-title">Harga Jasa Pasang</h2>
+        <p class="sub-sec">Lantai, dinding, dan tangga dihitung per meter persegi. Top table dihitung per meter lari, karena lebar standarnya 60 cm.</p>
+      </div>
+      <div class="feat-grid feat-grid--2">
+        <div class="price-card">
+          <h3>Jasa pasang lantai, dinding, tangga</h3>
+          <p style="font-size:26px;font-weight:700;color:var(--green)">Mulai Rp700.000<span style="font-size:15px;font-weight:400"> /meter persegi</span></p>
+          <p>Tenaga pasang dan perlengkapannya. Bahannya bisa Anda beli sendiri, atau kami bantu carikan berikut contohnya saat ukur di lokasi.</p>
+        </div>
+        <div class="price-card">
+          <h3>Jasa pasang top table saja</h3>
+          <p style="font-size:26px;font-weight:700;color:var(--green)">Mulai Rp600.000<span style="font-size:15px;font-weight:400"> /meter lari</span></p>
+          <p>Kalau lempeng marmer atau granitnya Anda beli sendiri. Kami ukur, potong di workshop, pasang, lalu rapikan tepi dan sambungannya.</p>
+        </div>
+      </div>
+      <p style="margin-top:22px;font-size:14px;color:var(--ink-2)">Angka di atas titik masuk untuk motif polos. Motif urat besar, marmer impor, dan sintered stone lebih tinggi. Semua dihitung ulang setelah ukur di lokasi, tanpa biaya ukur.</p>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="lingkup-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Lingkup pekerjaan</p>
+        <h2 class="h-sec" id="lingkup-title">Yang Kami Kerjakan</h2>
+      </div>
+      <div class="feat-grid feat-grid--2">
+        <div class="price-card"><h3>Lantai</h3><p>Marmer, granit, atau sintered stone untuk ruang tamu, kamar, dan area tangga. Potongan disusun rapi supaya polanya nyambung dan bahan tidak banyak terbuang.</p></div>
+        <div class="price-card"><h3>Dinding &amp; backsplash</h3><p>Lempeng batu untuk dinding dan backsplash dapur, termasuk pemasangan di atas kabinet yang sudah terpasang.</p></div>
+        <div class="price-card"><h3>Tangga</h3><p>Pijakan dan riser diukur satu per satu supaya tinggi anak tangga tetap sama dan natnya lurus dari bawah ke atas.</p></div>
+        <div class="price-card"><h3>Top table &amp; meja wastafel</h3><p>Lempeng batu untuk meja dapur, island, meja makan, dan wastafel, sudah termasuk potong lubang sink dan kompor serta tepi yang dirapikan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--cream" aria-labelledby="pilih-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Pilihan bahan</p>
+        <h2 class="h-sec" id="pilih-title">Marmer, Granit, Quadra, atau Sintered Stone</h2>
+      </div>
+      <div class="two-col">
+        <div>
+          <h3>Marmer</h3>
+          <p>Uratnya paling hidup dan warnanya halus. Marmer lebih lunak, jadi cuka, jeruk, dan cairan asam bisa meninggalkan bekas pudar kalau dibiarkan lama. Cocok untuk ruang tamu, kamar, dan meja yang tidak dipakai memasak berat.</p>
+          <h3>Granit</h3>
+          <p>Lebih padat dan lebih tahan noda, panas, serta goresan. Untuk dapur yang dipakai memasak setiap hari dan lantai yang sering dilewati, granit pilihan yang lebih aman.</p>
+        </div>
+        <div>
+          <h3>Quadra &amp; sintered stone</h3>
+          <p>Lempeng sintered stone ukurannya besar, jadi sambungan pada top table bisa lebih sedikit dan warnanya rata. Bahannya tahan panas dan tidak menyerap cairan. Contoh bahan dan rincian biayanya kami bawa saat ukur di lokasi.</p>
+          <p><a href="/top-table/">Lihat halaman top table marmer, granit, dan quadra</a></p>
+          <p><a href="/granit-meja-dapur/">Lihat harga granit meja dapur per meter lari</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="cara-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Cara kerja</p>
+        <h2 class="h-sec" id="cara-title">Empat Langkah, Tanpa Biaya Dadakan</h2>
+      </div>
+      <div class="feat-grid feat-grid--2">
+        <div class="price-card"><h3>1. Ukur di lokasi</h3><p>Panjang, lebar, dan tinggi area diukur. Kami sekalian periksa kondisi lantai atau rangka yang lama. Tidak dikenakan biaya.</p></div>
+        <div class="price-card"><h3>2. Pilih bahan dan rincian biaya</h3><p>Anda pilih motif dan ketebalan, lalu menerima rincian biaya tertulis. Pekerjaan mulai setelah Anda setuju.</p></div>
+        <div class="price-card"><h3>3. Potong di workshop</h3><p>Potongan, lubang sink, lubang kompor, dan profil tepi dikerjakan dengan mesin di workshop kami sendiri.</p></div>
+        <div class="price-card"><h3>4. Pasang, rapikan, QC bersama</h3><p>Perekat khusus batu, nat resin sewarna, lalu area dibersihkan. Anda periksa hasilnya, kami rapikan bagian yang kurang, baru serah terima.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--cream" aria-labelledby="area-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Area layanan</p>
+        <h2 class="h-sec" id="area-title">Pasang Marmer &amp; Granit di Jabodetabek</h2>
+        <p class="sub-sec">Berangkat dari workshop di Jl. Alternatif Cibubur 60, Nagrak, Gunung Putri.</p>
+      </div>
+      <p>
+        <a href="/top-table/bogor/">Pasang marmer Bogor</a> ·
+        <a href="/top-table/depok/">Pasang granit Depok</a> ·
+        <a href="/top-table/bekasi/">Pasang marmer Bekasi</a> ·
+        <a href="/top-table/jakarta-selatan/">Pasang granit Jakarta Selatan</a> ·
+        <a href="/top-table/jakarta-timur/">Pasang marmer Jakarta Timur</a> ·
+        <a href="/top-table/cibubur/">Pasang marmer Cibubur</a>
+      </p>
+      <p style="margin-top:18px"><a href="/contact/">Hubungi kami untuk lokasi lain di Jabodetabek</a></p>
+    </div>
+  </section>
+
+  <Faq items={faqPasang} />
+
+  <section class="sec" aria-labelledby="cta-title">
+    <div class="wrap" style="text-align:center">
+      <h2 class="h-sec" id="cta-title">Mau Dihitung Biaya Pasangnya?</h2>
+      <p class="sub-sec">Kirim ukuran atau foto area yang mau dikerjakan lewat WhatsApp. Survei lokasi gratis, tim kami yang datang ke tempat Anda.</p>
+      <p style="margin-top:20px"><a class="btn btn--green" href={waLink('Halo Kak, saya mau survei lokasi gratis untuk pasang marmer/granit. Alamat saya:')}>Minta Survei Lokasi Gratis</a></p>
+      <p style="margin-top:14px;font-size:14px;color:var(--ink-2)">WhatsApp 0821-2184-1119 · Buka Senin sampai Sabtu, 09.00 sampai 17.00 WIB</p>
+    </div>
+  </section>
+</Base>

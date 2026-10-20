@@ -43,6 +43,22 @@ const isOn = (h) => (h === '/' ? path === '/' : path.startsWith(h));
       aggregateRating:{'@type':'AggregateRating',ratingValue:'4.9',reviewCount:'221',bestRating:'5'},
       sameAs:['https://instagram.com/rayfurnitureandstone','https://tiktok.com/@rayfurnitureandstone'],
     })} />
+
+  <!-- Tag Google Ads: konversi klik WhatsApp. Disamakan dengan dua halaman arahan
+       (toptablecibubur & poleskristalcibubur) supaya klik WhatsApp dari halaman
+       utama dan /kitchen-set/ ikut terhitung, bukan cuma dari subdomain. -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18507166465"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18507166465');
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me/"]') : null;
+      if (!a) return;
+      gtag('event', 'conversion', { 'send_to': 'AW-18507166465/RN-wCPzMnJ8dEIHm8_hE' });
+    });
+  </script>
 </head>
 <body class={bodyClass}>
   <header class="site-head">
