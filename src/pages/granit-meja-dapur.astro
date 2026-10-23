@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Faq from '../components/Faq.astro';
 import { waLink } from '../data/site.js';
 
-const desc = 'Jasa pasang granit meja dapur dengan harga jelas per meter lari. Mulai Rp850.000 per meter lari sudah termasuk bahan dan pasang. Ukur dulu, baru bayar. Melayani Bogor, Depok, Jakarta, Bekasi, dan Tangerang.';
+const desc = 'Granit untuk meja dapur dipasang dengan harga jelas per meter lari. Mulai Rp850.000 per meter lari sudah termasuk bahan dan pasang. Ukur dulu, baru bayar. Melayani Bogor, Depok, Jakarta, Bekasi, dan Tangerang.';
 
 const faqGMD = [
   ['Berapa harga granit meja dapur per meter?',
@@ -18,7 +18,19 @@ const faqGMD = [
    'Setelah ukur dan bahan disetujui, pengerjaan biasanya 3 sampai 5 hari kerja untuk satu meja dapur. Meja panjang atau bentuk huruf L bisa lebih lama karena jumlah potongan dan sambungannya lebih banyak.'],
   ['Apakah bisa pasang granit untuk meja dapur yang lama diganti saja?',
    'Bisa. Meja lama dibongkar dulu, rangka dicek apakah masih rata dan kuat, baru granit baru dipasang. Kalau rangkanya sudah tidak rata, kami beri tahu sebelum pekerjaan mulai supaya biaya perbaikan tidak muncul di tengah jalan.'],
-];
+  ['Berapa ukuran standar meja dapur granit?',
+   'Lebar standar meja dapur adalah 60 cm. Granit dijual dan dihitung per meter lari, yaitu panjang meja dengan lebar 60 cm itu. Ubin granit 60x60 yang sering dicari adalah 0,6 meter lari, karena sisi 60 cm adalah panjangnya dan sisi lainnya adalah kedalaman yang sudah pas standar. Kalau dapur Anda lebih dalam dari 60 cm, kami ukur dulu supaya potongan tidak mubazir.'],
+  ['Berapa harga meja dapur granit 60x60?',
+   'Kami hitung dari tarif resmi per meter lari, bukan tarif per ubin. Untuk paket bahan dan pasang mulai Rp850.000 per meter lari, satu lembar 60x60 (0,6 meter lari) mulai sekitar Rp510.000 sudah termasuk potong, pasang, dan coating. Kalau granit Anda beli sendiri, jasa pasang saja mulai Rp600.000 per meter lari, atau sekitar Rp360.000 untuk 0,6 meter lari. Angka final keluar setelah ukur di lokasi, tanpa biaya.'],
+  ['Meja dapur granit warna apa yang bagus untuk dapur harian?',
+     'Hitam, putih, cream, dan abu-abu adalah yang paling laku karena cocok dengan kabinet apa saja dan noda harian tidak terlalu menonjol. Motif kayu juga ada untuk yang ingin kesan hangat tanpa rawan gores seperti kayu asli. Untuk dapur yang dipakai memasak berat setiap hari, pilih motif polos daripada urat besar supaya sambungan nat resin lebih mudah menyatu.'],
+    ['Granit jenis apa yang paling cocok untuk meja dapur?',
+     'Yang menentukan bukan mereknya, tapi kepadatan bahan dan panjang lempengannya. Granit motif polos lebih mudah disambung rapi karena uratnya tidak perlu bertemu di tiap sambungan. Granit urat besar tetap bisa dipakai, tetapi sebaiknya dari lempengan yang panjang supaya jumlah sambungannya sedikit. Granit lembar 60x60 lebih hemat, lempengan besar lebih rapi karena sambungannya jarang. Semua dipotong di workshop kami sendiri, jadi ukuran potongan bisa disesuaikan dengan bentuk meja Anda.'],
+    ['Bolehkah granit untuk meja dapur saya beli sendiri?',
+     'Boleh. Kalau bahan Anda yang beli, kami hitung jasa pasang saja mulai Rp600.000 per meter lari, sudah termasuk ukur di lokasi, potong di workshop, potong lubang sink dan kompor, nat resin, sampai coating. Kalau ingin barang saja tanpa pemasangan, ada layanan cutting size: kami potong presisi sesuai ukuran yang Anda kirim, lalu Anda sendiri yang memasang. Sebutkan saja mau yang mana saat tanya harga.'],
+    ['Granit untuk meja dapur bisa dibuat sekalian dengan kitchen set?',
+     'Bisa, dan sering lebih hemat karena satu kali ukur untuk keduanya. Kitchen set custom mulai Rp1.800.000 per meter lari, sedangkan full aluminium anti rayap mulai Rp2.500.000 per meter lari. Ukuran top table diambil setelah kabinet terpasang supaya granitnya pas tanpa celah di pinggir. Pilihan bahannya ada di halaman kitchen set custom.'],
+  ];
 
 const schema = {
   '@context': 'https://schema.org',
@@ -54,7 +66,7 @@ const schema = {
 };
 ---
 
-<Base title="Granit Meja Dapur — Jasa Pasang & Harga per Meter" description={desc}>
+<Base title="Granit untuk Meja Dapur: Pilihan Jenis & Harga per Meter Lari" description={desc}>
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/top-table/">Top Table</a> / Granit Meja Dapur</nav></div>
@@ -62,9 +74,9 @@ const schema = {
   <section class="page-hero">
     <div class="wrap two-col" style="align-items:center">
       <div>
-        <p class="eyebrow">Granit meja dapur</p>
-        <h1>Granit Meja Dapur, <em>Dipasang Rapi</em></h1>
-        <p class="lead">Jasa pasang granit untuk meja dapur, dari ukur di lokasi sampai sambungan dirapatkan dan permukaan di-coating. Mulai Rp850.000 per meter lari, sudah termasuk bahan dan pasang. Kalau granitnya Anda beli sendiri, jasa pasang saja mulai Rp600.000 per meter lari.</p>
+        <p class="eyebrow">Granit untuk meja dapur</p>
+                <h1>Granit untuk Meja Dapur, <em>Dipasang Rapi</em></h1>
+                <p class="lead">Jasa pasang granit untuk meja dapur, dari ukur di lokasi sampai sambungan dirapatkan dan permukaan di-coating. Mulai Rp850.000 per meter lari, sudah termasuk bahan dan pasang. Kalau granitnya Anda beli sendiri, jasa pasang saja mulai Rp600.000 per meter lari.</p>
         <p style="margin-top:22px">
           <a class="btn btn--green" href={waLink('Halo Kak, saya mau tanya granit meja dapur. Ini ukuran dapur saya:')}>Tanya Harga Granit Meja Dapur</a>
         </p>
@@ -126,6 +138,33 @@ const schema = {
     </div>
   </section>
 
+  <section class="sec" aria-labelledby="pilih-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Cara memilih</p>
+        <h2 class="h-sec" id="pilih-title">Cara Memilih Granit untuk Meja Dapur</h2>
+        <p class="sub-sec">Tiga hal yang paling menentukan hasil akhir granit untuk meja dapur: panjang meja, pola bahan, dan siapa yang memasang.</p>
+      </div>
+      <div class="two-col">
+        <div>
+          <h3>Mulai dari panjang meja, bukan dari motif</h3>
+          <p>Granit untuk meja dapur dihitung per meter lari, yaitu panjang meja dengan lebar standar 60 cm. Jadi angka yang dikalikan tarif adalah panjang mejanya, bukan luas permukaannya. Meja 3 meter berarti 3 meter lari, walau lebarnya 60 cm.</p>
+          <p><a href="/what-news/tinggi-lebar-meja-dapur-yang-nyaman/">Panduan tinggi dan lebar meja dapur yang nyaman</a></p>
+          <h3>Sesuaikan pola bahan dengan jumlah sambungan</h3>
+          <p>Semakin panjang lempengan granitnya, semakin sedikit sambungan, dan semakin rapi tampilannya. Kalau meja dapur Anda lebih dari 2,5 meter, pilih bahan dari lempengan panjang supaya tidak ada nat resin di tengah meja. Untuk meja pendek, granit lembar 60x60 sudah cukup dan lebih hemat.</p>
+        </div>
+        <div>
+          <h3>Putuskan lebih dulu siapa yang memasang</h3>
+          <p>Ada tiga pilihan: paket bahan dan pasang mulai Rp850.000 per meter lari, jasa pasang saja mulai Rp600.000 per meter lari kalau granit Anda beli sendiri, atau cutting size untuk yang ingin dipotong presisi lalu dipasang sendiri. Harga paket sudah mencakup potong lubang sink dan kompor, edge profile, nat resin, dan coating anti air. Semen, pasir, dan rangka besi meja cor tidak termasuk, dan itu kami sebutkan sejak awal, bukan di tengah pekerjaan.</p>
+          <h3>Granit lokal atau impor, tidak selalu soal harga</h3>
+          <p>Granit impor biasanya uratnya lebih hidup dan harganya lebih tinggi, granit lokal lebih ramah kantong. Untuk dapur harian keduanya sama awet selama bahannya padat dan tidak ada retak rambut. Yang paling sering salah pilih justru lempengan tipis: 2 cm adalah ketebalan minimum yang aman, 3 cm kalau bentang meja panjang.</p>
+          <p><a href="/top-table/">Lihat katalog granit, marmer, quadra, dan sintered stone</a></p>
+          <p><a href="/what-news/panduan-memilih-bahan-top-table-granit-marmer-quadra/">Baca panduan memilih bahan top table</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="sec sec--cream" aria-labelledby="cara-title">
     <div class="wrap">
       <div class="sec-head">
@@ -168,7 +207,7 @@ const schema = {
       <h2 class="h-sec" id="cta-title">Mau Tahu Harga Granit untuk Meja Dapur Anda?</h2>
       <p class="sub-sec">Kirim panjang dan lebar meja Anda lewat WhatsApp. Estimasi kami kirim di hari yang sama, tanpa biaya ukur.</p>
       <p style="margin-top:20px"><a class="btn btn--green" href={waLink('Halo Kak, saya mau tanya granit meja dapur. Panjang meja saya: ... meter, lebar: ... cm.')}>Kirim Ukuran Meja Dapur Saya</a></p>
-      <p style="margin-top:14px;font-size:14px;color:var(--ink-2)">WhatsApp 0821-2184-1119 · Buka Senin sampai Sabtu, 09.00 sampai 17.00 WIB</p>
+      <p style="margin-top:14px;font-size:14px;color:var(--ink-2)">WhatsApp 0821-2184-1119 · Buka Senin sampai Sabtu, 09.00 sampai 17.00 WIB · <a href="/contact/">Cara kirim ukuran dan dapat estimasi</a></p>
     </div>
   </section>
 </Base>
