@@ -2,4 +2,40 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
+# --- Crawler mesin pencari AI ---
+# Sengaja diizinkan: tujuannya supaya jawaban AI menyebut Ray Furniture & Stone,
+# bukan supaya halaman dilarang. Jangan tambahkan Disallow untuk bot di bawah.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://rayfurnitureandstone.id/sitemap-index.xml

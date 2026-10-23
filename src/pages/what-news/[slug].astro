@@ -37,12 +37,12 @@ const schema = {
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: site.origin + '/' },
-      { '@type': 'ListItem', position: 2, name: 'What News', item: site.origin + '/what-news' },
+      { '@type': 'ListItem', position: 2, name: "What's New", item: site.origin + '/what-news' },
       { '@type': 'ListItem', position: 3, name: title, item: `${site.origin}/what-news/${post.id}` },
     ],
   })} />
 
-  <div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/what-news/">What News</a> / {title}</nav></div>
+  <div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/what-news/">What's New</a> / {title}</nav></div>
 
   <article class="page-hero" style="padding-bottom:0">
     <div class="wrap">

@@ -11,10 +11,10 @@ import { services, inclusions, customVsStock, stoneRestoration, process, waLink,
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft))
   .sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date)).slice(0, 6);
-const desc = 'Selain produksi kitchen set dan furniture custom, Ray Furniture & Stone juga menyediakan jasa pasang marmer dan granit serta poles lantai. Desain 3D gratis, garansi 1 tahun.';
+const desc = 'Jasa kitchen set custom, pasang marmer granit, dan poles lantai di Bogor & JABODETABEK. Desain 3D gratis, garansi 1 tahun, harga tanpa markup.';
 ---
 
-<Base title="Kitchen Set Custom — Fokus Utama Kami" description={desc}>
+<Base title="Kitchen Set Custom, Pasang Marmer & Granit Bogor" description={desc}>
   <HeroSlider />
 
   <!-- Banner Program Partner (B2B: desainer interior, kontraktor, investor properti) -->
