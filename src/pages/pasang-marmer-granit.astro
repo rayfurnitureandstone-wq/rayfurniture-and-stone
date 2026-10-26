@@ -3,11 +3,17 @@ import Base from '../layouts/Base.astro';
 import Faq from '../components/Faq.astro';
 import { waLink } from '../data/site.js';
 
-const desc = 'Jasa pasang marmer, granit, quadra, dan sintered stone untuk lantai, dinding, tangga, dan top table. Jasa pasang mulai Rp700.000 per meter persegi, top table pasang saja mulai Rp600.000 per meter lari. Ukur di lokasi dulu, tanpa biaya. Melayani Bogor, Depok, Jakarta, Bekasi, Tangerang, dan Cibubur.';
+const desc = 'Jasa pasang marmer dan granit untuk lantai, dinding, tangga, dan top table di Bogor, Depok, Jakarta, Bekasi, Tangerang. Pasang top table mulai Rp850.000 per meter lari, sudah termasuk bahan dan pasang.';
 
 const faqPasang = [
-  ['Berapa harga jasa pasang marmer atau granit per meter?',
-   'Jasa pasang lantai, dinding, atau tangga mulai Rp700.000 per meter persegi, tenaga dan perlengkapan pasang. Bahan batunya bisa Anda beli sendiri atau kami bantu carikan. Untuk top table, kalau bahannya Anda beli sendiri, jasa pasang dan potongnya mulai Rp600.000 per meter lari. Angka pasti keluar setelah ukur di lokasi, tanpa biaya.'],
+  ['Berapa biaya pasang marmer per meter?',
+   'Lantai, dinding, dan tangga mulai Rp700.000 per meter persegi, sudah termasuk material dan pemasangan. Top table mulai Rp850.000 per meter lari dengan lebar standar 60 cm, termasuk potong lubang sink dan kompor. Kalau batunya Anda beli sendiri, jasa pasang dan potong top table mulai Rp600.000 per meter lari.'],
+  ['Harga pasang marmer sudah termasuk material batunya?',
+   'Ya. Semua harga yang kami tampilkan adalah paket jasa dan bahan dalam satu angka. Pengecualiannya hanya jasa pasang top table saja, untuk Anda yang sudah membeli lempeng batu sendiri. Yang pasti tidak termasuk: semen, pasir, dan rangka struktur meja cor.'],
+  ['Apakah ongkos kirim dihitung terpisah?',
+   'Ongkir di Jabodetabek gratis untuk order minimal 3 meter. Order di bawah 3 meter dikenakan Rp300.000.'],
+  ['Apakah harga di atas sudah termasuk material batu?',
+   'Lantai, dinding, dan tangga dihitung per meter persegi, satu angka untuk jasa dan material. Top table dihitung per meter lari dari panjang meja, dengan lebar standar 60 cm, juga sudah termasuk bahan batu. Yang tidak termasuk hanya semen, pasir, dan rangka struktur meja cor.'],
   ['Bahan marmer, granit, atau sintered stone sebaiknya saya beli sendiri?',
    'Dua-duanya bisa. Kalau Anda sudah punya bahan atau ingin memilih sendiri di toko langganan Anda, kami ukur dan pasang. Kalau Anda ingin praktis, kami bantu carikan bahan berikut contohnya saat ukur di lokasi, lalu biayanya masuk di rincian penawaran.'],
   ['Apakah lantai lama harus dibongkar dulu?',
@@ -40,17 +46,32 @@ const schema = {
     },
   },
   areaServed: ['Bogor', 'Depok', 'Jakarta', 'Bekasi', 'Tangerang', 'Cibubur'],
-  offers: {
-    '@type': 'Offer',
-    priceCurrency: 'IDR',
-    price: '700000',
-    priceSpecification: {
-      '@type': 'UnitPriceSpecification',
-      price: '700000',
+  offers: [
+    {
+      '@type': 'Offer',
       priceCurrency: 'IDR',
-      unitText: 'per meter persegi',
+      price: '700000',
+      itemOffered: 'Pasang lantai, dinding, atau tangga marmer dan granit, sudah termasuk material',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '700000',
+        priceCurrency: 'IDR',
+        unitText: 'per meter persegi',
+      },
     },
-  },
+    {
+      '@type': 'Offer',
+      priceCurrency: 'IDR',
+      price: '850000',
+      itemOffered: 'Pasang top table marmer, granit, atau quadra, sudah termasuk bahan dan pasang',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '850000',
+        priceCurrency: 'IDR',
+        unitText: 'per meter lari',
+      },
+    },
+  ],
 };
 ---
 
@@ -63,8 +84,8 @@ const schema = {
     <div class="wrap two-col" style="align-items:center">
       <div>
         <p class="eyebrow">Pasang marmer &amp; granit</p>
-        <h1>Pasang Marmer, Granit, <em>dan Sintered Stone</em></h1>
-        <p class="lead">Untuk lantai, dinding, tangga, dan top table. Kami ukur dulu di lokasi, potong di workshop sendiri, lalu pasang dengan perekat khusus batu dan sambungan yang dirapikan. Jasa pasang mulai Rp700.000 per meter persegi.</p>
+        <h1>Jasa Pasang Marmer, Granit, <em>dan Sintered Stone</em></h1>
+        <p class="lead">Jasa pasang marmer dan granit untuk lantai, dinding, tangga, dan top table. Kami ukur dulu di lokasi, potong di workshop sendiri, lalu pasang dengan perekat khusus batu dan sambungan yang dirapikan. Pasang lantai, dinding, atau tangga mulai Rp700.000 per meter persegi, sudah termasuk material.</p>
         <p style="margin-top:22px">
           <a class="btn btn--green" href={waLink('Halo Kak, saya mau tanya jasa pasang marmer atau granit. Luas area yang mau dikerjakan: ... m2.')}>Tanya Harga Pasang Marmer</a>
         </p>
@@ -83,17 +104,22 @@ const schema = {
       </div>
       <div class="feat-grid feat-grid--2">
         <div class="price-card">
-          <h3>Jasa pasang lantai, dinding, tangga</h3>
-          <p style="font-size:26px;font-weight:700;color:var(--green)">Mulai Rp700.000<span style="font-size:15px;font-weight:400"> /meter persegi</span></p>
-          <p>Tenaga pasang dan perlengkapannya. Bahannya bisa Anda beli sendiri, atau kami bantu carikan berikut contohnya saat ukur di lokasi.</p>
+          <h3>Pasang top table, bahan dari kami</h3>
+          <p style="font-size:26px;font-weight:700;color:var(--green)">Mulai Rp850.000<span style="font-size:15px;font-weight:400"> /meter lari</span></p>
+          <p>Satu angka untuk jasa dan material, lebar standar 60 cm. Termasuk potong lubang sink dan kompor, edge profile, nat resin, dan coating anti air.</p>
         </div>
         <div class="price-card">
-          <h3>Jasa pasang top table saja</h3>
+          <h3>Pasang lantai, dinding, tangga</h3>
+          <p style="font-size:26px;font-weight:700;color:var(--green)">Mulai Rp700.000<span style="font-size:15px;font-weight:400"> /meter persegi</span></p>
+          <p>Sudah termasuk material. Motif dan ketebalan Anda pilih saat kami ukur di lokasi; contoh bahan kami bawa.</p>
+        </div>
+        <div class="price-card">
+          <h3>Pasang saja, batu Anda beli sendiri</h3>
           <p style="font-size:26px;font-weight:700;color:var(--green)">Mulai Rp600.000<span style="font-size:15px;font-weight:400"> /meter lari</span></p>
-          <p>Kalau lempeng marmer atau granitnya Anda beli sendiri. Kami ukur, potong di workshop, pasang, lalu rapikan tepi dan sambungannya.</p>
+          <p>Kalau lempeng marmer atau granitnya sudah Anda punya. Kami ukur, potong di workshop, pasang, lalu rapikan tepi dan sambungannya.</p>
         </div>
       </div>
-      <p style="margin-top:22px;font-size:14px;color:var(--ink-2)">Angka di atas titik masuk untuk motif polos. Motif urat besar, marmer impor, dan sintered stone lebih tinggi. Semua dihitung ulang setelah ukur di lokasi, tanpa biaya ukur.</p>
+      <p style="margin-top:22px;font-size:14px;color:var(--ink-2)">Angka di atas titik masuk untuk motif polos. Motif urat besar, marmer impor, dan sintered stone lebih tinggi. Biaya tidak mencakup semen, pasir, dan rangka besi meja cor. Ongkir gratis untuk order minimal 3 meter di Jabodetabek, di bawah itu Rp300.000. Semua dihitung ulang setelah ukur di lokasi, tanpa biaya ukur.</p>
     </div>
   </section>
 
@@ -130,6 +156,7 @@ const schema = {
           <p>Lempeng sintered stone ukurannya besar, jadi sambungan pada top table bisa lebih sedikit dan warnanya rata. Bahannya tahan panas dan tidak menyerap cairan. Contoh bahan dan rincian biayanya kami bawa saat ukur di lokasi.</p>
           <p><a href="/top-table/">Lihat halaman top table marmer, granit, dan quadra</a></p>
           <p><a href="/granit-meja-dapur/">Lihat harga granit meja dapur per meter lari</a></p>
+          <p><a href="/kitchen-set/">Sekalian butuh kitchen set? Lihat halaman kitchen set custom</a></p>
         </div>
       </div>
     </div>
