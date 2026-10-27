@@ -1,0 +1,450 @@
+---
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import { waLink, site } from '../../data/site.js';
+
+const desc = 'Cari kitchen set aluminium terdekat? Workshop kami di Gunung Putri, Kabupaten Bogor, survei dan pasang gratis ke Bogor, Cibubur, Depok, Jakarta, Tangerang, Bekasi. Full aluminium anti rayap mulai Rp2.700.000 per meter lari. Garansi rangka 1 tahun.';
+
+// Banner resmi pemilik: flyer bahan aluminium single layer, harga 2,7jt/m, bonus lengkap.
+const banner = { src: '/images/kitchen-aluminium/banner-flyer.jpg', w: 1254, h: 1254 };
+
+// MODEL: contoh nyata dari pekerjaan kami, bukan gambar contoh dari internet.
+const models = [
+  { src: '/images/kitchen-aluminium/model-japandi.jpg', w: 1440, h: 1800,
+    nama: 'Japandi',
+    isi: 'Putih matte dipadu kayu hangat dan gagang knob kuningan. Kesan tenang dan rapi. Cocok untuk dapur yang menyatu dengan ruang makan.' },
+  { src: '/images/kitchen-aluminium/model-minimalis.jpg', w: 1440, h: 1920,
+    nama: 'Minimalis',
+    isi: 'Kabinet hitam rata tanpa gagang, dipadu kayu terang di pulau dapur. Kontras tegas, mudah dibersihkan, dan tidak ada gagang yang menyangkut.' },
+  { src: '/images/kitchen-aluminium/model-semi-klasik.jpg', w: 1440, h: 1920,
+    nama: 'Semi Klasik',
+    isi: 'Pintu panel putih glossy dengan sebagian kabinet kaca berkotak, gagang tarik stainless. Ada kesan mewah, tapi tetap modern dan tidak berat.' },
+  { src: '/images/kitchen-aluminium/model-bronze-mirror.jpg', w: 1440, h: 1802,
+    nama: 'Bronze Mirror',
+    isi: 'Kabinet atas berpanel cermin bronze, kabinet bawah champagne glossy. Ruangan terasa lebih terang dan lebih tinggi.' },
+];
+
+// Pilihan lain yang tersedia (daftar resmi pemilik, ejaan apa adanya).
+const finishing = ['Single layer', 'Double layer', 'Cat Duco', 'Glass tone', 'Bronze mirror', 'HPL'];
+const handleOpt = ['Finger grooved', 'Aluminium', 'Knob'];
+const aksenList = ['Tambour panel', 'Flexible fluted panel', 'Profil classic panel'];
+
+// MOTIF ACP: lembar katalog ACP yang dipakai untuk panel kabinet.
+const acp = [
+  { src: '/images/kitchen-aluminium/acp-1.jpg', w: 1080, h: 1530,
+    nama: 'Warna solid doff',
+    isi: 'Signal Blue, French Grey, Pure White, Ivory, Cream White, Light Coffee, Brown Door, Chinese Red, Violet.' },
+  { src: '/images/kitchen-aluminium/acp-2.jpg', w: 1080, h: 1530,
+    nama: 'Kayu, marmer & mirror',
+    isi: 'Kayu: White Maple, White Oak, Black Wallnut, Cherry Wood, Dark Teak, Mahogany Wood, Neo Wooden. Marmer: Porto, Black Marmer, White Marmer, Vermont Marble, Sesame White, Cherokee Marble. Mirror: Silver Mirror, Golden Mirror.' },
+  { src: '/images/kitchen-aluminium/acp-3.jpg', w: 1080, h: 1530,
+    nama: 'Glossy & metallic',
+    isi: 'Mengkilap: Yellow, White, Orange, Ivory, Blue, Red, Black, Brown, Green, Pink. Metalik: Light Silver, Champagne Gold, Seaweed Silver, Cooper.' },
+  { src: '/images/kitchen-aluminium/acp-4.jpg', w: 1080, h: 1530,
+    nama: 'Spesifikasi bahan',
+    isi: 'Tebal 3 mm, ukuran lembar 1220 x 2440 mm, tipe coating PE. Anti rayap, kokoh, anti karat, dan warna tahan lama.' },
+];
+
+// DETAIL PEKERJAAN: foto dari pekerjaan kami sendiri.
+const details = [
+  { src: '/images/kitchen-aluminium/detail-1.jpg', nama: 'Rak tarik dua tingkat',
+    isi: 'Keranjang stainless yang bisa ditarik penuh. Panci dan wajan di bagian belakang tetap terjangkau tanpa membungkuk.' },
+  { src: '/images/kitchen-aluminium/detail-6.jpg', nama: 'Rail double track & rak sendok',
+    isi: 'Laci ditarik penuh sampai ujung, jadi tidak ada barang yang tersembunyi di belakang. Di dalamnya sudah ada sekat sendok.' },
+  { src: '/images/kitchen-aluminium/detail-7.jpg', nama: 'Pintu atas hidrolik & rak piring',
+    isi: 'Pintu terangkat pakai hidrolik, jadi kepala tidak terbentur. Di dalamnya rak piring stainless di atas wastafel.' },
+  { src: '/images/kitchen-aluminium/detail-5.jpg', nama: 'Ventilasi kabinet & lampu LED',
+    isi: 'Slot udara di pintu bawah supaya isi kabinet tidak pengap, ditambah lampu LED di bawah kabinet atas.' },
+  { src: '/images/kitchen-aluminium/detail-3.jpg', nama: 'Kabinet tabung gas',
+    isi: 'Tabung gas ditaruh di kabinet berbaki tarik, bawahnya terbuka jadi sirkulasi udara tetap ada. Aman dan tidak berantakan.' },
+  { src: '/images/kitchen-aluminium/detail-4.jpg', nama: 'Lampu LED bawah kabinet',
+    isi: 'Area kerja terang tanpa bayangan badan sendiri, jadi memotong bahan tidak gelap dan tidak salah ukur.' },
+  { src: '/images/kitchen-aluminium/detail-2.jpg', nama: 'Pintu rata tanpa gagang menonjol',
+    isi: 'Gagang pakai coakan, tidak ada yang menyangkut baju. Sela antar pintu dijaga seragam supaya tampilannya rapi dari jauh.' },
+  { src: '/images/kitchen-aluminium/detail-8.jpg', nama: 'Pemeriksaan sebelum serah terima',
+    isi: 'Setelah semua terpasang, kami cek kerapatan pintu, nyala lampu, dan aliran udara kabinet sebelum Anda melihat hasilnya.' },
+];
+
+// JSON-LD Service: supaya mesin AI (ChatGPT, Gemini, Perplexity) punya angka
+// dan cakupan wilayah yang bisa dikutip saat ditanya "kitchen set aluminium terdekat".
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Kitchen Set Aluminium Custom',
+  serviceType: 'Pembuatan dan pemasangan kitchen set full aluminium',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Ray Furniture & Stone',
+    telephone: '+6282121841119',
+    url: 'https://rayfurnitureandstone.id/',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Jl. Transyogi No.60, Nagrak',
+      addressLocality: 'Gunung Putri',
+      addressRegion: 'Jawa Barat',
+      postalCode: '16967',
+      addressCountry: 'ID',
+    },
+  },
+  areaServed: ['Bogor', 'Kabupaten Bogor', 'Kota Bogor', 'Cibubur', 'Sentul', 'Depok', 'Jakarta', 'Tangerang', 'Tangerang Selatan', 'Bekasi', 'Cikarang', 'Karawang', 'Bandung', 'Sukabumi', 'Purwakarta', 'Serang'],
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'IDR',
+    price: '2700000',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: '2700000',
+      priceCurrency: 'IDR',
+      unitText: 'per meter lari',
+    },
+  },
+};
+
+const faqItems = [
+  ['Kabinet aluminium beda apa dengan plywood?', 'Kabinet plywood dengan finishing HPL lebih murah dan motif kayunya hangat, tapi di dapur yang lembap lama-lama bisa mengembang dan dimakan rayap. Rangka aluminium tidak bisa dimakan rayap, tidak menyerap air, dan tidak berubah bentuk. Untuk dapur dekat pesisir atau yang sering terpapar uap, aluminium lebih awet.'],
+  ['Harga Rp2,7 juta per meter lari itu untuk apa saja?', 'Harga mulai Rp2.700.000 per meter lari untuk rangka aluminium, lebar standar 60 cm. Sudah termasuk jasa pemasangan dan bonus standar kami: rak sendok, aluminium handle, rak piring bawah, engsel slowmotion, lampu kabinet LED, rail double track, dan ventilasi kabinet.'],
+  ['Apakah kabinet bawah dan kabinet atas dihitung terpisah?', 'Ya. Kabinet bawah dan kabinet atas dihitung terpisah, tergantung yang Anda pilih. Kabinet bawah full box harganya berbeda dengan kabinet atas. Setelah survei kami kirim gambar 3D dan rincian biaya, jadi Anda tahu persis angka tiap bagian sebelum produksi mulai.'],
+  ['Model dan motif bisa saya pilih sendiri?', 'Bisa. Model Japandi, Minimalis, Semi Klasik, dan Bronze Mirror yang tampil di halaman ini semuanya pernah kami kerjakan. Motif panel bisa diambil dari pilihan ACP, ada motif kayu, marmer, mirror, glossy, dan metalik. Saat survei kami bawa contoh bahannya supaya Anda bisa melihat dan meraba langsung, bukan cuma dari layar.'],
+  ['Berapa lama pengerjaan?', 'Rata-rata 10 sampai 21 hari kerja, tergantung ukuran dan tingkat kerumitan, dihitung setelah desain 3D Anda setujui.'],
+  ['Garansi rangka 1 tahun berlaku untuk apa?', 'Garansi 1 tahun untuk engsel, handle, lampu LED, dan HPL yang melengkung atau mengelupas. Khusus cacat produksi, dengan syarat dan ketentuan yang berlaku.'],
+  ['Bagaimana kalau dapur saya bentuknya tidak beraturan?', 'Justru itu alasan memilih custom. Kami ukur dulu di lokasi, termasuk dinding yang tidak lurus dan sudut mati, lalu setiap modul dipotong mengikuti kondisi ruang Anda. Tidak ada sela kosong yang jadi tempat kotoran menumpuk.'],
+  ['Di mana kitchen set aluminium terdekat yang bisa survei gratis?', 'Workshop kami ada di Jl. Transyogi No.60, Nagrak, Gunung Putri, Kabupaten Bogor, jalur yang sama kalau Anda dari Cibubur ke arah Sentul. Survei dan pengukuran gratis untuk seluruh Jabodetabek: Bogor, Cibubur, Sentul, Depok, Jakarta, Tangerang, dan Bekasi. Tunggu di rumah saja, tim kami yang datang membawa contoh bahan.'],
+  ['Rumah saya di luar Jabodetabek, masih bisa pesan kitchen set aluminium?', 'Bisa. Selain seluruh Jabodetabek, kami juga melayani Bandung, Sukabumi, Purwakarta, dan Karawang. Cek dulu halaman kota untuk area Anda di daftar di bawah, atau langsung kirim ukuran lewat [WhatsApp kami](https://wa.me/6282121841119?text=Halo%20Kak%2C%20saya%20di%20luar%20Jabodetabek%2C%20mau%20tanya%20kitchen%20set%20full%20aluminium%20bisa%20dikerjakan%20nggak%3F).'],
+  ['Cara memastikan yang memasang tim sendiri dan bukan subcontractor?', 'Salah satu tanda penyedia yang jujur: workshop-nya bisa didatangkan. Workshop kami di Gunung Putri, Kabupaten Bogor, dan Anda boleh mampir lihat proses potong dan rakit kabinet sebelum deal. Setelah pemasangan juga QC kami lakukan sendiri sampai Anda setuju, bukan dilempar ke pihak lain.'],
+];
+---
+
+<Base title="Kitchen Set Aluminium Terdekat: Harga, Model & Jangkauan Jabodetabek" description={desc}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <!-- ===== HERO ===== -->
+  <section class="ka-hero">
+    <div class="wrap ka-hero__in">
+      <div class="ka-hero__copy">
+        <p class="ka-eyebrow">Kitchen set aluminium terdekat &middot; Survei gratis Jabodetabek &middot; Garansi rangka 1 tahun</p>
+        <h1>Kabinet Dapur Anda Sedang <span>Dimakan Pelan-pelan</span>, dan Tidak Terasa Sampai Terlambat</h1>
+        <p class="ka-lead">Uap dari kompor menempel di kabinet setiap hari. Tiga tahun pertama tidak ada tanda apa pun. Lalu pintu mulai tidak rapat, engsel turun, dan ketika Anda menarik laci, yang keluar bukan piring, tapi bubuk kayu.</p>
+        <p class="ka-lead ka-lead--mute">Perbaikannya bukan ditambal. Rangkanya yang diganti ke aluminium, dan masalah itu selesai sejak hari pertama dipasang.</p>
+        <p class="ka-btn-row">
+          <a class="btn btn--wa" href={waLink('Halo Kak, saya mau tanya kitchen set full aluminium. Boleh minta survei gratis dan lihat contoh motifnya?')}>Minta Survei Gratis Sekarang &rarr;</a>
+        </p>
+        <p class="ka-note">Balas hari ini. Survei lokasi, desain 3D, dan rincian biaya tidak dipungut biaya di Jabodetabek.</p>
+      </div>
+      <div class="ka-hero__media">
+        <img src={banner.src} width={banner.w} height={banner.h}
+             alt="Banner kitchen set aluminium single layer Ray Furniture & Stone, harga mulai 2,7 juta per meter, bonus LED strip, rel slowmotion, rak, engsel slowmotion, dan handle"
+             loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AGITATE ===== -->
+  <section class="sec sec--cream" aria-labelledby="ka-agit">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Yang terjadi tiap hari</p>
+        <h2 class="h-sec" id="ka-agit">Dapur Jadi Ruangan yang Paling Malas Anda Masuki</h2>
+        <p class="sub-sec">Bukan karena Anda tidak rajin. Kabinet yang sudah rusak diam-diam membuat pekerjaan paling sederhana jadi berat.</p>
+      </div>
+      <div class="ka-pain">
+        <article class="ka-pain__item">
+          <p class="ka-pain__no">01</p>
+          <h3>Pintu tidak bisa rapat lagi</h3>
+          <p>Kayu yang mengembang membuat pintu bergeser dan tidak menutup sempurna. Semut jadi mudah masuk, dan isi kabinet berdebu.</p>
+        </article>
+        <article class="ka-pain__item">
+          <p class="ka-pain__no">02</p>
+          <h3>Bau apek yang tidak hilang</h3>
+          <p>Kabinet kayu yang menyerap uap jadi tempat bakteri. Bahan makanan disimpan di sebelahnya, dan baunya menempel ke beras serta bumbu.</p>
+        </article>
+        <article class="ka-pain__item">
+          <p class="ka-pain__no">03</p>
+          <h3>Biaya besar yang datang tiba-tiba</h3>
+          <p>Rayap dan lapuk baru ketahuan setelah parah. Ganti satu set kabinet bukan perbaikan kecil, dan itu pengeluaran puluhan juta yang tidak pernah Anda rencanakan.</p>
+        </article>
+      </div>
+      <p class="ka-pivot">Aluminium memotong seluruh rangkaian masalah itu. Bukan karena lebih mahal, tapi karena bahannya memang tidak bisa dimakan rayap dan tidak bisa lapuk.</p>
+    </div>
+  </section>
+
+  <!-- ===== SOLUSI ===== -->
+  <section class="sec" aria-labelledby="ka-sol">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Solusinya</p>
+        <h2 class="h-sec" id="ka-sol">Rangka Aluminium, Fungsinya Sama, Umurnya Beda</h2>
+        <p class="sub-sec">Bentuk dan fungsinya sama seperti kabinet biasa. Yang berubah hanya rangkanya: aluminium, bukan kayu. Air tidak menyerap, rayap tidak makan, dan pintunya tetap presisi bertahun-tahun.</p>
+      </div>
+      <div class="ka-feat">
+        <article class="ka-feat__item">
+          <h3>Tidak bisa dimakan rayap</h3>
+          <p>Rayap butuh selulosa, dan aluminium tidak punya. Tidak ada bubuk kayu, tidak ada sarang tersembunyi di balik kabinet.</p>
+        </article>
+        <article class="ka-feat__item">
+          <h3>Tidak menyerap air</h3>
+          <p>Uap dapur yang menempel setiap hari tidak membuat rangka mengembang atau berubah bentuk. Laci tetap lurus, pintu tetap rapat.</p>
+        </article>
+        <article class="ka-feat__item">
+          <h3>Ukur dulu, baru dipotong</h3>
+          <p>Kami ukur dapur Anda di lokasi, termasuk dinding yang tidak lurus dan sudut mati. Anda menerima gambar 3D dan rincian biaya sebelum produksi jalan.</p>
+        </article>
+        <article class="ka-feat__item">
+          <h3>Tidak ada tambahan di tengah jalan</h3>
+          <p>Angka yang Anda setujui di rincian biaya itu yang berlaku. Kabinet bawah dan atas dihitung terbuka, jadi Anda tahu bayar untuk bagian apa.</p>
+        </article>
+        <article class="ka-feat__item">
+          <h3>Bonus standar ikut semua</h3>
+          <p>Rak sendok, aluminium handle, rak piring bawah, engsel slowmotion, lampu kabinet LED, rail double track, dan ventilasi kabinet. Bukan tambahan berbayar.</p>
+        </article>
+        <article class="ka-feat__item">
+          <h3>Garansi rangka 1 tahun</h3>
+          <p>Untuk engsel, handle, lampu LED, dan HPL yang melengkung atau mengelupas. Khusus cacat produksi, dengan syarat dan ketentuan.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MODEL & AKSEN ===== -->
+  <section class="sec sec--cream" id="model" aria-labelledby="ka-model">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Pilih modelnya</p>
+        <h2 class="h-sec" id="ka-model">Empat Model yang Bisa Anda Pilih</h2>
+        <p class="sub-sec">Ini contoh nyata dari pekerjaan kami, bukan gambar contoh dari internet. Saat survei kami bawa contoh bahan, jadi Anda bisa melihat dan meraba langsung sebelum memutuskan.</p>
+      </div>
+      <div class="ka-model">
+        {models.map(m => (
+          <figure class="ka-model__item">
+            <img src={m.src} width={m.w} height={m.h} alt={`Kitchen set aluminium model ${m.nama}`} loading="lazy" />
+            <figcaption>
+              <b>{m.nama}</b>
+              <span>{m.isi}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <div class="ka-opt">
+        <div class="ka-opt__col">
+          <h3>Finishing kabinet</h3>
+          <ul class="ka-chips">{finishing.map(f => <li>{f}</li>)}</ul>
+        </div>
+        <div class="ka-opt__col">
+          <h3>Pilihan handle</h3>
+          <ul class="ka-chips">{handleOpt.map(f => <li>{f}</li>)}</ul>
+        </div>
+        <div class="ka-opt__col">
+          <h3>Aksen tambahan</h3>
+          <ul class="ka-chips">{aksenList.map(f => <li>{f}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MOTIF ACP ===== -->
+  <section class="sec" id="motif" aria-labelledby="ka-motif">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Pilih motifnya</p>
+        <h2 class="h-sec" id="ka-motif">Motif ACP untuk Panel Kabinet</h2>
+        <p class="sub-sec">Kalau Anda ingin tampilan kayu, marmer, atau cermin tanpa risiko lapuk, panelnya bisa memakai ACP. Motifnya jadi, tidak perlu dicat ulang, dan tahan air. Ini lembar pilihan yang kami bawa saat survei.</p>
+      </div>
+      <p class="ka-hint">Teks nama warna di lembar ini kecil. Klik gambarnya untuk membuka ukuran penuh.</p>
+      <div class="ka-acp">
+        {acp.map(a => (
+          <figure class="ka-acp__item">
+            <a class="ka-acp__zoom" href={a.src} target="_blank" rel="noopener" aria-label={`Buka lembar motif ACP ukuran penuh: ${a.nama}`}>
+              <img src={a.src} width={a.w} height={a.h} alt={`Lembar pilihan motif ACP: ${a.nama}`} loading="lazy" />
+            </a>
+            <figcaption>
+              <b>{a.nama}</b>
+              <span>{a.isi}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <p class="ka-disclaim">Catatan jujur: warna di layar bisa berbeda dengan bahan aslinya, terutama warna metalik dan mirror karena pantulan cahaya. Karena itu kami selalu membawa contoh fisik ke lokasi saat survei, supaya motif yang Anda pilih memang motif yang dipasang.</p>
+    </div>
+  </section>
+
+  <!-- ===== DETAIL PEKERJAAN ===== -->
+  <section class="sec sec--cream" id="detail" aria-labelledby="ka-detail">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Detail pekerjaan kami</p>
+        <h2 class="h-sec" id="ka-detail">Yang Membedakan Terlihat dari Bagian yang Jarang Difoto</h2>
+        <p class="sub-sec">Pintu depan semua kitchen set kelihatan mirip. Yang menentukan awet atau tidak justru engsel, rel, ventilasi, dan kerapatan sela antar pintu. Ini foto dari pekerjaan kami sendiri.</p>
+      </div>
+      <div class="ka-detail">
+        {details.map(d => (
+          <figure class="ka-detail__item">
+            <img src={d.src} width={480} height={640} alt={`Detail pekerjaan kitchen set aluminium: ${d.nama}`} loading="lazy" />
+            <figcaption>
+              <b>{d.nama}</b>
+              <span>{d.isi}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HARGA ===== -->
+  <section class="sec" id="harga" aria-labelledby="ka-harga">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Harga terbuka</p>
+        <h2 class="h-sec" id="ka-harga">Berapa yang Anda Bayar</h2>
+      </div>
+      <div class="ka-price">
+        <p class="ka-price__from">Kitchen set full aluminium</p>
+        <p class="ka-price__amt">Rp 2.700.000<span>/meter lari</span></p>
+        <p class="ka-price__note">Lebar standar 60 cm. Kabinet bawah dan kabinet atas dihitung terpisah, tergantung yang Anda pilih. Angka final keluar setelah ukur di lokasi, tanpa biaya.</p>
+        <ul class="ka-price__inc">
+          <li>Jasa pemasangan</li>
+          <li>Rak sendok</li>
+          <li>Aluminium handle</li>
+          <li>Rak piring bawah</li>
+          <li>Engsel slowmotion</li>
+          <li>Lampu kabinet LED</li>
+          <li>Rail double track</li>
+          <li>Ventilasi kabinet</li>
+        </ul>
+        <a class="btn btn--wa" href={waLink('Halo Kak, saya mau minta rincian biaya kitchen set full aluminium untuk dapur saya.')}>Minta Rincian Biaya Dapur Saya</a>
+        <p class="ka-price__fine">Garansi rangka 1 tahun untuk engsel, handle, lampu LED, dan HPL yang melengkung atau mengelupas. Khusus cacat produksi, syarat dan ketentuan berlaku.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JANGKAUAN / TERDEKAT ===== -->
+  <section class="sec sec--cream" id="terdekat" aria-labelledby="ka-lokasi">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Kitchen set aluminium terdekat</p>
+        <h2 class="h-sec" id="ka-lokasi">Workshop Kami di Gunung Putri, Tim Kami yang Datang ke Rumah Anda</h2>
+        <p class="sub-sec">Bukan calo yang melempar proyek ke tukang antah berantah. Kami buat di workshop sendiri di Jl. Transyogi No.60, Nagrak, Gunung Putri, Kabupaten Bogor, lalu pasang sendiri sampai Anda tanda-tangani QC. Full aluminium mulai Rp2.700.000 per meter lari, kabinet bawah dan atas dihitung terpisah sesuai pilihan Anda. Mau bandingkan dulu? Kitchen set custom rangka plywood finishing HPL mulai Rp1.800.000 per meter lari. Survei dan pengukuran gratis untuk seluruh Jabodetabek.</p>
+      </div>
+      <ul class="ka-cities">
+        <li><a href="/kitchen-set/cibubur/">Kitchen set aluminium Cibubur</a></li>
+        <li><a href="/kitchen-set/bogor/">Kitchen set aluminium Bogor</a></li>
+        <li><a href="/kitchen-set/sentul/">Kitchen set aluminium Sentul</a></li>
+        <li><a href="/kitchen-set/depok/">Kitchen set aluminium Depok</a></li>
+        <li><a href="/kitchen-set/jakarta-timur/">Kitchen set aluminium Jakarta Timur</a></li>
+        <li><a href="/kitchen-set/jakarta-selatan/">Kitchen set aluminium Jakarta Selatan</a></li>
+        <li><a href="/kitchen-set/tangerang/">Kitchen set aluminium Tangerang</a></li>
+        <li><a href="/kitchen-set/bekasi/">Kitchen set aluminium Bekasi</a></li>
+        <li><a href="/kitchen-set/karawang/">Kitchen set aluminium Karawang</a></li>
+        <li><a href="/kitchen-set/bandung/">Kitchen set aluminium Bandung</a></li>
+      </ul>
+      <p class="ka-area-note">Area Anda tidak ada di daftar? Kami tetap melayani ke Sukabumi, Purwakarta, dan seluruh Jabodetabek. Lihat semua pilihan bahan di <a href="/kitchen-set/">katalog kitchen set custom</a>, pasang top table marmer atau granit sekalian dari <a href="/top-table/">halaman top table</a>, atau tanya langsung lewat <a href={waLink('Halo Kak, saya mau tanya kitchen set aluminium terdekat. Rumah saya di area mana ya bisa disurvei?')}>WhatsApp {site.waDisplay}</a>. Cara pemesanannya ada di <a href="/contact/">halaman kontak</a>.</p>
+    </div>
+  </section>
+
+  <!-- ===== URGENCY ===== -->
+  <section class="ka-urg" aria-labelledby="ka-urg">
+    <div class="wrap">
+      <h2 id="ka-urg">Rayap Tidak Menunggu Anda Siap. Kabinet Itu Tetap Dimakan Malam Ini.</h2>
+      <p>Survei dan desain 3D hari ini tidak dipungut biaya. Yang Anda keluarkan hanya satu chat. Bandingkan dengan biaya mengganti seluruh kabinet dua tahun dari sekarang, saat kerusakannya sudah tidak bisa ditambal lagi.</p>
+      <a class="btn btn--wa btn--lg" href={waLink('Halo Kak, saya mau jadwalkan survei gratis untuk kitchen set full aluminium. Tolong dibantu hitung biayanya.')}>Chat WhatsApp, Jadwalkan Survei Gratis</a>
+      <p class="ka-urg__meta">WhatsApp {site.waDisplay} &middot; Balasan hari ini &middot; Jabodetabek</p>
+    </div>
+  </section>
+
+  <Faq items={faqItems} title="Pertanyaan Seputar Kitchen Set Aluminium" />
+</Base>
+
+<style>
+  /* ponytail: seluruh gaya di-hoist ke halaman ini; global.css hanya disentuh di footer mobile. */
+  /* Teks abu --muted (#6f7580) hanya 4.15:1 di atas krem (#f6f2ec), di bawah WCAG AA.
+     Digelapkan lokal di bagian krem halaman ini saja; di latar putih tetap lolos. */
+  .sec--cream{--muted:#5c6167}
+  .ka-disclaim{--muted:#5c6167;color:#5c6167}
+  .ka-hero{background:linear-gradient(180deg,#1f4436 0%,#2f5d46 100%);color:#fff;padding:52px 0}
+  .ka-hero__in{display:grid;grid-template-columns:1fr 420px;gap:44px;align-items:center}
+  .ka-eyebrow{color:#a5e3bb;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px}
+  .ka-hero h1{font-size:clamp(25px,3.2vw,38px);line-height:1.14;font-weight:800;margin:0 0 16px;letter-spacing:-.01em}
+  .ka-hero h1 span{color:#a5e3bb}
+  .ka-lead{font-size:15.5px;line-height:1.7;color:#e6efe9;margin:0 0 12px}
+  .ka-lead--mute{color:#bcd2c8}
+  .ka-btn-row{margin:22px 0 10px}
+  .ka-note{font-size:12.5px;color:#a5e3bb;line-height:1.6;margin:0}
+  .ka-hero__media img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius-lg);box-shadow:0 16px 44px rgba(0,0,0,.3)}
+  .btn--wa{background:#25d366;color:#06281a;border:none}
+  .btn--wa:hover{background:#1eb356}
+  .btn--lg{padding:16px 30px;font-size:14px}
+
+  .ka-pain{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .ka-pain__item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .ka-pain__no{font-size:28px;font-weight:800;color:var(--red);line-height:1;margin:0 0 10px}
+  .ka-pain__item h3{margin:0 0 8px;font-size:17px}
+  .ka-pain__item p{margin:0;color:var(--muted);font-size:14px;line-height:1.65}
+  .ka-pivot{margin:30px auto 0;max-width:760px;text-align:center;font-size:16px;line-height:1.7;font-weight:600;color:var(--green-dark)}
+
+  .ka-feat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .ka-feat__item{background:var(--cream);border-radius:var(--radius);padding:22px;border-top:3px solid var(--green)}
+  .ka-feat__item h3{margin:0 0 8px;font-size:16px;color:var(--green-dark)}
+  .ka-feat__item p{margin:0;color:#5c6167;font-size:14px;line-height:1.6}
+
+  .ka-model{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .ka-model__item{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+  .ka-model__item img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+  .ka-model__item figcaption{display:flex;flex-direction:column;gap:6px;padding:16px 16px 18px}
+  .ka-model__item b{font-size:15px;color:var(--green-dark);text-transform:uppercase;letter-spacing:.04em}
+  .ka-model__item span{font-size:13.5px;color:var(--muted);line-height:1.6}
+
+  .ka-opt{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+  .ka-opt__col{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .ka-opt__col h3{margin:0 0 12px;font-size:14px;color:var(--green);text-transform:uppercase;letter-spacing:.08em}
+  .ka-chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0}
+  .ka-chips li{background:var(--green-soft);color:var(--green-dark);border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:600}
+
+  .ka-acp{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .ka-hint{margin:0 0 16px;font-size:12.5px;color:var(--green);font-weight:600;text-align:center}
+  .ka-acp__item{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+  .ka-acp__zoom{display:block;background:var(--cream);cursor:zoom-in}
+  .ka-acp__zoom img{width:100%;height:auto;aspect-ratio:1080/1530;object-fit:contain;transition:opacity .15s}
+  .ka-acp__zoom:hover img{opacity:.92}
+  .ka-acp__item figcaption{display:flex;flex-direction:column;gap:6px;padding:14px 16px 18px}
+  .ka-acp__item b{font-size:14px;color:var(--green-dark)}
+  .ka-acp__item span{font-size:12.5px;color:var(--muted);line-height:1.55}
+  .ka-disclaim{margin:26px auto 0;max-width:760px;font-size:13px;color:var(--muted);line-height:1.7;border-left:3px solid var(--line);padding:2px 0 2px 16px}
+
+  .ka-detail{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .ka-detail__item{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+  .ka-detail__item img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+  .ka-detail__item figcaption{display:flex;flex-direction:column;gap:6px;padding:14px 16px 18px}
+  .ka-detail__item b{font-size:14px;color:var(--green-dark)}
+  .ka-detail__item span{font-size:12.5px;color:var(--muted);line-height:1.55}
+
+  .ka-price{max-width:600px;margin:0 auto;text-align:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px 26px;box-shadow:var(--shadow)}
+  .ka-price__from{margin:0;color:var(--muted);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
+  .ka-price__amt{margin:6px 0 8px;font-size:36px;font-weight:800;color:var(--green)}
+  .ka-price__amt span{font-size:15px;font-weight:500;color:var(--muted)}
+  .ka-price__note{color:var(--muted);font-size:13.5px;line-height:1.65;margin:0 0 20px}
+  .ka-price__inc{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 24px;padding:0}
+  .ka-price__inc li{background:var(--cream);border-radius:6px;padding:6px 12px;font-size:12.5px;color:var(--ink)}
+  .ka-price__fine{margin:16px 0 0;font-size:12px;color:var(--muted);line-height:1.6}
+
+  .ka-urg{background:#191d1b;color:#fff;padding:62px 0;text-align:center}
+  .ka-cities{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 0 22px;padding:0}
+  .ka-cities a{display:block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:13.5px;font-weight:600;color:var(--green-dark)}
+  .ka-cities a:hover{background:var(--green);color:#fff;border-color:var(--green)}
+  .ka-area-note{max-width:760px;margin:0 auto;text-align:center;font-size:14px;line-height:1.7;color:#5c6167}
+  .ka-area-note a{color:var(--green-dark);font-weight:600;text-decoration:underline}
+  .ka-urg h2{font-size:clamp(21px,2.9vw,32px);line-height:1.22;font-weight:800;margin:0 auto 16px;max-width:800px}
+  .ka-urg p{color:#c9cfcc;max-width:660px;margin:0 auto 26px;line-height:1.75;font-size:15px}
+  .ka-urg__meta{margin:16px 0 0;font-size:12.5px;color:#8b9390}
+
+  @media (max-width:1024px){
+    .ka-model,.ka-acp,.ka-detail,.ka-pain,.ka-feat,.ka-opt{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:860px){
+    .ka-hero__in{grid-template-columns:1fr;gap:26px}
+    .ka-hero__media{order:-1}
+    .ka-hero__media img{max-width:420px;margin:0 auto}
+  }
+  @media (max-width:560px){
+    .ka-pain,.ka-feat,.ka-opt,.ka-model,.ka-acp,.ka-detail{grid-template-columns:1fr}
+    .ka-hero{padding:34px 0}
+  }
+</style>
