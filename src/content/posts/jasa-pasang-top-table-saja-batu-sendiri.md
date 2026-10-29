@@ -6,7 +6,7 @@ banner: "/images/ai/jasa-pasang-marmer-granit-bogor.jpg"
 excerpt: "Sebagian pelanggan membeli lempeng granit atau marmer sendiri, lalu butuh tukang pasang yang paham potong presisi. Ini yang dikerjakan pada jasa pasang saja, mulai Rp600.000 per meter lari, dan bedanya dengan paket lengkap."
 ---
 
-Ada dua cara orang sampai ke meja dapur batu. Cara pertama, semuanya kami urus: bahan dipilih, dipotong, dipasang. Cara kedua, lempengnya sudah ada di rumah, tinggal butuh yang memasang. Tulisan ini membahas cara kedua, karena pertanyaannya cukup sering masuk lewat pesan: "Batunya sudah saya beli, bisa pasang saja?"
+Ada dua cara orang sampai punya meja dapur berbahan marmer atau granit. Cara pertama, semuanya kami urus: bahan dipilih, dipotong, dipasang. Cara kedua, lempengnya sudah ada di rumah, tinggal butuh yang memasang. Tulisan ini membahas cara kedua, karena pertanyaannya cukup sering masuk lewat pesan: "Batunya sudah saya beli, bisa pasang saja?"
 
 Bisa. Jasa pasang top table saja di Ray Furniture & Stone mulai Rp600.000 per meter lari, dengan bahan batu dibeli sendiri oleh pelanggan.
 
