@@ -1,14 +1,26 @@
 ---
-title: "Jasa Poles Lantai Marmer Bogor: Shine vs Full Restoration"
+title: "Jasa Poles Marmer Bogor: Harga per Meter Persegi, Beda Shine dan Full Restoration"
 date: 2026-10-07
 category: "Perawatan"
 banner: "/images/ai/jasa-poles-lantai-marmer-bogor.jpg"
-excerpt: "Lantai marmer kusam tidak selalu harus dibongkar. Ini bedanya Shine dan Full Stone Restoration, dan kapan cukup satu."
+excerpt: "Poles marmer Bogor mulai Rp85.000 per meter persegi, satu angka untuk jasa dan bahan. Ini bedanya Shine dan Full Stone Restoration untuk lantai kusam di Jabodetabek."
 ---
 
-Lantai marmer yang dulu mengkilap, setelah dua tahun biasanya sudah redup dan kusam. Owners sering mengira itu akhir — padahal severity-nya berbeda.
+Poles marmer di Bogor mulai Rp85.000 per meter persegi untuk lantai yang cuma hilang kilau, dan mulai Rp130.000 per meter persegi kalau permukaannya harus direstorasi total. Angka itu satu paket jasa dan bahan, dihitung dari luas lantai yang dikerjakan. Tim kami berangkat dari workshop di Jl. Transyogi No.60, Nagrak, Gunung Putri, jadi area Kota Bogor, Kabupaten Bogor, dan Sentul termasuk jarak terdekat.
 
-Untuk pemilik rumah di Bogor, Bekasi, Depok, Tangerang, dan Jakarta, ada dua level [jasa poles lantai marmer dan granit](https://rayfurnitureandstone.id/about/#harga) yang perlu dipahami sebelum memilih.
+Lantai marmer yang dulu mengkilap, setelah dua tahun biasanya sudah redup dan kusam. Banyak pemilik rumah mengira batunya rusak, padahal yang habis biasanya lapisan pelindungnya. Karena itu poles hampir selalu jadi solusi pertama, bukan membongkar lantai.
+
+Untuk pemilik rumah di Bogor, Bekasi, Depok, Tangerang, dan Jakarta, ada dua tingkat [jasa poles lantai marmer dan granit](https://rayfurnitureandstone.id/about/#harga) yang perlu dipahami sebelum memilih.
+
+## Harga poles yang kami tayangkan
+
+Harga dihitung per meter persegi luas lantai, bukan per ruangan, dan bukan ongkos tukang yang ditagih terpisah:
+
+- Poles kristalisasi lantai marmer: mulai Rp85.000 per meter persegi.
+- Poles kristalisasi lantai granit: mulai Rp95.000 per meter persegi.
+- Full Stone Restoration, untuk lantai yang natnya tidak rata atau kilaunya hilang total: mulai Rp130.000 per meter persegi.
+
+Sudah termasuk bahan kristalisasi, pemolesan, dan pembersihan sisa kerja. Angka final keluar setelah luas dan kondisi lantai diketahui, dan survei lokasi tidak dikenakan biaya. Cara menghitung luasnya, panjang kali lebar tiap ruangan, dibahas detail di artikel [harga poles marmer per meter persegi](/what-news/harga-poles-marmer-per-meter-persegi/).
 
 ## Kenapa lantai marmer menjadi kusam
 
@@ -25,7 +37,7 @@ Yang dikerjakan:
 - Merapikan permukaan
 - Sealing ulang dengan lapisan pelindung baru
 
-Hasilnya lantai kembali mengkilap dan lebih tahan noda. Untuk lantai yangrusak ringan, ini sudah cukup dan jauh lebih murah daripada Full Restoration.
+Hasilnya lantai kembali mengkilap dan lebih tahan noda. Untuk lantai yang rusak ringan, ini sudah cukup dan jauh lebih murah daripada Full Restoration.
 
 ## Full Stone Restoration: untuk yang sudah rusak lebih berat
 
@@ -66,6 +78,23 @@ Lantai yang sudah disegel dengan benar bisa bertahan satu sampai dua tahun sebel
 
 Untuk area yang sering terkena air seperti dapur, intervalnya lebih pendek.
 
+## Pertanyaan yang paling sering ditanya pelanggan di Bogor
+
+**Berapa biaya poles marmer per meter persegi di Bogor?**
+Poles kristalisasi lantai marmer mulai Rp85.000 per meter persegi, lantai granit mulai Rp95.000 per meter persegi, dan Full Stone Restoration mulai Rp130.000 per meter persegi. Semuanya satu angka untuk jasa dan bahan. Penawaran resmi keluar setelah kami tahu luas dan kondisi lantainya.
+
+**Apakah pengerjaan poles bikin rumah berdebu?**
+Pengerjaan memakai mesin dengan penyedot yang bekerja langsung di sumbernya, jadi ruangan tidak penuh debu. Lantai dipoles di tempat, batu tidak dibongkar, perabot cukup digeser sementara, dan rumah tetap bisa ditinggali selama pengerjaan.
+
+**Lantai saya di Kabupaten Bogor atau Sentul, apakah tetap dilayani?**
+Ya. Kami melayani Kota Bogor, Kabupaten Bogor termasuk Sentul, area Cibubur perbatasan, plus Depok, Jakarta, Bekasi, dan Tangerang. Untuk proyek di luar Jabodetabek, harga dan durasi menyesuaikan.
+
+**Kilapnya baru hilang sebagian, harus langsung Full Restoration?**
+Tidak. Selama nat masih rata dan permukaan belum kasar, Shine Restoration biasanya sudah mengembalikan kilau. Full Stone Restoration baru dibutuhkan kalau permukaan sudah tidak rata atau noda sudah masuk ke dalam batu.
+
+**Berapa lama hasil poles bertahan?**
+Lantai yang disegel dengan benar biasanya bertahan satu sampai dua tahun sebelum perlu diulang, tergantung intensitas pemakaian dan seberapa sering terkena noda. Order ulang mendapat diskon.
+
 ## Yang termasuk dalam garansi
 
 Untuk pekerjaan poles lantai, garansi berlaku sampai QC selesai dan DP lunas. Setelah itu tidak ada garansi after-sale.
@@ -74,6 +103,10 @@ Kalau ada masalah pada nat atau pemasangan yang salah, itu ditangani di tahap pe
 
 ## Langkah berikutnya
 
-Kirim foto area lantai dan perkiraan luasnya dalam meter. [Ray Furniture and Stone](https://rayfurnitureandstone.id/contact/) akan membantu menilai level yang tepat, lalu membalas dengan estimasi biaya tanpa biaya survei.
+Kirim foto area lantai dari dua sudut dengan lampu ruangan menyala, plus perkiraan luasnya. Dari foto biasanya sudah kelihatan tingkat kerusakannya, dan kami bisa sebut perkiraan biayanya lebih dulu sebelum survei. Tim poles kami berangkat dari workshop di Jl. Transyogi No.60, Nagrak, Gunung Putri, jadi area Bogor dan Cibubur adalah jarak terdekat.
 
-Untuk info harga restoration dan layanan pasang batu lainnya, lihat [layanan lengkap kami](https://rayfurnitureandstone.id/about/) atau [simulator top table](https://rayfurnitureandstone.id/top-table/#simulator) untuk estimasi cepat.
+Kalau ragu lantai Anda masuk level poles biasa atau restorasi, bandingkan ciri-cirinya dengan artikel [kenapa lantai marmer kusam harus dipoles](/what-news/kenapa-lantai-marmer-kusam-harus-dipoles/). Rincian harga pasang batu lainnya ada di [halaman harga kami](https://rayfurnitureandstone.id/about/#harga).
+
+---
+
+Butuh jasa poles marmer di Bogor? Lihat [jasa pasang top table marmer & granit](https://rayfurnitureandstone.id/top-table/) atau langsung hubungi [WhatsApp kami](https://wa.me/6282121841119?text=Halo%20Kak%2C%20saya%20mau%20tanya%20jasa%20poles%20marmer%20di%20Bogor.%20Luas%20lantai%20kurang%20lebih%20...%20m2). Kami melayani Bogor, Depok, Jakarta, Bekasi, Tangerang, dan seluruh Jabodetabek.

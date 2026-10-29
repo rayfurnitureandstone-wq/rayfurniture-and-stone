@@ -50,7 +50,7 @@ Cukup dipoles kalau permukaannya masih rata tetapi kilaunya hilang, warnanya ter
 
 Perlu restorasi penuh kalau permukaannya sudah tidak rata saat disentuh, ada bopeng kecil bekas cipratan jeruk atau cuka, ada noda yang tidak hilang setelah dipel, atau nat dan tepi batu mulai menghitam.
 
-Kalau ragu, kirim foto lantai dari dua sudut dengan lampu ruangan menyala. Dari foto biasanya sudah kelihatan tingkat kerusakannya, dan kami bisa sebut perkiraan biayanya lebih dulu sebelum survei.
+Kalau ragu, kirim foto lantai dari dua sudut dengan lampu ruangan menyala. Dari foto biasanya sudah kelihatan tingkat kerusakannya, dan kami bisa sebut perkiraan biayanya lebih dulu sebelum survei. Untuk lantai di area Bogor dan Sentul, rincian tingkat pengerjaannya ada di artikel [jasa poles marmer Bogor](/what-news/jasa-poles-lantai-marmer-bogor/).
 
 ## Urutan kerjanya
 
