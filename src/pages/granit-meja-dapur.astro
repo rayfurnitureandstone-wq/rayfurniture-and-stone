@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Faq from '../components/Faq.astro';
 import { waLink } from '../data/site.js';
 
-const desc = 'Granit bevel meja dapur dipasang mulai Rp850.000 per meter lari, sudah termasuk bahan dan pasang. Profil tepi bevel, bullnose, eased, square, sampai ogee dijelaskan lengkap plus harganya. Ukur dulu, baru bayar. Melayani Bogor, Depok, Jakarta, Bekasi, dan Tangerang.';
+const desc = 'Meja granit dapur mulai Rp850.000 per meter lari, sudah termasuk bahan dan pasang. Hitung biaya meja 1 sampai 3 meter, plus pilihan profil tepi bevel. Melayani seluruh Jabodetabek.';
 
 const faqGMD = [
   ['Berapa harga granit meja dapur per meter?',
@@ -47,8 +47,14 @@ const faqGMD = [
     ['Berapa biaya bevel tepi granit meja dapur?',
      'Tidak ada tambahan biaya. Pembentukan dan pemolesan tepi, mau bevel, bullnose, eased, atau square, sudah termasuk dalam paket bahan dan pasang mulai Rp850.000 per meter lari. Kalau granitnya Anda beli sendiri, penghalusan tepi juga sudah masuk jasa pasang saja mulai Rp600.000 per meter lari. Anda cukup menyebut profil tepi yang dipilih sebelum batu dipotong.'],
     ['Beda bevel dengan bullnose untuk meja dapur?',
-     'Bevel dipotong miring dan dipoles, bikin meja kelihatan tipis dan modern. Bullnose dibulatkan penuh di semua sisi, jadi tidak ada sudut sama sekali. Untuk dapur yang sering dipakai anak kecil, bullnose lebih aman. Untuk tampilan meja yang ramping dengan sambungan yang menyatu, bevel lebih cocok. Ogee, profil dekoratif berlengkung ganda, juga ada untuk dapur bergaya klasik.'],
-  ];
+         'Bevel dipotong miring dan dipoles, bikin meja kelihatan tipis dan modern. Bullnose dibulatkan penuh di semua sisi, jadi tidak ada sudut sama sekali. Untuk dapur yang sering dipakai anak kecil, bullnose lebih aman. Untuk tampilan meja yang ramping dengan sambungan yang menyatu, bevel lebih cocok. Ogee, profil dekoratif berlengkung ganda, juga ada untuk dapur bergaya klasik.'],
+        ['Meja granit dapur ukuran 2 meter berapa biayanya?',
+         'Tarifnya Rp850.000 per meter lari untuk paket bahan dan pasang, jadi meja 2 meter mulai Rp1.700.000. Kalau total order Anda di bawah 3 meter, ada ongkir Rp300.000 di Jabodetabek, jadi totalnya mulai Rp2.000.000. Order 3 meter ke atas gratis ongkir. Angka final keluar setelah ukur di lokasi, tanpa biaya.'],
+        ['Meja granit dapur 1 meter bisa dibuat, atau ada ukuran minimum?',
+         'Bisa, tidak ada ukuran minimum. Meja 1 meter mulai Rp850.000 untuk paket bahan dan pasang, sudah termasuk potong lubang sink dan kompor, profil tepi, nat resin, dan coating. Karena ordernya di bawah 3 meter, ongkir di Jabodetabek Rp300.000. Ukur dan konsultasi tetap gratis walau mejanya pendek.'],
+        ['Meja granit dapur perlu rangka besi cor?',
+         'Tidak wajib. Granit bisa diletakkan di atas kabinet kayu atau aluminium yang rata dan kuat, dan itu pilihan paling sering dipakai di rumah. Kalau meja memakai cor beton, semen, pasir, dan struktur rangka besinya dihitung terpisah karena itu pekerjaan sipil, bukan pekerjaan batu. Semua disebut di awal supaya tidak ada biaya yang muncul di tengah pekerjaan.'],
+      ];
 
 const schema = {
   '@context': 'https://schema.org',
@@ -84,7 +90,7 @@ const schema = {
 };
 ---
 
-<Base title="Granit Bevel Meja Dapur: Pilihan Profil Tepi dan Harga Pasang per Meter Lari" description={desc}>
+<Base title="Meja Granit Dapur: Harga Mulai Rp850.000 per Meter Lari dan Profil Tepi Bevel" description={desc}>
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/top-table/">Top Table</a> / Granit Meja Dapur</nav></div>
@@ -93,7 +99,7 @@ const schema = {
     <div class="wrap two-col" style="align-items:center">
       <div>
         <p class="eyebrow">Granit bevel meja dapur</p>
-                <h1>Granit Bevel Meja Dapur, <em>Tepinya Rapi</em> Sejak Dipotong</h1>
+                <h1>Meja Granit Dapur, <em>Tepinya Rapi</em> Sejak Dipotong</h1>
                 <p class="lead">Pasang granit bevel meja dapur, dari ukur di lokasi sampai tepi meja dibentuk di mesin kami sendiri dan permukaan di-coating. Harga mulai Rp850.000 per meter lari, sudah termasuk bahan dan pasang. Profil tepi bevel, bullnose, eased, square, sampai ogee termasuk dalam harga paket.</p>
         <p style="margin-top:22px">
           <a class="btn btn--green" href={waLink('Halo Kak, saya mau tanya granit meja dapur. Ini ukuran dapur saya:')}>Tanya Harga Granit Meja Dapur</a>
@@ -128,6 +134,39 @@ const schema = {
         </div>
       </div>
       <p style="margin-top:22px;font-size:14px;color:var(--ink-2)">Harga di atas adalah titik masuk untuk granit motif polos. Motif urat besar dan marmer impor lebih tinggi. Angka final keluar setelah ukur di lokasi, tanpa biaya.</p>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="hitung-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Hitung sendiri</p>
+        <h2 class="h-sec" id="hitung-title">Biaya Meja Granit Dapur 1 sampai 3 Meter</h2>
+        <p class="sub-sec">Semua angka di bawah memakai tarif paket bahan dan pasang mulai Rp850.000 per meter lari dengan lebar standar 60 cm. Meja huruf L dihitung dari total panjangnya.</p>
+      </div>
+      <div class="feat-grid feat-grid--2">
+        <div class="price-card">
+          <h3>Meja granit dapur 1 meter</h3>
+          <p style="font-size:26px;font-weight:700;color:var(--green)">Mulai Rp850.000</p>
+          <p>Sudah termasuk granit, potong lubang sink dan kompor, profil tepi, nat resin, dan coating anti air.</p>
+        </div>
+        <div class="price-card">
+          <h3>Meja granit dapur 1,5 meter</h3>
+          <p style="font-size:26px;font-weight:700;color:var(--green)">Mulai Rp1.275.000</p>
+          <p>Ukuran yang paling sering dipakai di dapur rumah tapak, muat sink dan satu area kerja.</p>
+        </div>
+        <div class="price-card">
+          <h3>Meja granit dapur 2 meter</h3>
+          <p style="font-size:26px;font-weight:700;color:var(--green)">Mulai Rp1.700.000</p>
+          <p>Muat sink dan kompor sekaligus, sambungannya lebih sedikit kalau bahannya dari lempengan panjang.</p>
+        </div>
+        <div class="price-card">
+          <h3>Meja granit dapur 3 meter</h3>
+          <p style="font-size:26px;font-weight:700;color:var(--green)">Mulai Rp2.550.000</p>
+          <p>Sudah masuk batas gratis ongkir di Jabodetabek. Order di bawah 3 meter dikenakan ongkir Rp300.000.</p>
+        </div>
+      </div>
+      <p style="margin-top:22px;font-size:14px;color:var(--ink-2)">Semen, pasir, dan struktur rangka besi untuk meja cor tidak termasuk, dan itu disebut terpisah sejak awal. Kirim panjang meja Anda lewat <a href="/contact/">halaman kontak</a>, estimasi kami kirim di hari yang sama.</p>
     </div>
   </section>
 
