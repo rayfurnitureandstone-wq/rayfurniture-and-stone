@@ -19,7 +19,7 @@ Pintu kabinet pakai engsel slow motion, menutup halus tanpa bunyi keras. Setiap 
 
 ## Hitungan Per Meter Lari Transparan
 
-Kitchen set aluminium mulai Rp2.500.000 per meter lari. Kabinet bawah dan kabinet atas dihitung terpisah, jadi Anda tahu persis berapa yang dibayar untuk tiap bagian. Tidak ada biaya tersembunyi di akhir.
+Kitchen set aluminium mulai Rp2.700.000 per meter lari. Kabinet bawah dan kabinet atas dihitung terpisah, jadi Anda tahu persis berapa yang dibayar untuk tiap bagian. Tidak ada biaya tersembunyi di akhir.
 
 ## Survei Lokasi Gratis
 

@@ -39,7 +39,7 @@ Garansi produk 1 tahun biasanya menutup engsel turun, handle lepas, HPL mengelup
 Untuk kitchen set custom di Tangerang dan sekitarnya:
 
 - Mulai **Rp1.800.000** untuk unit sederhana (plywood + blokmin finishing HPL)
-- Mulai **Rp2.500.000** untuk full aluminium (anti rayap)
+- Mulai **Rp2.700.000** untuk full aluminium (anti rayap)
 - DP 30 sampai 50 persen, sisanya setelah QC
 - 3 sampai 7 hari kerja tergantung ukuran
 

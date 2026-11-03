@@ -51,7 +51,7 @@ Patokan yang bisa dipakai di JABODETABEK, termasuk Tangerang. Semua angka sudah 
 - Pasang lantai, dinding, atau tangga marmer dan granit, patokannya **per meter persegi**
 - Poles lantai mulai **Rp100.000 per meter persegi**, Full Stone Restoration **Rp130.000**
 - Kitchen set plywood + blokmin finishing HPL mulai **Rp1.800.000** per meter lari
-- Kitchen set full aluminium (anti rayap) mulai **Rp2.500.000** per meter lari
+- Kitchen set full aluminium (anti rayap) mulai **Rp2.700.000** per meter lari
 - Kalau hanya butuh bahannya saja, minta hitungan **cutting size**
 
 Angka ini titik awal, bukan harga final. Harga keluar setelah ukuran ruang dan pilihan batu dipastikan.

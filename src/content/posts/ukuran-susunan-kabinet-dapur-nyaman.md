@@ -36,7 +36,7 @@ Susunan yang rapi tidak banyak gunanya kalau bodi kabinetnya menggelembung setel
 
 ## Harga kitchen set custom
 
-Harga kitchen set custom kami mulai Rp1.800.000 per meter lari, sudah termasuk material dan pemasangan. Untuk pilihan kabinet atas aluminium, harganya mulai Rp2.500.000 per meter lari, sedangkan kabinet bawah full box mulai Rp2.400.000 per meter lari. Semua pekerjaan kami beri garansi rangka satu tahun, dan sebelum dikerjakan kami survei lokasi serta buat desain 3D supaya Anda tahu bentuk dan ukuran hasilnya lebih dulu.
+Harga kitchen set custom kami mulai Rp1.800.000 per meter lari, sudah termasuk material dan pemasangan. Untuk pilihan kabinet atas aluminium, harganya mulai Rp2.700.000 per meter lari, sedangkan kabinet bawah full box mulai Rp2.400.000 per meter lari. Semua pekerjaan kami beri garansi rangka satu tahun, dan sebelum dikerjakan kami survei lokasi serta buat desain 3D supaya Anda tahu bentuk dan ukuran hasilnya lebih dulu.
 
 Kami mengerjakan kitchen set custom untuk rumah di Jakarta Timur, Depok, Bogor, Kabupaten Bogor, Bekasi, dan Tangerang. Kalau ukuran dapur Anda tidak standar atau plafonnya rendah, itu tetap bisa kami kerjakan dengan susunan yang menyesuaikan.
 

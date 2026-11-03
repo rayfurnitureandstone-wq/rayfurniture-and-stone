@@ -76,6 +76,6 @@ Kirim tiga hal ini, dan kami balas dengan desain 3D serta estimasi biaya:
 2. Ukuran kasar panjang dan lebar ruang, dalam meter.
 3. Anggaran yang Anda siapkan.
 
-Survei dan pengukuran di Jabodetabek tidak dikenakan biaya. Kitchen set custom mulai Rp 1.800.000 per meter lari (plywood + blokmin, finishing HPL) dan mulai Rp 2.500.000 per meter lari untuk full aluminium yang anti rayap.
+Survei dan pengukuran di Jabodetabek tidak dikenakan biaya. Kitchen set custom mulai Rp 1.800.000 per meter lari (plywood + blokmin, finishing HPL) dan mulai Rp 2.700.000 per meter lari untuk full aluminium yang anti rayap.
 
 Lihat [jasa kitchen set custom Jabodetabek](https://rayfurnitureandstone.id/kitchen-set/) untuk rincian harga dan contoh pengerjaan, atau langsung kirim tiga hal di atas lewat [WhatsApp kami](https://wa.me/6282121841119?text=Halo%20Ray%20Furniture%20and%20Stone%2C%20saya%20mau%20cerita%20anggaran%20kitchen%20set%20custom%20saya.%20Mohon%20rekomendasi%20desain%20dan%20materialnya.). Kami melayani Jakarta, Bogor, Depok, Tangerang, Bekasi, dan seluruh Jabodetabek.

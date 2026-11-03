@@ -32,7 +32,7 @@ Kami membuka angkanya sejak awal supaya Anda bisa menghitung sendiri perkiraan t
 
 - Kitchen set custom mulai Rp1.800.000 per meter lari.
 - Kabinet bawah full box mulai Rp2.400.000 per meter lari.
-- Kabinet atas aluminium mulai Rp2.500.000 per meter lari.
+- Kabinet atas aluminium mulai Rp2.700.000 per meter lari.
 
 Angka itu adalah biaya jasa dan barang, sudah termasuk pemasangan, bukan ongkos tukang terpisah. Rangka aluminium yang kami pakai tidak menggelembung saat terkena air dan tidak dimakan rayap, engselnya slow motion, dan rangkanya kami beri garansi satu tahun.
 

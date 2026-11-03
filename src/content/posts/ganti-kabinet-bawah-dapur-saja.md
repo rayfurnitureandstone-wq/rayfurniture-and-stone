@@ -41,7 +41,7 @@ Sebelum dikerjakan, kami survei lokasi untuk mengukur ruang dan melihat posisi p
 
 ## Hitungan biaya yang kami pakai
 
-Harga kitchen set kami dihitung per meter lari, satu angka sudah termasuk jasa pengerjaan dan material. Untuk kabinet bawah full box (berarti kabinet tertutup penuh, bukan rangka terbuka) mulai Rp2.400.000 per meter lari. Bila sekalian mengganti kabinet atas, kitchen set aluminium untuk bagian atas mulai Rp2.500.000 per meter lari, sementara kitchen set custom secara umum mulai Rp1.800.000 per meter lari.
+Harga kitchen set kami dihitung per meter lari, satu angka sudah termasuk jasa pengerjaan dan material. Untuk kabinet bawah full box (berarti kabinet tertutup penuh, bukan rangka terbuka) mulai Rp2.400.000 per meter lari. Bila sekalian mengganti kabinet atas, kitchen set aluminium untuk bagian atas mulai Rp2.700.000 per meter lari, sementara kitchen set custom secara umum mulai Rp1.800.000 per meter lari.
 
 Angka ini titik awal, bukan patokan mati. Panjang dapur, jumlah laci, dan pilihan motif HPL membuat hasil akhirnya bisa berbeda. Karena itu kami sebut angkanya setelah melihat ukuran dan kondisi dapur, bukan sebelum.
 
